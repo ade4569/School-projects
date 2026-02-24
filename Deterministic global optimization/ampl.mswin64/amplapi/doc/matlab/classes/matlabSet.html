@@ -1,0 +1,1056 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>Set &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/matlabSet';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/matlab/classes/matlabSet.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SetInstance" href="matlabSetInstance.html" />
+    <link rel="prev" title="Parameter" href="matlabParameter.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="../index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">MATLAB API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    MATLAB API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    MATLAB API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    MATLAB API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    MATLAB API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="matlabAMPL.html">AMPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabAMPLOutput.html">AMPLOutput</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabDataFrame.html">Data Frame</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="matlabConstraint.html">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabConstraintInstance.html">ConstraintInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabEntity.html">Entity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabEntityList.html">EntityList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabObjective.html">Objective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabObjectiveInstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabParameter.html">Parameter</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabSetInstance.html">SetInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabTuple.html">Tuple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabVariable.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabVariableInstance.html">VariableInstance</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../reference.html" class="nav-link">MATLAB API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Set</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="set">
+<span id="secmatlabrefset"></span><h1>Set<a class="headerlink" href="#set" title="Link to this heading">#</a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="Set">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Set</span></span><a class="headerlink" href="#Set" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p>The Set object stores the information regarding a set in the algebraic model.
+It can be indexed or simple. In case of simple sets, its members are accessible from this object, through methods like
+<a class="reference internal" href="#Set.getValues" title="Set.getValues"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">Set.getValues</span></code></a> or <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">asSet</span></code>.</p>
+<p>If it is indexed, the single sets, represented as <a class="reference internal" href="matlabSetInstance.html#SetInstance" title="SetInstance"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">SetInstance</span></code></a> are accessible through the function <a class="reference internal" href="#Set.get" title="Set.get"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">Set.get</span></code></a>.</p>
+<p>Data can be assigned to the set via <a class="reference internal" href="#Set.setValues" title="Set.setValues"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">Set.setValues</span></code></a> and <a class="reference internal" href="matlabSetInstance.html#SetInstance.setValues" title="SetInstance.setValues"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">SetInstance.setValues</span></code></a></p>
+<section id="get">
+<h2>get<a class="headerlink" href="#get" title="Link to this heading">#</a></h2>
+<dl class="mat classmethod">
+<dt class="sig sig-object mat" id="Set.get">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">Set.</span></span><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Set.get" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<section id="syntax">
+<h3><strong>Syntax</strong><a class="headerlink" href="#syntax" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">get()</span></code>
+<code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">get(key)</span></code></p>
+</section>
+<section id="description">
+<h3><strong>Description</strong><a class="headerlink" href="#description" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">get()</span></code> returns the SetInstance (only for not indexed sets)
+<code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">get(key)</span></code> returns the SetInstance corresponding to the specified key
+Note that the same effect can be achieved using MATLAB’s indexing operator (round brackets).</p>
+</section>
+<section id="input-arguments">
+<h3><strong>Input Arguments</strong><a class="headerlink" href="#input-arguments" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">key</span></code></dt><dd><p>The key of the set instance to look up.</p>
+</dd>
+</dl>
+</section>
+<section id="output-arguments">
+<h3><strong>Output Arguments</strong><a class="headerlink" href="#output-arguments" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">v</span></code></dt><dd><p>The specified set instance (<a class="reference internal" href="matlabSetInstance.html#SetInstance" title="SetInstance"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">SetInstance</span></code></a>)</p>
+</dd>
+</dl>
+</section>
+<section id="example">
+<h3><strong>Example</strong><a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p>Create an indexed set and get an instance</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;set A{1..2}; let A[1] := {&#39;&#39;a&#39;&#39;, &#39;&#39;b&#39;&#39;};&#39;</span><span class="p">);</span>
+<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getSet</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">);</span>
+<span class="n">setinstance</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nb">cell</span><span class="p">(</span><span class="n">setinstance</span><span class="p">.</span><span class="n">asStrings</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span>
+ <span class="s1">&#39;a&#39;</span>
+ <span class="s1">&#39;b&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="getvalues">
+<h2>getValues<a class="headerlink" href="#getvalues" title="Link to this heading">#</a></h2>
+<dl class="mat classmethod">
+<dt class="sig sig-object mat" id="Set.getValues">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">Set.</span></span><span class="sig-name descname"><span class="pre">getValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Set.getValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<section id="id1">
+<h3><strong>Syntax</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">v.getValues()</span></code></p>
+</section>
+<section id="id2">
+<h3><strong>Description</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">v.getValues()</span></code></p>
+<p>This functions return a dataframe with all the values of
+the set, decoupled from the underlying AMPL.
+To gain access to the data, see <a class="reference internal" href="matlabDataFrame.html#DataFrame" title="DataFrame"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>.</p>
+</section>
+<section id="id3">
+<h3><strong>Output Arguments</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">df</span></code></dt><dd><p>A dataframe containing all the values in the set</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h3><strong>Example</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Create an AMPL set and get its values in a dataframe</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;set A{1..2}; let A[1] := {&#39;&#39;a&#39;&#39;, &#39;&#39;b&#39;&#39;}; let A[2] := {&#39;&#39;c&#39;&#39;, &#39;&#39;d&#39;&#39;};&#39;</span><span class="p">);</span>
+<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getSet</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">);</span>
+<span class="n">df</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">getValues</span><span class="p">();</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span>
+<span class="mi">1</span> <span class="o">..</span> <span class="mi">2</span>  <span class="o">|</span>  <span class="n">A</span>
+<span class="mf">1.0</span>     <span class="o">|</span>  <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span>
+<span class="mf">2.0</span>     <span class="o">|</span>  <span class="p">[</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="asset">
+<h2>asSet()<a class="headerlink" href="#asset" title="Link to this heading">#</a></h2>
+<dl class="mat classmethod">
+<dt class="sig sig-object mat" id="Set.asSet">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">Set.</span></span><span class="sig-name descname"><span class="pre">asSet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Set.asSet" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<section id="id5">
+<h3><strong>Syntax</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">set.asSet()</span></code></p>
+</section>
+<section id="id6">
+<h3><strong>Description</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">set.asSet()</span></code> Get a copy of the elements in this set as a java Set of Objects (Strings and double numbers). Valid only for not indexed sets.</p>
+</section>
+<section id="id7">
+<h3><strong>Output Arguments</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">v</span></code></dt><dd><p>Get a copy of the elements in this set as a java Set of Objects (Strings and double numbers).</p>
+</dd>
+</dl>
+</section>
+<section id="id8">
+<h3><strong>Example</strong><a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>Create a set in AMPL and get it as a Java Set.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;set A := 2000..2020 by 5;&#39;</span><span class="p">);</span>
+<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getSet</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">);</span>
+<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">asSet</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="o">=</span>
+<span class="p">[</span><span class="mf">2000.0</span><span class="p">,</span> <span class="mf">2005.0</span><span class="p">,</span> <span class="mf">2010.0</span><span class="p">,</span> <span class="mf">2015.0</span><span class="p">,</span> <span class="mf">2020.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="setvalues">
+<h2>setValues()<a class="headerlink" href="#setvalues" title="Link to this heading">#</a></h2>
+<dl class="mat classmethod">
+<dt class="sig sig-object mat" id="Set.setValues">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">Set.</span></span><span class="sig-name descname"><span class="pre">setValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Set.setValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<section id="id9">
+<h3><strong>Syntax</strong><a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">set.setValues(members)</span></code></p>
+</section>
+<section id="id10">
+<h3><strong>Description</strong><a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">set.setValues(members)</span></code> Assign data to this set instance.</p>
+</section>
+<section id="id11">
+<h3><strong>Input Arguments</strong><a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">members</span></code></dt><dd><p>List of strings and numbers which represent the members of this set.</p>
+<p>For multidimensional sets, each item of the <code class="docutils literal notranslate"><span class="pre">members</span></code> list must be either a cell array or a Tuple representing each item.</p>
+</dd>
+</dl>
+</section>
+<section id="id12">
+<h3><strong>Example</strong><a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>Create a set in AMPL and assign some data to it from MATLAB</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;set A;&#39;</span><span class="p">);</span>
+<span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getSet</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">).</span><span class="n">get</span><span class="p">();</span>
+<span class="n">s</span><span class="p">.</span><span class="n">setValues</span><span class="p">({</span><span class="mf">4.2</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;4.2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;b&#39;</span><span class="p">});</span>
+<span class="n">s</span><span class="p">.</span><span class="n">asSet</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span>
+   <span class="p">[</span><span class="mf">4.2</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="example-multidimensional-sets">
+<h3><strong>Example</strong>: multidimensional sets<a class="headerlink" href="#example-multidimensional-sets" title="Link to this heading">#</a></h3>
+<p>Create a multidimensional set in AMPL and assign some data to it from MATLAB, using Tuples and using cell arrays.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;set A dimen 2;&#39;</span><span class="p">);</span>
+<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getSet</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">).</span><span class="n">get</span><span class="p">();</span>
+<span class="n">A</span><span class="p">.</span><span class="n">setValues</span><span class="p">(</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;a&#39;</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;b&#39;</span><span class="p">});</span>
+<span class="n">A</span>
+
+<span class="s">%</span><span class="w"> </span><span class="s">Alternative</span><span class="w"> </span><span class="s">way,</span><span class="w"> </span><span class="s">with</span><span class="w"> </span><span class="s">tuples</span>
+<span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;set B dimen 2;&#39;</span><span class="p">);</span>
+<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getSet</span><span class="p">(</span><span class="s">&#39;B&#39;</span><span class="p">).</span><span class="n">get</span><span class="p">();</span>
+<span class="n">t1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Tuple</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;a&#39;</span><span class="p">);</span>
+<span class="n">t2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Tuple</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">B</span><span class="p">.</span><span class="n">setValues</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">t2</span><span class="p">);</span>
+<span class="n">B</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span>
+ <span class="nb">set</span> <span class="n">A</span> <span class="o">=</span> <span class="p">{(</span><span class="mf">1.0</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)};</span>
+
+<span class="n">B</span> <span class="o">=</span>
+ <span class="nb">set</span> <span class="n">B</span> <span class="o">=</span> <span class="p">{(</span><span class="mf">1.0</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)};</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="contains">
+<h2>contains()<a class="headerlink" href="#contains" title="Link to this heading">#</a></h2>
+<dl class="mat classmethod">
+<dt class="sig sig-object mat" id="Set.contains">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">Set.</span></span><span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Set.contains" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<section id="id13">
+<h3><strong>Syntax</strong><a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">set.contains(member)</span></code>
+<code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">set.containsAll(members)</span></code></p>
+</section>
+<section id="id14">
+<h3><strong>Description</strong><a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span>&#160; <span class="pre">set.contains(member)</span></code> Checks whether the set contains the specified member. Valid only for not indexed sets.
+<code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span>&#160; <span class="pre">set.containsAll(members)</span></code> Checks whether the set contains all the specified members. Valid only for not indexed sets.</p>
+</section>
+<section id="id15">
+<h3><strong>Input Arguments</strong><a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">member</span></code></dt><dd><p>The element (string or number) to be found in the set</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">members</span></code></dt><dd><p>A cell arrray of strings and numbers which represent the members to be found</p>
+</dd>
+</dl>
+</section>
+<section id="id16">
+<h3><strong>Example</strong><a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<p>Create a set in AMPL and checks for its members</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;set A := {&#39;&#39;a&#39;&#39;, &#39;&#39;b&#39;&#39;, 4};&#39;</span><span class="p">);</span>
+<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getSet</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">);</span>
+<span class="n">A</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">A</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">A</span><span class="p">.</span><span class="n">containsAll</span><span class="p">({</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">})</span>
+<span class="n">A</span><span class="p">.</span><span class="n">containsAll</span><span class="p">({</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span>
+     <span class="mi">0</span>
+
+<span class="n">ans</span> <span class="o">=</span>
+     <span class="mi">1</span>
+
+<span class="n">ans</span> <span class="o">=</span>
+     <span class="mi">1</span>
+
+<span class="n">ans</span> <span class="o">=</span>
+     <span class="mi">0</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="size">
+<h2>size()<a class="headerlink" href="#size" title="Link to this heading">#</a></h2>
+<dl class="mat classmethod">
+<dt class="sig sig-object mat" id="Set.size">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">Set.</span></span><span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Set.size" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<section id="id17">
+<h3><strong>Syntax</strong><a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span>&#160; <span class="pre">set.size(member)</span></code></p>
+</section>
+<section id="id18">
+<h3><strong>Description</strong><a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span>&#160; <span class="pre">set.size(member)</span></code> For not indexed sets, get the cardinality of the set. For indexed sets, get the number of set instances into this
+set.</p>
+</section>
+<section id="id19">
+<h3><strong>Output Arguments</strong><a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">b</span></code></dt><dd><p>The cardinality (number of elements) of this set or the number of set instances.</p>
+</dd>
+</dl>
+</section>
+<section id="id20">
+<h3><strong>Example</strong><a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<p>Create a set in AMPL and look at its size</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;set A := {&#39;&#39;a&#39;&#39;, &#39;&#39;b&#39;&#39;, 4};&#39;</span><span class="p">);</span>
+<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getSet</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">);</span>
+<span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span>
+     <span class="mi">3</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="arity">
+<h2>arity()<a class="headerlink" href="#arity" title="Link to this heading">#</a></h2>
+<dl class="mat classmethod">
+<dt class="sig sig-object mat" id="Set.arity">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">Set.</span></span><span class="sig-name descname"><span class="pre">arity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Set.arity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<section id="id21">
+<h3><strong>Syntax</strong><a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span>&#160; <span class="pre">Set.arity()</span></code></p>
+</section>
+<section id="id22">
+<h3><strong>Description</strong><a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span>&#160; <span class="pre">Set.arity()</span></code> Returns the dimension of the items in this set.
+set.</p>
+</section>
+<section id="id23">
+<h3><strong>Output Arguments</strong><a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">b</span></code></dt><dd><p>The <em>arity</em> (number of elements) of the members of this set.</p>
+</dd>
+</dl>
+</section>
+<section id="id24">
+<h3><strong>Example</strong><a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<p>Create a set in AMPL as a set product and look at its arity</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;set A; set B;&#39;</span><span class="p">);</span>
+<span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;set C := A cross B;&#39;</span><span class="p">);</span>
+<span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getSet</span><span class="p">(</span><span class="s">&#39;C&#39;</span><span class="p">);</span>
+<span class="n">C</span><span class="p">.</span><span class="n">arity</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span>
+     <span class="mi">2</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="matlabParameter.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Parameter</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="matlabSetInstance.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SetInstance</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get">get</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax"><strong>Syntax</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description"><strong>Description</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-arguments"><strong>Input Arguments</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-arguments"><strong>Output Arguments</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example"><strong>Example</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getvalues">getValues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Syntax</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Description</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>Output Arguments</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>Example</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asset">asSet()</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Syntax</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>Description</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>Output Arguments</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>Example</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setvalues">setValues()</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>Syntax</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>Description</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>Input Arguments</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>Example</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-multidimensional-sets"><strong>Example</strong>: multidimensional sets</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contains">contains()</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><strong>Syntax</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><strong>Description</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15"><strong>Input Arguments</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16"><strong>Example</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size">size()</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17"><strong>Syntax</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18"><strong>Description</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19"><strong>Output Arguments</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20"><strong>Example</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arity">arity()</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21"><strong>Syntax</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22"><strong>Description</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23"><strong>Output Arguments</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24"><strong>Example</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

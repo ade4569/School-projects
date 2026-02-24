@@ -1,0 +1,17 @@
+.. highlight:: c++
+
+.. _ref::Objective:
+
+Objective
+---------
+
+.. doxygenclass:: ampl::Entities::Objective
+   :members:
+   :undoc-members:
+
+ObjectiveMap
+-------------
+
+.. doxygenclass:: ampl::Entities::ObjectiveMap
+   :members:
+   :undoc-members:

@@ -1,0 +1,101 @@
+.. _secExamplesCsharp:
+
+C# API Examples
+===============
+
+This section lists a few examples in C#. 
+These are the same files that can be found in the *examples* directory of the distribution, and show the basic usage of the C# API. 
+
+Example 1: First steps
+----------------------
+
+:download:`firstexample.cs <../../cpp/swig/csharp/examples/FirstExample.cs>`
+
+This example shows how to
+ 
+* read an AMPL model
+* reassign values to parameters 
+* solve the model 
+* display the objective function value
+
+Example 2: Get and set AMPL options
+-----------------------------------
+
+:download:`optionsexample.cs <../../cpp/swig/csharp/examples/OptionsExample.cs>`
+
+This example shows how to:
+
+* get and set AMPL options
+   
+Example 3: Get and set data through DataFrames
+----------------------------------------------
+
+:download:`dataframeexample.cs <../../cpp/swig/csharp/examples/DataFrameExample.cs>`
+
+This example shows how to:
+
+* Use :cs:class:`DataFrame` objects to assign values to sets and parameters
+* Use an :cs:class:`DataFrame` object to fetch and decouple values from a variable
+   
+Example 4: Operate with multidimensional data
+---------------------------------------------
+
+:download:`multidimensionalexample.cs <../../cpp/swig/csharp/examples/MultidimensionalExample.cs>`
+
+This example shows how to:
+
+* Use a :cs:class:`DataFrame` to assign values to multidimensional parameters
+
+
+Example 5: Assign all data to a model and solve it
+--------------------------------------------------
+
+:download:`dietmodel.cs <../../cpp/swig/csharp/examples/DietModel.cs>`
+
+This example shows how to:
+
+* Assign all the data necessary to generate a model instance programmatically
+
+
+
+Example 6: Build an efficient frontier
+--------------------------------------
+
+:download:`efficientfrontier.cs <../../cpp/swig/csharp/examples/EfficientFrontier.cs>`
+
+This example shows how to:
+
+* build an efficient frontier by repeteatly solve a portfolio problem in AMPL
+
+Example 7: Simple heuristic
+---------------------------
+
+:download:`trackingmodel.cs <../../cpp/swig/csharp/examples/TrackingModel.cs>`
+
+This example shows how to:
+
+* Do a simple heuristics for solving a QMIP problem, using the relaxed solution as a hint
+
+ 
+Example 8: Simple heuristic
+---------------------------
+
+:download:`trackingmodel.cs <../../cpp/swig/csharp/examples/TrackingModel.cs>`
+
+This example shows how to:
+
+* Do a simple heuristics for solving a QMIP problem, using the relaxed solution as a hint
+
+ 
+Example 10: Redirecting output and error messages
+--------------------------------------------------
+
+:download:`OutputAndErrorRedirectionExample.cs <../../cpp/swig/csharp/examples/OutputAndErrorRedirectionExample.cs>`
+
+This example shows how to:
+
+* Redirect the output and error messages from the underlying AMPL interpreter
+
+ 
+   
+   

@@ -1,0 +1,20 @@
+# graph partitioning dat
+
+param n := 7; # number of vertices
+
+param kmax := 3;  # max number of clusters
+
+# edges (pair of vertices) and their associated cost
+param : E :   c :=  
+       1  2 1   
+       1  6 1    
+       2  3 1  
+       2  4 1  
+       3  4 1  
+       4  5 1 
+       5  6 1  
+       5  7 1
+       6  7 1
+;
+
+

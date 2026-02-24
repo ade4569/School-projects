@@ -1,0 +1,65 @@
+# Problem: Optimisation pour l'e-commerce Cas particulier 2.2.3
+
+set Sommets;
+set Clients; 
+
+# variables
+var AParcourir{i in Sommets, j in Sommets}, binary, >=0; 
+var OrdreLivraison{i in Clients}, integer, >=0; 
+
+# paramètres
+param distances{i in Sommets, j in Sommets};
+param nb_Clients;
+
+# contraintes
+s.t. UneSeuleSource{i in Sommets}:
+  sum{j in Sommets} AParcourir[i,j] = 1;
+
+s.t. UneSeuleDestination{j in Sommets}:
+  sum{i in Sommets} AParcourir[i,j] = 1;
+  
+s.t. TrajetAuMemeClient:
+  sum{i in Sommets} AParcourir[i,i] = 0;
+  
+s.t. LivraisonLogique{i in Clients, j in Clients}:
+  OrdreLivraison[i] + (nb_Clients-1) >= OrdreLivraison[j] + nb_Clients * AParcourir[i, j];
+  
+s.t. OrdreLivraisonSup1{i in Clients}:
+  OrdreLivraison[i] >= 1;
+  
+s.t. OrdreLivraisonInfN{i in Clients}:
+  OrdreLivraison[i] <= nb_Clients;
+
+# fonction
+minimize DistanceParcourue: 
+	sum{i in Sommets,j in Sommets} (distances[i,j] * AParcourir[i,j]) ; 
+
+data;
+
+set Sommets := 
+ALPHA
+C1
+C2
+C3
+C4
+C5;
+
+set Clients := 
+C1
+C2
+C3
+C4
+C5;
+
+
+param distances: ALPHA C1 C2 C3 C4 C5 :=
+ALPHA 0 1 1 10 12 12
+C1 1 0 1 8 10 11
+C2 1 1 0 8 11 10
+C3 10 8 8 0 1 1
+C4 12 10 11 1 0 1
+C5 12 11 10 1 1 0;
+
+param nb_Clients := 5;
+
+end;

@@ -1,0 +1,51 @@
+# Problem: Optimisation pour l'e-commerce Cas particulier 
+
+set Demandes; 
+set Fluides;
+set Magasins; 
+
+var a{i in Demandes, j in Magasins, k in Fluides}, >=0;
+
+param demandes{i in Demandes, j in Fluides};
+param stocks{i in Magasins, j in Fluides};
+param couts{i in Magasins, j in Fluides};
+
+s.t. StocksSuffisant{j in Magasins, k in Fluides}:
+sum{i in Demandes} a[i,j,k] <= stocks[j,k];
+
+s.t. DemandesTotales{i in Demandes, k in Fluides}:
+sum{j in Magasins} a[i,j,k] = demandes[i,k];
+
+minimize CoutTotal :
+    sum{i in Demandes, j in Magasins, k in Fluides} a[i,j,k]*couts[j,k];
+
+data;
+
+set Demandes :=
+D1
+D2;
+
+set Fluides :=
+F1
+F2;
+
+set Magasins :=
+M1
+M2
+M3;
+
+param demandes : F1 F2 := 
+D1 2 0
+D2 1 3;
+
+param stocks : F1 F2 :=
+M1 2.5 1
+M2 1 2
+M3 2 1;
+
+param couts : F1 F2 :=
+M1 1 1
+M2 2 3
+M3 3 2;
+
+end;

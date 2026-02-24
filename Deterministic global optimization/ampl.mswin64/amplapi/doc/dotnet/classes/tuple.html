@@ -1,0 +1,817 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>Tuple &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/tuple';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/dotnet/classes/tuple.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Variant" href="variant.html" />
+    <link rel="prev" title="Environment" href="environment.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="../index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">C# API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../deployment.html">
+    Deployment Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C# API Reference
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../examples.html">
+    C# API Examples
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../deployment.html">
+    Deployment Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C# API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    C# API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ampl.html">AMPL</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="dataframe.html">DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tuple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variant.html">Variant</a></li>
+
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="entity.html">EntityBase</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="entitymap.html">EntityMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instance.html">Instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constraint.html">Constraint</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="constraintinstance.html">ConstraintInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objective.html">Objective</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="objectiveinstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameter.html">Parameter</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="set.html">Set</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="setinstance.html">SetInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variable.html">Variable</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="variableinstance.html">VariableInstance</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="amplexception.html">AMPLException</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../reference.html" class="nav-link">C# API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Tuple</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="tuple">
+<span id="ref-tuple"></span><h1>Tuple<a class="headerlink" href="#tuple" title="Link to this heading">#</a></h1>
+<dl class="cs class">
+<dt class="sig sig-object cs" id="class-ampl.Tuple">
+<span class="target" id="classampl_1_1_tuple"></span><em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ampl.Tuple</span></span><a class="headerlink" href="#class-ampl.Tuple" title="Link to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> immutable tuple. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Tuple.Tuple">
+<span class="target" id="classampl_1_1_tuple_1a2cd735eb1492cba5c6de0a1e5f4623b5"></span><span class="sig-name descname"><span class="pre">Tuple</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Tuple.Tuple" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_tuple_1a4c6785c7060be2a9652eef7df8b4b1e6"></span><span class="sig-name descname"><span class="pre">Tuple</span></span> <span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">i</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_tuple_1ac6f67c21bd104ab4b44a5920b7e3cf46"></span><span class="sig-name descname"><span class="pre">Tuple</span></span> <span class="sig-paren">(</span><span class="pre">long</span> <em><span class="pre">i</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_tuple_1a3234844ef9cd369a0b441fd1a7b550a1"></span><span class="sig-name descname"><span class="pre">Tuple</span></span> <span class="sig-paren">(</span><span class="pre">double</span> <em><span class="pre">i</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_tuple_1a261d0ea5d18aa4d15494da4561414e15"></span><span class="sig-name descname"><span class="pre">Tuple</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">i</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_tuple_1adb1968b9322d22b33b3152bc5d4fac65"></span><span class="sig-name descname"><span class="pre">Tuple</span></span> <span class="sig-paren">(</span><em class="property"><span class="pre">params</span></em> <span class="pre">object</span><span class="pre">[]</span> <em><span class="pre">objects</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Tuple.ToString">
+<span class="target" id="classampl_1_1_tuple_1a50147ef7e69d490ebbad385bd6d0203e"></span><em class="property"><span class="pre">override</span></em> <span class="pre">string</span> <span class="sig-name descname"><span class="pre">ToString</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Tuple.ToString" title="Link to this definition">#</a></dt>
+<dd><p>Returns a System.String that represents this instance. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Tuple.Equals">
+<span class="target" id="classampl_1_1_tuple_1a225841390c2ee7f66e6dc5291718b764"></span><em class="property"><span class="pre">override</span></em> <span class="pre">bool</span> <span class="sig-name descname"><span class="pre">Equals</span></span> <span class="sig-paren">(</span><span class="pre">object</span> <em><span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Tuple.Equals" title="Link to this definition">#</a></dt>
+<dd><p>Determines whether the specified System.Object, is equal to this instance, implements deep comparison. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Tuple.GetHashCode">
+<span class="target" id="classampl_1_1_tuple_1ac3c331e633c13a51308ddb7306bdf279"></span><em class="property"><span class="pre">override</span></em> <span class="pre">int</span> <span class="sig-name descname"><span class="pre">GetHashCode</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Tuple.GetHashCode" title="Link to this definition">#</a></dt>
+<dd><p>Returns a hash code for this instance. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cs var">
+<dt class="sig sig-object cs" id="var-ampl.Tuple.inner">
+<span class="target" id="classampl_1_1_tuple_1a43396edd52cecb49a8647cdb592ee62b"></span><span class="pre">TupleBase</span> <span class="sig-name descname"><span class="pre">inner</span></span><a class="headerlink" href="#var-ampl.Tuple.inner" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-properties">Properties</p>
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Tuple.Size">
+<span class="target" id="classampl_1_1_tuple_1ae19f4800a72e6dc577ab6d99bcd30e90"></span><span class="pre">int</span> <span class="sig-name descname"><span class="pre">Size</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Tuple.Size" title="Link to this definition">#</a></dt>
+<dd><p>Gets the size (number of elements) of this tuple. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_tuple_1a1a5abe2fd820a72487441e41a42c7834"></span><span class="sig-name descname"><span class="pre">ampl.Variant</span> <span class="pre">this[int</span> <span class="pre">index]</span> <span class="pre">{get;set;}</span></span></dt>
+<dd><p>Gets the <a class="reference internal" href="variant.html#classampl_1_1_variant"><span class="std std-ref">ampl.Variant</span></a> at the specified index. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Tuple.FromTuple">
+<span class="target" id="classampl_1_1_tuple_1a78328786562ecd1b89114035e66c5b45"></span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a> <span class="sig-name descname"><span class="pre">FromTuple</span></span><span class="pre">&lt;</span><span class="pre">T</span><span class="pre">&gt;</span> <span class="sig-paren">(</span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a><span class="pre">&lt;</span><span class="pre">T</span><span class="pre">&gt;</span> <em><span class="pre">tuple</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Tuple.FromTuple" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_tuple_1afc856ed4b9bc8f26083ed8193c832fde"></span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a> <span class="sig-name descname"><span class="pre">FromTuple</span></span><span class="pre">&lt;</span><span class="pre">T1</span><span class="pre">,</span> <span class="pre">T2</span><span class="pre">&gt;</span> <span class="sig-paren">(</span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a><span class="pre">&lt;</span><span class="pre">T1</span><span class="pre">,</span> <span class="pre">T2</span><span class="pre">&gt;</span> <em><span class="pre">tuple</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_tuple_1aa7faccda07372ef2ab8c7bec19ac87e7"></span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a> <span class="sig-name descname"><span class="pre">FromTuple</span></span><span class="pre">&lt;</span><span class="pre">T1</span><span class="pre">,</span> <span class="pre">T2</span><span class="pre">,</span> <span class="pre">T3</span><span class="pre">&gt;</span> <span class="sig-paren">(</span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a><span class="pre">&lt;</span><span class="pre">T1</span><span class="pre">,</span> <span class="pre">T2</span><span class="pre">,</span> <span class="pre">T3</span><span class="pre">&gt;</span> <em><span class="pre">tuple</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_tuple_1a4056dc24e6283f4dc63f19c617948557"></span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a> <span class="sig-name descname"><span class="pre">FromTuple</span></span><span class="pre">&lt;</span><span class="pre">T1</span><span class="pre">,</span> <span class="pre">T2</span><span class="pre">,</span> <span class="pre">T3</span><span class="pre">,</span> <span class="pre">T4</span><span class="pre">&gt;</span> <span class="sig-paren">(</span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a><span class="pre">&lt;</span><span class="pre">T1</span><span class="pre">,</span> <span class="pre">T2</span><span class="pre">,</span> <span class="pre">T3</span><span class="pre">,</span> <span class="pre">T4</span><span class="pre">&gt;</span> <em><span class="pre">tuple</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_tuple_1ab7560ec1babd4afd5d39eed51e230a57"></span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a> <span class="sig-name descname"><span class="pre">FromTuple</span></span><span class="pre">&lt;</span><span class="pre">T1</span><span class="pre">,</span> <span class="pre">T2</span><span class="pre">,</span> <span class="pre">T3</span><span class="pre">,</span> <span class="pre">T4</span><span class="pre">,</span> <span class="pre">T5</span><span class="pre">&gt;</span> <span class="sig-paren">(</span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a><span class="pre">&lt;</span><span class="pre">T1</span><span class="pre">,</span> <span class="pre">T2</span><span class="pre">,</span> <span class="pre">T3</span><span class="pre">,</span> <span class="pre">T4</span><span class="pre">,</span> <span class="pre">T5</span><span class="pre">&gt;</span> <em><span class="pre">tuple</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_tuple_1a97909e402220bf9bb2661d6538faa4d4"></span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a> <span class="sig-name descname"><span class="pre">FromTuple</span></span><span class="pre">&lt;</span><span class="pre">T1</span><span class="pre">,</span> <span class="pre">T2</span><span class="pre">,</span> <span class="pre">T3</span><span class="pre">,</span> <span class="pre">T4</span><span class="pre">,</span> <span class="pre">T5</span><span class="pre">,</span> <span class="pre">T6</span><span class="pre">&gt;</span> <span class="sig-paren">(</span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a><span class="pre">&lt;</span><span class="pre">T1</span><span class="pre">,</span> <span class="pre">T2</span><span class="pre">,</span> <span class="pre">T3</span><span class="pre">,</span> <span class="pre">T4</span><span class="pre">,</span> <span class="pre">T5</span><span class="pre">,</span> <span class="pre">T6</span><span class="pre">&gt;</span> <em><span class="pre">tuple</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_tuple_1a5264e6738ea3841f78da8e1dc240054e"></span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a> <span class="sig-name descname"><span class="pre">FromTuple</span></span><span class="pre">&lt;</span><span class="pre">T1</span><span class="pre">,</span> <span class="pre">T2</span><span class="pre">,</span> <span class="pre">T3</span><span class="pre">,</span> <span class="pre">T4</span><span class="pre">,</span> <span class="pre">T5</span><span class="pre">,</span> <span class="pre">T6</span><span class="pre">,</span> <span class="pre">T7</span><span class="pre">&gt;</span> <span class="sig-paren">(</span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a><span class="pre">&lt;</span><span class="pre">T1</span><span class="pre">,</span> <span class="pre">T2</span><span class="pre">,</span> <span class="pre">T3</span><span class="pre">,</span> <span class="pre">T4</span><span class="pre">,</span> <span class="pre">T5</span><span class="pre">,</span> <span class="pre">T6</span><span class="pre">,</span> <span class="pre">T7</span><span class="pre">&gt;</span> <em><span class="pre">tuple</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Tuple.FromArray">
+<span class="target" id="classampl_1_1_tuple_1a1bb12ff33bcc81137585589a21f46e86"></span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a><span class="pre">[]</span> <span class="sig-name descname"><span class="pre">FromArray</span></span> <span class="sig-paren">(</span><em class="property"><span class="pre">params</span></em> <span class="pre">object</span><span class="pre">[]</span> <em><span class="pre">objects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Tuple.FromArray" title="Link to this definition">#</a></dt>
+<dd><p>Create an array of tuples from an array of objects. </p>
+<p>Each object in the first level array (being it a string, a number or an array) is interpreted as the contents of each returned <a class="reference internal" href="#classampl_1_1_tuple"><span class="std std-ref">Tuple</span></a>. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Tuple.Parse">
+<span class="target" id="classampl_1_1_tuple_1a6b761888ef5102f34fcee5fc9ea631e0"></span><a class="reference internal" href="#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a> <span class="sig-name descname"><span class="pre">Parse</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Tuple.Parse" title="Link to this definition">#</a></dt>
+<dd><p>Parse a string and returns a <a class="reference internal" href="#classampl_1_1_tuple"><span class="std std-ref">Tuple</span></a>. </p>
+<p>The elements are comma separated. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="environment.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Environment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="variant.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Variant</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

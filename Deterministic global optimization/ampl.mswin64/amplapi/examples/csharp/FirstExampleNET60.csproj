@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="copy ..\..\bin\dotnet\*.* $(OutDir)&#xD;&#xA;copy ..\..\bin\ampl-*.* $(OutDir)&#xD;&#xA;" />
+  </Target>
+  <ItemGroup>
+    <Compile Include="FirstExampleNET60.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Analysis" Version="0.21.0-preview.23511.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="AMPL.Api">
+      <HintPath>..\..\bin\dotnet\net6.0\AMPL.Api.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

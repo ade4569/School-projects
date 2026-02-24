@@ -1,0 +1,15 @@
+.. _ref::Variant:
+
+Variant
+-------
+
+.. doxygenclass:: ampl::Variant
+   :members:
+   :undoc-members:
+
+VariantRef
+----------
+
+.. doxygenclass:: ampl::VariantRef
+   :members:
+   :undoc-members:

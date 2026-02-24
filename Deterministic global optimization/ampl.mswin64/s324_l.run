@@ -1,0 +1,6 @@
+reset;
+model models/lmodels/s324_l.mod;
+option solver cplex;
+solve;
+display x;
+display y;

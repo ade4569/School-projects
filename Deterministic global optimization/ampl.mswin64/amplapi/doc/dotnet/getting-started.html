@@ -1,0 +1,910 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>Initial Setup &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting-started';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/dotnet/getting-started.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quick Start" href="quick-start.html" />
+    <link rel="prev" title="Introduction" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">C# API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="deployment.html">
+    Deployment Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference.html">
+    C# API Reference
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="examples.html">
+    C# API Examples
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="deployment.html">
+    Deployment Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference.html">
+    C# API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    C# API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Initial Setup</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="initial-setup">
+<h1>Initial Setup<a class="headerlink" href="#initial-setup" title="Link to this heading">#</a></h1>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>The AMPL API can function as an add-on to any existing AMPL installation.
+If you do not yet have an AMPL installation on the computer where you will
+be working with the API, see our
+<a class="reference external" href="http://ampl.com/try-ampl/download-a-free-demo/">demo page</a> or
+<a class="reference external" href="http://ampl.com/try-ampl/request-a-full-trial/">trial page</a> to download a
+working version that can be installed quickly.</p>
+<p>Follow the instructions on our <a class="reference external" href="http://ampl.com/products/api/">AMPL API</a>
+page to download the API package appropriate to your platform, and to add
+the downloaded folder (directory) <code class="docutils literal notranslate"><span class="pre">amplapi</span></code> to your AMPL installation.</p>
+<p>There are two main ways of installing the API:</p>
+<ol class="arabic simple">
+<li><p>Using the NuGet packages (reccomended)</p></li>
+<li><p>Using the distributed assembly and libraries</p></li>
+</ol>
+</section>
+<section id="create-a-new-project-using-nuget-reccomended">
+<h2>Create a new project using NuGet (reccomended)<a class="headerlink" href="#create-a-new-project-using-nuget-reccomended" title="Link to this heading">#</a></h2>
+<section id="visual-studio-windows">
+<h3>Visual Studio (Windows)<a class="headerlink" href="#visual-studio-windows" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Create a new project using any .NET framework</p></li>
+<li><p>Right click on the project icon and click <code class="docutils literal notranslate"><span class="pre">Manage</span> <span class="pre">NuGet</span> <span class="pre">Packages</span></code></p></li>
+<li><p>Search for <code class="docutils literal notranslate"><span class="pre">AMPL.Api</span></code></p></li>
+</ul>
+</section>
+<section id="vs-code-or-command-line">
+<h3>VS Code or command line<a class="headerlink" href="#vs-code-or-command-line" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Make sure you have .NET 6.0+ installed</p></li>
+<li><p>Create the project executing <code class="docutils literal notranslate"><span class="pre">dotnet</span> <span class="pre">new</span> <span class="pre">console</span></code></p></li>
+<li><p>Add the AMPL API package executing <code class="docutils literal notranslate"><span class="pre">dotnet</span> <span class="pre">add</span> <span class="pre">package</span> <span class="pre">AMPL.Api</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="use-the-distributed-assembly">
+<h2>Use the distributed assembly<a class="headerlink" href="#use-the-distributed-assembly" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Reference the appropriate assembly in <code class="docutils literal notranslate"><span class="pre">bin/dotnet/framework</span></code></p></li>
+<li><p>Make sure all the files in <code class="docutils literal notranslate"><span class="pre">bin</span></code> are copied where the target will be executed</p></li>
+</ul>
+</section>
+<section id="running-the-examples">
+<h2>Running the examples<a class="headerlink" href="#running-the-examples" title="Link to this heading">#</a></h2>
+<p>AMPL API is distributed as one .NET assembly and a native library. They must be both
+accessible for the API to work.
+A valid Mono .NET or .NET framework configuration is needed to use the .NET AMPL API;
+some examples are provided for the user to familiarize with the API; for users of Visual Studio,
+some ready-to-use solution files are provided, whilst users of Mono .NET must follow the instructions
+or build their own assemblies taking care to reference the assembly provided.</p>
+<section id="visual-studio">
+<h3>Visual Studio<a class="headerlink" href="#visual-studio" title="Link to this heading">#</a></h3>
+<p>Open the solution file at <code class="docutils literal notranslate"><span class="pre">amplapi/examples/csharp/csharp-examples.sln</span></code>. Visual Studio 2017 or above are required to open the solution files. The solution file contains all the examples as separate projects.
+Note that depending on the architecture of the AMPL API in use (32 bits or 64 bits), the appropriate solution platform should be selected, this is easily achieved using the dropdown in the figure below:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/visualstudio.png"><img alt="Visual studio configuration" src="_images/visualstudio.png" style="width: 645px; height: 78px;" />
+</a>
+</figure>
+</section>
+<section id="command-line-with-dotnet">
+<h3>Command line with dotnet<a class="headerlink" href="#command-line-with-dotnet" title="Link to this heading">#</a></h3>
+<p>Change the current directory to <code class="docutils literal notranslate"><span class="pre">amplapi/examples/csharp</span></code> and then:</p>
+<section id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h4>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dotnet new console -n FirstExample
+copy FirstExample.cs FirstExample\Program.cs
+cd FirstExample
+dotnet add package AMPL.Api
+set solver=highs
+dotnet run
+</pre></div>
+</div>
+</section>
+<section id="linux-macos">
+<h4>Linux / macOS<a class="headerlink" href="#linux-macos" title="Link to this heading">#</a></h4>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dotnet new console -n FirstExample
+cp FirstExample.cs FirstExample/Program.cs
+cd FirstExample
+dotnet add package AMPL.Api
+export solver=highs
+dotnet run
+</pre></div>
+</div>
+</section>
+</section>
+<section id="mono">
+<h3>Mono<a class="headerlink" href="#mono" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>Windows<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Note that the csharp examples look for model files in <code class="docutils literal notranslate"><span class="pre">..\..\models</span></code>, hence they should be compiled in a subdirectory of the path containing them, which must be created. Moreover, they expect <code class="docutils literal notranslate"><span class="pre">AMPL.Api.dll</span></code> to be accessible. So, for example:</p>
+<ul class="simple">
+<li><p>Change the current directory to <code class="docutils literal notranslate"><span class="pre">amplapi\examples\csharp</span></code></p></li>
+<li><p>Create a directory</p></li>
+<li><p>Change current directory to the directory created above</p></li>
+<li><dl class="simple">
+<dt>Copy the required assembliy to this directory:</dt><dd><ul>
+<li><p>The assembly <code class="docutils literal notranslate"><span class="pre">bin\dotnet\netstandard2.0\AMPL.API.dll</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Either:</dt><dd><ol class="loweralpha simple">
+<li><p>Copy the required libraries to the directory above:</p>
+<ul>
+<li><p>The mono/native interface <code class="docutils literal notranslate"><span class="pre">bin\dotnet\ampl-dotnet-native.dll</span></code></p></li>
+<li><p>The C++ AMPLAPI library <code class="docutils literal notranslate"><span class="pre">bin\ampl-2.3.13.dll</span></code></p></li>
+</ul>
+</li>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">bin</span></code> and <code class="docutils literal notranslate"><span class="pre">bin\dotnet</span></code> directories of the AMPL API distribution to the system path</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>Compile any of the example files taking care of referencing the API assembly.</p></li>
+<li><p>The procedure above is implemented by the script below:</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>md bin
+cd bin
+copy ..\..\..\bin\dotnet\*.dll .
+copy ..\..\..\bin\ampl-2.*.dll .
+copy ..\..\..\bin\dotnet\netstandard2.0\* .
+mcs /t:exe /out:firstexample /platform:anycpu /sdk:4 /reference:System.dll /reference:AMPL.Api.dll ../FirstExample.cs
+</pre></div>
+</div>
+<p>To complete an initial test, build <code class="docutils literal notranslate"><span class="pre">FirstExample.cs</span></code> using the script above and then invoke it with:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mono firstexample &lt;modeldir&gt; &lt;solver&gt;
+</pre></div>
+</div>
+<p>where optionally <code class="docutils literal notranslate"><span class="pre">&lt;modeldir&gt;</span></code> is the location of the model files used in the examples
+and <code class="docutils literal notranslate"><span class="pre">&lt;solver&gt;</span></code> is the name of a solver that has been installed with AMPL
+(if a solver is not specified, then AMPL default choice will be used). This will solve
+several small diet problems and then display the optimal amounts of the foods
+from the last solution.</p>
+<p>Note that the folder containing the AMPL executable should be in the system search path.
+Otherwise, the error message “AMPL could not be started” will be shown.
+If the AMPL installation directory is not in the system search path,
+you can add it passing a new  <code class="xref py py-class docutils literal notranslate"><span class="pre">ampl.Environment</span></code> to  <a class="reference internal" href="classes/ampl.html#class-ampl.AMPL" title="class: ampl.AMPL"><code class="xref cs cs-class docutils literal notranslate"><span class="pre">AMPL</span></code></a> as follows:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">Environment</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">Environment</span><span class="p">(</span><span class="s">&quot;full path to the AMPL installation directory&quot;</span><span class="p">);</span>
+<span class="n">ampl</span><span class="p">.</span><span class="n">AMPL</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">AMPL</span><span class="p">(</span><span class="n">env</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Note that you may need to escape backslashes (e.g., “C:\\ampl\\ampl.mswin64”) if included in the path.</p>
+</section>
+<section id="id2">
+<h4>Linux / macOS<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Note that the csharp examples look for model files in <code class="docutils literal notranslate"><span class="pre">../../models</span></code>, hence they should be compiled in a subdirectory of the path containing them, which must be created. Moreover, they expect <code class="docutils literal notranslate"><span class="pre">AMPL.Api.dll</span></code> to be accessible. So, for example:</p>
+<ul>
+<li><p>Change the current directory to <code class="docutils literal notranslate"><span class="pre">amplapi/examples/csharp</span></code></p></li>
+<li><p>Create a directory</p></li>
+<li><p>Change current directory to the directory created above</p></li>
+<li><p>Copy the mono assembly <code class="docutils literal notranslate"><span class="pre">bin/dotnet/ampl-dotnet-native.dll</span></code> to this directory.</p></li>
+<li><p>Adjust the environment variable <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> (or <code class="docutils literal notranslate"><span class="pre">DYLD_LIBRARY_PATH</span></code> for macOS)  to look for the dynamic libraries in the correct directory</p></li>
+<li><p>Compile any of the example files taking care of referencing the API assembly</p></li>
+<li><p>The procedure above is implemented by the script below:</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mkdir bin
+cd bin
+cp ../../../bin/dotnet/libampl-dotnet-native.* .
+cp ../../../bin/dotnet/netstandard2.0/* .
+export LD_LIBRARY_PATH=$PWD/../../../lib:$LD_LIBRARY_PATH # for Linux
+export DYLD_LIBRARY_PATH=$PWD/../../../lib:$DYLD_LIBRARY_PATH # for macOS
+mcs /t:exe /out:firstexample /platform:anycpu /sdk:4 /reference:System.dll /reference:./AMPL.Api.dll ../FirstExample.cs
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>To complete an initial test, build <code class="docutils literal notranslate"><span class="pre">FirstExample.cs</span></code> using the script above and then invoke it with:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mono firstexample &lt;modeldir&gt; &lt;solver&gt;
+</pre></div>
+</div>
+<p>where optionally <code class="docutils literal notranslate"><span class="pre">&lt;modeldir&gt;</span></code> is the location of the model files used in the examples
+and <code class="docutils literal notranslate"><span class="pre">&lt;solver&gt;</span></code> is the name of a solver that has been installed with AMPL
+(if a solver is not specified, then AMPL default choice will be used). This will solve
+several small diet problems and then display the optimal amounts of the foods
+from the last solution. If some libraries are not found, see the note on <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> in the next section.</p>
+</section>
+</section>
+</section>
+<section id="development">
+<h2>Development<a class="headerlink" href="#development" title="Link to this heading">#</a></h2>
+<p>Reference the assembly <code class="docutils literal notranslate"><span class="pre">bin/dotnet/&lt;framework&gt;/AMPL.Api.dll</span></code> in your C# project. The binary files that must be accessible are platform dependent and listed below, using the main amplapi directory as root:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Windows:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">bin\dotnet\&lt;framework&gt;\AMPL.Api.dll</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bin\dotnet\ampl-dotnet-native.dll</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bin\ampl-2.3.13.dll</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Linux/Unix:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">bin/dotnet/&lt;framework&gt;/AMPL.Api.dll</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bin/dotnet/libampl-dotnet-native.so</span></code> on Linux o <code class="docutils literal notranslate"><span class="pre">bin/dotnet/libampl-dotnet-native.dylib</span></code> on macOS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/libampl.so.2.3.13</span></code> on Linux or <code class="docutils literal notranslate"><span class="pre">lib/libampl.2.3.13.dylib</span></code> on macOS</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Together with your existing AMPL implementation, this will provide the full object library and access to all AMPL functions.</p>
+<p>The <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">amplapi</span></code> folder (directory) can be moved to a different location in your computer’s filesystem, provided that the location of your AMPL executable has been placed in the system search path.
+In Unix/Linux environments, note that the environment variable <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> (or <code class="docutils literal notranslate"><span class="pre">DYLD_LIBRARY_PATH</span></code> for macOS) may need to be set appropriately.
+To search for the libraries in the current directory, on Linux execute <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH=$PWD:$LD_LIBRARY_PATH</span></code>, on macOS execute
+<code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">DYLD_LIBRARY_PATH=$PWD:$DYLD_LIBRARY_PATH</span></code></p>
+</section>
+<section id="deployment">
+<h2>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h2>
+<p>To deploy AMPL API applications to users who do not have their own AMPL installations, include with your C# application the AMPL executable
+(<code class="docutils literal notranslate"><span class="pre">ampl</span></code> or <code class="docutils literal notranslate"><span class="pre">ampl.exe</span></code>), the additional files listed in the previous section, the binaries needed to run any solvers that are used and
+an appropriate license file for AMPL and solvers.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="quick-start.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Quick Start</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-project-using-nuget-reccomended">Create a new project using NuGet (reccomended)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-studio-windows">Visual Studio (Windows)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-or-command-line">VS Code or command line</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-distributed-assembly">Use the distributed assembly</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-examples">Running the examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-studio">Visual Studio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-with-dotnet">Command line with dotnet</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-macos">Linux / macOS</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mono">Mono</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Windows</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Linux / macOS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development">Development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+.. highlight:: java
+
+AMPL Java API
+=============
+
+Contents
+--------
+
+.. toctree::
+   :maxdepth: 2
+
+   intro
+   getting-started
+   quick-start
+   class-structure
+   reference
+   examples
+
+Indices and tables
+------------------
+
+* :ref:`genindex`
+* :ref:`search`

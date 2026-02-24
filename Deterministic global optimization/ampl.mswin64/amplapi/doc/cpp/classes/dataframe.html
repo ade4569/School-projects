@@ -1,0 +1,1338 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>DataFrame &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/dataframe';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/cpp/classes/dataframe.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Environment" href="environment.html" />
+    <link rel="prev" title="AMPL" href="ampl.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="../index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">C++ API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C++ API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    C++ API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C++ API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    C++ API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ampl.html">AMPL</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errorhandler.html">ErrorHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional.html">Optional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputhandler.html">OutputHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runnable.html">Runnable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tuple.html">Tuple</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="variant.html">BasicVariant</a></li>
+
+
+
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="entity.html">Entity</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="entitymap.html">EntityMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instance.html">Instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constraint.html">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constraintinstance.html">ConstraintInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objective.html">Objective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objectiveinstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameter.html">Parameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setinstance.html">SetInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variable.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variableinstance.html">VariableInstance</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="amplexception.html">AMPLException</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../reference.html" class="nav-link">C++ API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">DataFrame</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="dataframe">
+<span id="ref-dataframe"></span><h1>DataFrame<a class="headerlink" href="#dataframe" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrameE">
+<span id="_CPPv3N4ampl9DataFrameE"></span><span id="_CPPv2N4ampl9DataFrameE"></span><span id="ampl::DataFrame"></span><span class="target" id="classampl_1_1_data_frame"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#_CPPv4N4ampl9DataFrameE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> object, used to communicate data to and from the AMPL entities. </p>
+<p>An object of this class can be used to do the following tasks:</p>
+<p><ul class="simple">
+<li><p>Assign values to AMPL entities (once the <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> is populated, use <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l_1aee45bc8bf4e410c106a5f040b1e84ce8"><span class="std std-ref">AMPL::setData()</span></a> to assign its values to the modelling entities in its columns) </p></li>
+<li><p>Get values from AMPL, decoupling the values from the AMPL entities they originate via <a class="reference internal" href="entity.html#classampl_1_1_entity_1abe3f0475205ed08ffa1f1036ef7c50df"><span class="std std-ref">Entity::getValues()</span></a></p></li>
+</ul>
+</p>
+<p>A <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> object can be created in various ways. <ul class="simple">
+<li><p>Create a skeleton via <a class="reference internal" href="#classampl_1_1_data_frame_1abbb190189e0f5661011b2b45438dc67e"><span class="std std-ref">DataFrame(std::size_t numberOfIndexColumns,StringArgs headers)</span></a>, specifiying manually the number of indexing columns and the column headers. </p></li>
+<li><p>Get column names (and number of indexing columns) from entities of the API, using the constructor <a class="reference internal" href="#classampl_1_1_data_frame_1af5f4e292ee8aa47145b05b5e5ca2437a"><span class="std std-ref">DataFrame(const EntityArgs&amp;headers)</span></a>. </p></li>
+<li><p>Get values from <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a>, decoupling the values from the AMPL entities they originate from (via <a class="reference internal" href="entity.html#classampl_1_1_entity_1abe3f0475205ed08ffa1f1036ef7c50df"><span class="std std-ref">Entity::getValues()</span></a>) </p></li>
+</ul>
+</p>
+<p>Populating a <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> object can be done adding row by row to a pre-existing skeleton via <a class="reference internal" href="#classampl_1_1_data_frame_1aecad6061ce975511ddc1eddce0171600"><span class="std std-ref">DataFrame.addRow()</span></a>, setting whole columns of a pre-existing skeleton via <a class="reference internal" href="#classampl_1_1_data_frame_1a22bba0686743878e6158a313df94c123"><span class="std std-ref">DataFrame.setColumn()</span></a> or adding columns (including indexing columns) via <a class="reference internal" href="#classampl_1_1_data_frame_1a32fab4ce85387b5b5c6a9d7d45c5cf4e"><span class="std std-ref">DataFrame.addColumn()</span></a>. </p>
+<p>Modifying a <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> object can be done via <a class="reference internal" href="#classampl_1_1_data_frame_1a22bba0686743878e6158a313df94c123"><span class="std std-ref">DataFrame.setColumn</span></a> method. </p>
+<p>Accessing data in a <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> can be done row by row using <a class="reference internal" href="#classampl_1_1_data_frame_1a71d950163ed38a7b044102ca57fd315c"><span class="std std-ref">DataFrame.getRow()</span></a> or by column via <a class="reference internal" href="#classampl_1_1_data_frame_1a889b7b600d3dbf9e5d71e42bb95f7d06"><span class="std std-ref">DataFrame.getColumn()</span></a>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame3RowE">
+<span id="_CPPv3N4ampl9DataFrame3RowE"></span><span id="_CPPv2N4ampl9DataFrame3RowE"></span><span id="ampl::DataFrame::Row"></span><span class="target" id="classampl_1_1_data_frame_1a4910a53d7ce27cb4334544af6f7b87bf"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Slice</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Row</span></span></span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame3RowE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Represents a row in a <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame6ColumnE">
+<span id="_CPPv3N4ampl9DataFrame6ColumnE"></span><span id="_CPPv2N4ampl9DataFrame6ColumnE"></span><span id="ampl::DataFrame::Column"></span><span class="target" id="classampl_1_1_data_frame_1a27013e6d176bd490ae9729e7f74e70e7"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Slice</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Column</span></span></span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame6ColumnE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Represents a column in a <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame9DataFrameENSt6size_tE">
+<span id="_CPPv3N4ampl9DataFrame9DataFrameENSt6size_tE"></span><span id="_CPPv2N4ampl9DataFrame9DataFrameENSt6size_tE"></span><span id="ampl::DataFrame::DataFrame__std::s"></span><span class="target" id="classampl_1_1_data_frame_1abe28acc1891e383d5823d3dedcff93f8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DataFrame</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numberOfIndexColumns</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame9DataFrameENSt6size_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Create a new <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> with the specified number of indices. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrameD0Ev">
+<span id="_CPPv3N4ampl9DataFrameD0Ev"></span><span id="_CPPv2N4ampl9DataFrameD0Ev"></span><span id="ampl::DataFrame::~DataFrame"></span><span class="target" id="classampl_1_1_data_frame_1acc5e9584319dfc40eab0e6866489b4df"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~DataFrame</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrameD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame9DataFrameENSt6size_tE10StringArgs">
+<span id="_CPPv3N4ampl9DataFrame9DataFrameENSt6size_tE10StringArgs"></span><span id="_CPPv2N4ampl9DataFrame9DataFrameENSt6size_tE10StringArgs"></span><span id="ampl::DataFrame::DataFrame__std::s.StringArgs"></span><span class="target" id="classampl_1_1_data_frame_1abbb190189e0f5661011b2b45438dc67e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DataFrame</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numberOfIndexColumns</span></span>, <span class="n"><span class="pre">StringArgs</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">headers</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame9DataFrameENSt6size_tE10StringArgs" title="Link to this definition">#</a><br /></dt>
+<dd><p>Create a new <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> where the specified number of columns are an index and with the specified strings as column headers. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numberOfIndexColumns</strong> – Number of columns to be considered as index for this table (&gt;=0) </p></li>
+<li><p><strong>headers</strong> – The columns headers to be used </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">invalid_argument</span></span></span> – If a non-valid number of indices is specified (e.g. &gt; than the number of headers) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame9DataFrameERK10EntityArgs">
+<span id="_CPPv3N4ampl9DataFrame9DataFrameERK10EntityArgs"></span><span id="_CPPv2N4ampl9DataFrame9DataFrameERK10EntityArgs"></span><span id="ampl::DataFrame::DataFrame__EntityArgsCR"></span><span class="target" id="classampl_1_1_data_frame_1af5f4e292ee8aa47145b05b5e5ca2437a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DataFrame</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="entity.html#_CPPv4N4ampl10EntityArgsE" title="ampl::EntityArgs"><span class="n"><span class="pre">EntityArgs</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">headers</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame9DataFrameERK10EntityArgs" title="Link to this definition">#</a><br /></dt>
+<dd><p>Create a new <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> with the specified entities as column headers. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>headers</strong> – The columns headers to be used; since they are AMPL entities, sets are automatically considered indices and have to be placed first in the constructor. The </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">invalid_argument</span></span></span> – if sets are not put first while using this constructor or if the indexarity of the data columns does not correspond to the total indexarity of the <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame9DataFrameERK9DataFrame">
+<span id="_CPPv3N4ampl9DataFrame9DataFrameERK9DataFrame"></span><span id="_CPPv2N4ampl9DataFrame9DataFrameERK9DataFrame"></span><span id="ampl::DataFrame::DataFrame__DataFrameCR"></span><span class="target" id="classampl_1_1_data_frame_1af41e7a1693dc660fc0e8d4eb511b0ac7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DataFrame</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame9DataFrameERK9DataFrame" title="ampl::DataFrame::DataFrame"><span class="n"><span class="pre">DataFrame</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame9DataFrameERK9DataFrame" title="Link to this definition">#</a><br /></dt>
+<dd><p>Copy constructor (deep copy) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrameaSERK9DataFrame">
+<span id="_CPPv3N4ampl9DataFrameaSERK9DataFrame"></span><span id="_CPPv2N4ampl9DataFrameaSERK9DataFrame"></span><span id="ampl::DataFrame::assign-operator__DataFrameCR"></span><span class="target" id="classampl_1_1_data_frame_1a11e8643ba05996e3bd9471a8ef70f1fe"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrameE" title="ampl::DataFrame"><span class="n"><span class="pre">DataFrame</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrameE" title="ampl::DataFrame"><span class="n"><span class="pre">DataFrame</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">df</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrameaSERK9DataFrame" title="Link to this definition">#</a><br /></dt>
+<dd><p>Assignment operator (deep copies all the data) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrameeqERK9DataFrame">
+<span id="_CPPv3NK4ampl9DataFrameeqERK9DataFrame"></span><span id="_CPPv2NK4ampl9DataFrameeqERK9DataFrame"></span><span id="ampl::DataFrame::eq-operator__DataFrameCRC"></span><span class="target" id="classampl_1_1_data_frame_1aa53c113c1342562dc0e5fa53b4c35c9a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrameE" title="ampl::DataFrame"><span class="n"><span class="pre">DataFrame</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrameeqERK9DataFrame" title="Link to this definition">#</a><br /></dt>
+<dd><p>Equality check. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrameneERK9DataFrame">
+<span id="_CPPv3NK4ampl9DataFrameneERK9DataFrame"></span><span id="_CPPv2NK4ampl9DataFrameneERK9DataFrame"></span><span id="ampl::DataFrame::neq-operator__DataFrameCRC"></span><span class="target" id="classampl_1_1_data_frame_1a9295076783741c62a925a6ee7e760850"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">!=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrameE" title="ampl::DataFrame"><span class="n"><span class="pre">DataFrame</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrameneERK9DataFrame" title="Link to this definition">#</a><br /></dt>
+<dd><p>Inequality check. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame10getNumColsEv">
+<span id="_CPPv3NK4ampl9DataFrame10getNumColsEv"></span><span id="_CPPv2NK4ampl9DataFrame10getNumColsEv"></span><span id="ampl::DataFrame::getNumColsC"></span><span class="target" id="classampl_1_1_data_frame_1a57f916b803f1a420f3fc22cbb6f00de7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumCols</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame10getNumColsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the total number of columns in this dataframe (indexarity + number of values) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of columns. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame10getNumRowsEv">
+<span id="_CPPv3NK4ampl9DataFrame10getNumRowsEv"></span><span id="_CPPv2NK4ampl9DataFrame10getNumRowsEv"></span><span id="ampl::DataFrame::getNumRowsC"></span><span class="target" id="classampl_1_1_data_frame_1ad7f25ed9924f2f576aec38d00d2a3435"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumRows</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame10getNumRowsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the number of data rows in this dataframe. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of rows. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame13getNumIndicesEv">
+<span id="_CPPv3NK4ampl9DataFrame13getNumIndicesEv"></span><span id="_CPPv2NK4ampl9DataFrame13getNumIndicesEv"></span><span id="ampl::DataFrame::getNumIndicesC"></span><span class="target" id="classampl_1_1_data_frame_1ad6568d07e7ce441f22efe41a6f3bcc75"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumIndices</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame13getNumIndicesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>std::size_t <a class="reference internal" href="#classampl_1_1_data_frame_1ad6568d07e7ce441f22efe41a6f3bcc75"><span class="std std-ref">DataFrame::getNumIndices() const </span></a>Get the number of indices (the indexarity) of this dataframe. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of indices needed to access one row of this dataframe. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame6addRowE8TupleRef">
+<span id="_CPPv3N4ampl9DataFrame6addRowE8TupleRef"></span><span id="_CPPv2N4ampl9DataFrame6addRowE8TupleRef"></span><span id="ampl::DataFrame::addRow__TupleRef"></span><span class="target" id="classampl_1_1_data_frame_1aecad6061ce975511ddc1eddce0171600"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addRow</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="tuple.html#_CPPv4N4ampl8TupleRefE" title="ampl::TupleRef"><span class="n"><span class="pre">TupleRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame6addRowE8TupleRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a row to the <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+<p>The size of the tuple must be equal to the total number of columns in the dataframe. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – A tuple containing all the values for the row to be added. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame6addRowE10VariantRef">
+<span id="_CPPv3N4ampl9DataFrame6addRowE10VariantRef"></span><span id="_CPPv2N4ampl9DataFrame6addRowE10VariantRef"></span><span id="ampl::DataFrame::addRow__VariantRef"></span><span class="target" id="classampl_1_1_data_frame_1aadd06731faab0665f5e20aa1b322c53c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addRow</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="variant.html#_CPPv4N4ampl10VariantRefE" title="ampl::VariantRef"><span class="n"><span class="pre">VariantRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a1</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame6addRowE10VariantRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a value to a <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> composed of only one column. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>a1</strong> – The value to be added. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame6addRowE10VariantRef10VariantRef">
+<span id="_CPPv3N4ampl9DataFrame6addRowE10VariantRef10VariantRef"></span><span id="_CPPv2N4ampl9DataFrame6addRowE10VariantRef10VariantRef"></span><span id="ampl::DataFrame::addRow__VariantRef.VariantRef"></span><span class="target" id="classampl_1_1_data_frame_1a86516478e930db382c9c21c7de4a8dcf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addRow</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="variant.html#_CPPv4N4ampl10VariantRefE" title="ampl::VariantRef"><span class="n"><span class="pre">VariantRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a1</span></span>, <a class="reference internal" href="variant.html#_CPPv4N4ampl10VariantRefE" title="ampl::VariantRef"><span class="n"><span class="pre">VariantRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame6addRowE10VariantRef10VariantRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a value to a <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> composed of two columns. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a1</strong> – The value to be added in the first column. </p></li>
+<li><p><strong>a2</strong> – The value to be added in the second column. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame6addRowE10VariantRef10VariantRef10VariantRef">
+<span id="_CPPv3N4ampl9DataFrame6addRowE10VariantRef10VariantRef10VariantRef"></span><span id="_CPPv2N4ampl9DataFrame6addRowE10VariantRef10VariantRef10VariantRef"></span><span id="ampl::DataFrame::addRow__VariantRef.VariantRef.VariantRef"></span><span class="target" id="classampl_1_1_data_frame_1af00644ac9dbd1601f1666436d78af4ec"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addRow</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="variant.html#_CPPv4N4ampl10VariantRefE" title="ampl::VariantRef"><span class="n"><span class="pre">VariantRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a1</span></span>, <a class="reference internal" href="variant.html#_CPPv4N4ampl10VariantRefE" title="ampl::VariantRef"><span class="n"><span class="pre">VariantRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a2</span></span>, <a class="reference internal" href="variant.html#_CPPv4N4ampl10VariantRefE" title="ampl::VariantRef"><span class="n"><span class="pre">VariantRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a3</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame6addRowE10VariantRef10VariantRef10VariantRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a value to a <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> composed of three columns. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a1</strong> – The value to be added in the first column. </p></li>
+<li><p><strong>a2</strong> – The value to be added in the second column. </p></li>
+<li><p><strong>a3</strong> – The value to be added in the third column. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame6addRowE10VariantRef10VariantRef10VariantRef10VariantRef">
+<span id="_CPPv3N4ampl9DataFrame6addRowE10VariantRef10VariantRef10VariantRef10VariantRef"></span><span id="_CPPv2N4ampl9DataFrame6addRowE10VariantRef10VariantRef10VariantRef10VariantRef"></span><span id="ampl::DataFrame::addRow__VariantRef.VariantRef.VariantRef.VariantRef"></span><span class="target" id="classampl_1_1_data_frame_1a50658ce04ae5ad01302ecf8fe9333741"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addRow</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="variant.html#_CPPv4N4ampl10VariantRefE" title="ampl::VariantRef"><span class="n"><span class="pre">VariantRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a1</span></span>, <a class="reference internal" href="variant.html#_CPPv4N4ampl10VariantRefE" title="ampl::VariantRef"><span class="n"><span class="pre">VariantRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a2</span></span>, <a class="reference internal" href="variant.html#_CPPv4N4ampl10VariantRefE" title="ampl::VariantRef"><span class="n"><span class="pre">VariantRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a3</span></span>, <a class="reference internal" href="variant.html#_CPPv4N4ampl10VariantRefE" title="ampl::VariantRef"><span class="n"><span class="pre">VariantRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a4</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame6addRowE10VariantRef10VariantRef10VariantRef10VariantRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a value to a <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> composed of four columns. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a1</strong> – The value to be added in the first column. </p></li>
+<li><p><strong>a2</strong> – The value to be added in the second column. </p></li>
+<li><p><strong>a3</strong> – The value to be added in the third column. </p></li>
+<li><p><strong>a4</strong> – The value to be added in the fourth column. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame7reserveENSt6size_tE">
+<span id="_CPPv3N4ampl9DataFrame7reserveENSt6size_tE"></span><span id="_CPPv2N4ampl9DataFrame7reserveENSt6size_tE"></span><span id="ampl::DataFrame::reserve__std::s"></span><span class="target" id="classampl_1_1_data_frame_1a00bbd809b6236832fba65ede8e77a911"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reserve</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numRows</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame7reserveENSt6size_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reserve space for the given number of rows. </p>
+<p>NOTE that the rows cannot be accessed, they still have to be added via <a class="reference internal" href="#classampl_1_1_data_frame_1aecad6061ce975511ddc1eddce0171600"><span class="std std-ref">DataFrame::addRow</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>numRows</strong> – Number of rows to be allocated. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame8toStringEv">
+<span id="_CPPv3NK4ampl9DataFrame8toStringEv"></span><span id="_CPPv2NK4ampl9DataFrame8toStringEv"></span><span id="ampl::DataFrame::toStringC"></span><span class="target" id="classampl_1_1_data_frame_1a4d29a3768428adce85e7d3e4f892c424"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toString</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame8toStringEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Give a tabular string representation of the dataframe object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A std::string that represents this object </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame9addColumnEN3fmt10CStringRefE">
+<span id="_CPPv3N4ampl9DataFrame9addColumnEN3fmt10CStringRefE"></span><span id="_CPPv2N4ampl9DataFrame9addColumnEN3fmt10CStringRefE"></span><span id="ampl::DataFrame::addColumn__fmt::CStringRef"></span><span class="target" id="classampl_1_1_data_frame_1a32fab4ce85387b5b5c6a9d7d45c5cf4e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addColumn</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CStringRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">header</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame9addColumnEN3fmt10CStringRefE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a new empty column with the corresponding header. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>header</strong> – The header. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame9addColumnEN3fmt10CStringRefEN8internal4ArgsE">
+<span id="_CPPv3N4ampl9DataFrame9addColumnEN3fmt10CStringRefEN8internal4ArgsE"></span><span id="_CPPv2N4ampl9DataFrame9addColumnEN3fmt10CStringRefEN8internal4ArgsE"></span><span id="ampl::DataFrame::addColumn__fmt::CStringRef.internal::Args"></span><span class="target" id="classampl_1_1_data_frame_1afeace00e4075e1d2b9b5827f53d10d47"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addColumn</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CStringRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">header</span></span>, <span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame9addColumnEN3fmt10CStringRefEN8internal4ArgsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a new column with the corresponding header and values to the dataframe. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – The name of the new column </p></li>
+<li><p><strong>values</strong> – An array of size <a class="reference internal" href="#classampl_1_1_data_frame_1ad7f25ed9924f2f576aec38d00d2a3435"><span class="std std-ref">getNumRows()</span></a> with all the values of the new row </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame9getColumnEN3fmt10CStringRefE">
+<span id="_CPPv3NK4ampl9DataFrame9getColumnEN3fmt10CStringRefE"></span><span id="_CPPv2NK4ampl9DataFrame9getColumnEN3fmt10CStringRefE"></span><span id="ampl::DataFrame::getColumn__fmt::CStringRefC"></span><span class="target" id="classampl_1_1_data_frame_1a889b7b600d3dbf9e5d71e42bb95f7d06"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame6ColumnE" title="ampl::DataFrame::Column"><span class="n"><span class="pre">Column</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getColumn</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CStringRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">header</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame9getColumnEN3fmt10CStringRefE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the specified column as a view object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>header</strong> – The header of the column. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame8setValueE8TupleRefN3fmt10CStringRefEN4ampl10VariantRefE">
+<span id="_CPPv3N4ampl9DataFrame8setValueE8TupleRefN3fmt10CStringRefEN4ampl10VariantRefE"></span><span id="_CPPv2N4ampl9DataFrame8setValueE8TupleRefN3fmt10CStringRefEN4ampl10VariantRefE"></span><span id="ampl::DataFrame::setValue__TupleRef.fmt::CStringRef.ampl::VariantRef"></span><span class="target" id="classampl_1_1_data_frame_1a453e7804b4391dc8d9578faea8f179a3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setValue</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="tuple.html#_CPPv4N4ampl8TupleRefE" title="ampl::TupleRef"><span class="n"><span class="pre">TupleRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">rowIndex</span></span>, <span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CStringRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">colHeader</span></span>, <span class="n"><span class="pre">ampl</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="variant.html#_CPPv4N4ampl10VariantRefE" title="ampl::VariantRef"><span class="n"><span class="pre">VariantRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame8setValueE8TupleRefN3fmt10CStringRefEN4ampl10VariantRefE" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="set.html#classampl_1_1_set"><span class="std std-ref">Set</span></a> the value at the specified row and columnn. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rowIndex</strong> – A tuple identiying the row to modify </p></li>
+<li><p><strong>colHeader</strong> – The header of the column to modify </p></li>
+<li><p><strong>value</strong> – The value to assign </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame8setValueENSt6size_tE6size_tN4ampl10VariantRefE">
+<span id="_CPPv3N4ampl9DataFrame8setValueENSt6size_tE6size_tN4ampl10VariantRefE"></span><span id="_CPPv2N4ampl9DataFrame8setValueENSt6size_tE6size_tN4ampl10VariantRefE"></span><span id="ampl::DataFrame::setValue__std::s.s.ampl::VariantRef"></span><span class="target" id="classampl_1_1_data_frame_1a2d722646ca2dc4841a6c2ca80966dde3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setValue</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rowIndex</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">colIndex</span></span>, <span class="n"><span class="pre">ampl</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="variant.html#_CPPv4N4ampl10VariantRefE" title="ampl::VariantRef"><span class="n"><span class="pre">VariantRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame8setValueENSt6size_tE6size_tN4ampl10VariantRefE" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="set.html#classampl_1_1_set"><span class="std std-ref">Set</span></a> the value at the specified row and columnn. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rowIndex</strong> – The 0-based index of the row to modify </p></li>
+<li><p><strong>colIndex</strong> – The 0-based index of the column to modify (including indices)</p></li>
+<li><p><strong>value</strong> – The value to assign </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame9setColumnEN3fmt10CStringRefEN8internal4ArgsENSt6size_tE">
+<span id="_CPPv3N4ampl9DataFrame9setColumnEN3fmt10CStringRefEN8internal4ArgsENSt6size_tE"></span><span id="_CPPv2N4ampl9DataFrame9setColumnEN3fmt10CStringRefEN8internal4ArgsENSt6size_tE"></span><span id="ampl::DataFrame::setColumn__fmt::CStringRef.internal::Args.std::s"></span><span class="target" id="classampl_1_1_data_frame_1a22bba0686743878e6158a313df94c123"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setColumn</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CStringRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">header</span></span>, <span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">column</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame9setColumnEN3fmt10CStringRefEN8internal4ArgsENSt6size_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="set.html#classampl_1_1_set"><span class="std std-ref">Set</span></a> the values of a column. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – The header of the column to be set </p></li>
+<li><p><strong>column</strong> – The values to set. </p></li>
+<li><p><strong>n</strong> – The number of items in the column. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame13getRowByIndexENSt6size_tE">
+<span id="_CPPv3NK4ampl9DataFrame13getRowByIndexENSt6size_tE"></span><span id="_CPPv2NK4ampl9DataFrame13getRowByIndexENSt6size_tE"></span><span id="ampl::DataFrame::getRowByIndex__std::sC"></span><span class="target" id="classampl_1_1_data_frame_1ab532bca6240840c7e195316bb7a830b7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame3RowE" title="ampl::DataFrame::Row"><span class="n"><span class="pre">Row</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRowByIndex</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame13getRowByIndexENSt6size_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get row by numeric index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> – Zero-based index of the row to get </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The corresponding row. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame6getRowE10VariantRef">
+<span id="_CPPv3N4ampl9DataFrame6getRowE10VariantRef"></span><span id="_CPPv2N4ampl9DataFrame6getRowE10VariantRef"></span><span id="ampl::DataFrame::getRow__VariantRef"></span><span class="target" id="classampl_1_1_data_frame_1a71d950163ed38a7b044102ca57fd315c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame3RowE" title="ampl::DataFrame::Row"><span class="n"><span class="pre">Row</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRow</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="variant.html#_CPPv4N4ampl10VariantRefE" title="ampl::VariantRef"><span class="n"><span class="pre">VariantRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a1</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame6getRowE10VariantRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a row by value of the indexing column (for DataFrames with one indexing column) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>a1</strong> – Index of the desired row </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The correponding row. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame6getRowE8TupleRef">
+<span id="_CPPv3NK4ampl9DataFrame6getRowE8TupleRef"></span><span id="_CPPv2NK4ampl9DataFrame6getRowE8TupleRef"></span><span id="ampl::DataFrame::getRow__TupleRefC"></span><span class="target" id="classampl_1_1_data_frame_1a6123f077181853366de2f14d738ad7bb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame3RowE" title="ampl::DataFrame::Row"><span class="n"><span class="pre">Row</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRow</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="tuple.html#_CPPv4N4ampl8TupleRefE" title="ampl::TupleRef"><span class="n"><span class="pre">TupleRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="tuple.html#_CPPv4N4ampl8TupleRefE" title="ampl::TupleRef"><span class="n"><span class="pre">TupleRef</span></span></a><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame6getRowE8TupleRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a row by value of the indexing columns. </p>
+<p>If the index is not specified, gets the only row of a dataframe with no indexing columns. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> – <a class="reference internal" href="tuple.html#classampl_1_1_tuple"><span class="std std-ref">Tuple</span></a> representing the index of the desired row </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The row. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame5beginEv">
+<span id="_CPPv3NK4ampl9DataFrame5beginEv"></span><span id="_CPPv2NK4ampl9DataFrame5beginEv"></span><span id="ampl::DataFrame::beginC"></span><span class="target" id="classampl_1_1_data_frame_1a7d798e31013f1c9dce57cee72d0fc6ab"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame8iteratorE" title="ampl::DataFrame::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame5beginEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the iterator to the first row in this <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame3endEv">
+<span id="_CPPv3NK4ampl9DataFrame3endEv"></span><span id="_CPPv2NK4ampl9DataFrame3endEv"></span><span id="ampl::DataFrame::endC"></span><span class="target" id="classampl_1_1_data_frame_1a8558ea9072f13bc5bcf7ace74850b42a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame8iteratorE" title="ampl::DataFrame::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame3endEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the iterator to the last row in this <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> (an iterator of numerical index <a class="reference internal" href="#classampl_1_1_data_frame_1ad7f25ed9924f2f576aec38d00d2a3435"><span class="std std-ref">DataFrame::getNumRows</span></a>). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame4findE8TupleRef">
+<span id="_CPPv3NK4ampl9DataFrame4findE8TupleRef"></span><span id="_CPPv2NK4ampl9DataFrame4findE8TupleRef"></span><span id="ampl::DataFrame::find__TupleRefC"></span><span class="target" id="classampl_1_1_data_frame_1a2cac15d70b6c0305cc89fffd45c6cc98"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame8iteratorE" title="ampl::DataFrame::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="tuple.html#_CPPv4N4ampl8TupleRefE" title="ampl::TupleRef"><span class="n"><span class="pre">TupleRef</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame4findE8TupleRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the iterator to the specified row in this <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> – The index of the <a class="reference internal" href="#classampl_1_1_data_frame_1a4910a53d7ce27cb4334544af6f7b87bf"><span class="std std-ref">Row</span></a> to be found </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An iterator pointing to the found row, or iterator::end if not found. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame10getHeadersEv">
+<span id="_CPPv3NK4ampl9DataFrame10getHeadersEv"></span><span id="_CPPv2NK4ampl9DataFrame10getHeadersEv"></span><span id="ampl::DataFrame::getHeadersC"></span><span class="target" id="classampl_1_1_data_frame_1a004ae3806b9390699b4f31d6f2c60c4f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">StringArray</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getHeaders</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame10getHeadersEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the headers of this <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The headers of this <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_NSt6size_tEEN4ampl9DataFrame8setArrayEvN8internal4ArgsERA2NR_Kd">
+<span id="_CPPv3I_NSt6size_tEEN4ampl9DataFrame8setArrayEN8internal4ArgsERA2NR_Kd"></span><span id="_CPPv2I_NSt6size_tEEN4ampl9DataFrame8setArrayEN8internal4ArgsERANR_Kd"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NR</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classampl_1_1_data_frame_1afacaaab500d9da85e518205789b7415f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setArray</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">indices</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#_CPPv4I_NSt6size_tEEN4ampl9DataFrame8setArrayEvN8internal4ArgsERA2NR_Kd" title="ampl::DataFrame::setArray::NR"><span class="n"><span class="pre">NR</span></span></a><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_NSt6size_tEEN4ampl9DataFrame8setArrayEvN8internal4ArgsERA2NR_Kd" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="set.html#classampl_1_1_set"><span class="std std-ref">Set</span></a> the values of a <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> from an array of doubles. </p>
+<p>The <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> must have one index and one data column. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>indices</strong> – The indices of the values to set </p></li>
+<li><p><strong>values</strong> – An array containing the values to be set </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_NSt6size_tEEN4ampl9DataFrame8setArrayEvN8internal4ArgsERA2NR_PKc">
+<span id="_CPPv3I_NSt6size_tEEN4ampl9DataFrame8setArrayEN8internal4ArgsERA2NR_PKc"></span><span id="_CPPv2I_NSt6size_tEEN4ampl9DataFrame8setArrayEN8internal4ArgsERANR_PKc"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NR</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classampl_1_1_data_frame_1ae8c28fdb675a5c4cad3147d66e9fee6c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setArray</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">indices</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#_CPPv4I_NSt6size_tEEN4ampl9DataFrame8setArrayEvN8internal4ArgsERA2NR_PKc" title="ampl::DataFrame::setArray::NR"><span class="n"><span class="pre">NR</span></span></a><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_NSt6size_tEEN4ampl9DataFrame8setArrayEvN8internal4ArgsERA2NR_PKc" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="set.html#classampl_1_1_set"><span class="std std-ref">Set</span></a> the values of a <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> from an array of string literals. </p>
+<p>The <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> must have one index and one data column. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>indices</strong> – The indices of the values to set </p></li>
+<li><p><strong>values</strong> – An array containing the values to be set </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame8setArrayENSt6size_tEN8internal4ArgsEPKd">
+<span id="_CPPv3N4ampl9DataFrame8setArrayENSt6size_tEN8internal4ArgsEPKd"></span><span id="_CPPv2N4ampl9DataFrame8setArrayENSt6size_tEN8internal4ArgsEPKd"></span><span id="ampl::DataFrame::setArray__std::s.internal::Args.doubleCP"></span><span class="target" id="classampl_1_1_data_frame_1afd38033725c5a3b691c0fa3ad79ae5ed"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setArray</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span>, <span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">indices</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame8setArrayENSt6size_tEN8internal4ArgsEPKd" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="set.html#classampl_1_1_set"><span class="std std-ref">Set</span></a> the values of a <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> from an array of doubles. </p>
+<p>The <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> must have one index and one data column. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> – The size of the two arrays passed </p></li>
+<li><p><strong>indices</strong> – The indices of the values to set </p></li>
+<li><p><strong>values</strong> – An array containing the values to be set </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame8setArrayENSt6size_tEN8internal4ArgsEPPCKc">
+<span id="_CPPv3N4ampl9DataFrame8setArrayENSt6size_tEN8internal4ArgsEPPCKc"></span><span id="_CPPv2N4ampl9DataFrame8setArrayENSt6size_tEN8internal4ArgsEPPCKc"></span><span id="ampl::DataFrame::setArray__std::s.internal::Args.cCPCP"></span><span class="target" id="classampl_1_1_data_frame_1a5ee4fcb02e6ad36615d021737eeda3b4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setArray</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span>, <span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">indices</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame8setArrayENSt6size_tEN8internal4ArgsEPPCKc" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="set.html#classampl_1_1_set"><span class="std std-ref">Set</span></a> the values of a <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> from an array of string literals. </p>
+<p>The <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> must have one index and one data column. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> – The size of the two arrays passed </p></li>
+<li><p><strong>indices</strong> – The indices of the values to set </p></li>
+<li><p><strong>values</strong> – An array containing the values to be set </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEvN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_Kd">
+<span id="_CPPv3I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_Kd"></span><span id="_CPPv2I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEN8internal4ArgsEN8internal4ArgsERANR_ANC_Kd"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NR</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NC</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classampl_1_1_data_frame_1a2ab0282962328a0c0b70284fb46d1cc7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMatrix</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">indices0</span></span>, <span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">indices1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#_CPPv4I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEvN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_Kd" title="ampl::DataFrame::setMatrix::NR"><span class="n"><span class="pre">NR</span></span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#_CPPv4I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEvN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_Kd" title="ampl::DataFrame::setMatrix::NC"><span class="n"><span class="pre">NC</span></span></a><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEvN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_Kd" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="set.html#classampl_1_1_set"><span class="std std-ref">Set</span></a> a matrix of doubles to an empty <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+<p>The <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> must have two indices and one data column. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>indices0</strong> – The values of the first indexing column </p></li>
+<li><p><strong>indices1</strong> – The values of the second indexing column </p></li>
+<li><p><strong>values</strong> – a 2d-array of doubles </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEvN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_PKc">
+<span id="_CPPv3I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_PKc"></span><span id="_CPPv2I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEN8internal4ArgsEN8internal4ArgsERANR_ANC_PKc"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NR</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NC</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classampl_1_1_data_frame_1a34708c5c1f90a4570a8e21ad6543bd13"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMatrix</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">indices0</span></span>, <span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">indices1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#_CPPv4I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEvN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_PKc" title="ampl::DataFrame::setMatrix::NR"><span class="n"><span class="pre">NR</span></span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#_CPPv4I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEvN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_PKc" title="ampl::DataFrame::setMatrix::NC"><span class="n"><span class="pre">NC</span></span></a><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEvN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_PKc" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="set.html#classampl_1_1_set"><span class="std std-ref">Set</span></a> a matrix of strings to an empty <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+<p>The <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> must have two indices and one data column. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>indices0</strong> – The values of the first indexing column </p></li>
+<li><p><strong>indices1</strong> – The values of the second indexing column </p></li>
+<li><p><strong>values</strong> – a 2d-array of string literals </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame9setMatrixENSt6size_tEN8internal4ArgsENSt6size_tEN8internal4ArgsEPKd">
+<span id="_CPPv3N4ampl9DataFrame9setMatrixENSt6size_tEN8internal4ArgsENSt6size_tEN8internal4ArgsEPKd"></span><span id="_CPPv2N4ampl9DataFrame9setMatrixENSt6size_tEN8internal4ArgsENSt6size_tEN8internal4ArgsEPKd"></span><span id="ampl::DataFrame::setMatrix__std::s.internal::Args.std::s.internal::Args.doubleCP"></span><span class="target" id="classampl_1_1_data_frame_1af76cdd1e7c117544d6726bb03beec1a9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMatrix</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">num_rows</span></span>, <span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">row_indices</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">num_cols</span></span>, <span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">indices_cols</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame9setMatrixENSt6size_tEN8internal4ArgsENSt6size_tEN8internal4ArgsEPKd" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="set.html#classampl_1_1_set"><span class="std std-ref">Set</span></a> a matrix of doubles to an empty <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+<p>The <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> must have two indices and one data column. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_rows</strong> – The size of the first dimension (number of rows) </p></li>
+<li><p><strong>row_indices</strong> – The values of the first indexing column </p></li>
+<li><p><strong>num_cols</strong> – The size of the second dimension (number of columns) </p></li>
+<li><p><strong>indices_cols</strong> – The values of the second indexing column </p></li>
+<li><p><strong>values</strong> – a 2d-array of doubles </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame9setMatrixENSt6size_tEN8internal4ArgsENSt6size_tEN8internal4ArgsEPPCKc">
+<span id="_CPPv3N4ampl9DataFrame9setMatrixENSt6size_tEN8internal4ArgsENSt6size_tEN8internal4ArgsEPPCKc"></span><span id="_CPPv2N4ampl9DataFrame9setMatrixENSt6size_tEN8internal4ArgsENSt6size_tEN8internal4ArgsEPPCKc"></span><span id="ampl::DataFrame::setMatrix__std::s.internal::Args.std::s.internal::Args.cCPCP"></span><span class="target" id="classampl_1_1_data_frame_1aaa3d169b15a12ba1a24d98e500142823"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMatrix</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">num_rows</span></span>, <span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">row_indices</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">num_cols</span></span>, <span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Args</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">indices_cols</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame9setMatrixENSt6size_tEN8internal4ArgsENSt6size_tEN8internal4ArgsEPPCKc" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="set.html#classampl_1_1_set"><span class="std std-ref">Set</span></a> a matrix of string literals to an empty <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+<p>The <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> must have two indices and one data column. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_rows</strong> – The size of the first dimension (number of rows) </p></li>
+<li><p><strong>row_indices</strong> – The values of the first indexing column </p></li>
+<li><p><strong>num_cols</strong> – The size of the second dimension (number of columns) </p></li>
+<li><p><strong>indices_cols</strong> – The values of the second indexing column </p></li>
+<li><p><strong>values</strong> – a 2d-array of strings </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame4implEv">
+<span id="_CPPv3NK4ampl9DataFrame4implEv"></span><span id="_CPPv2NK4ampl9DataFrame4implEv"></span><span id="ampl::DataFrame::implC"></span><span class="target" id="classampl_1_1_data_frame_1ab16ca6a6f014820d8b869c7f153ad9eb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">impl</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame4implEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Infrastructure: returns a pointer to the inner object. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame8iteratorE">
+<span id="_CPPv3N4ampl9DataFrame8iteratorE"></span><span id="_CPPv2N4ampl9DataFrame8iteratorE"></span><span id="ampl::DataFrame::iterator"></span><span class="target" id="classampl_1_1_data_frame_1_1iterator"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">iterator</span></span></span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame8iteratorE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Iterates through the <a class="reference internal" href="#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> in a row-by-row fashion. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame8iterator17iterator_categoryE">
+<span id="_CPPv3N4ampl9DataFrame8iterator17iterator_categoryE"></span><span id="_CPPv2N4ampl9DataFrame8iterator17iterator_categoryE"></span><span class="target" id="classampl_1_1_data_frame_1_1iterator_1a397065a30540d7e988f6bd19e6b887a8"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">iterator_category</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">forward_iterator_tag</span></span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame8iterator17iterator_categoryE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame8iterator10value_typeE">
+<span id="_CPPv3N4ampl9DataFrame8iterator10value_typeE"></span><span id="_CPPv2N4ampl9DataFrame8iterator10value_typeE"></span><span class="target" id="classampl_1_1_data_frame_1_1iterator_1ac404be3371c6e37a621a35b4145476d9"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value_type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame3RowE" title="ampl::DataFrame::Row"><span class="n"><span class="pre">Row</span></span></a><a class="headerlink" href="#_CPPv4N4ampl9DataFrame8iterator10value_typeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame8iterator15difference_typeE">
+<span id="_CPPv3N4ampl9DataFrame8iterator15difference_typeE"></span><span id="_CPPv2N4ampl9DataFrame8iterator15difference_typeE"></span><span class="target" id="classampl_1_1_data_frame_1_1iterator_1a930566d9cad9caa9e0be23ff8da1b22a"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">difference_type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ptrdiff_t</span></span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame8iterator15difference_typeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame8iterator7pointerE">
+<span id="_CPPv3N4ampl9DataFrame8iterator7pointerE"></span><span id="_CPPv2N4ampl9DataFrame8iterator7pointerE"></span><span class="target" id="classampl_1_1_data_frame_1_1iterator_1a7f3ac585a19250fec54d36801b8a4613"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pointer</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame8iterator10value_typeE" title="ampl::DataFrame::iterator::value_type"><span class="n"><span class="pre">value_type</span></span></a><span class="p"><span class="pre">*</span></span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame8iterator7pointerE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame8iterator9referenceE">
+<span id="_CPPv3N4ampl9DataFrame8iterator9referenceE"></span><span id="_CPPv2N4ampl9DataFrame8iterator9referenceE"></span><span class="target" id="classampl_1_1_data_frame_1_1iterator_1acf729145b589ad2eebab574539aa98c0"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reference</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame8iterator10value_typeE" title="ampl::DataFrame::iterator::value_type"><span class="n"><span class="pre">value_type</span></span></a><span class="p"><span class="pre">&amp;</span></span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame8iterator9referenceE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame8iteratormlEv">
+<span id="_CPPv3NK4ampl9DataFrame8iteratormlEv"></span><span id="_CPPv2NK4ampl9DataFrame8iteratormlEv"></span><span id="ampl::DataFrame::iterator::mul-operatorC"></span><span class="target" id="classampl_1_1_data_frame_1_1iterator_1a81a747828f80901cecc54e90c8fa4180"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame8iterator10value_typeE" title="ampl::DataFrame::iterator::value_type"><span class="n"><span class="pre">value_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame8iteratormlEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Dereferences the iterator, gets a <a class="reference internal" href="#classampl_1_1_data_frame_1a4910a53d7ce27cb4334544af6f7b87bf"><span class="std std-ref">DataFrame::Row</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame8iteratorppEv">
+<span id="_CPPv3N4ampl9DataFrame8iteratorppEv"></span><span id="_CPPv2N4ampl9DataFrame8iteratorppEv"></span><span id="ampl::DataFrame::iterator::inc-operator"></span><span class="target" id="classampl_1_1_data_frame_1_1iterator_1a517afe3a8be9ae5761056527c3a128c6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame8iteratorE" title="ampl::DataFrame::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">++</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame8iteratorppEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Go to the next row. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl9DataFrame8iteratorppEi">
+<span id="_CPPv3N4ampl9DataFrame8iteratorppEi"></span><span id="_CPPv2N4ampl9DataFrame8iteratorppEi"></span><span id="ampl::DataFrame::iterator::inc-operator__i"></span><span class="target" id="classampl_1_1_data_frame_1_1iterator_1a1887a965f540ca48c7b201fa5d562382"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame8iteratorE" title="ampl::DataFrame::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">++</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl9DataFrame8iteratorppEi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Go to the next row. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame8iteratoreqE8iterator">
+<span id="_CPPv3NK4ampl9DataFrame8iteratoreqE8iterator"></span><span id="_CPPv2NK4ampl9DataFrame8iteratoreqE8iterator"></span><span id="ampl::DataFrame::iterator::eq-operator__iteratorC"></span><span class="target" id="classampl_1_1_data_frame_1_1iterator_1a4a1d0c73962fe2611d328b044b66e4b6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame8iteratorE" title="ampl::DataFrame::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame8iteratoreqE8iterator" title="Link to this definition">#</a><br /></dt>
+<dd><p>Equality check. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl9DataFrame8iteratorneE8iterator">
+<span id="_CPPv3NK4ampl9DataFrame8iteratorneE8iterator"></span><span id="_CPPv2NK4ampl9DataFrame8iteratorneE8iterator"></span><span id="ampl::DataFrame::iterator::neq-operator__iteratorC"></span><span class="target" id="classampl_1_1_data_frame_1_1iterator_1ac6b99171e0fe79a3dfe05ccd0b90cbc8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">!=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4ampl9DataFrame8iteratorE" title="ampl::DataFrame::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl9DataFrame8iteratorneE8iterator" title="Link to this definition">#</a><br /></dt>
+<dd><p>Inequality check. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ampl.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">AMPL</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="environment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Environment</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrameE"><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame3RowE"><code class="docutils literal notranslate"><span class="pre">DataFrame::Row</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame6ColumnE"><code class="docutils literal notranslate"><span class="pre">DataFrame::Column</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame9DataFrameENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">DataFrame::DataFrame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrameD0Ev"><code class="docutils literal notranslate"><span class="pre">DataFrame::~DataFrame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame9DataFrameENSt6size_tE10StringArgs"><code class="docutils literal notranslate"><span class="pre">DataFrame::DataFrame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame9DataFrameERK10EntityArgs"><code class="docutils literal notranslate"><span class="pre">DataFrame::DataFrame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame9DataFrameERK9DataFrame"><code class="docutils literal notranslate"><span class="pre">DataFrame::DataFrame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrameaSERK9DataFrame"><code class="docutils literal notranslate"><span class="pre">DataFrame::operator=()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrameeqERK9DataFrame"><code class="docutils literal notranslate"><span class="pre">DataFrame::operator==()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrameneERK9DataFrame"><code class="docutils literal notranslate"><span class="pre">DataFrame::operator!=()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame10getNumColsEv"><code class="docutils literal notranslate"><span class="pre">DataFrame::getNumCols()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame10getNumRowsEv"><code class="docutils literal notranslate"><span class="pre">DataFrame::getNumRows()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame13getNumIndicesEv"><code class="docutils literal notranslate"><span class="pre">DataFrame::getNumIndices()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame6addRowE8TupleRef"><code class="docutils literal notranslate"><span class="pre">DataFrame::addRow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame6addRowE10VariantRef"><code class="docutils literal notranslate"><span class="pre">DataFrame::addRow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame6addRowE10VariantRef10VariantRef"><code class="docutils literal notranslate"><span class="pre">DataFrame::addRow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame6addRowE10VariantRef10VariantRef10VariantRef"><code class="docutils literal notranslate"><span class="pre">DataFrame::addRow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame6addRowE10VariantRef10VariantRef10VariantRef10VariantRef"><code class="docutils literal notranslate"><span class="pre">DataFrame::addRow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame7reserveENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">DataFrame::reserve()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame8toStringEv"><code class="docutils literal notranslate"><span class="pre">DataFrame::toString()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame9addColumnEN3fmt10CStringRefE"><code class="docutils literal notranslate"><span class="pre">DataFrame::addColumn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame9addColumnEN3fmt10CStringRefEN8internal4ArgsE"><code class="docutils literal notranslate"><span class="pre">DataFrame::addColumn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame9getColumnEN3fmt10CStringRefE"><code class="docutils literal notranslate"><span class="pre">DataFrame::getColumn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame8setValueE8TupleRefN3fmt10CStringRefEN4ampl10VariantRefE"><code class="docutils literal notranslate"><span class="pre">DataFrame::setValue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame8setValueENSt6size_tE6size_tN4ampl10VariantRefE"><code class="docutils literal notranslate"><span class="pre">DataFrame::setValue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame9setColumnEN3fmt10CStringRefEN8internal4ArgsENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">DataFrame::setColumn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame13getRowByIndexENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">DataFrame::getRowByIndex()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame6getRowE10VariantRef"><code class="docutils literal notranslate"><span class="pre">DataFrame::getRow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame6getRowE8TupleRef"><code class="docutils literal notranslate"><span class="pre">DataFrame::getRow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame5beginEv"><code class="docutils literal notranslate"><span class="pre">DataFrame::begin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame3endEv"><code class="docutils literal notranslate"><span class="pre">DataFrame::end()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame4findE8TupleRef"><code class="docutils literal notranslate"><span class="pre">DataFrame::find()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame10getHeadersEv"><code class="docutils literal notranslate"><span class="pre">DataFrame::getHeaders()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_NSt6size_tEEN4ampl9DataFrame8setArrayEvN8internal4ArgsERA2NR_Kd"><code class="docutils literal notranslate"><span class="pre">DataFrame::setArray()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_NSt6size_tEEN4ampl9DataFrame8setArrayEvN8internal4ArgsERA2NR_PKc"><code class="docutils literal notranslate"><span class="pre">DataFrame::setArray()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame8setArrayENSt6size_tEN8internal4ArgsEPKd"><code class="docutils literal notranslate"><span class="pre">DataFrame::setArray()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame8setArrayENSt6size_tEN8internal4ArgsEPPCKc"><code class="docutils literal notranslate"><span class="pre">DataFrame::setArray()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEvN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_Kd"><code class="docutils literal notranslate"><span class="pre">DataFrame::setMatrix()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEvN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_PKc"><code class="docutils literal notranslate"><span class="pre">DataFrame::setMatrix()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame9setMatrixENSt6size_tEN8internal4ArgsENSt6size_tEN8internal4ArgsEPKd"><code class="docutils literal notranslate"><span class="pre">DataFrame::setMatrix()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame9setMatrixENSt6size_tEN8internal4ArgsENSt6size_tEN8internal4ArgsEPPCKc"><code class="docutils literal notranslate"><span class="pre">DataFrame::setMatrix()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame4implEv"><code class="docutils literal notranslate"><span class="pre">DataFrame::impl()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame8iteratorE"><code class="docutils literal notranslate"><span class="pre">DataFrame::iterator</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame8iterator17iterator_categoryE"><code class="docutils literal notranslate"><span class="pre">DataFrame::iterator::iterator_category</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame8iterator10value_typeE"><code class="docutils literal notranslate"><span class="pre">DataFrame::iterator::value_type</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame8iterator15difference_typeE"><code class="docutils literal notranslate"><span class="pre">DataFrame::iterator::difference_type</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame8iterator7pointerE"><code class="docutils literal notranslate"><span class="pre">DataFrame::iterator::pointer</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame8iterator9referenceE"><code class="docutils literal notranslate"><span class="pre">DataFrame::iterator::reference</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame8iteratormlEv"><code class="docutils literal notranslate"><span class="pre">DataFrame::iterator::operator*()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame8iteratorppEv"><code class="docutils literal notranslate"><span class="pre">DataFrame::iterator::operator++()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl9DataFrame8iteratorppEi"><code class="docutils literal notranslate"><span class="pre">DataFrame::iterator::operator++()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame8iteratoreqE8iterator"><code class="docutils literal notranslate"><span class="pre">DataFrame::iterator::operator==()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl9DataFrame8iteratorneE8iterator"><code class="docutils literal notranslate"><span class="pre">DataFrame::iterator::operator!=()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

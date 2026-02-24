@@ -1,0 +1,1032 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>Constraint &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/constraint';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/dotnet/classes/constraint.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ConstraintInstance" href="constraintinstance.html" />
+    <link rel="prev" title="Instance" href="instance.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="../index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">C# API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../deployment.html">
+    Deployment Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C# API Reference
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../examples.html">
+    C# API Examples
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../deployment.html">
+    Deployment Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C# API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    C# API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ampl.html">AMPL</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="dataframe.html">DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tuple.html">Tuple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variant.html">Variant</a></li>
+
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="entity.html">EntityBase</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="entitymap.html">EntityMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instance.html">Instance</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Constraint</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="constraintinstance.html">ConstraintInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objective.html">Objective</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="objectiveinstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameter.html">Parameter</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="set.html">Set</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="setinstance.html">SetInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variable.html">Variable</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="variableinstance.html">VariableInstance</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="amplexception.html">AMPLException</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../reference.html" class="nav-link">C# API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Constraint</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="constraint">
+<span id="ref-constraint"></span><h1>Constraint<a class="headerlink" href="#constraint" title="Link to this heading">#</a></h1>
+<dl class="cs class">
+<dt class="sig sig-object cs" id="class-ampl.Entities.Constraint">
+<span class="target" id="classampl_1_1_entities_1_1_constraint"></span><em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ampl.Entities.Constraint</span></span> <span class="pre">:</span> <span class="pre">ampl.Entities.Entity</span><span class="pre">&lt;</span><span class="pre">K</span><span class="pre">&gt;</span><a class="headerlink" href="#class-ampl.Entities.Constraint" title="Link to this definition">#</a></dt>
+<dd><p>This class represents an algebraic or logical constraint. </p>
+<p>In case the constraint is scalar, its values can be accessed via properties like <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_entities_1_1_constraint_1a4229dbbba447a6c5e1bfcb275a8d3f38"><span class="std std-ref"><span class="pre">ampl.Entities.Constraint.Body</span></span></a></code> and <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_entities_1_1_constraint_1a3d129ecb8b045939bcd98622020ba6a3"><span class="std std-ref"><span class="pre">ampl.Entities.Constraint.Dual</span></span></a></code>. All the <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> suffixes for constraints (see <a class="reference external" href="http://www.ampl.com/NEW/suffbuiltin.html">http://www.ampl.com/NEW/suffbuiltin.html</a>) are available through methods of this class with the same name (and methods of <code class="docutils literal notranslate"><a class="reference internal" href="constraintinstance.html#classampl_1_1_constraint_instance"><span class="std std-ref"><span class="pre">ampl.ConstraintInstance</span></span></a></code> for indexed constraints). Note that, since this class represents both algebraic and logical constraints, some suffixes might not be available for every entity. An <code class="docutils literal notranslate"><span class="pre">ArgumentException</span></code> is thrown if one of such methods is called for a non-scalar constraint and if a method corresponding to a suffix which is not supported by the type of the constraint is called. An <code class="docutils literal notranslate"><span class="pre">ArgumentOutOfRangeException</span></code> is thrown if any property of an entity which has been deleted from the underlying interpreter is accessed. The instances, represented by the class <code class="docutils literal notranslate"><a class="reference internal" href="constraintinstance.html#classampl_1_1_constraint_instance"><span class="std std-ref"><span class="pre">ampl.ConstraintInstance</span></span></a></code> can be accessed via the indexing operator, via the method <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_entities_1_1_constraint_1ae4b5c807c6aef0b3971935e779047593"><span class="std std-ref"><span class="pre">ampl.Entities.Constraint.Get</span></span></a></code> or via the iterator provided. To gain access to all the values in an entity (for all instances and all suffixes for that entities), see <code class="docutils literal notranslate"><span class="pre">ampl.Entities.Entity.GetValues()</span></code> and the <code class="docutils literal notranslate"><a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref"><span class="pre">ampl.DataFrame</span></span></a></code> class. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Entities.Constraint.GetEnumerator">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1af6b0cfe56e268bea4ea7a7fafac26f51"></span><em class="property"><span class="pre">override</span></em> <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerator" title="type: msdn ~&gt; System.Collections.IEnumerator"><span class="pre">IEnumerator</span></a><span class="pre">&lt;</span><a class="reference internal" href="constraintinstance.html#class-ampl.ConstraintInstance" title="class: ampl.ConstraintInstance"><span class="pre">ConstraintInstance</span></a><span class="pre">&gt;</span> <span class="sig-name descname"><span class="pre">GetEnumerator</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Entities.Constraint.GetEnumerator" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Entities.Constraint.Get">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1ae4b5c807c6aef0b3971935e779047593"></span><em class="property"><span class="pre">new</span></em> <a class="reference internal" href="constraintinstance.html#class-ampl.ConstraintInstance" title="class: ampl.ConstraintInstance"><span class="pre">ConstraintInstance</span></a> <span class="sig-name descname"><span class="pre">Get</span></span> <span class="sig-paren">(</span><em class="property"><span class="pre">params</span></em> <span class="pre">object</span><span class="pre">[]</span> <em><span class="pre">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Entities.Constraint.Get" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a0e6ba75caa43e64cf1cdd1d6c3d5a7a6"></span><em class="property"><span class="pre">override</span></em> <a class="reference internal" href="constraintinstance.html#class-ampl.ConstraintInstance" title="class: ampl.ConstraintInstance"><span class="pre">ConstraintInstance</span></a> <span class="sig-name descname"><span class="pre">Get</span></span> <span class="sig-paren">(</span><a class="reference internal" href="tuple.html#class-ampl.Tuple" title="class: ampl.Tuple"><span class="pre">Tuple</span></a> <em><span class="pre">t</span></em><em> <span class="pre">=</span> <span class="pre">null</span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Entities.Constraint.Drop">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a41e70ff903a381337e81f58ccc4c595b"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Drop</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Entities.Constraint.Drop" title="Link to this definition">#</a></dt>
+<dd><p>Drop all instances in this constraint entity, corresponding to the <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> code: <code class="docutils literal notranslate"><span class="pre">drop</span> <span class="pre">constraintname;</span></code></p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Entities.Constraint.Restore">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a0591dc5acf975b1b0d412be856fe3532"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Restore</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Entities.Constraint.Restore" title="Link to this definition">#</a></dt>
+<dd><p>Restore all instances in this constraint entity, corresponding to the <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> code: <code class="docutils literal notranslate"><span class="pre">restore</span> <span class="pre">constraintname;</span></code></p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Entities.Constraint.AsArray">
+<span class="target" id="classampl_1_1_entities_1_1_entity-1-g_1a2885f8780720dccf689e3cdfab51cae3"></span><span class="pre">K</span><span class="pre">[]</span> <span class="sig-name descname"><span class="pre">AsArray</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Entities.Constraint.AsArray" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Entities.Constraint.ToString">
+<span class="target" id="classampl_1_1_entities_1_1_entity_base_1ad10331c487abc248495fe6322331a881"></span><em class="property"><span class="pre">override</span></em> <span class="pre">string</span> <span class="sig-name descname"><span class="pre">ToString</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Entities.Constraint.ToString" title="Link to this definition">#</a></dt>
+<dd><p>Returns a textual representation of this entity. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Entities.Constraint.GetValues">
+<span class="target" id="classampl_1_1_entities_1_1_entity_base_1a0cce4250fc4824bf3805ec14f7c63321"></span><a class="reference internal" href="dataframe.html#class-ampl.DataFrame" title="class: ampl.DataFrame"><span class="pre">DataFrame</span></a> <span class="sig-name descname"><span class="pre">GetValues</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Entities.Constraint.GetValues" title="Link to this definition">#</a></dt>
+<dd><p>Get the principal values of this entity as a <a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+<p>The specific returned value depends on the type of entity. For:</p>
+<p>Variables and Objectives it returns the suffix <code class="docutils literal notranslate"><span class="pre">val</span></code></p>
+<p>Parameters it returns their values</p>
+<p>Constraints it returns the suffix <code class="docutils literal notranslate"><span class="pre">dual</span></code></p>
+<p>Sets it returns all the members of the set, Note that it does not apply to indexed sets. See <code class="docutils literal notranslate"><a class="reference internal" href="setinstance.html#classampl_1_1_set_instance_1a5061385e2c81f374bcea130b726bdb97"><span class="std std-ref"><span class="pre">ampl.SetInstance.GetValues</span></span></a></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> containing the values for all instances</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_entities_1_1_entity_base_1ac8a1eded44f988a957354c2d2d393aa0"></span><a class="reference internal" href="dataframe.html#class-ampl.DataFrame" title="class: ampl.DataFrame"><span class="pre">DataFrame</span></a> <span class="sig-name descname"><span class="pre">GetValues</span></span> <span class="sig-paren">(</span><em class="property"><span class="pre">params</span></em> <span class="pre">string</span><span class="pre">[]</span> <em><span class="pre">suffixes</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get the specified suffixes value for all instances in a <a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param suffixes<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Suffixes to get</p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> containing the specified values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Entities.Constraint.SetValues">
+<span class="target" id="classampl_1_1_entities_1_1_entity_base_1ae29f83a68b2775fc7d2a64d365812979"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">SetValues</span></span> <span class="sig-paren">(</span><a class="reference internal" href="dataframe.html#class-ampl.DataFrame" title="class: ampl.DataFrame"><span class="pre">DataFrame</span></a> <em><span class="pre">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Entities.Constraint.SetValues" title="Link to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="set.html#classampl_1_1_entities_1_1_set"><span class="std std-ref">Set</span></a> the values of this entity to the correponding values of a <a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> indexed over the same sets(or a subset). </p>
+<p>This function assigns the values in the first data column of the passed dataframe to the entity the function is called from. In particular, the statement:: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> `x.SetValues(y.GetValues());`
+</pre></div>
+</div>
+</p>
+<p>is semantically equivalent to the <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> statement:: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> `let { s in S } x[s] := y[s];`
+</pre></div>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param data<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The data to set the entity to</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-properties">Properties</p>
+<dl class="cs property">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1aefe69dee5fc175e98750072b35c8b451"></span><span class="sig-name descname"><span class="pre">ConstraintInstance</span> <span class="pre">this[Tuple</span> <span class="pre">t]</span> <span class="pre">{get;set;}</span></span></dt>
+<dd><p>Get the instance with the specified index. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a5c8b3fd7dece2f8ab977e5f51a5beea8"></span><span class="sig-name descname"><span class="pre">ConstraintInstance</span> <span class="pre">this[string</span> <span class="pre">t]</span> <span class="pre">{get;set;}</span></span></dt>
+<dd><p>Get the instance at t. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.index">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1aa677a63921f76ded825adafc3c49aed2"></span><em class="property"><span class="pre">this[params</span></em> <span class="pre">object</span><span class="pre">[]</span> <span class="sig-name descname"><span class="pre">index</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.index" title="Link to this definition">#</a></dt>
+<dd><p>Get the instance at index. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.IsLogical">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a917ef140371289010071a613162f33b6"></span><span class="pre">bool</span> <span class="sig-name descname"><span class="pre">IsLogical</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.IsLogical" title="Link to this definition">#</a></dt>
+<dd><p>Check if the constraint is a logical constraint. </p>
+<p>The available suffixes differ between logical and non logical constraints. See <a class="reference external" href="http://www.ampl.com/NEW/suffbuiltin.html">http://www.ampl.com/NEW/suffbuiltin.html</a><p>for a list of the available suffixes for algebraic constraints. The suffixes available for logical constraints are marked on the method description by “Valid only for logical</p>
+<p>constraints”.</p>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if logical</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Body">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a4229dbbba447a6c5e1bfcb275a8d3f38"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Body</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Body" title="Link to this definition">#</a></dt>
+<dd><p>Get the current value of the constraint’s body. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Astatus">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1ac1879b14ef116ce470e7e81f2c23f27e"></span><span class="pre">string</span> <span class="sig-name descname"><span class="pre">Astatus</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Astatus" title="Link to this definition">#</a></dt>
+<dd><p>Get the current <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> status (dropped, presolved, or substituted out) </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Defvar">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a8aece79caf3d8317762180e1f4981dc2"></span><span class="pre">int</span> <span class="sig-name descname"><span class="pre">Defvar</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Defvar" title="Link to this definition">#</a></dt>
+<dd><p>Get the index in <code class="docutils literal notranslate"><span class="pre">_var</span></code> of “defined variable” substituted out by the constraint. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Dinit">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1ab3ff648bb7fe146e957f89d916949446"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Dinit</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Dinit" title="Link to this definition">#</a></dt>
+<dd><p>Get the current initial guess for the constraint’s public dual variable. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Dinit0">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a582db8c17fc1e9437977f9e460958f05"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Dinit0</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Dinit0" title="Link to this definition">#</a></dt>
+<dd><p>Get the original initial guess for the constraint’s public dual variable. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Dual">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a3d129ecb8b045939bcd98622020ba6a3"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Dual</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Dual" title="Link to this definition">#</a></dt>
+<dd><p>Get and set the current value of the constraint’s public dual variable. </p>
+<p>Setting this property is equivalent to the <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> statement: <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">c</span> <span class="pre">:=</span> <span class="pre">dual;</span></code> Note that dual values are often reset by the underlying <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> interpreter by the presolve functionalities triggered by some methods. A possible workaround is to set the option <code class="docutils literal notranslate"><span class="pre">presolve;</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code> (see <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l_1ad399696791094bf9891a9d001ff4ea0d"><span class="std std-ref">AMPL.SetOption</span></a>). </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Lb">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1aaeccf70e23ef0452d1cdbf976d86b5fe"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Lb</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Lb" title="Link to this definition">#</a></dt>
+<dd><p>Get the current value of the constraint’s lower bound. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Ub">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a68116c58790a443146ca43b58119795a"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Ub</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Ub" title="Link to this definition">#</a></dt>
+<dd><p>Get the current value of the constraint’s upper bound. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Lbs">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a0615c107e3b37a0e37a9fe8e427705d4"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Lbs</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Lbs" title="Link to this definition">#</a></dt>
+<dd><p>Get the constraint lower bound sent to the solver (reflecting adjustment for fixed variables) </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Ubs">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a10ce4a64812080a4e3a3f88219fa9bf7"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Ubs</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Ubs" title="Link to this definition">#</a></dt>
+<dd><p>Get the constraint upper bound sent to the solver (reflecting adjustment for fixed variables) </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Ldual">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a0421ed4320e2c498ee7b9b436ba7583c"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Ldual</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Ldual" title="Link to this definition">#</a></dt>
+<dd><p>Get the current public dual value associated with the lower bound. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Udual">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a5ff2bff11a71bfd390660a208ee0feb4"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Udual</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Udual" title="Link to this definition">#</a></dt>
+<dd><p>Get the current public dual value associated with the upper bounds. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Lslack">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1aa7d70713278ca253f5e43b736fd2f5f5"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Lslack</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Lslack" title="Link to this definition">#</a></dt>
+<dd><p>Get the slack at lower bound <code class="docutils literal notranslate"><span class="pre">body</span> <span class="pre">-</span> <span class="pre">lb</span></code></p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Uslack">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a2ae5016ca95a3028195ad60d5a0977c5"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Uslack</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Uslack" title="Link to this definition">#</a></dt>
+<dd><p>Get the slack at upper bound <code class="docutils literal notranslate"><span class="pre">ub</span> <span class="pre">-</span> <span class="pre">body</span></code></p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Slack">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a2a8524758f75b525fdd478be1b41fc32"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Slack</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Slack" title="Link to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="#classampl_1_1_entities_1_1_constraint"><span class="std std-ref">Constraint</span></a> slack (the lesser of lslack and uslack) </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Sstatus">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1ae18568fab0b8e3a61d7bbe0804ae5089"></span><span class="pre">string</span> <span class="sig-name descname"><span class="pre">Sstatus</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Sstatus" title="Link to this definition">#</a></dt>
+<dd><p>Get the solver status (basis status of constraint’s slack or artificial variable) </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Status">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1a54132509820b9a09935f8315527d80d2"></span><span class="pre">string</span> <span class="sig-name descname"><span class="pre">Status</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Status" title="Link to this definition">#</a></dt>
+<dd><p>Get the <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> status if not <code class="docutils literal notranslate"><span class="pre">in</span></code>, otherwise solver status. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Val">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_1ad7d134110f23445a60fde21e96118352"></span><span class="pre">double</span> <span class="sig-name descname"><span class="pre">Val</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Val" title="Link to this definition">#</a></dt>
+<dd><p>Get the <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> val suffix. </p>
+<p>Valid only for logical constraints. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Name">
+<span class="target" id="classampl_1_1_entities_1_1_entity_base_1ae93466363778582d7cb4f68a53b683e5"></span><span class="pre">string</span> <span class="sig-name descname"><span class="pre">Name</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Name" title="Link to this definition">#</a></dt>
+<dd><p>Get the name of this entity. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.Indexarity">
+<span class="target" id="classampl_1_1_entities_1_1_entity_base_1a026e9231eec39b7d327289362c36c119"></span><span class="pre">int</span> <span class="sig-name descname"><span class="pre">Indexarity</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.Indexarity" title="Link to this definition">#</a></dt>
+<dd><p>Get the indexarity of this entity (sum of the dimensions of the indexing sets). </p>
+<p>This value indicates the arity of the tuple to be passed to the method <code class="docutils literal notranslate"><span class="pre">ampl.Entities.EntityBase.Get</span></code> in order to access an instance of this entity. See the following <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> examples:: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">var</span> <span class="n">x</span><span class="p">;</span>               <span class="c1"># indexarity = 0</span>
+  <span class="n">var</span> <span class="n">y</span> <span class="p">{</span><span class="mf">1..2</span><span class="p">};</span>        <span class="c1"># indexarity = 1</span>
+  <span class="n">var</span> <span class="n">z</span> <span class="p">{</span><span class="mf">1..2</span><span class="p">,</span><span class="mf">3..4</span><span class="p">};</span>   <span class="c1"># indexarity = 2</span>
+  <span class="n">var</span> <span class="n">zz</span> <span class="p">{{</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)}</span> <span class="p">};</span>   <span class="c1"># indexarity = 2</span>
+</pre></div>
+</div>
+</p>
+<p>Get the sum of the dimensions of the indexing sets or 0 if the entity is not indexed </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.IsScalar">
+<span class="target" id="classampl_1_1_entities_1_1_entity_base_1a7074e1258e5e11851304a9b2d5ceb63a"></span><span class="pre">bool</span> <span class="sig-name descname"><span class="pre">IsScalar</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.IsScalar" title="Link to this definition">#</a></dt>
+<dd><p>Check whether this entity is scalar. </p>
+<p>Equivalent to testing whether indexarity is equal to zero, is true if the entity is scalar (not indexed over any set) </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.NumInstances">
+<span class="target" id="classampl_1_1_entities_1_1_entity_base_1aeedb5160fdc407b826ebbb28b68a885a"></span><span class="pre">int</span> <span class="sig-name descname"><span class="pre">NumInstances</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.NumInstances" title="Link to this definition">#</a></dt>
+<dd><p>Get the number of instances in this entity. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.IndexingSets">
+<span class="target" id="classampl_1_1_entities_1_1_entity_base_1a7f8116912857a43f3c9ecc73998e7c0e"></span><span class="pre">string</span><span class="pre">[]</span> <span class="sig-name descname"><span class="pre">IndexingSets</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.IndexingSets" title="Link to this definition">#</a></dt>
+<dd><p>Get the <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> string representation of the sets on which this entity is indexed.The obtained vector can be modified without any effect to the entity. </p>
+<p>Is equal to the string representation of the indexing sets for this entity or an empty array if the entity is scalar </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.Constraint.XRef">
+<span class="target" id="classampl_1_1_entities_1_1_entity_base_1a2e5fbc804e7900becc44ac22e40b8602"></span><span class="pre">string</span><span class="pre">[]</span> <span class="sig-name descname"><span class="pre">XRef</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.Constraint.XRef" title="Link to this definition">#</a></dt>
+<dd><p>Get the names of all entities which depend on this one. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="constraintmap">
+<h1>ConstraintMap<a class="headerlink" href="#constraintmap" title="Link to this heading">#</a></h1>
+<dl class="cs class">
+<dt class="sig sig-object cs" id="class-ampl.Entities.ConstraintMap">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_map"></span><em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ampl.Entities.ConstraintMap</span></span> <span class="pre">:</span> <span class="pre">ampl.Entities.EntityMap</span><span class="pre">&lt;</span><span class="pre">ENTITY</span><span class="pre">&gt;</span><a class="headerlink" href="#class-ampl.Entities.ConstraintMap" title="Link to this definition">#</a></dt>
+<dd><p>Enables iterable access to the constraints. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Entities.ConstraintMap.GetEnumerator">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_map_1a1e0ff8f2b67885bf9d1385add04de16d"></span><em class="property"><span class="pre">override</span></em> <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerator" title="type: msdn ~&gt; System.Collections.IEnumerator"><span class="pre">IEnumerator</span></a><span class="pre">&lt;</span><a class="reference internal" href="#class-ampl.Entities.Constraint" title="class: ampl.Entities.Constraint"><span class="pre">Constraint</span></a><span class="pre">&gt;</span> <span class="sig-name descname"><span class="pre">GetEnumerator</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Entities.ConstraintMap.GetEnumerator" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.Entities.ConstraintMap.AsArray">
+<span class="target" id="classampl_1_1_entities_1_1_entity_map-1-g_1a83ff425d795f05796d23c565568889d8"></span><span class="pre">ENTITY</span><span class="pre">[]</span> <span class="sig-name descname"><span class="pre">AsArray</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.Entities.ConstraintMap.AsArray" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-properties">Properties</p>
+<dl class="cs property">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_map_1add64bfed0065b44de5da5798688f709b"></span><span class="sig-name descname"><span class="pre">new</span> <span class="pre">Constraint</span> <span class="pre">this[string</span> <span class="pre">name]</span> <span class="pre">{get;set;}</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.Entities.ConstraintMap.Size">
+<span class="target" id="classampl_1_1_entities_1_1_constraint_map_1a2d26d9b5d7225171ec67e34b2c14fdba"></span><em class="property"><span class="pre">override</span></em> <span class="pre">int</span> <span class="sig-name descname"><span class="pre">Size</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.Entities.ConstraintMap.Size" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="instance.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Instance</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="constraintinstance.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ConstraintInstance</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Constraint</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#constraintmap">ConstraintMap</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

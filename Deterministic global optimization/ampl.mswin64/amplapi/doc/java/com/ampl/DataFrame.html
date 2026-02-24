@@ -1,0 +1,1546 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>DataFrame &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'com/ampl/DataFrame';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/java/com/ampl/DataFrame.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Environment" href="Environment.html" />
+    <link rel="prev" title="AMPL" href="AMPL.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="../../index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">Java API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../reference.html">
+    Java API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples.html">
+    Java API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../reference.html">
+    Java API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples.html">
+    Java API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AMPL.html">AMPL</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ErrorHandler.html">ErrorHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OutputHandler.html">OutputHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tuple.html">Tuple</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Entity.html">Entity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicEntity.html">BasicEntity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Instance.html">Instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EntityMap.html">EntityMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Constraint.html">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ConstraintInstance.html">ConstraintInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objective.html">Objective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObjectiveInstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parameter.html">Parameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Set.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetInstance.html">SetInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Variable.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VariableInstance.html">VariableInstance</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AMPLException.html">AMPLException</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../packages.html">Javadoc</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="package-index.html">com.ampl</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="AMPL.html">AMPL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AMPL-InnerErrorHandler.html">AMPL.InnerErrorHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AMPL-InnerOutputHandler.html">AMPL.InnerOutputHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AMPL-RunnableBridge.html">AMPL.RunnableBridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AMPLException.html">AMPLException</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BasicEntity.html">BasicEntity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BasicInstance.html">BasicInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Constraint.html">Constraint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Constraint-MyConstraintIterator.html">Constraint.MyConstraintIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConstraintInstance.html">ConstraintInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConstraintMap.html">ConstraintMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConstraintMap-MyConstraintMapIterator.html">ConstraintMap.MyConstraintMapIterator</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">DataFrame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Entity.html">Entity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EntityMap.html">EntityMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Environment.html">Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ErrorHandler.html">ErrorHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Instance.html">Instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSUtils.html">OSUtils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Objective.html">Objective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Objective-MyObjectiveIterator.html">Objective.MyObjectiveIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ObjectiveInstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ObjectiveMap.html">ObjectiveMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ObjectiveMap-MyObjectiveMapIterator.html">ObjectiveMap.MyObjectiveMapIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OutputHandler.html">OutputHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Parameter.html">Parameter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Parameter-MyParameterIterator.html">Parameter.MyParameterIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ParameterMap.html">ParameterMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ParameterMap-MyParameterMapIterator.html">ParameterMap.MyParameterMapIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set.html">Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set-MemberRange.html">Set.MemberRange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set-MySetIterator.html">Set.MySetIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SetInstance.html">SetInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SetMap.html">SetMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SetMap-MySetMapIterator.html">SetMap.MySetMapIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table-MyTableIterator.html">Table.MyTableIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableInstance.html">TableInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableMap.html">TableMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableMap-MyTableMapIterator.html">TableMap.MyTableMapIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tuple.html">Tuple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Util.html">Util</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Variable.html">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Variable-MyVariableIterator.html">Variable.MyVariableIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VariableInstance.html">VariableInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VariableMap.html">VariableMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VariableMap-MyVariableMapIterator.html">VariableMap.MyVariableMapIterator</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../reference.html" class="nav-link">Java API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">DataFrame</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="dataframe">
+<h1>DataFrame<a class="headerlink" href="#dataframe" title="Link to this heading">#</a></h1>
+<dl class="java type">
+<dt class="sig sig-object java" id="com.ampl.DataFrame">
+<span class="pre">public</span> <span class="pre">class</span> <span class="sig-name descname"><span class="pre">DataFrame</span></span> <span class="pre">implements</span> <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html" title="java.lang.Iterable"><span class="pre">Iterable</span></a><span class="pre">&lt;</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><span class="pre">[]</span><span class="pre">&gt;</span><a class="headerlink" href="#com.ampl.DataFrame" title="Link to this definition">#</a></dt>
+<dd><p>A DataFrame object, used to communicate data to and from the AMPL entities. An object of this class can be used to do the following tasks:</p>
+<ul class="simple">
+<li><p>Assign values to AMPL entities (once the DataFrame is populated, use the <a class="reference internal" href="AMPL.html#com.ampl.AMPL.setData(DataFrame, String)" title="com.ampl.AMPL.setData(DataFrame, String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">AMPL.setData</span></code></a> to assign its values to the modelling entities in its columns)</p></li>
+<li><p>Get values from AMPL, decoupling the values from the AMPL entities they originate from (via <a class="reference internal" href="Entity.html#com.ampl.Entity.getValues(String)" title="com.ampl.Entity.getValues(String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Entity.getValues</span></code></a>)</p></li>
+</ul>
+<p>A DataFrame object can be created in various ways.</p>
+<ul class="simple">
+<li><p>Create a skeleton via <a class="reference internal" href="#com.ampl.DataFrame.DataFrame(int, String)" title="com.ampl.DataFrame.DataFrame(int, String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">DataFrame.DataFrame(int</span> <span class="pre">numberOfIndexColumns,</span> <span class="pre">String...</span> <span class="pre">headers)</span></code></a>, specifiying manually the number of indexing columns and the column headers.</p></li>
+<li><p>Get column names (and number of indexing columns) from entities of the API, using the constructor <a class="reference internal" href="#com.ampl.DataFrame.DataFrame(int, String)" title="com.ampl.DataFrame.DataFrame(int, String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">DataFrame.DataFrame(Entity...</span> <span class="pre">headers)</span></code></a>.</p></li>
+<li><p>Get values from AMPL, decoupling the values from the AMPL entities they originate from (via <a class="reference internal" href="Entity.html#com.ampl.Entity.getValues(String)" title="com.ampl.Entity.getValues(String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Entity.getValues</span></code></a>)</p></li>
+</ul>
+<p>Populating a DataFrame object can be done adding row by row to a pre-existing skeleton via <a class="reference internal" href="#com.ampl.DataFrame.addRow(Object)" title="com.ampl.DataFrame.addRow(Object)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">DataFrame.addRow</span></code></a>, setting whole columns of a pre-existing skeleton via <a class="reference internal" href="#com.ampl.DataFrame.setColumn(Object, Collection)" title="com.ampl.DataFrame.setColumn(Object, Collection)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">DataFrame.setColumn</span></code></a> or adding columns (including indexing columns) via <a class="reference internal" href="#com.ampl.DataFrame.addColumn(Object, float[])" title="com.ampl.DataFrame.addColumn(Object, float[])"><code class="xref java java-ref docutils literal notranslate"><span class="pre">DataFrame.addColumn</span></code></a>.</p>
+<p>Modifying a DataFrame object can be done via <a class="reference internal" href="#com.ampl.DataFrame.setColumn(Object, Collection)" title="com.ampl.DataFrame.setColumn(Object, Collection)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">DataFrame.setColumn</span></code></a> or, item by item, via <a class="reference internal" href="#com.ampl.DataFrame.setValue(Tuple, String, String)" title="com.ampl.DataFrame.setValue(Tuple, String, String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">DataFrame.setValue</span></code></a>.</p>
+<p>Accessing data in a DataFrame can be done row by row using <a class="reference internal" href="#com.ampl.DataFrame.getRow(Object)" title="com.ampl.DataFrame.getRow(Object)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">DataFrame.getRow</span></code></a> or by column via <a class="reference internal" href="#com.ampl.DataFrame.getColumn(Object)" title="com.ampl.DataFrame.getColumn(Object)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">DataFrame.getColumn</span></code></a>. Automated casting of columns is provided via <a class="reference internal" href="#com.ampl.DataFrame.getColumnAsDoubles(Object)" title="com.ampl.DataFrame.getColumnAsDoubles(Object)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">DataFrame.getColumnAsDoubles</span></code></a> and <a class="reference internal" href="#com.ampl.DataFrame.getColumnAsStrings(Object)" title="com.ampl.DataFrame.getColumnAsStrings(Object)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">DataFrame.getColumnAsStrings</span></code></a>.</p>
+</dd></dl>
+
+<section id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Link to this heading">#</a></h2>
+<section id="impl">
+<h3>_impl<a class="headerlink" href="#impl" title="Link to this heading">#</a></h3>
+<dl class="java field">
+<dt class="sig sig-object java" id="com.ampl.DataFrame._impl">
+ <span class="pre">DataFrameBase</span> <span class="sig-name descname"><span class="pre">_impl</span></span><a class="headerlink" href="#com.ampl.DataFrame._impl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+<section id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>DataFrame<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<dl class="java constructor">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.DataFrame(DataFrameBase)">
+ <span class="sig-name descname"><span class="pre">DataFrame</span></span><span class="sig-paren">(</span><span class="pre">DataFrameBase</span><em> <span class="pre">impl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.DataFrame(DataFrameBase)" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id2">
+<h3>DataFrame<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<dl class="java constructor">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.DataFrame(int)">
+ <span class="sig-name descname"><span class="pre">DataFrame</span></span><span class="sig-paren">(</span><span class="pre">int</span><em> <span class="pre">numberOfIndexColumns</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.DataFrame(int)" title="Link to this definition">#</a></dt>
+<dd><p>Create a new DataFrame with the specified number of indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>IllegalArgumentException</strong> – If a negative number of column is specified</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id3">
+<h3>DataFrame<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<dl class="java constructor">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.DataFrame(Entity)">
+<span class="pre">public</span> <span class="sig-name descname"><span class="pre">DataFrame</span></span><span class="sig-paren">(</span><a class="reference internal" href="Entity.html#com.ampl.Entity" title="com.ampl.Entity"><span class="pre">Entity</span></a><span class="pre">...</span><em> <span class="pre">headers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.DataFrame(Entity)" title="Link to this definition">#</a></dt>
+<dd><p>Create a new DataFrame with the specified entities as column headers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>headers</strong> – The columns headers to be used; since they are AMPL entities, sets are automatically considered indices and have to be placed first in the constructor</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>IllegalArgumentException</strong> – if sets are not put first while using this constructor</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id4">
+<h3>DataFrame<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<dl class="java constructor">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.DataFrame(int, String)">
+<span class="pre">public</span> <span class="sig-name descname"><span class="pre">DataFrame</span></span><span class="sig-paren">(</span><span class="pre">int</span><em> <span class="pre">numberOfIndexColumns</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">...</span><em> <span class="pre">headers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.DataFrame(int, String)" title="Link to this definition">#</a></dt>
+<dd><p>Create a new DataFrame where the specified number of columns are an index and with the specified strings as column headers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numberOfIndexColumns</strong> – Number of columns to be considered as index for this table (&gt;=0)</p></li>
+<li><p><strong>headers</strong> – The columns headers to be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>IllegalArgumentException</strong> – If a non-valid number of keys is specified</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<section id="addcolumn">
+<h3>addColumn<a class="headerlink" href="#addcolumn" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.addColumn(Object)">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">addColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.addColumn(Object)" title="Link to this definition">#</a></dt>
+<dd><p>Add a new (empty) column to the DataFrame. Data can then be reassigned with <a class="reference internal" href="#com.ampl.DataFrame.setColumn(Object, Collection)" title="com.ampl.DataFrame.setColumn(Object, Collection)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">DataFrame.setColumn</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – The header for the new column to be added</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – If a column with the same name exists already or if a set column is added after a data column has been added already.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id5">
+<h3>addColumn<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.addColumn(Object, Collection)">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">addColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html" title="java.util.Collection"><span class="pre">Collection</span></a><span class="pre">&lt;</span><span class="pre">?</span><span class="pre">&gt;</span><em> <span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.addColumn(Object, Collection)" title="Link to this definition">#</a></dt>
+<dd><p>Add a new column to the dataframe, with the corresponding data. *</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – The header for the new column to be added</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the size of <code class="docutils literal notranslate"><span class="pre">values</span></code> is not the same as the number of indices in the DataFrame, if a column with the same name exists already or if a set column is added after a data column has been added already.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id6">
+<h3>addColumn<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.addColumn(Object, T[])">
+<span class="pre">public</span> <span class="pre">&lt;T&gt;</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">addColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em>, <span class="pre">T</span><span class="pre">[]</span><em> <span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.addColumn(Object, T[])" title="Link to this definition">#</a></dt>
+<dd><p>Add a new column to the dataframe, with the corresponding data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – The header for the new column to be added</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the cardinality of values is not the same as the number of indices in the DataFrame, if a column with the same name exists already or if a set column is added after a data column has been added already.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id7">
+<h3>addColumn<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.addColumn(Object, int[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">addColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em>, <span class="pre">int[]</span><em> <span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.addColumn(Object, int[])" title="Link to this definition">#</a></dt>
+<dd><p>Add a new column to the dataframe, with the corresponding data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – The header for the new column to be added</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the cardinality of values is not the same as the number of indices in the DataFrame, if a column with the same name exists already or if a set column is added after a data column has been added already.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id8">
+<h3>addColumn<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.addColumn(Object, double[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">addColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em>, <span class="pre">double[]</span><em> <span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.addColumn(Object, double[])" title="Link to this definition">#</a></dt>
+<dd><p>Add a new column to the dataframe, with the corresponding data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – The header for the new column to be added</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the cardinality of values is incompatible with the dataframe structure or if a column with the same name exists already</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id9">
+<h3>addColumn<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.addColumn(Object, long[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">addColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em>, <span class="pre">long[]</span><em> <span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.addColumn(Object, long[])" title="Link to this definition">#</a></dt>
+<dd><p>Add a new column to the dataframe, with the corresponding data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – The header for the new column to be added</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the cardinality of values is not the same as the number of indices in the DataFrame, if a column with the same name exists already or if a set column is added after a data column has been added already.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id10">
+<h3>addColumn<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.addColumn(Object, float[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">addColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em>, <span class="pre">float[]</span><em> <span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.addColumn(Object, float[])" title="Link to this definition">#</a></dt>
+<dd><p>Add a new column to the dataframe, with the corresponding data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – The header for the new column to be added</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the cardinality of values is not the same as the number of indices in the DataFrame, if a column with the same name exists already or if a set column is added after a data column has been added already.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="addrow">
+<h3>addRow<a class="headerlink" href="#addrow" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.addRow(Object)">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">addRow</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><span class="pre">...</span><em> <span class="pre">items</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.addRow(Object)" title="Link to this definition">#</a></dt>
+<dd><p>Add a row to the current table. The first <code class="docutils literal notranslate"><span class="pre">numberOfIndexColumns</span></code> columns (decided at object creation time) are treated as indices</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>items</strong> – Items of the row to be added</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the number of items in the row is not equal to the number of columns, if a row is added to a DataFrame with no indices or if a row with the same indices exists already.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="equals">
+<h3>equals<a class="headerlink" href="#equals" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.equals(Object)">
+<span class="pre">public</span> <span class="pre">boolean</span> <span class="sig-name descname"><span class="pre">equals</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.equals(Object)" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="getcolumn">
+<h3>getColumn<a class="headerlink" href="#getcolumn" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.getColumn(Object)">
+<span class="pre">public</span> <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><span class="pre">[]</span> <span class="sig-name descname"><span class="pre">getColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.getColumn(Object)" title="Link to this definition">#</a></dt>
+<dd><p>Get the data corresponding to the specified column</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – Column to be returned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Data corresponding to the column, null if the specified column does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getcolumnasdoubles">
+<h3>getColumnAsDoubles<a class="headerlink" href="#getcolumnasdoubles" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.getColumnAsDoubles(Object)">
+<span class="pre">public</span> <span class="pre">double[]</span> <span class="sig-name descname"><span class="pre">getColumnAsDoubles</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.getColumnAsDoubles(Object)" title="Link to this definition">#</a></dt>
+<dd><p>Get the data corresponding to the specified column as an array of double numbers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – Column to be returned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Data corresponding to the column, null if the specified column does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getcolumnasstrings">
+<h3>getColumnAsStrings<a class="headerlink" href="#getcolumnasstrings" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.getColumnAsStrings(Object)">
+<span class="pre">public</span> <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span> <span class="sig-name descname"><span class="pre">getColumnAsStrings</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.getColumnAsStrings(Object)" title="Link to this definition">#</a></dt>
+<dd><p>Get the data corresponding to the specified column as an array of strings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – Column to be returned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – If the header specified does not correspond to any column</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Data corresponding to the column, null if the specified column does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getheaders">
+<h3>getHeaders<a class="headerlink" href="#getheaders" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.getHeaders()">
+<span class="pre">public</span> <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span> <span class="sig-name descname"><span class="pre">getHeaders</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.getHeaders()" title="Link to this definition">#</a></dt>
+<dd><p>Get the column headers of this DataFrame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Header names</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getnumcols">
+<h3>getNumCols<a class="headerlink" href="#getnumcols" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.getNumCols()">
+<span class="pre">public</span> <span class="pre">int</span> <span class="sig-name descname"><span class="pre">getNumCols</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.getNumCols()" title="Link to this definition">#</a></dt>
+<dd><p>Get the number of columns in the table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of columns</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getnumindices">
+<h3>getNumIndices<a class="headerlink" href="#getnumindices" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.getNumIndices()">
+<span class="pre">public</span> <span class="pre">int</span> <span class="sig-name descname"><span class="pre">getNumIndices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.getNumIndices()" title="Link to this definition">#</a></dt>
+<dd><p>Get the number of indices in the table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of indices</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getnumrows">
+<h3>getNumRows<a class="headerlink" href="#getnumrows" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.getNumRows()">
+<span class="pre">public</span> <span class="pre">int</span> <span class="sig-name descname"><span class="pre">getNumRows</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.getNumRows()" title="Link to this definition">#</a></dt>
+<dd><p>Get the number of rows in the table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of rows</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getrow">
+<h3>getRow<a class="headerlink" href="#getrow" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.getRow(Object)">
+<span class="pre">public</span> <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><span class="pre">[]</span> <span class="sig-name descname"><span class="pre">getRow</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><span class="pre">...</span><em> <span class="pre">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.getRow(Object)" title="Link to this definition">#</a></dt>
+<dd><p>Get the specified row (by values of the indexing columns)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> – Indices for the row</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – If the number of indices specified is wrong for the DataFrame</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The specified row, or ‘null’ if the row was not found</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getrowbyindex">
+<h3>getRowByIndex<a class="headerlink" href="#getrowbyindex" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.getRowByIndex(int)">
+<span class="pre">public</span> <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><span class="pre">[]</span> <span class="sig-name descname"><span class="pre">getRowByIndex</span></span><span class="sig-paren">(</span><span class="pre">int</span><em> <span class="pre">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.getRowByIndex(int)" title="Link to this definition">#</a></dt>
+<dd><p>Get the specified row</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> – 0-based numeric index</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IndexOutOfBoundsException.html" title="java.lang.IndexOutOfBoundsException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IndexOutOfBoundsException</span></code></a></span> – If the index is &lt; 0 or greater than the number of rows in the DataFrame.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="hashcode">
+<h3>hashCode<a class="headerlink" href="#hashcode" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.hashCode()">
+<span class="pre">public</span> <span class="pre">int</span> <span class="sig-name descname"><span class="pre">hashCode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.hashCode()" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="iterator">
+<h3>iterator<a class="headerlink" href="#iterator" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.iterator()">
+<span class="pre">public</span> <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html" title="java.util.Iterator"><span class="pre">Iterator</span></a><span class="pre">&lt;</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><span class="pre">[]</span><span class="pre">&gt;</span> <span class="sig-name descname"><span class="pre">iterator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.iterator()" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="setcolumn">
+<h3>setColumn<a class="headerlink" href="#setcolumn" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setColumn(Object, int[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em>, <span class="pre">int[]</span><em> <span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setColumn(Object, int[])" title="Link to this definition">#</a></dt>
+<dd><p>Set (all) the values for a specific column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column</strong> – Column identifier</p></li>
+<li><p><strong>values</strong> – Values to be assigned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the cardinality of values is not the same as the number of indices in the DataFrame or if a column with the same name exists already.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id11">
+<h3>setColumn<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setColumn(Object, float[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em>, <span class="pre">float[]</span><em> <span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setColumn(Object, float[])" title="Link to this definition">#</a></dt>
+<dd><p>Set (all) the values for a specific column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – Column identifier</p></li>
+<li><p><strong>values</strong> – Values to be assigned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the cardinality of values is not the same as the number of indices in the DataFrame or if a column with the same name exists already.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id12">
+<h3>setColumn<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setColumn(Object, double[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em>, <span class="pre">double[]</span><em> <span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setColumn(Object, double[])" title="Link to this definition">#</a></dt>
+<dd><p>Set (all) the values for a specific column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – Column identifier</p></li>
+<li><p><strong>values</strong> – Values to be assigned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the cardinality of values is not the same as the number of indices in the DataFrame or if a column with the same name exists already.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id13">
+<h3>setColumn<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setColumn(Object, long[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em>, <span class="pre">long[]</span><em> <span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setColumn(Object, long[])" title="Link to this definition">#</a></dt>
+<dd><p>Set (all) the values for a specific column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – Column identifier</p></li>
+<li><p><strong>values</strong> – Values to be assigned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the cardinality of values is not the same as the number of indices in the DataFrame or if a column with the same name exists already.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id14">
+<h3>setColumn<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setColumn(Object, T[])">
+<span class="pre">public</span> <span class="pre">&lt;T&gt;</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em>, <span class="pre">T</span><span class="pre">[]</span><em> <span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setColumn(Object, T[])" title="Link to this definition">#</a></dt>
+<dd><p>Set (all) the values for a specific column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – Column identifier</p></li>
+<li><p><strong>values</strong> – Values to be assigned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the cardinality of values is not the same as the number of indices in the DataFrame or if a column with the same name exists already.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id15">
+<h3>setColumn<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setColumn(Object, Collection)">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setColumn</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">header</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html" title="java.util.Collection"><span class="pre">Collection</span></a><span class="pre">&lt;</span><span class="pre">?</span><span class="pre">&gt;</span><em> <span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setColumn(Object, Collection)" title="Link to this definition">#</a></dt>
+<dd><p>Set (all) the values for a specific column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column</strong> – Column identifier</p></li>
+<li><p><strong>header</strong> – Values to be assigned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the cardinality of values is not the same as the number of indices in the DataFrame or if a column with the same name exists already.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="setmatrix">
+<h3>setMatrix<a class="headerlink" href="#setmatrix" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setMatrix(Object, Object[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setMatrix</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">values</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><span class="pre">[]</span><span class="pre">...</span><em> <span class="pre">indices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setMatrix(Object, Object[])" title="Link to this definition">#</a></dt>
+<dd><p>Set the multidimensional array <code class="docutils literal notranslate"><span class="pre">values</span></code> as data column for this DataFrame, and all the vectors in <code class="docutils literal notranslate"><span class="pre">indices</span></code> as indices values.</p>
+<p>For example, the code snippet (which does not include the arrays initialization):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">double</span><span class="p">[][][][]</span> <span class="n">fourdimensions</span> <span class="o">=</span> <span class="n">new</span> <span class="n">double</span><span class="p">[][][][]</span> <span class="p">{</span><span class="o">...</span><span class="p">};</span>
+<span class="n">String</span><span class="p">[]</span> <span class="n">firstIndex</span> <span class="o">=</span> <span class="n">new</span> <span class="n">String</span><span class="p">[]{</span><span class="o">...</span><span class="p">};</span>
+<span class="n">String</span><span class="p">[]</span> <span class="n">secondIndex</span> <span class="o">=</span> <span class="n">new</span> <span class="n">String</span><span class="p">[]{</span><span class="o">...</span><span class="p">};</span>
+<span class="n">String</span><span class="p">[]</span> <span class="n">thirdIndex</span> <span class="o">=</span> <span class="n">new</span> <span class="n">String</span><span class="p">[]{</span><span class="o">...</span><span class="p">};</span>
+<span class="n">String</span><span class="p">[]</span> <span class="n">fourthIndex</span> <span class="o">=</span> <span class="n">new</span> <span class="n">String</span><span class="p">[]{</span><span class="o">...</span><span class="p">};</span>
+<span class="n">setMatrix</span><span class="p">(</span><span class="n">fourdimensions</span><span class="p">,</span> <span class="n">firstIndex</span><span class="p">,</span> <span class="n">secondIndex</span><span class="p">,</span> <span class="n">thirdIndex</span><span class="p">,</span> <span class="n">fourthIndex</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>is valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> – A multidimensional array, can be either <code class="docutils literal notranslate"><span class="pre">double[]..[]</span></code>, <code class="docutils literal notranslate"><span class="pre">String[]..[]</span></code> or <code class="docutils literal notranslate"><span class="pre">Object[]..[]</span></code>. The arrays can be anything from 1 to 6 dimensional. Items in <code class="docutils literal notranslate"><span class="pre">Object</span></code> arrays are converted to AMPL datatypes, so any numeric type is converted to double, anything else to String.</p></li>
+<li><p><strong>indices</strong> – Vectors containing the indices values for each dimension of the <code class="docutils literal notranslate"><span class="pre">values</span></code> array.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – If the number of indices is not equal to the arity of the values array, or if the arity is not supported.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id16">
+<h3>setMatrix<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setMatrix(double[], double[], double[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setMatrix</span></span><span class="sig-paren">(</span><span class="pre">double[]</span><em> <span class="pre">values</span></em>, <span class="pre">double[]</span><em> <span class="pre">rowindices</span></em>, <span class="pre">double[]</span><em> <span class="pre">colindices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setMatrix(double[], double[], double[])" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id17">
+<h3>setMatrix<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setMatrix(double[], String[], double[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setMatrix</span></span><span class="sig-paren">(</span><span class="pre">double[]</span><em> <span class="pre">values</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span><em> <span class="pre">rowindices</span></em>, <span class="pre">double[]</span><em> <span class="pre">colindices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setMatrix(double[], String[], double[])" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id18">
+<h3>setMatrix<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setMatrix(double[], double[], String[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setMatrix</span></span><span class="sig-paren">(</span><span class="pre">double[]</span><em> <span class="pre">values</span></em>, <span class="pre">double[]</span><em> <span class="pre">rowindices</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span><em> <span class="pre">colindices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setMatrix(double[], double[], String[])" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id19">
+<h3>setMatrix<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setMatrix(double[], String[], String[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setMatrix</span></span><span class="sig-paren">(</span><span class="pre">double[]</span><em> <span class="pre">values</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span><em> <span class="pre">rowindices</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span><em> <span class="pre">colindices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setMatrix(double[], String[], String[])" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id20">
+<h3>setMatrix<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setMatrix(String[], double[], double[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setMatrix</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span><em> <span class="pre">values</span></em>, <span class="pre">double[]</span><em> <span class="pre">rowindices</span></em>, <span class="pre">double[]</span><em> <span class="pre">colindices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setMatrix(String[], double[], double[])" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id21">
+<h3>setMatrix<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setMatrix(String[], String[], double[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setMatrix</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span><em> <span class="pre">values</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span><em> <span class="pre">rowindices</span></em>, <span class="pre">double[]</span><em> <span class="pre">colindices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setMatrix(String[], String[], double[])" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id22">
+<h3>setMatrix<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setMatrix(String[], double[], String[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setMatrix</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span><em> <span class="pre">values</span></em>, <span class="pre">double[]</span><em> <span class="pre">rowindices</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span><em> <span class="pre">colindices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setMatrix(String[], double[], String[])" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id23">
+<h3>setMatrix<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setMatrix(String[], String[], String[])">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setMatrix</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span><em> <span class="pre">values</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span><em> <span class="pre">rowindices</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><span class="pre">[]</span><em> <span class="pre">colindices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setMatrix(String[], String[], String[])" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="setmatrixpacked">
+<h3>setMatrixPacked<a class="headerlink" href="#setmatrixpacked" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setMatrixPacked(Object, Object)">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setMatrixPacked</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">values</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><em> <span class="pre">indices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setMatrixPacked(Object, Object)" title="Link to this definition">#</a></dt>
+<dd><p>Set the multidimensional array <code class="docutils literal notranslate"><span class="pre">values</span></code> as data column for this DataFrame, and all the vectors in <code class="docutils literal notranslate"><span class="pre">indices</span></code> as indices values. Packed version, usable to pass an Object representing all the arrays of indices.</p>
+</dd></dl>
+
+</section>
+<section id="setvalue">
+<h3>setValue<a class="headerlink" href="#setvalue" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setValue(Object)">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setValue</span></span><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" title="java.lang.Object"><span class="pre">Object</span></a><span class="pre">...</span><em> <span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setValue(Object)" title="Link to this definition">#</a></dt>
+<dd><p>Set a single value in the DataFrame object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> – The first objects are the row indices, followed by the column index, and finally by the value to be assigned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" title="java.lang.IllegalArgumentException"><code class="xref java java-type docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code></a></span> – if the specified column or row is not in the dataframe or if the number of arguments is wrong</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id24">
+<h3>setValue<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setValue(int, int, double)">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setValue</span></span><span class="sig-paren">(</span><span class="pre">int</span><em> <span class="pre">rowIndex</span></em>, <span class="pre">int</span><em> <span class="pre">colIndex</span></em>, <span class="pre">double</span><em> <span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setValue(int, int, double)" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id25">
+<h3>setValue<a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setValue(int, int, String)">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setValue</span></span><span class="sig-paren">(</span><span class="pre">int</span><em> <span class="pre">rowIndex</span></em>, <span class="pre">int</span><em> <span class="pre">colIndex</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><em> <span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setValue(int, int, String)" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id26">
+<h3>setValue<a class="headerlink" href="#id26" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setValue(Tuple, String, double)">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setValue</span></span><span class="sig-paren">(</span><a class="reference internal" href="Tuple.html#com.ampl.Tuple" title="com.ampl.Tuple"><span class="pre">Tuple</span></a><em> <span class="pre">rowIndex</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><em> <span class="pre">colHeader</span></em>, <span class="pre">double</span><em> <span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setValue(Tuple, String, double)" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id27">
+<h3>setValue<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.setValue(Tuple, String, String)">
+<span class="pre">public</span> <span class="pre">void</span> <span class="sig-name descname"><span class="pre">setValue</span></span><span class="sig-paren">(</span><a class="reference internal" href="Tuple.html#com.ampl.Tuple" title="com.ampl.Tuple"><span class="pre">Tuple</span></a><em> <span class="pre">rowIndex</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><em> <span class="pre">colHeader</span></em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a><em> <span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.setValue(Tuple, String, String)" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="tostring">
+<h3>toString<a class="headerlink" href="#tostring" title="Link to this heading">#</a></h3>
+<dl class="java method">
+<dt class="sig sig-object java" id="com.ampl.DataFrame.toString()">
+<span class="pre">public</span> <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String"><span class="pre">String</span></a> <span class="sig-name descname"><span class="pre">toString</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#com.ampl.DataFrame.toString()" title="Link to this definition">#</a></dt>
+<dd><p>Gives a tabular string representation of the dataframe object</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="AMPL.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">AMPL</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Environment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Environment</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields">Fields</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impl">_impl</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructors">Constructors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">DataFrame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">DataFrame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">DataFrame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">DataFrame</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addcolumn">addColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">addColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">addColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">addColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">addColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">addColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">addColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addrow">addRow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equals">equals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getcolumn">getColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getcolumnasdoubles">getColumnAsDoubles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getcolumnasstrings">getColumnAsStrings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getheaders">getHeaders</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getnumcols">getNumCols</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getnumindices">getNumIndices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getnumrows">getNumRows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getrow">getRow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getrowbyindex">getRowByIndex</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hashcode">hashCode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterator">iterator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setcolumn">setColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">setColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">setColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">setColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">setColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">setColumn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setmatrix">setMatrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">setMatrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">setMatrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">setMatrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">setMatrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">setMatrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">setMatrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">setMatrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">setMatrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setmatrixpacked">setMatrixPacked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setvalue">setValue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">setValue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">setValue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">setValue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">setValue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tostring">toString</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

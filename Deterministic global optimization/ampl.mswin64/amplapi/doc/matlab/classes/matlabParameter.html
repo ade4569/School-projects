@@ -1,0 +1,1019 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>Parameter &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/matlabParameter';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/matlab/classes/matlabParameter.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Set" href="matlabSet.html" />
+    <link rel="prev" title="ObjectiveInstance" href="matlabObjectiveInstance.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="../index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">MATLAB API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    MATLAB API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    MATLAB API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    MATLAB API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    MATLAB API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="matlabAMPL.html">AMPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabAMPLOutput.html">AMPLOutput</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabDataFrame.html">Data Frame</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="matlabConstraint.html">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabConstraintInstance.html">ConstraintInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabEntity.html">Entity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabEntityList.html">EntityList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabObjective.html">Objective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabObjectiveInstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Parameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabSet.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabSetInstance.html">SetInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabTuple.html">Tuple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabVariable.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlabVariableInstance.html">VariableInstance</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../reference.html" class="nav-link">MATLAB API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Parameter</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="parameter">
+<span id="secmatlabrefparameter"></span><h1>Parameter<a class="headerlink" href="#parameter" title="Link to this heading">#</a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="Parameter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Parameter</span></span><a class="headerlink" href="#Parameter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p>The Parameter object stores the information regarding a parameter in the algebraic
+model. It can contain multiple instances, typically numbers (or strings in case of symbolic paramters) or can be scalar.
+Accessing numerical data  of a Parameter can via achieved via the single instances (throgh <a class="reference internal" href="#Parameter.get" title="Parameter.get"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">Parameter.get</span></code></a>) or
+via the <a class="reference internal" href="#Parameter.getValues" title="Parameter.getValues"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">Parameter.getValues</span></code></a> which returns a <a class="reference internal" href="matlabDataFrame.html#DataFrame" title="DataFrame"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> object containing all the information
+stored in the parameter, including the indexing.
+Data can be assigned using <a class="reference internal" href="matlabAMPL.html#AMPL.setData" title="AMPL.setData"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">AMPL.setData</span></code></a> and a <a class="reference internal" href="matlabDataFrame.html#DataFrame" title="DataFrame"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> or using <a class="reference internal" href="#Parameter.set" title="Parameter.set"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">Parameter.set</span></code></a> or <a class="reference internal" href="#Parameter.setValues" title="Parameter.setValues"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">Parameter.setValues</span></code></a>.</p>
+<section id="get-key">
+<h2>get(key)<a class="headerlink" href="#get-key" title="Link to this heading">#</a></h2>
+<dl class="mat classmethod">
+<dt class="sig sig-object mat" id="Parameter.get">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">Parameter.</span></span><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Parameter.get" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p><strong>Syntax</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">get(key)</span></code></p>
+<p><strong>Description</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">get(key)</span></code> returns the object corresponding to the specified key.
+Note that the same effect can be achieved using MATLAB’s indexing operator (round brackets).</p>
+<p><strong>Input Arguments</strong></p>
+<p>The key of the parameter instance to look up.</p>
+<p><strong>Output Arguments</strong></p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">v</span></code></dt><dd><p>The specified parameter instance</p>
+</dd>
+</dl>
+<p><strong>Example</strong></p>
+<p>Create an indexed variable, get an instance for each, and fix them to some value</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;var x{1..5}; var y{1..2, 1..2};&#39;</span><span class="p">);</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getVariable</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getVariable</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">);</span>
+<span class="n">x2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">      </span><span class="c">% or x2 = x(2);</span>
+<span class="n">y2_2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="c">% or y2_2 = y(2,2);</span>
+<span class="n">x2</span><span class="p">.</span><span class="n">fix</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">y2_2</span><span class="p">.</span><span class="n">fix</span><span class="p">(</span><span class="mf">4.4</span><span class="p">);</span>
+<span class="n">x</span><span class="p">.</span><span class="n">getValues</span>
+<span class="n">y</span><span class="p">.</span><span class="n">getValues</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span>
+  <span class="n">i1</span>   <span class="o">|</span>  <span class="n">val</span>
+  <span class="mf">1.0</span>  <span class="o">|</span>  <span class="mf">0.0</span>
+  <span class="mf">2.0</span>  <span class="o">|</span>  <span class="mf">3.0</span>
+  <span class="mf">3.0</span>  <span class="o">|</span>  <span class="mf">0.0</span>
+  <span class="mf">4.0</span>  <span class="o">|</span>  <span class="mf">0.0</span>
+  <span class="mf">5.0</span>  <span class="o">|</span>  <span class="mf">0.0</span>
+
+  <span class="n">ans</span> <span class="o">=</span>
+  <span class="n">i1</span>   <span class="n">i2</span>   <span class="o">|</span>  <span class="n">val</span>
+  <span class="mf">1.0</span>  <span class="mf">1.0</span>  <span class="o">|</span>  <span class="mf">0.0</span>
+  <span class="mf">1.0</span>  <span class="mf">2.0</span>  <span class="o">|</span>  <span class="mf">0.0</span>
+  <span class="mf">2.0</span>  <span class="mf">1.0</span>  <span class="o">|</span>  <span class="mf">0.0</span>
+  <span class="mf">2.0</span>  <span class="mf">2.0</span>  <span class="o">|</span>  <span class="mf">4.4</span>
+</pre></div>
+</div>
+</section>
+<section id="getvalues">
+<h2>getValues<a class="headerlink" href="#getvalues" title="Link to this heading">#</a></h2>
+<dl class="mat classmethod">
+<dt class="sig sig-object mat" id="Parameter.getValues">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">Parameter.</span></span><span class="sig-name descname"><span class="pre">getValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parameter.getValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p><strong>Syntax</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">getValues()</span></code></p>
+<p><strong>Description</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">getValues()</span></code> returns a dataframe with all the values stored in the parameter, decoupled from the underlying AMPL.
+To gain access to the data, see <a class="reference internal" href="matlabDataFrame.html#DataFrame" title="DataFrame"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>.</p>
+<p><strong>Output Arguments</strong></p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">df</span></code></dt><dd><p>A dataframe containing all the values of the parameter and all its indices</p>
+</dd>
+</dl>
+<p><strong>Example</strong></p>
+<p>Create a parameter and get its values in a dataframe. Prove that it is disconnected from the underlying AMPL instance:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;param b{i in 1..2} := i;&#39;</span><span class="p">);</span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">df</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">getValues</span><span class="p">();</span>
+<span class="n">ampl</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="n">ampl</span>
+<span class="s">df</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span> <span class="o">=</span>
+<span class="n">AMPL</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">running</span>
+
+<span class="n">df</span> <span class="o">=</span>
+<span class="n">i</span> <span class="ow">in</span> <span class="mi">1</span> <span class="o">..</span> <span class="mi">2</span>  <span class="o">|</span>  <span class="n">value</span>
+<span class="mi">1</span>            <span class="o">|</span>  <span class="mf">1.0</span>
+<span class="mi">2</span>            <span class="o">|</span>  <span class="mf">2.0</span>
+</pre></div>
+</div>
+</section>
+<section id="hasdefault">
+<h2>hasDefault<a class="headerlink" href="#hasdefault" title="Link to this heading">#</a></h2>
+<dl class="mat classmethod">
+<dt class="sig sig-object mat" id="Parameter.hasDefault">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">Parameter.</span></span><span class="sig-name descname"><span class="pre">hasDefault</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parameter.hasDefault" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p><strong>Syntax</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">hasDefault</span></code></p>
+<p><strong>Description</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">hasDefault</span></code> returns true if the parameter has a default value set</p>
+<p><strong>Output Arguments</strong></p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">v</span></code></dt><dd><p>1 if the parameter has a default value, 0 otherwise</p>
+</dd>
+</dl>
+<p><strong>Example</strong></p>
+<p>Create two parameters, one with default and one not and check which one has a default:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;param a; param b{1..2} default 1;&#39;</span><span class="p">);</span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">);</span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">a</span><span class="p">.</span><span class="n">hasDefault</span>
+<span class="n">b</span><span class="p">.</span><span class="n">hasDefault</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span>
+  <span class="mi">0</span>
+
+<span class="n">ans</span> <span class="o">=</span>
+  <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="issymbolic">
+<h2>isSymbolic<a class="headerlink" href="#issymbolic" title="Link to this heading">#</a></h2>
+<dl class="mat classmethod">
+<dt class="sig sig-object mat" id="Parameter.isSymbolic">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">Parameter.</span></span><span class="sig-name descname"><span class="pre">isSymbolic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parameter.isSymbolic" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p><strong>Syntax</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">isSymbolic</span></code></p>
+<p><strong>Description</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">isSymbolic</span></code> returns true if the parameter is symbolic (can store strings rather than numbers)</p>
+<p><strong>Output Arguments</strong></p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">v</span></code></dt><dd><p>1 if the parameter is symbolic, 0 otherwise</p>
+</dd>
+</dl>
+<p><strong>Example</strong></p>
+<p>Create two parameters and check which one is symbolic:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;param a symbolic; param b{1..2} default 1;&#39;</span><span class="p">);</span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">);</span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">a</span><span class="p">.</span><span class="n">isSymbolic</span>
+<span class="n">b</span><span class="p">.</span><span class="n">isSymbolic</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span>
+  <span class="mi">1</span>
+
+<span class="n">ans</span> <span class="o">=</span>
+  <span class="mi">0</span>
+</pre></div>
+</div>
+</section>
+<section id="set-index-value">
+<h2>set(index, value)<a class="headerlink" href="#set-index-value" title="Link to this heading">#</a></h2>
+<dl class="mat classmethod">
+<dt class="sig sig-object mat" id="Parameter.set">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">Parameter.</span></span><span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parameter.set" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p><strong>Syntax</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">set(value)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">set(stringvalue)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">set(index,</span> <span class="pre">value)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">set(index,</span> <span class="pre">stringvalue)</span></code></p>
+<p><strong>Description</strong></p>
+<p>Function to set a single value of a parameter.</p>
+<p><code class="docutils literal notranslate"><span class="pre">set(value)</span></code> and <code class="docutils literal notranslate"><span class="pre">set(stringvalue)</span></code> set the a scalar parameter to the specified value.</p>
+<p><code class="docutils literal notranslate"><span class="pre">set(index,</span> <span class="pre">value)</span></code> and <code class="docutils literal notranslate"><span class="pre">set(index,</span> <span class="pre">stringvalue)</span></code> set the a scalar parameter to the specified value.</p>
+<p><strong>Input Arguments</strong></p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">index</span></code></dt><dd><p>The index of the value to be set</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">value</span></code></dt><dd><p>The numerical value to set</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">stringvalue</span></code></dt><dd><p>The literal value to set</p>
+</dd>
+</dl>
+<p><strong>Example</strong></p>
+<p>Create a few parameters and assign single values to their instances.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;param a{1..5} default 2; param b{1..2, 1..2} symbolic default &quot;default value&quot;;&#39;</span><span class="p">);</span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">);</span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">ad</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">getInstances</span>
+<span class="n">bd</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">getInstances</span>
+<span class="n">a</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
+<span class="n">b</span><span class="p">.</span><span class="n">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;New Value&#39;</span><span class="p">);</span>
+<span class="w"> </span><span class="n">ad</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">getInstances</span>
+<span class="n">bd</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">getInstances</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ad</span> <span class="o">=</span>
+  <span class="mi">2</span>
+  <span class="mi">2</span>
+  <span class="mi">2</span>
+  <span class="mi">2</span>
+  <span class="mi">2</span>
+
+<span class="n">bd</span> <span class="o">=</span>
+ <span class="s1">&#39;default value&#39;</span>
+ <span class="s1">&#39;default value&#39;</span>
+ <span class="s1">&#39;default value&#39;</span>
+ <span class="s1">&#39;default value&#39;</span>
+
+<span class="n">ad</span> <span class="o">=</span>
+  <span class="mi">2</span>
+ <span class="mi">42</span>
+  <span class="mi">2</span>
+  <span class="mi">2</span>
+  <span class="mi">2</span>
+
+<span class="n">bd</span> <span class="o">=</span>
+ <span class="s1">&#39;default value&#39;</span>
+ <span class="s1">&#39;New Value&#39;</span>
+ <span class="s1">&#39;default value&#39;</span>
+ <span class="s1">&#39;default value&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="setvalues">
+<h2>setValues<a class="headerlink" href="#setvalues" title="Link to this heading">#</a></h2>
+<dl class="mat classmethod">
+<dt class="sig sig-object mat" id="Parameter.setValues">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">Parameter.</span></span><span class="sig-name descname"><span class="pre">setValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parameter.setValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p><strong>Syntax</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">setValues(indices,</span> <span class="pre">values)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">setValues(indices,</span> <span class="pre">stringvalues)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">setValues(valuesmatrix)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">setValues(values)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">setValues(stringvalues)</span></code></p>
+<p><strong>Description</strong></p>
+<p>Function to set multiple values of a parameter which has no value assigned. To set data to multiple entities at once, see <a class="reference internal" href="matlabAMPL.html#AMPL.setData" title="AMPL.setData"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">AMPL.setData</span></code></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">setValues(indices,</span> <span class="pre">values)</span></code> Sets the values of the parameter at the specified indices to the values specified in values</p>
+<p><code class="docutils literal notranslate"><span class="pre">setValues(indices,</span> <span class="pre">stringvalues)</span></code> Sets the values of the symbolic parameter at the specified indices to the literal values specified in stringvalues</p>
+<p><code class="docutils literal notranslate"><span class="pre">setValues(valuesmatrix)</span></code> Sets the values of the parameter to the values specified in the matrix values. Valid only for 2-d parameters</p>
+<p><code class="docutils literal notranslate"><span class="pre">setValues(values)</span></code> Assign the specified double values to the parameter, assigning them to the parameter in the same order as the indices in the entity</p>
+<p><code class="docutils literal notranslate"><span class="pre">setValues(stringvalues)</span></code> Assign the specified string values to the parameter, assigning them to the parameter in the same order as the indices in the entity</p>
+<p><strong>Input Arguments</strong></p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">indices</span></code></dt><dd><p>An array or cell array of indices. Each tuple must be a row in the array.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">values</span></code></dt><dd><p>The numerical values to set. Each value must be a row in the array..</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">stringvalues</span></code></dt><dd><p>The literal values to set. Each value must be a row in the array..</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">valuesmatrix</span></code></dt><dd><p>The matrix of values to set to a 2-d parameter. For <strong>Example</strong>, the <span class="math notranslate nohighlight">\($m \times n$\)</span> matrix: <span class="math notranslate nohighlight">\(A = \left( \begin{array}{cccc} a_{11} &amp; a_{12} &amp; ... &amp; a_{1n} \\ x_{21} &amp; x_{22} &amp; ... &amp; x_{2n} \\ ... &amp; ... &amp; ... &amp; ... \\ a_{m1} &amp; a_{m2} &amp; ... &amp; a_{mn} \end{array} \right)\)</span>
+can be assigned to the AMPL parameter: <code class="docutils literal notranslate"><span class="pre">param</span> <span class="pre">a{1..m,</span> <span class="pre">1..n};</span></code>with the statement <code class="docutils literal notranslate"><span class="pre">setValues(A)</span></code></p>
+</dd>
+</dl>
+<p><strong>Example</strong></p>
+<p>Ordered. Create a few parameters and assign specific data specifying the indices of the instances.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;param a{1..5} default 2; param b{1..2, 1..2};&#39;</span><span class="p">);</span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">);</span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">indices</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="mi">4</span><span class="p">];</span><span class="w"> </span><span class="nb">values</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">11</span><span class="p">;</span><span class="w"> </span><span class="mi">22</span><span class="p">];</span>
+<span class="n">a</span><span class="p">.</span><span class="n">setValues</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span><span class="w"> </span><span class="nb">values</span><span class="p">);</span>
+<span class="n">a</span><span class="p">.</span><span class="n">getValues</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span>
+    <span class="n">a</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">:=</span>
+    <span class="mi">1</span>   <span class="mi">2</span>
+    <span class="mi">2</span>  <span class="mi">11</span>
+    <span class="mi">3</span>   <span class="mi">2</span>
+    <span class="mi">4</span>  <span class="mi">22</span>
+    <span class="mi">5</span>   <span class="mi">2</span>
+    <span class="p">;</span>
+</pre></div>
+</div>
+<p>and for multiple indices, simply:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">indices</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">b</span><span class="p">.</span><span class="n">setValues</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span><span class="w"> </span><span class="nb">values</span><span class="p">);</span>
+<span class="n">b</span><span class="p">.</span><span class="n">getValues</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span>
+   <span class="n">b</span> <span class="o">:=</span>
+   <span class="mi">1</span> <span class="mi">1</span>   <span class="mi">11</span>
+   <span class="mi">2</span> <span class="mi">2</span>   <span class="mi">22</span>
+   <span class="p">;</span>
+</pre></div>
+</div>
+<p>Bi-dimensional (assigning from matrix)</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;param 2d{1..3, 1..2};&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nb">values</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">  </span><span class="n">d</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&#39;2d&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">d</span><span class="p">.</span><span class="n">setValues</span><span class="p">(</span><span class="nb">values</span><span class="p">);</span>
+<span class="w">  </span><span class="n">d</span><span class="p">.</span><span class="n">getValues</span>
+
+<span class="n">gives</span><span class="p">::</span>
+
+<span class="w">  </span><span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
+<span class="w">   </span><span class="n">i1</span><span class="w">   </span><span class="n">i2</span><span class="w">   </span><span class="o">|</span><span class="w">  </span><span class="n">val</span>
+<span class="w">   </span><span class="mf">1.0</span><span class="w">  </span><span class="mf">1.0</span><span class="w">  </span><span class="o">|</span><span class="w">  </span><span class="mf">1.0</span>
+<span class="w">   </span><span class="mf">1.0</span><span class="w">  </span><span class="mf">2.0</span><span class="w">  </span><span class="o">|</span><span class="w">  </span><span class="mf">0.0</span>
+<span class="w">   </span><span class="mf">2.0</span><span class="w">  </span><span class="mf">1.0</span><span class="w">  </span><span class="o">|</span><span class="w">  </span><span class="mf">0.0</span>
+<span class="w">   </span><span class="mf">2.0</span><span class="w">  </span><span class="mf">2.0</span><span class="w">  </span><span class="o">|</span><span class="w">  </span><span class="mf">1.0</span>
+<span class="w">   </span><span class="mf">3.0</span><span class="w">  </span><span class="mf">1.0</span><span class="w">  </span><span class="o">|</span><span class="w">  </span><span class="mf">0.0</span>
+<span class="w">   </span><span class="mf">3.0</span><span class="w">  </span><span class="mf">2.0</span><span class="w">  </span><span class="o">|</span><span class="w">  </span><span class="mf">0.0</span>
+
+<span class="n">Not</span><span class="w"> </span><span class="s">specifying</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">indices,</span><span class="w"> </span><span class="s">it</span><span class="w"> </span><span class="s">is</span><span class="w"> </span><span class="s">possible</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">do</span><span class="w"> </span><span class="s">operations</span><span class="w"> </span><span class="s">like:</span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="n">ampl</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="s">&#39;param a{i in 1..5} := i; param b{1..5} default 0;&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nb">values</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">getInstances</span><span class="p">;</span>
+<span class="w">  </span><span class="n">b</span><span class="p">.</span><span class="n">setValues</span><span class="p">(</span><span class="nb">values</span><span class="p">);</span>
+<span class="w">  </span><span class="n">b</span><span class="p">.</span><span class="n">display</span>
+
+<span class="nb">which</span><span class="w"> </span><span class="n">assign</span><span class="w"> </span><span class="nb">all</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="nb">values</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">shown</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">output</span><span class="p">::</span>
+
+<span class="w">  </span><span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
+<span class="w">  </span><span class="n">i1</span><span class="w">   </span><span class="o">|</span><span class="w">  </span><span class="n">val</span>
+<span class="w">  </span><span class="mf">1.0</span><span class="w">  </span><span class="o">|</span><span class="w">  </span><span class="mf">1.0</span>
+<span class="w">  </span><span class="mf">2.0</span><span class="w">  </span><span class="o">|</span><span class="w">  </span><span class="mf">2.0</span>
+<span class="w">  </span><span class="mf">3.0</span><span class="w">  </span><span class="o">|</span><span class="w">  </span><span class="mf">3.0</span>
+<span class="w">  </span><span class="mf">4.0</span><span class="w">  </span><span class="o">|</span><span class="w">  </span><span class="mf">4.0</span>
+<span class="w">  </span><span class="mf">5.0</span><span class="w">  </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="matlabObjectiveInstance.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ObjectiveInstance</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="matlabSet.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Set</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-key">get(key)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getvalues">getValues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasdefault">hasDefault</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issymbolic">isSymbolic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-index-value">set(index, value)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setvalues">setValues</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

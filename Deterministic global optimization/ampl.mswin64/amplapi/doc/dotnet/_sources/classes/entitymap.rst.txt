@@ -1,0 +1,13 @@
+.. highlight:: c++
+
+.. _ref::EntityMap:
+
+EntityMap
+---------
+
+.. doxygenclass:: ampl::Entities::EntityMap
+	:members: 
+
+
+	
+

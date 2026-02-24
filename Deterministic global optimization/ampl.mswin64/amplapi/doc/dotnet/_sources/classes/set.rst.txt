@@ -1,0 +1,15 @@
+.. _ref::Set:
+
+Set
+---
+
+.. doxygenclass:: ampl::Entities::Set
+   :members:
+   :undoc-members:
+
+SetMap
+------
+
+.. doxygenclass:: ampl::Entities::SetMap
+   :members:
+   :undoc-members:

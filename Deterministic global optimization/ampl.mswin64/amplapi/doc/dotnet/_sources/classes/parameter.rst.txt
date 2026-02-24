@@ -1,0 +1,15 @@
+.. _ref::Parameter:
+
+Parameter
+---------
+
+.. doxygenclass:: ampl::Entities::Parameter
+   :members:
+   :undoc-members:
+
+ParameterMap
+-------------
+
+.. doxygenclass:: ampl::Entities::ParameterMap
+   :members:
+   :undoc-members:

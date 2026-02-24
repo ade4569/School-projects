@@ -1,0 +1,78 @@
+.. _ref::AMPL:
+
+AMPL
+----
+
+.. doxygenclass:: ampl::AMPL
+   :members:
+
+.. _ref::Kind:
+
+Kind
+----
+
+.. :cs:enum:: Kind
+
+Represents the type of the output coming from the interpreter.
+
+   .. rubric:: Output related to command execution:
+
+   - ``WAITING`` -- Output ``prompt2``, returned when incomplete statements are interpreted.
+   - ``BREAK`` -- Output ``break``, displayed when an operation is interrupted with SIGINT.
+   - ``CD`` -- Output ``cd``, returned by the ``cd`` function.
+   - ``DISPLAY`` -- Output ``display``, returned by the ``display`` function.
+   - ``EXIT`` -- Output ``exit``, returned as the last message from AMPL before exiting the interpreter.
+   - ``EXPAND`` -- Output ``expand``, returned by the ``expand`` function.
+   - ``LOAD`` -- Output ``load``, returned by the ``load`` function when loading a library.
+   - ``OPTION`` -- Output ``option``, returned by the ``option`` function when getting the value of an option.
+   - ``PRINT`` -- Output ``print``, returned by the ``print`` function when printing values from the AMPL command line.
+   - ``PROMPT`` -- Output ``prompt1``, normal AMPL prompt.
+
+   .. rubric:: Solver and solution-related output:
+
+   - ``SOLUTION`` -- Output ``solution``, returned when loading a solution with the ``solution`` command; contains the solver message.
+   - ``SOLVE`` -- Output ``solve``, returned by the ``solve`` function; contains the solver message.
+
+   .. rubric:: Miscellaneous command output:
+
+   - ``SHOW`` -- Output ``show``, returned by the ``show`` function.
+   - ``XREF`` -- Output ``xref``, returned by the ``xref`` function.
+   - ``SHELL_OUTPUT`` -- Output from the AMPL command ``shell``.
+   - ``SHELL_MESSAGE`` -- Messages from the command ``shell``.
+   - ``MISC`` -- General miscellaneous output.
+   - ``WRITE_TABLE`` -- Messages from the ``write table`` command.
+   - ``READ_TABLE`` -- Messages from the ``read table`` command.
+   - ``_READTABLE`` -- Internal messages from the ``read table`` command.
+   - ``_WRITETABLE`` -- Internal messages from the ``write table`` command.
+
+   .. rubric:: Debugging and scripting:
+
+   - ``BREAKPOINT`` -- Breakpoint hit.
+   - ``CALL`` -- Output of a script ``call``.
+   - ``CHECK`` -- Output of a ``check`` operation.
+   - ``CLOSE`` -- Output of a ``close`` command for output redirection.
+   - ``COMMANDS`` -- Output of a ``commands`` call into another file.
+   - ``CONTINUE`` -- Issued when ``continue`` is encountered.
+   - ``DATA`` -- Output of a ``data`` command.
+   - ``DELETECMD`` -- Output of a ``delete`` command.
+   - ``DROP`` -- Output of a ``drop`` command.
+   - ``DROP_OR_RESTORE_ALL`` -- Internal.
+   - ``ELSE`` -- Else block.
+   - ``ELSE_CHECK`` -- Internal.
+   - ``ENDIF`` -- End of if block.
+   - ``ENVIRON`` -- Output of an ``environ`` command.
+   - ``FIX`` -- Output of a ``fix`` command.
+   - ``FOR`` -- Output of a ``for`` command.
+   - ``IF`` -- Output of an ``if`` command.
+   - ``LET`` -- Output of a ``let`` command.
+   - ``LOOPEND`` -- End of loop.
+   - ``OBJECTIVE`` -- Output of an ``objective`` command.
+   - ``OPTION_RESET`` -- Occurs when resetting option values.
+   - ``PRINTF`` -- Output of a ``printf`` command.
+   - ``PROBLEM`` -- Output of a ``problem`` command.
+   - ``PURGE`` -- Output of a ``purge`` command.
+   - ``RBRACE`` -- Occurs when a right brace is encountered.
+   - ``READ`` -- Output of a ``read`` command.
+   - ``RELOAD`` -- Output of a ``reload`` command.
+   - ``REMOVE`` -- Output of a ``remove`` command.
+   - ``REPEAT`` -- Beginning of a ``repeat`` block.

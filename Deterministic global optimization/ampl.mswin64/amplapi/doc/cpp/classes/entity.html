@@ -1,0 +1,1331 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>Entity &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/entity';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/cpp/classes/entity.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="EntityMap" href="entitymap.html" />
+    <link rel="prev" title="BasicVariant" href="variant.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="../index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">C++ API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C++ API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    C++ API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C++ API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    C++ API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ampl.html">AMPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataframe.html">DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errorhandler.html">ErrorHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional.html">Optional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputhandler.html">OutputHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runnable.html">Runnable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tuple.html">Tuple</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="variant.html">BasicVariant</a></li>
+
+
+
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Entity</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="entitymap.html">EntityMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instance.html">Instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constraint.html">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constraintinstance.html">ConstraintInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objective.html">Objective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objectiveinstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameter.html">Parameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setinstance.html">SetInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variable.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variableinstance.html">VariableInstance</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="amplexception.html">AMPLException</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../reference.html" class="nav-link">C++ API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Entity</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="entity">
+<span id="ref-entity"></span><h1>Entity<a class="headerlink" href="#entity" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6EntityE">
+<span id="_CPPv3N4ampl6EntityE"></span><span id="_CPPv2N4ampl6EntityE"></span><span id="ampl::Entity"></span><span class="target" id="classampl_1_1_entity"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Entity</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6EntityE" title="Link to this definition">#</a><br /></dt>
+<dd><p>An AMPL entity such as a parameter or a variable. </p>
+<p>An entity can either represent a single instance of an AMPL algebraic entity or, if the corresponding declaration has an indexing expression, a mapping from keys to instances. In the derived classes, it has methods to access instance-level properties which can be used in case the represented entity is scalar. </p>
+<p>To gain access to all the values in an entity (for all instances and all suffixes for that entities), use the function <a class="reference internal" href="#classampl_1_1_entity_1abe3f0475205ed08ffa1f1036ef7c50df"><span class="std std-ref">Entity::getValues()</span></a>. </p>
+<p>The algebraic entities which currenty have an equivalent class in the API are: <ul class="simple">
+<li><p>Variables (see <a class="reference internal" href="variable.html#classampl_1_1_variable"><span class="std std-ref">ampl::Variable</span></a>) </p></li>
+<li><p>Constraints (see <a class="reference internal" href="constraint.html#classampl_1_1_constraint"><span class="std std-ref">ampl::Constraint</span></a>) </p></li>
+<li><p>Objectives (see <a class="reference internal" href="objective.html#classampl_1_1_objective"><span class="std std-ref">ampl::Objective</span></a>) </p></li>
+<li><p>Sets (see <a class="reference internal" href="set.html#classampl_1_1_set"><span class="std std-ref">ampl::Set</span></a>) </p></li>
+<li><p>Parameters (see <a class="reference internal" href="parameter.html#classampl_1_1_parameter"><span class="std std-ref">ampl::Parameter</span></a>) </p></li>
+<li><p>Tables (see ampl::Table) </p></li>
+</ul>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl6Entity4nameEv">
+<span id="_CPPv3NK4ampl6Entity4nameEv"></span><span id="_CPPv2NK4ampl6Entity4nameEv"></span><span id="ampl::Entity::nameC"></span><span class="target" id="classampl_1_1_entity_1ae7e6727c31290def1b8a4682455a5c5d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl6Entity4nameEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the name of this entity. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl6Entity4typeEv">
+<span id="_CPPv3NK4ampl6Entity4typeEv"></span><span id="_CPPv2NK4ampl6Entity4typeEv"></span><span id="ampl::Entity::typeC"></span><span class="target" id="classampl_1_1_entity_1a7908baaeddefb35090e0f7913575b05e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl6Entity4typeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the type of this entity. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl6Entity7isValidEv">
+<span id="_CPPv3NK4ampl6Entity7isValidEv"></span><span id="_CPPv2NK4ampl6Entity7isValidEv"></span><span id="ampl::Entity::isValidC"></span><span class="target" id="classampl_1_1_entity_1adc29a0bc1b613819ea2ceeff2caa3703"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isValid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl6Entity7isValidEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns true if the entity is in a valid state. </p>
+<p>That is, if the underlying intepreter is still open and the related <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> object is still allocated </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl6Entity10indexarityEv">
+<span id="_CPPv3NK4ampl6Entity10indexarityEv"></span><span id="_CPPv2NK4ampl6Entity10indexarityEv"></span><span id="ampl::Entity::indexarityC"></span><span class="target" id="classampl_1_1_entity_1a98b8bd79c072e3a9291a445ef1f0b259"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">indexarity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl6Entity10indexarityEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the indexarity of this entity (sum of the dimensions of the indexing sets). </p>
+<p>This value indicates the arity of the <a class="reference internal" href="tuple.html#classampl_1_1_tuple"><span class="std std-ref">Tuple</span></a> to be passed to the method <a class="reference internal" href="variable.html#classampl_1_1_basic_entity_1a32e82de65ec87aadc2879e2164d45f1b"><span class="std std-ref">BasicEntity::get()</span></a> in order to access an instance of this entity. See the following AMPL examples <p><div class="highlight-ampl notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nv">x</span><span class="p">;</span><span class="w">               </span><span class="c1"># indexarity = 0</span>
+<span class="kd">var</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="o">..</span><span class="mi">2</span><span class="p">};</span><span class="w">        </span><span class="c1"># indexarity = 1</span>
+<span class="kd">var</span><span class="w"> </span><span class="nv">z</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="o">..</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">..</span><span class="mi">4</span><span class="p">};</span><span class="w">   </span><span class="c1"># indexarity = 2</span>
+<span class="kd">var</span><span class="w"> </span><span class="nv">zz</span><span class="w"> </span><span class="p">{{(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)}};</span><span class="w">   </span><span class="c1"># indexarity = 2</span>
+</pre></div>
+</div>
+</p>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The sum of the dimensions of the indexing sets or 0 if the entity is not indexed </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl6Entity8isScalarEv">
+<span id="_CPPv3NK4ampl6Entity8isScalarEv"></span><span id="_CPPv2NK4ampl6Entity8isScalarEv"></span><span id="ampl::Entity::isScalarC"></span><span class="target" id="classampl_1_1_entity_1a1b5b83718699420654d1c207f9c82fe9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isScalar</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl6Entity8isScalarEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check whether this entity is scalar. </p>
+<p>Equivalent to testing whether <a class="reference internal" href="#classampl_1_1_entity_1a98b8bd79c072e3a9291a445ef1f0b259"><span class="std std-ref">indexarity()</span></a> is equal to zero. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the entity is scalar (not indexed over any set) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl6Entity12numInstancesEv">
+<span id="_CPPv3NK4ampl6Entity12numInstancesEv"></span><span id="_CPPv2NK4ampl6Entity12numInstancesEv"></span><span id="ampl::Entity::numInstancesC"></span><span class="target" id="classampl_1_1_entity_1aafbb69b7c49a0a84f836060c170ce398"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numInstances</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl6Entity12numInstancesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the number of instances in this entity. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl6Entity15getIndexingSetsEv">
+<span id="_CPPv3NK4ampl6Entity15getIndexingSetsEv"></span><span id="_CPPv2NK4ampl6Entity15getIndexingSetsEv"></span><span id="ampl::Entity::getIndexingSetsC"></span><span class="target" id="classampl_1_1_entity_1a084c9300cd3033c95577707d1817b944"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">StringArray</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getIndexingSets</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl6Entity15getIndexingSetsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the AMPL string representation of the sets on which this entity is indexed. </p>
+<p>The obtained vector can be modified without any effect to the entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The string representation of the indexing sets for this entity or an empty array if the entity is scalar </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl6Entity4xrefEv">
+<span id="_CPPv3NK4ampl6Entity4xrefEv"></span><span id="_CPPv2NK4ampl6Entity4xrefEv"></span><span id="ampl::Entity::xrefC"></span><span class="target" id="classampl_1_1_entity_1a4a9e2430dcbbebc99246b33336ce901b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">StringArray</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">xref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl6Entity4xrefEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the names of all entities which depend on this one. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An array with the names of all entities which depend on this one. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl6Entity9getValuesEv">
+<span id="_CPPv3NK4ampl6Entity9getValuesEv"></span><span id="_CPPv2NK4ampl6Entity9getValuesEv"></span><span id="ampl::Entity::getValuesC"></span><span class="target" id="classampl_1_1_entity_1abe3f0475205ed08ffa1f1036ef7c50df"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="dataframe.html#_CPPv4N4ampl9DataFrameE" title="ampl::DataFrame"><span class="n"><span class="pre">DataFrame</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getValues</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl6Entity9getValuesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p><p><p>Get the principal values of this entity as a DataFrame. The specific returned
+value depends on the
+type of entity (see list below).</p>
+<dl class="simple">
+<dt>For:</dt><dd><ul class="simple">
+<li><p>Variables and Objectives it returns the suffix <code class="docutils literal notranslate"><span class="pre">val</span></code></p></li>
+<li><p>Parameters it returns their values</p></li>
+<li><p>Constraints it returns the suffix <code class="docutils literal notranslate"><span class="pre">dual</span></code></p></li>
+<li><p>Sets it returns all the  of the set. Note that it does not</p></li>
+<li><p>apply to indexed sets. See SetInstance::getValues</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> containing the values for all instances </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl6Entity9getValuesE10StringArgs">
+<span id="_CPPv3NK4ampl6Entity9getValuesE10StringArgs"></span><span id="_CPPv2NK4ampl6Entity9getValuesE10StringArgs"></span><span id="ampl::Entity::getValues__StringArgsC"></span><span class="target" id="classampl_1_1_entity_1aa93ad10f8cfa1d629b77d02045f309a6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="dataframe.html#_CPPv4N4ampl9DataFrameE" title="ampl::DataFrame"><span class="n"><span class="pre">DataFrame</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getValues</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">StringArgs</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">suffixes</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl6Entity9getValuesE10StringArgs" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the specified suffixes value for all instances in a <a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>suffixes</strong> – Suffixes to get </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> containing the specified values </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6Entity9setValuesE9DataFrame">
+<span id="_CPPv3N4ampl6Entity9setValuesE9DataFrame"></span><span id="_CPPv2N4ampl6Entity9setValuesE9DataFrame"></span><span id="ampl::Entity::setValues__DataFrame"></span><span class="target" id="classampl_1_1_entity_1a35ab35d690e555fba172a774040e46a7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setValues</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="dataframe.html#_CPPv4N4ampl9DataFrameE" title="ampl::DataFrame"><span class="n"><span class="pre">DataFrame</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl6Entity9setValuesE9DataFrame" title="Link to this definition">#</a><br /></dt>
+<dd><p><p><p>Set the values of this entiy to the correponding values of a
+DataFrame indexed over the same sets (or a subset).
+This function assigns the values in the first data column of
+the passed dataframe to the entity the function is called from.
+In particular, the statement:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">.</span><span class="n">setValues</span><span class="p">(</span><span class="n">y</span><span class="p">.</span><span class="n">getValues</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>is semantically equivalent to the AMPL statement:</p>
+<div class="highlight-ampl notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="p">{</span>s<span class="w"> </span><span class="kr">in</span><span class="w"> </span>S<span class="p">}</span><span class="w"> </span><span class="nv">x</span><span class="p">[</span>s<span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span>y<span class="p">[</span>s<span class="p">];</span>
+</pre></div>
+</div>
+</p>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – The data to set the entity to </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl6Entity8toStringEv">
+<span id="_CPPv3NK4ampl6Entity8toStringEv"></span><span id="_CPPv2NK4ampl6Entity8toStringEv"></span><span id="ampl::Entity::toStringC"></span><span class="target" id="classampl_1_1_entity_1abbba6e9c68cac3ea47d301586abaedbb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toString</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl6Entity8toStringEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns a string representation of this entity (its declaration) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN4ampl6Entity6EntityE11BasicEntityI1IE">
+<span id="_CPPv3I0EN4ampl6Entity6EntityE11BasicEntityI1IE"></span><span id="_CPPv2I0EN4ampl6Entity6EntityE11BasicEntityI1IE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">I</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classampl_1_1_entity_1ae217f535e911624d0d24111ed6c847d3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Entity</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">BasicEntity</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN4ampl6Entity6EntityE11BasicEntityI1IE" title="ampl::Entity::Entity::I"><span class="n"><span class="pre">I</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN4ampl6Entity6EntityE11BasicEntityI1IE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor to allow implicit conversion. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6EntityaSERK6Entity">
+<span id="_CPPv3N4ampl6EntityaSERK6Entity"></span><span id="_CPPv2N4ampl6EntityaSERK6Entity"></span><span id="ampl::Entity::assign-operator__EntityCR"></span><span class="target" id="classampl_1_1_entity_1aecf4d76d098143ca3946497af9995072"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl6EntityaSERK6Entity" title="Link to this definition">#</a><br /></dt>
+<dd><p>Assignment operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6Entity6EntityEv">
+<span id="_CPPv3N4ampl6Entity6EntityEv"></span><span id="_CPPv2N4ampl6Entity6EntityEv"></span><span id="ampl::Entity::Entity"></span><span class="target" id="classampl_1_1_entity_1a980d496064a8c00726eb574c048a0355"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Entity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl6Entity6EntityEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor to allow the construction of arrays of entities. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
+<dl>
+<dt class="sig sig-object cpp">
+<em class="property"><span class="pre">friend</span> <span class="pre">class</span></em> <span class="pre">AMPL</span></dt>
+</dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<em class="property"><span class="pre">friend</span> <span class="pre">class</span></em> <span class="pre">DataFrame</span></dt>
+</dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<em class="property"><span class="pre">friend</span> <span class="pre">class</span></em> <span class="pre">EntityArgs</span></dt>
+</dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<em class="property"><span class="pre">friend</span> <span class="pre">class</span></em> <span class="pre">Instance</span></dt>
+</dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="basicentity">
+<h1>BasicEntity<a class="headerlink" href="#basicentity" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp">
+<span class="target" id="classampl_1_1_basic_entity"></span><span class="sig-name descname"><span class="pre">template&lt;class</span> <span class="pre">InstanceClass&gt;</span> <span class="pre">ampl::BasicEntity</span> <span class="pre">:</span> <span class="pre">private</span> <span class="pre">INHERITANCE</span> <span class="pre">Entity</span></span></dt>
+<dd><p>Infrastructure class to enable the inheriting classes type-safe access to instances. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-instance-access">Instance access</p>
+<p>Methods to access the instances which are part of this <a class="reference internal" href="#classampl_1_1_entity"><span class="std std-ref">Entity</span></a></p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError3getEv">
+<span id="_CPPv3NK19PhonyNameDueToError3getEv"></span><span id="_CPPv2NK19PhonyNameDueToError3getEv"></span><span id="PhonyNameDueToError::getC"></span><span class="target" id="classampl_1_1_basic_entity_1a32e82de65ec87aadc2879e2164d45f1b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">InstanceClass</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError3getEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the instance corresponding to a scalar entity. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if the entity has been deleted in the underlying AMPL interpreter </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">logic_error</span></span></span> – if the entity is not scalar </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The corresponding instance. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToErrorixE8TupleRef">
+<span id="_CPPv3NK19PhonyNameDueToErrorixE8TupleRef"></span><span id="_CPPv2NK19PhonyNameDueToErrorixE8TupleRef"></span><span id="PhonyNameDueToError::subscript-operator__TupleRefC"></span><span class="target" id="classampl_1_1_basic_entity_1a1708e6623ea6233e2f42e2289fa5ff19"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">InstanceClass</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">[]</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">TupleRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToErrorixE8TupleRef" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError3getE8TupleRef">
+<span id="_CPPv3NK19PhonyNameDueToError3getE8TupleRef"></span><span id="_CPPv2NK19PhonyNameDueToError3getE8TupleRef"></span><span id="PhonyNameDueToError::get__TupleRefC"></span><span class="target" id="classampl_1_1_basic_entity_1a79b4d8fa9c4feaaffa9351fe14aec1d2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">InstanceClass</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">TupleRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError3getE8TupleRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the instance with the specified index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> – The tuple specifying the index </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">out_of_range</span></span></span> – if an instance with the specified index does not exist </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">out_of_range</span></span></span> – if the entity has been deleted in the underlying AMPL interpreter </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">ampl</span><span class="p">::</span><span class="n">UnsupportedOperationException</span></span></span> – if the entity is scalar </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The corresponding instance </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToErrorixE10VariantRef">
+<span id="_CPPv3NK19PhonyNameDueToErrorixE10VariantRef"></span><span id="_CPPv2NK19PhonyNameDueToErrorixE10VariantRef"></span><span id="PhonyNameDueToError::subscript-operator__VariantRefC"></span><span class="target" id="classampl_1_1_basic_entity_1a87f1d642f78075924ef2ce2cb8052120"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">InstanceClass</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">[]</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">VariantRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToErrorixE10VariantRef" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError3getE10VariantRef">
+<span id="_CPPv3NK19PhonyNameDueToError3getE10VariantRef"></span><span id="_CPPv2NK19PhonyNameDueToError3getE10VariantRef"></span><span id="PhonyNameDueToError::get__VariantRefC"></span><span class="target" id="classampl_1_1_basic_entity_1a524b86e742c0218025b4a627dc4d3a71"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">InstanceClass</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">VariantRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError3getE10VariantRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the instance with the specified index. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError3getE10VariantRef10VariantRef">
+<span id="_CPPv3NK19PhonyNameDueToError3getE10VariantRef10VariantRef"></span><span id="_CPPv2NK19PhonyNameDueToError3getE10VariantRef10VariantRef"></span><span id="PhonyNameDueToError::get__VariantRef.VariantRefC"></span><span class="target" id="classampl_1_1_basic_entity_1adb93aae81826b66f8295326c1f0288db"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">InstanceClass</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">VariantRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v1</span></span>, <span class="n"><span class="pre">VariantRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v2</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError3getE10VariantRef10VariantRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the instance with the specified index. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError3getE10VariantRef10VariantRef10VariantRef">
+<span id="_CPPv3NK19PhonyNameDueToError3getE10VariantRef10VariantRef10VariantRef"></span><span id="_CPPv2NK19PhonyNameDueToError3getE10VariantRef10VariantRef10VariantRef"></span><span id="PhonyNameDueToError::get__VariantRef.VariantRef.VariantRefC"></span><span class="target" id="classampl_1_1_basic_entity_1a1ef0e5388e35b9afcccd7b57c40cdf91"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">InstanceClass</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">VariantRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v1</span></span>, <span class="n"><span class="pre">VariantRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v2</span></span>, <span class="n"><span class="pre">VariantRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v3</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError3getE10VariantRef10VariantRef10VariantRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the instance with the specified index. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError3getE10VariantRef10VariantRef10VariantRef10VariantRef">
+<span id="_CPPv3NK19PhonyNameDueToError3getE10VariantRef10VariantRef10VariantRef10VariantRef"></span><span id="_CPPv2NK19PhonyNameDueToError3getE10VariantRef10VariantRef10VariantRef10VariantRef"></span><span id="PhonyNameDueToError::get__VariantRef.VariantRef.VariantRef.VariantRefC"></span><span class="target" id="classampl_1_1_basic_entity_1a73666582a6547219a6c43312b02e49f1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">InstanceClass</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">VariantRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v1</span></span>, <span class="n"><span class="pre">VariantRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v2</span></span>, <span class="n"><span class="pre">VariantRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v3</span></span>, <span class="n"><span class="pre">VariantRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v4</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError3getE10VariantRef10VariantRef10VariantRef10VariantRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the instance with the specified index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>v1</strong> – The VariantRef specifying the first element of the indexing tuple </p></li>
+<li><p><strong>v2</strong> – The VariantRef specifying the second element of the indexing tuple</p></li>
+<li><p><strong>v3</strong> – The VariantRef specifying the third element of the indexing tuple</p></li>
+<li><p><strong>v4</strong> – The VariantRef specifying the fourth element of the indexing tuple </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">out_of_range</span></span></span> – if an instance with the specified index does not exist </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">runtime_error</span></span></span> – if the entity has been deleted in the underlying AMPL interpreter </p></li>
+<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">ampl</span><span class="p">::</span><span class="n">UnsupportedOperationException</span></span></span> – if the entity is scalar </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The corresponding instance </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N19PhonyNameDueToError11BasicEntityEPN8internal10EntityBaseE">
+<span id="_CPPv3N19PhonyNameDueToError11BasicEntityEPN8internal10EntityBaseE"></span><span id="_CPPv2N19PhonyNameDueToError11BasicEntityEPN8internal10EntityBaseE"></span><span id="PhonyNameDueToError::BasicEntity__internal::EntityBaseP"></span><span class="target" id="classampl_1_1_basic_entity_1a7ee51c7cebe296fc54faf8df8aef3de4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BasicEntity</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">EntityBase</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">entity</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N19PhonyNameDueToError11BasicEntityEPN8internal10EntityBaseE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor allowing cross conversions. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N19PhonyNameDueToError8iteratorE">
+<span id="_CPPv3N19PhonyNameDueToError8iteratorE"></span><span id="_CPPv2N19PhonyNameDueToError8iteratorE"></span><span id="PhonyNameDueToError::iterator"></span><span class="target" id="classampl_1_1_basic_entity_1af07a6d71c9f2a1cf30569f1410ea1607"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CountedIterator</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">EntityWrapper</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">InstanceClass</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">iterator</span></span></span><a class="headerlink" href="#_CPPv4N19PhonyNameDueToError8iteratorE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Iterator for entities, represented by an iterator pointing to elements of type std::pair&lt;TupleRef, InstanceClass&gt; </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError5beginEv">
+<span id="_CPPv3NK19PhonyNameDueToError5beginEv"></span><span id="_CPPv2NK19PhonyNameDueToError5beginEv"></span><span id="PhonyNameDueToError::beginC"></span><span class="target" id="classampl_1_1_basic_entity_1a83d585eb47d9739484509d1965df7d82"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N19PhonyNameDueToError8iteratorE" title="PhonyNameDueToError::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError5beginEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get an iterator pointing to the first instance in this entity. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError3endEv">
+<span id="_CPPv3NK19PhonyNameDueToError3endEv"></span><span id="_CPPv2NK19PhonyNameDueToError3endEv"></span><span id="PhonyNameDueToError::endC"></span><span class="target" id="classampl_1_1_basic_entity_1a48cc62a70d97354be9be938b945fbc4b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N19PhonyNameDueToError8iteratorE" title="PhonyNameDueToError::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError3endEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get an iterator pointing after the last instance in this entity. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError4findE8TupleRef">
+<span id="_CPPv3NK19PhonyNameDueToError4findE8TupleRef"></span><span id="_CPPv2NK19PhonyNameDueToError4findE8TupleRef"></span><span id="PhonyNameDueToError::find__TupleRefC"></span><span class="target" id="classampl_1_1_basic_entity_1af4055bd9d8d8ab250d7569fc1c3c7c2c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N19PhonyNameDueToError8iteratorE" title="PhonyNameDueToError::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">TupleRef</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError4findE8TupleRef" title="Link to this definition">#</a><br /></dt>
+<dd><p>Searches the current entity for an instance with the specified index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>an iterator to the wanted entity if found, otherwise an iterator to <a class="reference internal" href="variable.html#classampl_1_1_basic_entity_1a48cc62a70d97354be9be938b945fbc4b"><span class="std std-ref">BasicEntity::end</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError15getIndexingSetsEv">
+<span id="_CPPv3NK19PhonyNameDueToError15getIndexingSetsEv"></span><span id="_CPPv2NK19PhonyNameDueToError15getIndexingSetsEv"></span><span id="PhonyNameDueToError::getIndexingSetsC"></span><span class="target" id="classampl_1_1_basic_entity_1a084c9300cd3033c95577707d1817b944"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">StringArray</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getIndexingSets</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError15getIndexingSetsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the AMPL string representation of the sets on which this entity is indexed. </p>
+<p>The obtained vector can be modified without any effect to the entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The string representation of the indexing sets for this entity or an empty array if the entity is scalar </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError9getValuesEv">
+<span id="_CPPv3NK19PhonyNameDueToError9getValuesEv"></span><span id="_CPPv2NK19PhonyNameDueToError9getValuesEv"></span><span id="PhonyNameDueToError::getValuesC"></span><span class="target" id="classampl_1_1_basic_entity_1abe3f0475205ed08ffa1f1036ef7c50df"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getValues</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError9getValuesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p><p><p>Get the principal values of this entity as a DataFrame. The specific returned
+value depends on the
+type of entity (see list below).</p>
+<dl class="simple">
+<dt>For:</dt><dd><ul class="simple">
+<li><p>Variables and Objectives it returns the suffix <code class="docutils literal notranslate"><span class="pre">val</span></code></p></li>
+<li><p>Parameters it returns their values</p></li>
+<li><p>Constraints it returns the suffix <code class="docutils literal notranslate"><span class="pre">dual</span></code></p></li>
+<li><p>Sets it returns all the  of the set. Note that it does not</p></li>
+<li><p>apply to indexed sets. See SetInstance::getValues</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> containing the values for all instances </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError9getValuesE10StringArgs">
+<span id="_CPPv3NK19PhonyNameDueToError9getValuesE10StringArgs"></span><span id="_CPPv2NK19PhonyNameDueToError9getValuesE10StringArgs"></span><span id="PhonyNameDueToError::getValues__StringArgsC"></span><span class="target" id="classampl_1_1_basic_entity_1aa93ad10f8cfa1d629b77d02045f309a6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getValues</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">StringArgs</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">suffixes</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError9getValuesE10StringArgs" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the specified suffixes value for all instances in a <a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>suffixes</strong> – Suffixes to get </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> containing the specified values </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError10indexarityEv">
+<span id="_CPPv3NK19PhonyNameDueToError10indexarityEv"></span><span id="_CPPv2NK19PhonyNameDueToError10indexarityEv"></span><span id="PhonyNameDueToError::indexarityC"></span><span class="target" id="classampl_1_1_basic_entity_1a98b8bd79c072e3a9291a445ef1f0b259"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">indexarity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError10indexarityEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the indexarity of this entity (sum of the dimensions of the indexing sets). </p>
+<p>This value indicates the arity of the <a class="reference internal" href="tuple.html#classampl_1_1_tuple"><span class="std std-ref">Tuple</span></a> to be passed to the method <a class="reference internal" href="variable.html#classampl_1_1_basic_entity_1a32e82de65ec87aadc2879e2164d45f1b"><span class="std std-ref">BasicEntity::get()</span></a> in order to access an instance of this entity. See the following AMPL examples <p><div class="highlight-ampl notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nv">x</span><span class="p">;</span><span class="w">               </span><span class="c1"># indexarity = 0</span>
+<span class="kd">var</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="o">..</span><span class="mi">2</span><span class="p">};</span><span class="w">        </span><span class="c1"># indexarity = 1</span>
+<span class="kd">var</span><span class="w"> </span><span class="nv">z</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="o">..</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">..</span><span class="mi">4</span><span class="p">};</span><span class="w">   </span><span class="c1"># indexarity = 2</span>
+<span class="kd">var</span><span class="w"> </span><span class="nv">zz</span><span class="w"> </span><span class="p">{{(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)}};</span><span class="w">   </span><span class="c1"># indexarity = 2</span>
+</pre></div>
+</div>
+</p>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The sum of the dimensions of the indexing sets or 0 if the entity is not indexed </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError8isScalarEv">
+<span id="_CPPv3NK19PhonyNameDueToError8isScalarEv"></span><span id="_CPPv2NK19PhonyNameDueToError8isScalarEv"></span><span id="PhonyNameDueToError::isScalarC"></span><span class="target" id="classampl_1_1_basic_entity_1a1b5b83718699420654d1c207f9c82fe9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isScalar</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError8isScalarEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check whether this entity is scalar. </p>
+<p>Equivalent to testing whether <a class="reference internal" href="#classampl_1_1_basic_entity_1a98b8bd79c072e3a9291a445ef1f0b259"><span class="std std-ref">indexarity()</span></a> is equal to zero. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the entity is scalar (not indexed over any set) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError4nameEv">
+<span id="_CPPv3NK19PhonyNameDueToError4nameEv"></span><span id="_CPPv2NK19PhonyNameDueToError4nameEv"></span><span id="PhonyNameDueToError::nameC"></span><span class="target" id="classampl_1_1_basic_entity_1ae7e6727c31290def1b8a4682455a5c5d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError4nameEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the name of this entity. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError12numInstancesEv">
+<span id="_CPPv3NK19PhonyNameDueToError12numInstancesEv"></span><span id="_CPPv2NK19PhonyNameDueToError12numInstancesEv"></span><span id="PhonyNameDueToError::numInstancesC"></span><span class="target" id="classampl_1_1_basic_entity_1aafbb69b7c49a0a84f836060c170ce398"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numInstances</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError12numInstancesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the number of instances in this entity. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N19PhonyNameDueToError9setValuesE9DataFrame">
+<span id="_CPPv3N19PhonyNameDueToError9setValuesE9DataFrame"></span><span id="_CPPv2N19PhonyNameDueToError9setValuesE9DataFrame"></span><span id="PhonyNameDueToError::setValues__DataFrame"></span><span class="target" id="classampl_1_1_basic_entity_1a35ab35d690e555fba172a774040e46a7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setValues</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N19PhonyNameDueToError9setValuesE9DataFrame" title="Link to this definition">#</a><br /></dt>
+<dd><p><p><p>Set the values of this entiy to the correponding values of a
+DataFrame indexed over the same sets (or a subset).
+This function assigns the values in the first data column of
+the passed dataframe to the entity the function is called from.
+In particular, the statement:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">.</span><span class="n">setValues</span><span class="p">(</span><span class="n">y</span><span class="p">.</span><span class="n">getValues</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>is semantically equivalent to the AMPL statement:</p>
+<div class="highlight-ampl notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="p">{</span>s<span class="w"> </span><span class="kr">in</span><span class="w"> </span>S<span class="p">}</span><span class="w"> </span><span class="nv">x</span><span class="p">[</span>s<span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span>y<span class="p">[</span>s<span class="p">];</span>
+</pre></div>
+</div>
+</p>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – The data to set the entity to </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError8toStringEv">
+<span id="_CPPv3NK19PhonyNameDueToError8toStringEv"></span><span id="_CPPv2NK19PhonyNameDueToError8toStringEv"></span><span id="PhonyNameDueToError::toStringC"></span><span class="target" id="classampl_1_1_basic_entity_1abbba6e9c68cac3ea47d301586abaedbb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toString</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError8toStringEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns a string representation of this entity (its declaration) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK19PhonyNameDueToError4xrefEv">
+<span id="_CPPv3NK19PhonyNameDueToError4xrefEv"></span><span id="_CPPv2NK19PhonyNameDueToError4xrefEv"></span><span id="PhonyNameDueToError::xrefC"></span><span class="target" id="classampl_1_1_basic_entity_1a4a9e2430dcbbebc99246b33336ce901b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">StringArray</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">xref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK19PhonyNameDueToError4xrefEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the names of all entities which depend on this one. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An array with the names of all entities which depend on this one. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="entityargs">
+<h1>EntityArgs<a class="headerlink" href="#entityargs" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl10EntityArgsE">
+<span id="_CPPv3N4ampl10EntityArgsE"></span><span id="_CPPv2N4ampl10EntityArgsE"></span><span id="ampl::EntityArgs"></span><span class="target" id="classampl_1_1_entity_args"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EntityArgs</span></span></span><a class="headerlink" href="#_CPPv4N4ampl10EntityArgsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Represents a list of entities, to be passed as arguments to various API functions. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity">
+<span id="_CPPv3N4ampl10EntityArgs10EntityArgsE6Entity"></span><span id="_CPPv2N4ampl10EntityArgs10EntityArgsE6Entity"></span><span id="ampl::EntityArgs::EntityArgs__Entity"></span><span class="target" id="classampl_1_1_entity_args_1a14d2fbc8b0783262c18a6cca79886da2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EntityArgs</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">arg0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor from entities. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arg0</strong> – First entity </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity6Entity">
+<span id="_CPPv3N4ampl10EntityArgs10EntityArgsE6Entity6Entity"></span><span id="_CPPv2N4ampl10EntityArgs10EntityArgsE6Entity6Entity"></span><span id="ampl::EntityArgs::EntityArgs__Entity.Entity"></span><span class="target" id="classampl_1_1_entity_args_1afc68ee352e4449d1218a71b3547bd911"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EntityArgs</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">arg0</span></span>, <a class="reference internal" href="#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">arg1</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity6Entity" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor from entities. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg0</strong> – First entity </p></li>
+<li><p><strong>arg1</strong> – Second entity </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity6Entity6Entity">
+<span id="_CPPv3N4ampl10EntityArgs10EntityArgsE6Entity6Entity6Entity"></span><span id="_CPPv2N4ampl10EntityArgs10EntityArgsE6Entity6Entity6Entity"></span><span id="ampl::EntityArgs::EntityArgs__Entity.Entity.Entity"></span><span class="target" id="classampl_1_1_entity_args_1a988d39acc5a4d59a3222375be44c0d71"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EntityArgs</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">arg0</span></span>, <a class="reference internal" href="#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">arg1</span></span>, <a class="reference internal" href="#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">arg2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity6Entity6Entity" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor from entities. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg0</strong> – First entity </p></li>
+<li><p><strong>arg1</strong> – Second entity </p></li>
+<li><p><strong>arg2</strong> – Third entity </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity6Entity6Entity6Entity">
+<span id="_CPPv3N4ampl10EntityArgs10EntityArgsE6Entity6Entity6Entity6Entity"></span><span id="_CPPv2N4ampl10EntityArgs10EntityArgsE6Entity6Entity6Entity6Entity"></span><span id="ampl::EntityArgs::EntityArgs__Entity.Entity.Entity.Entity"></span><span class="target" id="classampl_1_1_entity_args_1a5926bb970160e77cd22d84bf545134e6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EntityArgs</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">arg0</span></span>, <a class="reference internal" href="#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">arg1</span></span>, <a class="reference internal" href="#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">arg2</span></span>, <a class="reference internal" href="#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">arg3</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity6Entity6Entity6Entity" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor from entities. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg0</strong> – First entity </p></li>
+<li><p><strong>arg1</strong> – Second entity </p></li>
+<li><p><strong>arg2</strong> – Third entity </p></li>
+<li><p><strong>arg3</strong> – Fourth entity </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl10EntityArgs10EntityArgsEA_K6EntityNSt6size_tE">
+<span id="_CPPv3N4ampl10EntityArgs10EntityArgsEA_K6EntityNSt6size_tE"></span><span id="_CPPv2N4ampl10EntityArgs10EntityArgsEA_K6EntityNSt6size_tE"></span><span id="ampl::EntityArgs::EntityArgs__EntityCA.std::s"></span><span class="target" id="classampl_1_1_entity_args_1ad1c56b96bd8776a07978060fe3c650d7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EntityArgs</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl10EntityArgs10EntityArgsEA_K6EntityNSt6size_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor from an array of entities. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – An array of entities </p></li>
+<li><p><strong>size</strong> – Size of the array </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl10EntityArgs7getArgsEv">
+<span id="_CPPv3NK4ampl10EntityArgs7getArgsEv"></span><span id="_CPPv2NK4ampl10EntityArgs7getArgsEv"></span><span id="ampl::EntityArgs::getArgsC"></span><span class="target" id="classampl_1_1_entity_args_1a35e449802e7e28e5b9e9e7c1e8b105b3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">EntityBase</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getArgs</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl10EntityArgs7getArgsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get access to the represented entities. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl10EntityArgs4sizeEv">
+<span id="_CPPv3NK4ampl10EntityArgs4sizeEv"></span><span id="_CPPv2NK4ampl10EntityArgs4sizeEv"></span><span id="ampl::EntityArgs::sizeC"></span><span class="target" id="classampl_1_1_entity_args_1a7e95d8ec4543a9841469580704cd687f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl10EntityArgs4sizeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Number of represented entities. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="variant.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">BasicVariant</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="entitymap.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">EntityMap</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Entity</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6EntityE"><code class="docutils literal notranslate"><span class="pre">Entity</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl6Entity4nameEv"><code class="docutils literal notranslate"><span class="pre">Entity::name()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl6Entity4typeEv"><code class="docutils literal notranslate"><span class="pre">Entity::type()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl6Entity7isValidEv"><code class="docutils literal notranslate"><span class="pre">Entity::isValid()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl6Entity10indexarityEv"><code class="docutils literal notranslate"><span class="pre">Entity::indexarity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl6Entity8isScalarEv"><code class="docutils literal notranslate"><span class="pre">Entity::isScalar()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl6Entity12numInstancesEv"><code class="docutils literal notranslate"><span class="pre">Entity::numInstances()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl6Entity15getIndexingSetsEv"><code class="docutils literal notranslate"><span class="pre">Entity::getIndexingSets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl6Entity4xrefEv"><code class="docutils literal notranslate"><span class="pre">Entity::xref()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl6Entity9getValuesEv"><code class="docutils literal notranslate"><span class="pre">Entity::getValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl6Entity9getValuesE10StringArgs"><code class="docutils literal notranslate"><span class="pre">Entity::getValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6Entity9setValuesE9DataFrame"><code class="docutils literal notranslate"><span class="pre">Entity::setValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl6Entity8toStringEv"><code class="docutils literal notranslate"><span class="pre">Entity::toString()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN4ampl6Entity6EntityE11BasicEntityI1IE"><code class="docutils literal notranslate"><span class="pre">Entity::Entity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6EntityaSERK6Entity"><code class="docutils literal notranslate"><span class="pre">Entity::operator=()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6Entity6EntityEv"><code class="docutils literal notranslate"><span class="pre">Entity::Entity()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#basicentity">BasicEntity</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError3getEv"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::get()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToErrorixE8TupleRef"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::operator[]()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError3getE8TupleRef"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::get()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToErrorixE10VariantRef"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::operator[]()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError3getE10VariantRef"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::get()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError3getE10VariantRef10VariantRef"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::get()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError3getE10VariantRef10VariantRef10VariantRef"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::get()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError3getE10VariantRef10VariantRef10VariantRef10VariantRef"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::get()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N19PhonyNameDueToError11BasicEntityEPN8internal10EntityBaseE"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::BasicEntity()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N19PhonyNameDueToError8iteratorE"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::iterator</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError5beginEv"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::begin()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError3endEv"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::end()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError4findE8TupleRef"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::find()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError15getIndexingSetsEv"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::getIndexingSets()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError9getValuesEv"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::getValues()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError9getValuesE10StringArgs"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::getValues()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError10indexarityEv"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::indexarity()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError8isScalarEv"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::isScalar()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError4nameEv"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::name()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError12numInstancesEv"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::numInstances()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N19PhonyNameDueToError9setValuesE9DataFrame"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::setValues()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError8toStringEv"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::toString()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK19PhonyNameDueToError4xrefEv"><code class="docutils literal notranslate"><span class="pre">PhonyNameDueToError::xref()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#entityargs">EntityArgs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl10EntityArgsE"><code class="docutils literal notranslate"><span class="pre">EntityArgs</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity"><code class="docutils literal notranslate"><span class="pre">EntityArgs::EntityArgs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity6Entity"><code class="docutils literal notranslate"><span class="pre">EntityArgs::EntityArgs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity6Entity6Entity"><code class="docutils literal notranslate"><span class="pre">EntityArgs::EntityArgs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity6Entity6Entity6Entity"><code class="docutils literal notranslate"><span class="pre">EntityArgs::EntityArgs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl10EntityArgs10EntityArgsEA_K6EntityNSt6size_tE"><code class="docutils literal notranslate"><span class="pre">EntityArgs::EntityArgs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl10EntityArgs7getArgsEv"><code class="docutils literal notranslate"><span class="pre">EntityArgs::getArgs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl10EntityArgs4sizeEv"><code class="docutils literal notranslate"><span class="pre">EntityArgs::size()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

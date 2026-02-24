@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
+MinimumVisualStudioVersion = 10.0.40219.1
+
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncExample", "AsyncExample.csproj", "{7F110BA8-AB55-4316-BD0E-3D31B0027401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFrameExample", "DataFrameExample.csproj", "{7F110BA8-AB55-4316-BD0E-3D31B0027401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietModel", "DietModel.csproj", "{7F110BA8-AB55-4316-BD0E-3D31B0027401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfficientFrontier", "EfficientFrontier.csproj", "{7F110BA8-AB55-4316-BD0E-3D31B0027401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstExample", "FirstExample.csproj", "{7F110BA8-AB55-4316-BD0E-3D31B0027401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultidimensionalExample", "MultidimensionalExample.csproj", "{7F110BA8-AB55-4316-BD0E-3D31B0027401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationTransportation", "LocationTransportation.csproj", "{7F110BA8-AB55-4316-BD0E-3D31B0027401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionsExample", "OptionsExample.csproj", "{7F110BA8-AB55-4316-BD0E-3D31B0027401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutputAndErrorRedirectionExample", "OutputAndErrorRedirectionExample.csproj", "{7F110BA8-AB55-4316-BD0E-3D31B0027401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackingModel", "TrackingModel.csproj", "{7F110BA8-AB55-4316-BD0E-3D31B0027401}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstExampleNET60", "FirstExampleNET60.csproj", "{9A19103F-16F7-4668-BE54-9A1E7A4F7ACAC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLDataFrames", "MLDataFrames.csproj", "{9A19103F-16F7-4668-BE54-9A1E7A4F7ACAC}"
+EndProject
+
+
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B958DE4C-CAE6-4F2D-8414-104BF03CA2C5}.Debug|x64.ActiveCfg = Debug|x64
+		{B958DE4C-CAE6-4F2D-8414-104BF03CA2C5}.Debug|x64.Build.0 = Debug|x64
+		{B958DE4C-CAE6-4F2D-8414-104BF03CA2C5}.Release|x64.ActiveCfg = Release|x64
+		{B958DE4C-CAE6-4F2D-8414-104BF03CA2C5}.Release|x64.Build.0 = Release|x64
+		{B958DE4C-CAE6-4F2D-8414-104BF03CA2C5}.Debug|x86.ActiveCfg = Debug|x86
+		{B958DE4C-CAE6-4F2D-8414-104BF03CA2C5}.Debug|x86.Build.0 = Debug|x86
+		{B958DE4C-CAE6-4F2D-8414-104BF03CA2C5}.Release|x86.ActiveCfg = Release|x86
+		{B958DE4C-CAE6-4F2D-8414-104BF03CA2C5}.Release|x86.Build.0 = Release|x86
+		{7F110BA8-AB55-4316-BD0E-3D31B0027401}.Debug|x64.ActiveCfg = Debug|x64
+		{7F110BA8-AB55-4316-BD0E-3D31B0027401}.Debug|x64.Build.0 = Debug|x64
+		{7F110BA8-AB55-4316-BD0E-3D31B0027401}.Release|x64.ActiveCfg = Release|x64
+		{7F110BA8-AB55-4316-BD0E-3D31B0027401}.Release|x64.Build.0 = Release|x64
+		{7F110BA8-AB55-4316-BD0E-3D31B0027401}.Debug|x86.ActiveCfg = Debug|x86
+		{7F110BA8-AB55-4316-BD0E-3D31B0027401}.Debug|x86.Build.0 = Debug|x86
+		{7F110BA8-AB55-4316-BD0E-3D31B0027401}.Release|x86.ActiveCfg = Release|x86
+		{7F110BA8-AB55-4316-BD0E-3D31B0027401}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

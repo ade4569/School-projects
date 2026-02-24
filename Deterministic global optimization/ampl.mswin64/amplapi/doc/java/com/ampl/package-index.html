@@ -1,0 +1,767 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>com.ampl &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'com/ampl/package-index';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/java/com/ampl/package-index.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AMPL.InnerErrorHandler" href="AMPL-InnerErrorHandler.html" />
+    <link rel="prev" title="Javadoc" href="../../packages.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="../../index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">Java API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../reference.html">
+    Java API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples.html">
+    Java API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../reference.html">
+    Java API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples.html">
+    Java API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AMPL.html">AMPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataFrame.html">DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ErrorHandler.html">ErrorHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OutputHandler.html">OutputHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tuple.html">Tuple</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Entity.html">Entity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicEntity.html">BasicEntity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Instance.html">Instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EntityMap.html">EntityMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Constraint.html">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ConstraintInstance.html">ConstraintInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objective.html">Objective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObjectiveInstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parameter.html">Parameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Set.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetInstance.html">SetInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Variable.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VariableInstance.html">VariableInstance</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AMPLException.html">AMPLException</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../packages.html">Javadoc</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">com.ampl</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="AMPL.html">AMPL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AMPL-InnerErrorHandler.html">AMPL.InnerErrorHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AMPL-InnerOutputHandler.html">AMPL.InnerOutputHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AMPL-RunnableBridge.html">AMPL.RunnableBridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AMPLException.html">AMPLException</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BasicEntity.html">BasicEntity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BasicInstance.html">BasicInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Constraint.html">Constraint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Constraint-MyConstraintIterator.html">Constraint.MyConstraintIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConstraintInstance.html">ConstraintInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConstraintMap.html">ConstraintMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConstraintMap-MyConstraintMapIterator.html">ConstraintMap.MyConstraintMapIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataFrame.html">DataFrame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Entity.html">Entity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EntityMap.html">EntityMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Environment.html">Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ErrorHandler.html">ErrorHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Instance.html">Instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSUtils.html">OSUtils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Objective.html">Objective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Objective-MyObjectiveIterator.html">Objective.MyObjectiveIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ObjectiveInstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ObjectiveMap.html">ObjectiveMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ObjectiveMap-MyObjectiveMapIterator.html">ObjectiveMap.MyObjectiveMapIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OutputHandler.html">OutputHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Parameter.html">Parameter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Parameter-MyParameterIterator.html">Parameter.MyParameterIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ParameterMap.html">ParameterMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ParameterMap-MyParameterMapIterator.html">ParameterMap.MyParameterMapIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set.html">Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set-MemberRange.html">Set.MemberRange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set-MySetIterator.html">Set.MySetIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SetInstance.html">SetInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SetMap.html">SetMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SetMap-MySetMapIterator.html">SetMap.MySetMapIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table-MyTableIterator.html">Table.MyTableIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableInstance.html">TableInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableMap.html">TableMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableMap-MyTableMapIterator.html">TableMap.MyTableMapIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tuple.html">Tuple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Util.html">Util</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Variable.html">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Variable-MyVariableIterator.html">Variable.MyVariableIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VariableInstance.html">VariableInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VariableMap.html">VariableMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VariableMap-MyVariableMapIterator.html">VariableMap.MyVariableMapIterator</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../reference.html" class="nav-link">Java API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../packages.html" class="nav-link">Javadoc</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">com.ampl</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="com-ampl">
+<h1>com.ampl<a class="headerlink" href="#com-ampl" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound" id="package-com.ampl">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="AMPL.html">AMPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMPL-InnerErrorHandler.html">AMPL.InnerErrorHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMPL-InnerOutputHandler.html">AMPL.InnerOutputHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMPL-RunnableBridge.html">AMPL.RunnableBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMPLException.html">AMPLException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicEntity.html">BasicEntity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicInstance.html">BasicInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Constraint.html">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Constraint-MyConstraintIterator.html">Constraint.MyConstraintIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ConstraintInstance.html">ConstraintInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ConstraintMap.html">ConstraintMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ConstraintMap-MyConstraintMapIterator.html">ConstraintMap.MyConstraintMapIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataFrame.html">DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Entity.html">Entity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EntityMap.html">EntityMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ErrorHandler.html">ErrorHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Instance.html">Instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OSUtils.html">OSUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objective.html">Objective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objective-MyObjectiveIterator.html">Objective.MyObjectiveIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObjectiveInstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObjectiveMap.html">ObjectiveMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObjectiveMap-MyObjectiveMapIterator.html">ObjectiveMap.MyObjectiveMapIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OutputHandler.html">OutputHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parameter.html">Parameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parameter-MyParameterIterator.html">Parameter.MyParameterIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ParameterMap.html">ParameterMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ParameterMap-MyParameterMapIterator.html">ParameterMap.MyParameterMapIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Set.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Set-MemberRange.html">Set.MemberRange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Set-MySetIterator.html">Set.MySetIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetInstance.html">SetInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetMap.html">SetMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetMap-MySetMapIterator.html">SetMap.MySetMapIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Table.html">Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Table-MyTableIterator.html">Table.MyTableIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TableInstance.html">TableInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TableMap.html">TableMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TableMap-MyTableMapIterator.html">TableMap.MyTableMapIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tuple.html">Tuple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Util.html">Util</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Variable.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Variable-MyVariableIterator.html">Variable.MyVariableIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VariableInstance.html">VariableInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VariableMap.html">VariableMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VariableMap-MyVariableMapIterator.html">VariableMap.MyVariableMapIterator</a></li>
+</ul>
+</div>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../packages.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Javadoc</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="AMPL-InnerErrorHandler.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AMPL.InnerErrorHandler</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

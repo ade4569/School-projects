@@ -1,0 +1,1465 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>AMPL &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/ampl';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/dotnet/classes/ampl.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DataFrame" href="dataframe.html" />
+    <link rel="prev" title="C# API Reference" href="../reference.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="../index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">C# API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../deployment.html">
+    Deployment Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C# API Reference
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../examples.html">
+    C# API Examples
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../deployment.html">
+    Deployment Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C# API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    C# API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">AMPL</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="dataframe.html">DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tuple.html">Tuple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variant.html">Variant</a></li>
+
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="entity.html">EntityBase</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="entitymap.html">EntityMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instance.html">Instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constraint.html">Constraint</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="constraintinstance.html">ConstraintInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objective.html">Objective</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="objectiveinstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameter.html">Parameter</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="set.html">Set</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="setinstance.html">SetInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variable.html">Variable</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="variableinstance.html">VariableInstance</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="amplexception.html">AMPLException</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../reference.html" class="nav-link">C# API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">AMPL</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="ampl">
+<span id="ref-ampl"></span><h1>AMPL<a class="headerlink" href="#ampl" title="Link to this heading">#</a></h1>
+<dl class="cs class">
+<dt class="sig sig-object cs" id="class-ampl.AMPL">
+<span class="target" id="classampl_1_1_a_m_p_l"></span><em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ampl.AMPL</span></span> <span class="pre">:</span> <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.IDisposable" title="type: msdn ~&gt; System.IDisposable"><span class="pre">IDisposable</span></a><a class="headerlink" href="#class-ampl.AMPL" title="Link to this definition">#</a></dt>
+<dd><p>An <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> translator. </p>
+<p>An object of this class can be used to do the following tasks:</p>
+<p>Run <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> code. See <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1ac4df2b43d4452313f9258ff7b4197ae6"><span class="std std-ref"><span class="pre">ampl.AMPL.Eval</span></span></a></code>.</p>
+<p>Read models and data from files. See <code class="docutils literal notranslate"><span class="pre">ampl.AMPL.read</span></code> and <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a839ecf76965a0e3ac6a73ea6b7cdb2fa"><span class="std std-ref"><span class="pre">ampl.AMPL.ReadData</span></span></a></code>.</p>
+<p>Solve optimization problems constructed from model and data (see <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a05c6be3b348d860ce44913500bec598a"><span class="std std-ref"><span class="pre">ampl.AMPL.Solve</span></span></a></code>).</p>
+<p>Access single elements of an optimization problem. See the generic <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1acd4b0990fd34f7ec79de2eaeb694025a"><span class="std std-ref"><span class="pre">ampl.AMPL.GetEntity</span></span></a></code> and the generic <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a21a5c7e970f7966bb676053ed131dda5"><span class="std std-ref"><span class="pre">ampl.AMPL.GetVariable</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1abbcbc3e9f8c2613e95c127500b4d1140"><span class="std std-ref"><span class="pre">ampl.AMPL.GetObjective</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1ac507d64bb7682534277454c543374d2f"><span class="std std-ref"><span class="pre">ampl.AMPL.GetConstraint</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a5fbba7125aae2ad448ba03332fd477bd"><span class="std std-ref"><span class="pre">ampl.AMPL.GetSet</span></span></a></code> and <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a4813c4037ec85c2a9e3ef74336e6ef70"><span class="std std-ref"><span class="pre">ampl.AMPL.GetParameter</span></span></a></code>.</p>
+<p>Access lists of available elements of an optimization problem. See <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a058e836ec479ecbb97c4299af4fba77e"><span class="std std-ref"><span class="pre">ampl.AMPL.GetVariables</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1afddf27051325142e5ff7f4e1713febc8"><span class="std std-ref"><span class="pre">ampl.AMPL.GetObjectives</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a5da9fce285a36671e62f0b686a448e0e"><span class="std std-ref"><span class="pre">ampl.AMPL.GetConstraints</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1aed83006f50bef51e6f5a31f8f9da41be"><span class="std std-ref"><span class="pre">ampl.AMPL.GetSets</span></span></a></code> and <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1ad9a98c5d659d89ce71b0a18098b40723"><span class="std std-ref"><span class="pre">ampl.AMPL.GetParameters</span></span></a></code>.</p>
+<p><a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> stores one or more problems which may consume substantial amount of memory. An <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> object without any references to it will eventually be freed by the Java garbage collector and all the memory and other resources associated with it will be released. This includes any resources which are out of scope of the garbage collector such as open files or memory managed by the native code. Call <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a2440982dbf19859c0ae707c7f6864ebd"><span class="std std-ref"><span class="pre">ampl.AMPL.Close</span></span></a></code> to release these resources explicitly.</p>
+<p>The initialization of the Java representation of the <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> entities (any class derived from <code class="docutils literal notranslate"><span class="pre">ampl.Entities.Entity</span></code>) is lazy and consists of two steps. When a function listing available elements is called, only a shallow list with names, types and declarations of the elements is populated. The same happens when a reference to a Java representation of one entity is obtained (through a call to <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1acd4b0990fd34f7ec79de2eaeb694025a"><span class="std std-ref"><span class="pre">ampl.AMPL.GetEntity</span></span></a></code> or any other single entity factory function). When accessing any instance of an entity (through the methods ‘get’ of any class), the (memory hungry) list of instances for that entity is created.</p>
+<p>Consistency is maintained automatically. Any command issued to the translator through <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1ac4df2b43d4452313f9258ff7b4197ae6"><span class="std std-ref"><span class="pre">ampl.AMPL.Eval</span></span></a></code> and similar functions invalidates all entities, and any further access to any entity will require communication between the native translator and the Java code. Conversely, any operation called through the Java equivalent function, like fixing variables or solving the model will invalidate only the entities involved. A list of dependencies between entities is automatically updated.</p>
+<p>Error handling is two-faced:</p>
+<p><ol class="loweralpha simple">
+<li><p>Errors coming from the underlying <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> translator (e.g. syntax errors and warnings obtained calling the <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1ac4df2b43d4452313f9258ff7b4197ae6"><span class="std std-ref"><span class="pre">ampl.AMPL.Eval</span></span></a></code> method) are handled by the event <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a8c949e63781db2192f33148b1100989a"><span class="std std-ref"><span class="pre">ampl.AMPL.Error</span></span></a></code>. Note that by default the event is disabled. To enable it, call <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a1ce1a9ccb622d2d10dee3ebfc811dd39"><span class="std std-ref"><span class="pre">ampl.AMPL.EnableErrorAndWarningRouting</span></span></a></code>.</p></li>
+<li><p>Generic errors coming from misusing the API, which are detected in .NET, are thrown as exceptions.</p></li>
+</ol>
+</p>
+<p>The default implementation of the error handler throws exceptions on errors and prints to console on warnings.</p>
+<p>The output of every user interaction with the underlying translator is handled by the event <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1abc922cdb87b9e5f37f6bc503d684e6b5"><span class="std std-ref"><span class="pre">ampl.AMPL.Output</span></span></a></code>, which is called at each block of output from the translator after the function <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a3c964b4ed347b1077d37c39adf6dfdff"><span class="std std-ref"><span class="pre">ampl.AMPL.EnableOutputRouting</span></span></a></code> is called. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.EnableOutputRouting">
+<span class="target" id="classampl_1_1_a_m_p_l_1a3c964b4ed347b1077d37c39adf6dfdff"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">EnableOutputRouting</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.EnableOutputRouting" title="Link to this definition">#</a></dt>
+<dd><p>Enable routing of <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> console outputs through the C# wrapper. </p>
+<p>Must be called to enable handling of the output through a personalised handler registered with <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1abc922cdb87b9e5f37f6bc503d684e6b5"><span class="std std-ref"><span class="pre">ampl.AMPL.Output</span></span></a></code>.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#classampl_1_1_a_m_p_l_1abc922cdb87b9e5f37f6bc503d684e6b5"><span class="std std-ref">AMPL.Output</span></a></p>
+</div>
+</p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.EnableErrorAndWarningRouting">
+<span class="target" id="classampl_1_1_a_m_p_l_1a1ce1a9ccb622d2d10dee3ebfc811dd39"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">EnableErrorAndWarningRouting</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.EnableErrorAndWarningRouting" title="Link to this definition">#</a></dt>
+<dd><p>Enable routing of <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> error and warning handling via the C# wrapper. </p>
+<p>Must be called to enable handling of errors and warning through handlers registered with <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a8c949e63781db2192f33148b1100989a"><span class="std std-ref"><span class="pre">ampl.AMPL.Error</span></span></a></code> and <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a9195ca6280356e401b93719eb58c8524"><span class="std std-ref"><span class="pre">ampl.AMPL.Warning</span></span></a></code>.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a8c949e63781db2192f33148b1100989a"><span class="std std-ref">AMPL.Error</span></a>, <a class="reference internal" href="#classampl_1_1_a_m_p_l_1a9195ca6280356e401b93719eb58c8524"><span class="std std-ref">AMPL.Warning</span></a></p>
+</div>
+</p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.AMPL">
+<span class="target" id="classampl_1_1_a_m_p_l_1a7190965b40a34f64709970a6d846d6ad"></span><span class="sig-name descname"><span class="pre">AMPL</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.AMPL" title="Link to this definition">#</a></dt>
+<dd><p>Default constructor: creates a new <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> instance with the default environment. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws ApplicationException<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If no valid <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> license has been found or if the translator cannot be started for any other reason.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_a_m_p_l_1a12b25e8d7d0efa74d838c593c8ac8218"></span><span class="sig-name descname"><span class="pre">AMPL</span></span> <span class="sig-paren">(</span><a class="reference internal" href="environment.html#class-ampl.Environment" title="class: ampl.Environment"><span class="pre">Environment</span></a> <em><span class="pre">e</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Creates a new <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> instance with the specified environment. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws ApplicationException<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If no valid <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> license has been found or if the translator cannot be started for any other reason.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.Eval">
+<span class="target" id="classampl_1_1_a_m_p_l_1ac4df2b43d4452313f9258ff7b4197ae6"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Eval</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">AMPLStatements</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.Eval" title="Link to this definition">#</a></dt>
+<dd><p>Parses <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> code and evaluates it as a possibly empty sequence of <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> declarations and statements. </p>
+<p>As a side effect, it invalidates all entities (as the passed statements can contain any arbitrary command); the lists of entities will be re-populated lazily (at first access) The output of interpreting the statements is passed to the current OutputHandler (see getOutputHandler and setOutputHandler). By default, errors are reported as exceptions and warnings are printed on stdout. This behavior can be changed reassigning an ErrorHandler using setErrorHandler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param AMPLStatements<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A collection of <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> statements and declarations to be passed to the interpreter</p>
+</dd>
+<dt class="field-even">Throws ApplicationException<span class="colon">:</span></dt>
+<dd class="field-even"><p>if the input is not a complete <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> statement (e.g. if it does not end with semicolon) or if the underlying interpreter is not running</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetOutput">
+<span class="target" id="classampl_1_1_a_m_p_l_1a34323249fb9a9be5ff9fe23a55d66b53"></span><span class="pre">string</span> <span class="sig-name descname"><span class="pre">GetOutput</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">AMPLStatements</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetOutput" title="Link to this definition">#</a></dt>
+<dd><p>Equivalent to <code class="docutils literal notranslate"><span class="pre">ampl.AMPL.eval</span></code> but returns the output as a string. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param AMPLStatements<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A collection of <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> statements and declarations to be passed to the interpreter</p>
+</dd>
+<dt class="field-even">Throws ApplicationException<span class="colon">:</span></dt>
+<dd class="field-even"><p>if the input is not a complete <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> statement (e.g. if it does not end with semicolon) or if the underlying interpreter is not running</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.Reset">
+<span class="target" id="classampl_1_1_a_m_p_l_1aaa02ad6dabe3f6df3c08d7cb992c74b2"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Reset</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.Reset" title="Link to this definition">#</a></dt>
+<dd><p>Clears all entities in the underlying <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> interpreter, clears all maps and invalidates all entities. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.Close">
+<span class="target" id="classampl_1_1_a_m_p_l_1a2440982dbf19859c0ae707c7f6864ebd"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Close</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.Close" title="Link to this definition">#</a></dt>
+<dd><p>Stops the underlying engine and release its resources. </p>
+<p>Any further attempt to execute optimisation commands without restarting it will throw an exception. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.Solve">
+<span class="target" id="classampl_1_1_a_m_p_l_1a05c6be3b348d860ce44913500bec598a"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Solve</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">problem</span></em><em> <span class="pre">=</span> <span class="pre">&quot;&quot;</span></em>, <span class="pre">string</span> <em><span class="pre">solver</span></em><em> <span class="pre">=</span> <span class="pre">&quot;&quot;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.Solve" title="Link to this definition">#</a></dt>
+<dd><p>Solve the model. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param problem<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Problem to solve.</p>
+</dd>
+<dt class="field-even">Param solver<span class="colon">:</span></dt>
+<dd class="field-even"><p>Solver to use.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.Read">
+<span class="target" id="classampl_1_1_a_m_p_l_1aba484987dad1b463600a64e7ac5fbfb0"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Read</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.Read" title="Link to this definition">#</a></dt>
+<dd><p>Interprets the specified file (script or model or mixed) As a side effect, it invalidates all entities (as the passed file can contain any arbitrary command); the lists of entities will be re-populated lazily (at first access) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param filename<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path to the file (Relative to the current working directory or absolute)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.ReadData">
+<span class="target" id="classampl_1_1_a_m_p_l_1a839ecf76965a0e3ac6a73ea6b7cdb2fa"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">ReadData</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.ReadData" title="Link to this definition">#</a></dt>
+<dd><p>Interprets the specified data file. </p>
+<p>As a side effect, it invalidates all entities (as the passed file can contain any arbitrary command); the lists of entities will be re-populated lazily (at first access)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param filename<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path to the file (Relative to the current working directory or absolute)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.Cd">
+<span class="target" id="classampl_1_1_a_m_p_l_1abb7c5db1c7d26ddb5253c01a66f56cb8"></span><span class="pre">string</span> <span class="sig-name descname"><span class="pre">Cd</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">directoryName</span></em><em> <span class="pre">=</span> <span class="pre">null</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.Cd" title="Link to this definition">#</a></dt>
+<dd><p>Change or display the current working directory (see <a class="reference external" href="https://en.wikipedia.org/wiki/Working_directory">https://en.wikipedia.org/wiki/Working_directory</a> ). </p>
+<p>
+&lt;return&gt;The current working directory&lt;/return&gt; </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param directoryName<span class="colon">:</span></dt>
+<dd class="field-odd"><p>New working directory or null (to display the working directory)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.ReadTable">
+<span class="target" id="classampl_1_1_a_m_p_l_1a2fa2c744ba6fbc10e2aee860d26820bc"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">ReadTable</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">tableName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.ReadTable" title="Link to this definition">#</a></dt>
+<dd><p>Read the table corresponding to the specified name, equivalent to the <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> statement: </p>
+<p>read table tableName;</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param tableName<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the table to be read</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.Interrupt">
+<span class="target" id="classampl_1_1_a_m_p_l_1a2364d4a2d86cd7b6a41d9e640286cd03"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Interrupt</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.Interrupt" title="Link to this definition">#</a></dt>
+<dd><p>Interrupt an underlying asynchronous operation (execution of <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> code by the <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> interpreter). </p>
+<p>An asynchronous operation can be started via evalAsync(), solveAsync(), readAsync() and readDataAsync(). Does nothing if the engine and the solver are idle. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.EvalAsync">
+<span class="target" id="classampl_1_1_a_m_p_l_1a55722d86c1c017b69cedf4958cbbe5d3"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">EvalAsync</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">AMPLStatements</span></em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.Action" title="type: msdn ~&gt; System.Action"><span class="pre">Action</span></a> <em><span class="pre">cb</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.EvalAsync" title="Link to this definition">#</a></dt>
+<dd><p>Interpret asynchronously the given <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> statements. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param AMPLStatements<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Statements to be interpreted</p>
+</dd>
+<dt class="field-even">Param cb<span class="colon">:</span></dt>
+<dd class="field-even"><p>Call back to be executed when completed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.SolveAsync">
+<span class="target" id="classampl_1_1_a_m_p_l_1a89c508a64fc5efff8956384296c555cd"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">SolveAsync</span></span> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.Action" title="type: msdn ~&gt; System.Action"><span class="pre">Action</span></a> <em><span class="pre">cb</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.SolveAsync" title="Link to this definition">#</a></dt>
+<dd><p>Solve the current model asynchronously. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param cb<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Call back to be executed when completed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.ReadAsync">
+<span class="target" id="classampl_1_1_a_m_p_l_1a0e0fe42a11623769244e5c5f6472e281"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">ReadAsync</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">filename</span></em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.Action" title="type: msdn ~&gt; System.Action"><span class="pre">Action</span></a> <em><span class="pre">cb</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.ReadAsync" title="Link to this definition">#</a></dt>
+<dd><p>Interprets the specified file asynchronously, interpreting it as a model or a script file. </p>
+<p>As a side effect, it invalidates all entities (as the passed file can contain any arbitrary command); the lists of entities will be re-populated lazily (at first access)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param filename<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path to the file (Relative to the current working directory or absolute)</p>
+</dd>
+<dt class="field-even">Param cb<span class="colon">:</span></dt>
+<dd class="field-even"><p>Callback to be executed when the file has been interpreted</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.ReadDataAsync">
+<span class="target" id="classampl_1_1_a_m_p_l_1ab8e0f56a9a9de3d090807a33b0c8113e"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">ReadDataAsync</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">filename</span></em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.Action" title="type: msdn ~&gt; System.Action"><span class="pre">Action</span></a> <em><span class="pre">cb</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.ReadDataAsync" title="Link to this definition">#</a></dt>
+<dd><p>Interprets the specified data file asynchronously, interpreting it as a model or a script file. </p>
+<p>The file is interpreted as data. As a side effect, it invalidates all entities (as the file can contain arbitrary commands); the lists of entities will be re-populated lazily (at first access)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param filename<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path to the file (Relative to the current working directory or absolute)</p>
+</dd>
+<dt class="field-even">Param cb<span class="colon">:</span></dt>
+<dd class="field-even"><p>Callback to be executed when the file has been interpreted</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.Snapshot">
+<span class="target" id="classampl_1_1_a_m_p_l_1a4a65688b39b26c311b6e5b7c7390915e"></span><span class="pre">string</span> <span class="sig-name descname"><span class="pre">Snapshot</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">fileName</span></em><em> <span class="pre">=</span> <span class="pre">&quot;&quot;</span></em>, <span class="pre">bool</span> <em><span class="pre">model</span></em><em> <span class="pre">=</span> <span class="pre">true</span></em>, <span class="pre">bool</span> <em><span class="pre">data</span></em><em> <span class="pre">=</span> <span class="pre">true</span></em>, <span class="pre">bool</span> <em><span class="pre">options</span></em><em> <span class="pre">=</span> <span class="pre">true</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.Snapshot" title="Link to this definition">#</a></dt>
+<dd><p>Returns all the declarations and data in the current <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> session. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param fileName<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The file where to write the snapshot to.</p>
+</dd>
+<dt class="field-even">Param model<span class="colon">:</span></dt>
+<dd class="field-even"><p>Include model if set to true.</p>
+</dd>
+<dt class="field-odd">Param data<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Include data if set to true.</p>
+</dd>
+<dt class="field-even">Param options<span class="colon">:</span></dt>
+<dd class="field-even"><p>Include options if set to true.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.ExportModel">
+<span class="target" id="classampl_1_1_a_m_p_l_1abdc6c33f21ad9c0706056848e26f1320"></span><span class="pre">string</span> <span class="sig-name descname"><span class="pre">ExportModel</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.ExportModel" title="Link to this definition">#</a></dt>
+<dd><p>Returns all the declarations in the current <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> instance. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_a_m_p_l_1a42942ec6f98f301b865e5604cd1ba8b4"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">ExportModel</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">fileName</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Writes the declarations in the current <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> instance to file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param fileName<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The file to write</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.ExportData">
+<span class="target" id="classampl_1_1_a_m_p_l_1a1e34d216b697d9b69bc1f37e27159053"></span><span class="pre">string</span> <span class="sig-name descname"><span class="pre">ExportData</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.ExportData" title="Link to this definition">#</a></dt>
+<dd><p>Get all the data currently loaded in dat format. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_a_m_p_l_1af4fd4db07d24ee220309f2649b873636"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">ExportData</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">fileName</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Writes all the data currently loaded to file in dat format. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param fileName<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The file to write</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetVariables">
+<span class="target" id="classampl_1_1_a_m_p_l_1a058e836ec479ecbb97c4299af4fba77e"></span><a class="reference internal" href="variable.html#class-ampl.Entities.VariableMap" title="class: ampl.Entities.VariableMap"><span class="pre">Entities.VariableMap</span></a> <span class="sig-name descname"><span class="pre">GetVariables</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetVariables" title="Link to this definition">#</a></dt>
+<dd><p>Get the defined variables. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetConstraints">
+<span class="target" id="classampl_1_1_a_m_p_l_1a5da9fce285a36671e62f0b686a448e0e"></span><a class="reference internal" href="constraint.html#class-ampl.Entities.ConstraintMap" title="class: ampl.Entities.ConstraintMap"><span class="pre">Entities.ConstraintMap</span></a> <span class="sig-name descname"><span class="pre">GetConstraints</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetConstraints" title="Link to this definition">#</a></dt>
+<dd><p>Get the defined constraints. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetObjectives">
+<span class="target" id="classampl_1_1_a_m_p_l_1afddf27051325142e5ff7f4e1713febc8"></span><a class="reference internal" href="objective.html#class-ampl.Entities.ObjectiveMap" title="class: ampl.Entities.ObjectiveMap"><span class="pre">Entities.ObjectiveMap</span></a> <span class="sig-name descname"><span class="pre">GetObjectives</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetObjectives" title="Link to this definition">#</a></dt>
+<dd><p>Get the defined objectives. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetSets">
+<span class="target" id="classampl_1_1_a_m_p_l_1aed83006f50bef51e6f5a31f8f9da41be"></span><a class="reference internal" href="set.html#class-ampl.Entities.SetMap" title="class: ampl.Entities.SetMap"><span class="pre">Entities.SetMap</span></a> <span class="sig-name descname"><span class="pre">GetSets</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetSets" title="Link to this definition">#</a></dt>
+<dd><p>Get the defined sets. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetParameters">
+<span class="target" id="classampl_1_1_a_m_p_l_1ad9a98c5d659d89ce71b0a18098b40723"></span><a class="reference internal" href="parameter.html#class-ampl.Entities.ParameterMap" title="class: ampl.Entities.ParameterMap"><span class="pre">Entities.ParameterMap</span></a> <span class="sig-name descname"><span class="pre">GetParameters</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetParameters" title="Link to this definition">#</a></dt>
+<dd><p>Get the defined parameters. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetEntity">
+<span class="target" id="classampl_1_1_a_m_p_l_1acd4b0990fd34f7ec79de2eaeb694025a"></span><a class="reference internal" href="entity.html#class-ampl.Entities.EntityBase" title="class: ampl.Entities.EntityBase"><span class="pre">Entities.EntityBase</span></a> <span class="sig-name descname"><span class="pre">GetEntity</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetEntity" title="Link to this definition">#</a></dt>
+<dd><p>Get entity corresponding to the specified name (looks for it in all types of entities) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the entity</p>
+</dd>
+<dt class="field-even">Throws ArgumentOutOfRangeException<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the specified entity is not found</p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> entity with the specified name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetVariable">
+<span class="target" id="classampl_1_1_a_m_p_l_1a21a5c7e970f7966bb676053ed131dda5"></span><a class="reference internal" href="variable.html#class-ampl.Entities.Variable" title="class: ampl.Entities.Variable"><span class="pre">Entities.Variable</span></a> <span class="sig-name descname"><span class="pre">GetVariable</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetVariable" title="Link to this definition">#</a></dt>
+<dd><p>Get the variable with the corresponding name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the variable to be found</p>
+</dd>
+<dt class="field-even">Throws ArgumentOutOfRangeException<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the specified variable does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetConstraint">
+<span class="target" id="classampl_1_1_a_m_p_l_1ac507d64bb7682534277454c543374d2f"></span><a class="reference internal" href="constraint.html#class-ampl.Entities.Constraint" title="class: ampl.Entities.Constraint"><span class="pre">Entities.Constraint</span></a> <span class="sig-name descname"><span class="pre">GetConstraint</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetConstraint" title="Link to this definition">#</a></dt>
+<dd><p>Get the constraint with the corresponding name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the constraint to be found</p>
+</dd>
+<dt class="field-even">Throws ArgumentOutOfRangeException<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the specified constraint does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetObjective">
+<span class="target" id="classampl_1_1_a_m_p_l_1abbcbc3e9f8c2613e95c127500b4d1140"></span><a class="reference internal" href="objective.html#class-ampl.Entities.Objective" title="class: ampl.Entities.Objective"><span class="pre">Entities.Objective</span></a> <span class="sig-name descname"><span class="pre">GetObjective</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetObjective" title="Link to this definition">#</a></dt>
+<dd><p>Get the objective with the corresponding name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the objective to be found</p>
+</dd>
+<dt class="field-even">Throws ArgumentOutOfRangeException<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the specified objective does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetParameter">
+<span class="target" id="classampl_1_1_a_m_p_l_1a4813c4037ec85c2a9e3ef74336e6ef70"></span><a class="reference internal" href="parameter.html#class-ampl.Entities.Parameter" title="class: ampl.Entities.Parameter"><span class="pre">Entities.Parameter</span></a> <span class="sig-name descname"><span class="pre">GetParameter</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetParameter" title="Link to this definition">#</a></dt>
+<dd><p>Get the parameter with the corresponding name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the parameter to be found</p>
+</dd>
+<dt class="field-even">Throws ArgumentOutOfRangeException<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the specified parameter does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetSet">
+<span class="target" id="classampl_1_1_a_m_p_l_1a5fbba7125aae2ad448ba03332fd477bd"></span><a class="reference internal" href="set.html#class-ampl.Entities.Set" title="class: ampl.Entities.Set"><span class="pre">Entities.Set</span></a> <span class="sig-name descname"><span class="pre">GetSet</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetSet" title="Link to this definition">#</a></dt>
+<dd><p>Get the set with the corresponding name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the set to be found</p>
+</dd>
+<dt class="field-even">Throws ArgumentOutOfRangeException<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the specified set does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetValue">
+<span class="target" id="classampl_1_1_a_m_p_l_1ab837ba0b9c058ebbf27d275b63182939"></span><a class="reference internal" href="variant.html#class-ampl.Variant" title="class: ampl.Variant"><span class="pre">Variant</span></a> <span class="sig-name descname"><span class="pre">GetValue</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">scalarExpression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetValue" title="Link to this definition">#</a></dt>
+<dd><p>Get a scalar value from the underlying <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> interpreter, as a double or a string. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param scalarExpression<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> expression which evaluates to a scalar value.</p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetData">
+<span class="target" id="classampl_1_1_a_m_p_l_1a5e2da91e83c385aec364d0a8182b05e8"></span><a class="reference internal" href="dataframe.html#class-ampl.DataFrame" title="class: ampl.DataFrame"><span class="pre">DataFrame</span></a> <span class="sig-name descname"><span class="pre">GetData</span></span> <span class="sig-paren">(</span><em class="property"><span class="pre">params</span></em> <span class="pre">string</span><span class="pre">[]</span> <em><span class="pre">statements</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetData" title="Link to this definition">#</a></dt>
+<dd><p>Get the data corresponding to the display statements. The statements can be <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> expressions, or entities. It captures the equivalent of the command: </p>
+<p><code class="docutils literal notranslate"><span class="pre">display</span> <span class="pre">ds1,</span> <span class="pre">...,</span> <span class="pre">dsn;</span></code></p>
+<p> where&lt;c&gt; ds1, …, dsn are the <em>statements</em>  with which the function is called. </p>
+<p>As only one <a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> is returned, the operation will fail if the results of the display statements cannot be indexed over the same set. As a result, any attempt to get data from more than one set, or to get data for multiple parameters with a different number of indexing sets will fail.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param statements<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The display statements to be fetched</p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> capturing the output of the display command in tabular form </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.SetData">
+<span class="target" id="classampl_1_1_a_m_p_l_1adb6e489dfe5ea581671066e2d262b6e9"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">SetData</span></span> <span class="sig-paren">(</span><a class="reference internal" href="dataframe.html#class-ampl.DataFrame" title="class: ampl.DataFrame"><span class="pre">DataFrame</span></a> <em><span class="pre">df</span></em>, <span class="pre">string</span> <em><span class="pre">setName</span></em><em> <span class="pre">=</span> <span class="pre">null</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.SetData" title="Link to this definition">#</a></dt>
+<dd><p>Assign the data in the dataframe to the <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> entities with the names corresponding to the column names.If setName is null, only the parameters value will be assigned. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param df<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dataframe containing the data to be assigned</p>
+</dd>
+<dt class="field-even">Param setName<span class="colon">:</span></dt>
+<dd class="field-even"><p>The name of the set to which the indices values of the <a class="reference internal" href="dataframe.html#classampl_1_1_data_frame"><span class="std std-ref">DataFrame</span></a> are to be assigned. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.SetOption">
+<span class="target" id="classampl_1_1_a_m_p_l_1ad399696791094bf9891a9d001ff4ea0d"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">SetOption</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em>, <span class="pre">string</span> <em><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.SetOption" title="Link to this definition">#</a></dt>
+<dd><p>Set an <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> option to a specified value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the option to be set (alphanumeric without spaces)</p>
+</dd>
+<dt class="field-even">Param value<span class="colon">:</span></dt>
+<dd class="field-even"><p>String representing the value the option must be set to</p>
+</dd>
+<dt class="field-odd">Throws ArgumentException<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if the option name is not valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_a_m_p_l_1aebd89763f98ace5168a5569def9e55ef"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">SetOption</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em>, <span class="pre">double</span> <em><span class="pre">value</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Set an <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> option to a specified double value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the option to be set (alphanumeric without spaces)</p>
+</dd>
+<dt class="field-even">Param value<span class="colon">:</span></dt>
+<dd class="field-even"><p>Value the option must be set to</p>
+</dd>
+<dt class="field-odd">Throws ArgumentException<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if the option name is not valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_a_m_p_l_1a60e48bdd0a6c5f745097b3152facdc8b"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">SetOption</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em>, <span class="pre">int</span> <em><span class="pre">value</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Set an <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> option to a specified integer value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the option to be set (alphanumeric without spaces)</p>
+</dd>
+<dt class="field-even">Param value<span class="colon">:</span></dt>
+<dd class="field-even"><p>Value the option must be set to</p>
+</dd>
+<dt class="field-odd">Throws ArgumentException<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if the option name is not valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classampl_1_1_a_m_p_l_1a85c3969b2bb04d9f2afde4d32bc8323e"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">SetOption</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em>, <span class="pre">bool</span> <em><span class="pre">value</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Set an <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> option to a specified boolean value. </p>
+<p>In <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a>, boolean options are represented as integer: 0 for false, 1 for true.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the option to be set (alphanumeric without spaces)</p>
+</dd>
+<dt class="field-even">Param value<span class="colon">:</span></dt>
+<dd class="field-even"><p>Value the option must be set to</p>
+</dd>
+<dt class="field-odd">Throws ArgumentException<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if the option name is not valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetOption">
+<span class="target" id="classampl_1_1_a_m_p_l_1acd3e083deaad8c29b9cb191d40e07483"></span><span class="pre">string</span> <span class="sig-name descname"><span class="pre">GetOption</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetOption" title="Link to this definition">#</a></dt>
+<dd><p>Get the current value of the specified option. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Option name</p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p>The option value, null if the specified option does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetIntOption">
+<span class="target" id="classampl_1_1_a_m_p_l_1a5032774cadf462c8b694a3ea257300ff"></span><span class="pre">int</span><span class="pre">?</span> <span class="sig-name descname"><span class="pre">GetIntOption</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetIntOption" title="Link to this definition">#</a></dt>
+<dd><p>Get the current value of the specified option. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Option name</p>
+</dd>
+<dt class="field-even">Throws ArgumentException<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the option is not in the correct format</p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The option value, null if the specified option does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetDblOption">
+<span class="target" id="classampl_1_1_a_m_p_l_1a1d1745eb14109c4615860ee886dae000"></span><span class="pre">double</span><span class="pre">?</span> <span class="sig-name descname"><span class="pre">GetDblOption</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetDblOption" title="Link to this definition">#</a></dt>
+<dd><p>Get the current value of the specified option. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Option name</p>
+</dd>
+<dt class="field-even">Throws ArgumentException<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the option is not in the correct format</p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The option value, null if the specified option does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.GetBoolOption">
+<span class="target" id="classampl_1_1_a_m_p_l_1ab6d14d847f46e5cac4d75313153b20b2"></span><span class="pre">bool</span><span class="pre">?</span> <span class="sig-name descname"><span class="pre">GetBoolOption</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.GetBoolOption" title="Link to this definition">#</a></dt>
+<dd><p>Get the current value of the specified boolean option. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Option name</p>
+</dd>
+<dt class="field-even">Throws ArgumentException<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the option is not in the correct format</p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The option value, null if the specified option does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.ToString">
+<span class="target" id="classampl_1_1_a_m_p_l_1a9add9c32597e595388658d4db1b62c73"></span><em class="property"><span class="pre">override</span></em> <span class="pre">string</span> <span class="sig-name descname"><span class="pre">ToString</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.ToString" title="Link to this definition">#</a></dt>
+<dd><p>Get a string describing the object. </p>
+<p><p>Returns the version of the API and either the version of the interpreter or the message “AMPL is not</p>
+<p>running” if the interpreter is not running (e.g. due to unexpected internal error or to a call</p>
+<a class="reference internal" href="#classampl_1_1_a_m_p_l_1a2440982dbf19859c0ae707c7f6864ebd"><span class="std std-ref">AMPL.Close()</span></a>) </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-properties">Properties</p>
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.AMPL.CurrentObjectiveName">
+<span class="target" id="classampl_1_1_a_m_p_l_1a368f51bf2b861debdb2329d8b691b54d"></span><span class="pre">string</span> <span class="sig-name descname"><span class="pre">CurrentObjectiveName</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.AMPL.CurrentObjectiveName" title="Link to this definition">#</a></dt>
+<dd><p>Get the name of the currently active objective (see the <code class="docutils literal notranslate"><span class="pre">objective</span></code> command), or null if no objective has been declared or selected. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.AMPL.Var">
+<span class="target" id="classampl_1_1_a_m_p_l_1a4ba40e6b227b18e17addf85604d36564"></span><a class="reference internal" href="variable.html#class-ampl.Entities.VariableMap" title="class: ampl.Entities.VariableMap"><span class="pre">Entities.VariableMap</span></a> <span class="sig-name descname"><span class="pre">Var</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.AMPL.Var" title="Link to this definition">#</a></dt>
+<dd><p>Get the defined variables. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.AMPL.Con">
+<span class="target" id="classampl_1_1_a_m_p_l_1a7bbbb52c22e0012d567cc10c40bbf201"></span><a class="reference internal" href="constraint.html#class-ampl.Entities.ConstraintMap" title="class: ampl.Entities.ConstraintMap"><span class="pre">Entities.ConstraintMap</span></a> <span class="sig-name descname"><span class="pre">Con</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.AMPL.Con" title="Link to this definition">#</a></dt>
+<dd><p>Get the defined constraints. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.AMPL.Obj">
+<span class="target" id="classampl_1_1_a_m_p_l_1a95a9dd9268a9ff6b4a379b7163039191"></span><a class="reference internal" href="objective.html#class-ampl.Entities.ObjectiveMap" title="class: ampl.Entities.ObjectiveMap"><span class="pre">Entities.ObjectiveMap</span></a> <span class="sig-name descname"><span class="pre">Obj</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.AMPL.Obj" title="Link to this definition">#</a></dt>
+<dd><p>Get the defined objectives. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.AMPL.Set">
+<span class="target" id="classampl_1_1_a_m_p_l_1a0c36a400060c1daa9ec19d6931963753"></span><a class="reference internal" href="set.html#class-ampl.Entities.SetMap" title="class: ampl.Entities.SetMap"><span class="pre">Entities.SetMap</span></a> <span class="sig-name descname"><span class="pre">Set</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.AMPL.Set" title="Link to this definition">#</a></dt>
+<dd><p>Get the defined sets. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-ampl.AMPL.Param">
+<span class="target" id="classampl_1_1_a_m_p_l_1a005266b76ed4cbffcc15eb08ecce8dda"></span><a class="reference internal" href="parameter.html#class-ampl.Entities.ParameterMap" title="class: ampl.Entities.ParameterMap"><span class="pre">Entities.ParameterMap</span></a> <span class="sig-name descname"><span class="pre">Param</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-ampl.AMPL.Param" title="Link to this definition">#</a></dt>
+<dd><p>Get the defined parameters. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-events">Events</p>
+<dl class="cs event">
+<dt class="sig sig-object cs" id="event-ampl.AMPL.Output">
+<span class="target" id="classampl_1_1_a_m_p_l_1abc922cdb87b9e5f37f6bc503d684e6b5"></span><em class="property"><span class="pre">event</span> </em><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.Action" title="type: msdn ~&gt; System.Action"><span class="pre">Action</span></a><span class="pre">&lt;</span><span class="pre">Kind</span><span class="pre">,</span> <span class="pre">string</span><span class="pre">&gt;</span> <span class="sig-name descname"><span class="pre">Output</span></span><a class="headerlink" href="#event-ampl.AMPL.Output" title="Link to this definition">#</a></dt>
+<dd><p>Raised for each <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> output, if <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a3c964b4ed347b1077d37c39adf6dfdff"><span class="std std-ref"><span class="pre">ampl.AMPL.EnableOutputRouting</span></span></a></code> has been called on the current object instance. </p>
+</dd></dl>
+
+<dl class="cs event">
+<dt class="sig sig-object cs" id="event-ampl.AMPL.Error">
+<span class="target" id="classampl_1_1_a_m_p_l_1a8c949e63781db2192f33148b1100989a"></span><em class="property"><span class="pre">event</span> </em><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.Action" title="type: msdn ~&gt; System.Action"><span class="pre">Action</span></a><span class="pre">&lt;</span><a class="reference internal" href="amplexception.html#class-AMPLException" title="class: AMPLException"><span class="pre">AMPLException</span></a><span class="pre">&gt;</span> <span class="sig-name descname"><span class="pre">Error</span></span><a class="headerlink" href="#event-ampl.AMPL.Error" title="Link to this definition">#</a></dt>
+<dd><p>Raised for each <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> error, if <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a1ce1a9ccb622d2d10dee3ebfc811dd39"><span class="std std-ref"><span class="pre">ampl.AMPL.EnableErrorAndWarningRouting</span></span></a></code> has been called on the current object instance. </p>
+</dd></dl>
+
+<dl class="cs event">
+<dt class="sig sig-object cs" id="event-ampl.AMPL.Warning">
+<span class="target" id="classampl_1_1_a_m_p_l_1a9195ca6280356e401b93719eb58c8524"></span><em class="property"><span class="pre">event</span> </em><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.Action" title="type: msdn ~&gt; System.Action"><span class="pre">Action</span></a><span class="pre">&lt;</span><a class="reference internal" href="amplexception.html#class-AMPLException" title="class: AMPLException"><span class="pre">AMPLException</span></a><span class="pre">&gt;</span> <span class="sig-name descname"><span class="pre">Warning</span></span><a class="headerlink" href="#event-ampl.AMPL.Warning" title="Link to this definition">#</a></dt>
+<dd><p>Raised for each <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> warning, if <code class="docutils literal notranslate"><a class="reference internal" href="#classampl_1_1_a_m_p_l_1a1ce1a9ccb622d2d10dee3ebfc811dd39"><span class="std std-ref"><span class="pre">ampl.AMPL.EnableErrorAndWarningRouting</span></span></a></code> has been called on the current object instance. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.LoadModules">
+<span class="target" id="classampl_1_1_a_m_p_l_1ae7f9ace8341612b8a53683524d655da3"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">LoadModules</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.LoadModules" title="Link to this definition">#</a></dt>
+<dd><p>Enable the use of the binaries distributed with the NuGet packages in the namespace AMPL.Module. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws FileNotFoundException<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If the NuGet package(s) are not correctly deployed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-ampl.AMPL.Activate">
+<span class="target" id="classampl_1_1_a_m_p_l_1a565de7cf547ac33d6b8d9192b97c236c"></span><span class="pre">bool</span> <span class="sig-name descname"><span class="pre">Activate</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">licenseid</span></em>, <span class="pre">bool</span> <em><span class="pre">verbose</span></em><em> <span class="pre">=</span> <span class="pre">false</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-ampl.AMPL.Activate" title="Link to this definition">#</a></dt>
+<dd><p>Activate an <a class="reference internal" href="#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> license. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param licenseid<span class="colon">:</span></dt>
+<dd class="field-odd"><p>License UUID</p>
+</dd>
+<dt class="field-even">Param verbose<span class="colon">:</span></dt>
+<dd class="field-even"><p>Set to true to have console output also in case the activation is successful</p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="kind">
+<span id="ref-kind"></span><h1>Kind<a class="headerlink" href="#kind" title="Link to this heading">#</a></h1>
+<p>Represents the type of the output coming from the interpreter.</p>
+<blockquote>
+<div><p class="rubric">Output related to command execution:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">WAITING</span></code> – Output <code class="docutils literal notranslate"><span class="pre">prompt2</span></code>, returned when incomplete statements are interpreted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAK</span></code> – Output <code class="docutils literal notranslate"><span class="pre">break</span></code>, displayed when an operation is interrupted with SIGINT.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CD</span></code> – Output <code class="docutils literal notranslate"><span class="pre">cd</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">cd</span></code> function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DISPLAY</span></code> – Output <code class="docutils literal notranslate"><span class="pre">display</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">display</span></code> function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXIT</span></code> – Output <code class="docutils literal notranslate"><span class="pre">exit</span></code>, returned as the last message from AMPL before exiting the interpreter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPAND</span></code> – Output <code class="docutils literal notranslate"><span class="pre">expand</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">expand</span></code> function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LOAD</span></code> – Output <code class="docutils literal notranslate"><span class="pre">load</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">load</span></code> function when loading a library.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OPTION</span></code> – Output <code class="docutils literal notranslate"><span class="pre">option</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">option</span></code> function when getting the value of an option.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PRINT</span></code> – Output <code class="docutils literal notranslate"><span class="pre">print</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">print</span></code> function when printing values from the AMPL command line.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PROMPT</span></code> – Output <code class="docutils literal notranslate"><span class="pre">prompt1</span></code>, normal AMPL prompt.</p></li>
+</ul>
+<p class="rubric">Solver and solution-related output:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SOLUTION</span></code> – Output <code class="docutils literal notranslate"><span class="pre">solution</span></code>, returned when loading a solution with the <code class="docutils literal notranslate"><span class="pre">solution</span></code> command; contains the solver message.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SOLVE</span></code> – Output <code class="docutils literal notranslate"><span class="pre">solve</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">solve</span></code> function; contains the solver message.</p></li>
+</ul>
+<p class="rubric">Miscellaneous command output:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOW</span></code> – Output <code class="docutils literal notranslate"><span class="pre">show</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">show</span></code> function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">XREF</span></code> – Output <code class="docutils literal notranslate"><span class="pre">xref</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">xref</span></code> function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHELL_OUTPUT</span></code> – Output from the AMPL command <code class="docutils literal notranslate"><span class="pre">shell</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHELL_MESSAGE</span></code> – Messages from the command <code class="docutils literal notranslate"><span class="pre">shell</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MISC</span></code> – General miscellaneous output.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WRITE_TABLE</span></code> – Messages from the <code class="docutils literal notranslate"><span class="pre">write</span> <span class="pre">table</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">READ_TABLE</span></code> – Messages from the <code class="docutils literal notranslate"><span class="pre">read</span> <span class="pre">table</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_READTABLE</span></code> – Internal messages from the <code class="docutils literal notranslate"><span class="pre">read</span> <span class="pre">table</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_WRITETABLE</span></code> – Internal messages from the <code class="docutils literal notranslate"><span class="pre">write</span> <span class="pre">table</span></code> command.</p></li>
+</ul>
+<p class="rubric">Debugging and scripting:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKPOINT</span></code> – Breakpoint hit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CALL</span></code> – Output of a script <code class="docutils literal notranslate"><span class="pre">call</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CHECK</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">check</span></code> operation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CLOSE</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">close</span></code> command for output redirection.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">COMMANDS</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">commands</span></code> call into another file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONTINUE</span></code> – Issued when <code class="docutils literal notranslate"><span class="pre">continue</span></code> is encountered.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DATA</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">data</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETECMD</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">delete</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DROP</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">drop</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DROP_OR_RESTORE_ALL</span></code> – Internal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ELSE</span></code> – Else block.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ELSE_CHECK</span></code> – Internal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ENDIF</span></code> – End of if block.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ENVIRON</span></code> – Output of an <code class="docutils literal notranslate"><span class="pre">environ</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FIX</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">fix</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOR</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">for</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IF</span></code> – Output of an <code class="docutils literal notranslate"><span class="pre">if</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LET</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">let</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LOOPEND</span></code> – End of loop.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OBJECTIVE</span></code> – Output of an <code class="docutils literal notranslate"><span class="pre">objective</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OPTION_RESET</span></code> – Occurs when resetting option values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PRINTF</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">printf</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PROBLEM</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">problem</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PURGE</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">purge</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RBRACE</span></code> – Occurs when a right brace is encountered.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">READ</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">read</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RELOAD</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">reload</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REMOVE</span></code> – Output of a <code class="docutils literal notranslate"><span class="pre">remove</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REPEAT</span></code> – Beginning of a <code class="docutils literal notranslate"><span class="pre">repeat</span></code> block.</p></li>
+</ul>
+</div></blockquote>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../reference.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">C# API Reference</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dataframe.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DataFrame</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">AMPL</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kind">Kind</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

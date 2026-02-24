@@ -1,0 +1,5 @@
+reset;
+model models/nlmodels/s324.mod;
+option solver gurobi;
+solve;
+display x;

@@ -1,0 +1,15 @@
+.. _ref::Variable:
+
+Variable
+--------
+
+.. doxygenclass:: ampl::Entities::Variable
+   :members:
+   :undoc-members:
+
+VariableMap
+-----------
+
+.. doxygenclass:: ampl::Entities::VariableMap
+   :members:
+   :undoc-members:

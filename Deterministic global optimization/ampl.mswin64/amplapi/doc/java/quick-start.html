@@ -1,0 +1,913 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>Quick Start &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'quick-start';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/java/quick-start.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Class structure" href="class-structure.html" />
+    <link rel="prev" title="Initial Setup" href="getting-started.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">Java API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference.html">
+    Java API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Java API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference.html">
+    Java API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Java API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Quick Start</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="quick-start">
+<span id="secjavaquickstart"></span><h1>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h1>
+<p>This section will show a simple example to illustrate various functionalities of the AMPL Java interface.
+The full example prints the version of the AMPL interpreter used, loads a model from file and the corresponding
+data file, solves it, gets some of the AMPL entities in Java and uses them to get the results and to assign data
+programmatically. This section assumes that you are already familiar with the Java language. Where screenshots are
+displayed, they refer to <a class="reference external" href="http://www.eclipse.org">Eclipse</a>, a free development environment.
+Full class reference is given in <a class="reference internal" href="reference.html#secreferencejava"><span class="std std-ref">Java API Reference</span></a>.</p>
+<section id="complete-listing">
+<h2>Complete listing<a class="headerlink" href="#complete-listing" title="Link to this heading">#</a></h2>
+<p>This is the complete listing of the example. Please note that, for clarity of presentation,
+all the code in the examples below does not include exceptions handling.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create an AMPL instance</span>
+<span class="n">AMPL</span><span class="w"> </span><span class="n">ampl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AMPL</span><span class="p">();</span>
+
+<span class="cm">/*</span>
+<span class="cm">// If the AMPL installation directory is not in the system search path:</span>
+<span class="cm">Environment env = new Environment(</span>
+<span class="cm">    &quot;full path to the AMPL installation directory&quot;);</span>
+<span class="cm">AMPL ampl = new AMPL(env);</span>
+<span class="cm">*/</span>
+
+<span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Interpret the two files</span>
+<span class="w">    </span><span class="n">ampl</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="s">&quot;models/diet.mod&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ampl</span><span class="p">.</span><span class="na">readData</span><span class="p">(</span><span class="s">&quot;models/diet.dat&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Solve</span>
+<span class="w">    </span><span class="n">ampl</span><span class="p">.</span><span class="na">solve</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Get objective entity by AMPL name</span>
+<span class="w">    </span><span class="n">Objective</span><span class="w"> </span><span class="n">totalcost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="na">getObjective</span><span class="p">(</span><span class="s">&quot;Total_Cost&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Print it</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;Objective is: %f%n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">totalcost</span><span class="p">.</span><span class="na">value</span><span class="p">());</span>
+
+<span class="w">    </span><span class="c1">// Reassign data - specific instances</span>
+<span class="w">    </span><span class="n">Parameter</span><span class="w"> </span><span class="n">cost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;cost&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cost</span><span class="p">.</span><span class="na">setValues</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;BEEF&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;HAM&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">5.01</span><span class="p">,</span><span class="w"> </span><span class="mf">4.55</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Increased costs of beef and ham.&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Resolve and display objective</span>
+<span class="w">    </span><span class="n">ampl</span><span class="p">.</span><span class="na">solve</span><span class="p">();</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;New objective value: %f%n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">totalcost</span><span class="p">.</span><span class="na">value</span><span class="p">());</span>
+
+<span class="w">    </span><span class="c1">// Reassign data - all instances</span>
+<span class="w">    </span><span class="n">cost</span><span class="p">.</span><span class="na">setValues</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">5.01</span><span class="p">,</span><span class="w"> </span><span class="mf">4.55</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Updated all costs&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Resolve and display objective</span>
+<span class="w">    </span><span class="n">ampl</span><span class="p">.</span><span class="na">solve</span><span class="p">();</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;New objective value: %f%n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">totalcost</span><span class="p">.</span><span class="na">value</span><span class="p">());</span>
+
+<span class="w">    </span><span class="c1">// Get the values of the variable Buy in a dataframe object</span>
+<span class="w">    </span><span class="n">Variable</span><span class="w"> </span><span class="n">buy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="na">getVariable</span><span class="p">(</span><span class="s">&quot;Buy&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">DataFrame</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buy</span><span class="p">.</span><span class="na">getValues</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// Print them</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">df</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Get the values of an expression into a DataFrame object</span>
+<span class="w">    </span><span class="n">DataFrame</span><span class="w"> </span><span class="n">df2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="na">getData</span><span class="p">(</span><span class="s">&quot;{j in FOOD} 100*Buy[j]/Buy[j].ub&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Print them</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">df2</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ampl</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="create-a-project-and-add-references">
+<h2>Create a project and add references<a class="headerlink" href="#create-a-project-and-add-references" title="Link to this heading">#</a></h2>
+<p>This section depends on the chosen development environment. The screenshots below refer to Eclipse.</p>
+<section id="creating-a-new-project">
+<h3>Creating a new project<a class="headerlink" href="#creating-a-new-project" title="Link to this heading">#</a></h3>
+<p>Open Eclipse, choose an appropriate workspace and create a new Java project as shown in
+figure <a class="reference internal" href="#figeclipsecreateproject"><span class="std std-ref">Create a project</span></a>.
+Please note that the minimum required JRE is version 1.6.</p>
+<figure class="align-center" id="id1">
+<span id="figeclipsecreateproject"></span><a class="reference internal image-reference" href="_images/CreateProject.png"><img alt="Create a new project in eclipse" src="_images/CreateProject.png" style="width: 371px; height: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Create a project</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="add-a-reference-to-the-ampl-java-library">
+<h3>Add a reference to the AMPL Java library<a class="headerlink" href="#add-a-reference-to-the-ampl-java-library" title="Link to this heading">#</a></h3>
+<p>Right click on the project name, click on <span class="guilabel">Properties</span>, select the tab <span class="guilabel">Java Build Path</span>
+and in the tab <span class="guilabel">Libraries</span> click on <span class="guilabel">Add External JARs</span> (figure <a class="reference internal" href="#figeclipseaddreferences"><span class="std std-ref">Add references to Eclipse</span></a>)
+and select the file <strong>ampl-1.0.jar</strong> which can be found in the AMPL API installation directory.
+This will give access to all the types and methods defined in the library.
+The reference AMPL API should now be visible in the Referenced Libraries folder in the Package Explorer.</p>
+<figure class="align-center" id="id2">
+<span id="figeclipseaddreferences"></span><a class="reference internal image-reference" href="_images/AddReferences.png"><img alt="Add references" src="_images/AddReferences.png" style="width: 400px; height: 277px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Add references to Eclipse</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The resulting package explorer view is shown in figure <a class="reference internal" href="#figeclipsedonereferences"><span class="std std-ref">Project with properly configured references</span></a> below.</p>
+<figure class="align-center" id="id3">
+<span id="figeclipsedonereferences"></span><a class="reference internal image-reference" href="_images/ResultingReferences.png"><img alt="Project with properly configured references" src="_images/ResultingReferences.png" style="width: 595px; height: 129px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Project with properly configured references</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="java-imports-and-ampl-environment-creation">
+<h2>Java imports and AMPL environment creation<a class="headerlink" href="#java-imports-and-ampl-environment-creation" title="Link to this heading">#</a></h2>
+<p>For a simple hello world program, first import the needed classes from the library,
+with the following statements:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ampl.AMPL</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ampl.DataFrame</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ampl.Objective</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ampl.Parameter</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ampl.Variable</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Then copy the following statements to have a hello world application which gets the value
+of the option <cite>version</cite> as defined in the underlying AMPL executable and prints the result
+on the console.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">AMPL</span><span class="w"> </span><span class="n">ampl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AMPL</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ampl</span><span class="p">.</span><span class="na">getOption</span><span class="p">(</span><span class="s">&quot;version&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>The first line creates a new Ampl object with all default settings.
+The second, which is the preferred way to access AMPL options, gets the value of the option
+<cite>version</cite> from AMPL as a string and prints the result on the active console.</p>
+</section>
+<section id="load-a-model-from-file">
+<h2>Load a model from file<a class="headerlink" href="#load-a-model-from-file" title="Link to this heading">#</a></h2>
+<p>The following lines use the method <a class="reference internal" href="com/ampl/AMPL.html#com.ampl.AMPL.read(String)" title="com.ampl.AMPL.read(String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">AMPL.read</span></code></a> to load a model and data stored in external (AMPL) files.
+If the files are not found, an IOException is thrown.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="s">&quot;models/diet.mod&quot;</span><span class="p">);</span>
+<span class="n">ampl</span><span class="p">.</span><span class="na">readData</span><span class="p">(</span><span class="s">&quot;models/diet.dat&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Once these commands are executed, the AMPL interpreter will have interpreted the content of the two files.
+No further communication is made between the AMPL interpreter and the Java object, as every entity is created lazily (as needed).</p>
+</section>
+<section id="solve-a-problem">
+<h2>Solve a problem<a class="headerlink" href="#solve-a-problem" title="Link to this heading">#</a></h2>
+<p>To solve the currently loaded problem instance, it is sufficient to issue the command:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ampl</span><span class="p">.</span><span class="na">solve</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section id="get-an-ampl-entity-in-the-programming-environment-get-objective-value">
+<h2>Get an AMPL entity in the programming environment (get objective value)<a class="headerlink" href="#get-an-ampl-entity-in-the-programming-environment-get-objective-value" title="Link to this heading">#</a></h2>
+<p>AMPL API provides java representations of the AMPL entities. Usually, not all the entities are
+of interest for the programmer. The generic procedure is:</p>
+<ol class="arabic simple">
+<li><p>Identify the entities that need interaction (either data read or modification)</p></li>
+<li><p>For each of these entities, create an object of the appropriate class in Java</p></li>
+<li><p>Get the entity through the AMPL API using <a class="reference internal" href="com/ampl/AMPL.html#com.ampl.AMPL.getEntity(String)" title="com.ampl.AMPL.getEntity(String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">AMPL.getEntity</span></code></a> or one of its type safe alternatives (<a class="reference internal" href="com/ampl/AMPL.html#com.ampl.AMPL.getVariable(String)" title="com.ampl.AMPL.getVariable(String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">AMPL.getVariable</span></code></a>, <a class="reference internal" href="com/ampl/AMPL.html#com.ampl.AMPL.getParameter(String)" title="com.ampl.AMPL.getParameter(String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">AMPL.getParameter</span></code></a>, <a class="reference internal" href="com/ampl/AMPL.html#com.ampl.AMPL.getObjective(String)" title="com.ampl.AMPL.getObjective(String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">AMPL.getObjective</span></code></a>  , <a class="reference internal" href="com/ampl/AMPL.html#com.ampl.AMPL.getSet(String)" title="com.ampl.AMPL.getSet(String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">AMPL.getSet</span></code></a>, <a class="reference internal" href="com/ampl/AMPL.html#com.ampl.AMPL.getConstraint(String)" title="com.ampl.AMPL.getConstraint(String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">AMPL.getConstraint</span></code></a>)</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Objective</span><span class="w"> </span><span class="n">totalcost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="na">getObjective</span><span class="p">(</span><span class="s">&quot;Total_Cost&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;Objective is: %f%n&quot;</span><span class="p">,</span><span class="n">totalcost</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">value</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>It can be noted that we access an Objective to interrogate AMPL API about the objective function.
+It is a collections of objectives. To access the single instance, the function get() should be used in
+case of the objective, which gets the only instance of the objective.
+Since objectives are often single instance, the value() function has been implemented in the class <a class="reference internal" href="com/ampl/Objective.html#com.ampl.Objective" title="com.ampl.Objective"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Objective</span></code></a>.
+So, equivalently to the call above, the following call would return the same value, as it gives direct access
+to the objective function value:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">totalcost</span><span class="p">.</span><span class="na">value</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>The output of the program above is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Objective</span> <span class="ow">is</span><span class="p">:</span> <span class="mf">118.05940323955669</span>
+</pre></div>
+</div>
+</section>
+<section id="modify-model-data-assign-values-to-parameters">
+<h2>Modify model data (assign values to parameters)<a class="headerlink" href="#modify-model-data-assign-values-to-parameters" title="Link to this heading">#</a></h2>
+<p>The input data of an optimisation model is stored in its parameters; these can be scalar or vectorial entities.
+Two ways are provided to change the value of vectorial parameter: change specific values or change all values at
+once. The example shows an example of both ways, reassigning the values of the parameter costs firstly specifically,
+then altogether. Each time, it then solves the model and get the objective function. The function used to change the
+values is overloaded, and is in both cases <a class="reference internal" href="com/ampl/Parameter.html#com.ampl.Parameter.setValues(double)" title="com.ampl.Parameter.setValues(double)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Parameter.setValues</span></code></a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Parameter</span><span class="w"> </span><span class="n">cost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;cost&quot;</span><span class="p">);</span>
+<span class="n">cost</span><span class="p">.</span><span class="na">setValues</span><span class="p">(</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;BEEF&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;HAM&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">5.01</span><span class="p">,</span><span class="w"> </span><span class="mf">4.55</span><span class="w"> </span><span class="p">});</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Increased costs of beef and ham.&quot;</span><span class="p">);</span>
+<span class="n">ampl</span><span class="p">.</span><span class="na">solve</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;New objective value: %f%n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">totalcost</span><span class="p">.</span><span class="na">value</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>The code above assigns the values 5.01 and 4.55 to the parameter cost for the objects beef and ham respectively.
+If the order of the indexing of an entity is known (i.e. for multiple reassignment), it is not necessary to specify
+both the index and the value. A collection of values is assigned to each of the parameter values, in the order they are represented in AMPL.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">cost</span><span class="p">.</span><span class="na">setValues</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">5.01</span><span class="p">,</span><span class="w"> </span><span class="mf">4.55</span><span class="w"> </span><span class="p">});</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Updated all costs&quot;</span><span class="p">);</span>
+<span class="c1">// Resolve and display objective</span>
+<span class="n">ampl</span><span class="p">.</span><span class="na">solve</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;New objective value: %f%n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">totalcost</span><span class="p">.</span><span class="na">value</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>The statements above produce the following output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Objective</span> <span class="ow">is</span><span class="p">:</span> <span class="mf">118.05940323955669</span>
+<span class="n">Increased</span> <span class="n">costs</span> <span class="n">of</span> <span class="n">beef</span> <span class="ow">and</span> <span class="n">ham</span><span class="o">.</span>
+<span class="n">New</span> <span class="n">objective</span> <span class="n">value</span><span class="p">:</span> <span class="mf">144.41572037510653</span>
+<span class="n">Updated</span> <span class="nb">all</span> <span class="n">costs</span>
+<span class="n">New</span> <span class="n">objective</span> <span class="n">value</span><span class="p">:</span> <span class="mf">164.54375000000002</span>
+</pre></div>
+</div>
+</section>
+<section id="get-numeric-values-from-variables">
+<h2>Get numeric values from variables<a class="headerlink" href="#get-numeric-values-from-variables" title="Link to this heading">#</a></h2>
+<p>To access all the numeric values contained in a Variable or any other entity, use a <a class="reference internal" href="com/ampl/DataFrame.html#com.ampl.DataFrame" title="com.ampl.DataFrame"><code class="xref java java-ref docutils literal notranslate"><span class="pre">DataFrame</span></code></a> object. Doing so, the data is detached from
+the entity, and there is a considerable performance gain. To do so, we first get the Variable object from AMPL, then we get its data with the
+function <a class="reference internal" href="com/ampl/Entity.html#com.ampl.Entity.getValues(String)" title="com.ampl.Entity.getValues(String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Entity.getValues</span></code></a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get the values of the variable Buy in a dataframe object</span>
+<span class="n">Variable</span><span class="w"> </span><span class="n">buy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="na">getVariable</span><span class="p">(</span><span class="s">&quot;Buy&quot;</span><span class="p">);</span>
+<span class="n">DataFrame</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buy</span><span class="p">.</span><span class="na">getValues</span><span class="p">();</span>
+<span class="c1">// Print them</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">df</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="get-arbitrary-values-via-ampl-expressions">
+<h2>Get arbitrary values via ampl expressions<a class="headerlink" href="#get-arbitrary-values-via-ampl-expressions" title="Link to this heading">#</a></h2>
+<p>Often we are interested in very specific values coming out of the optimization session. To make use of the power of AMPL expressions and avoiding
+cluttering up the environment by creating entities, fetching data through arbitrary AMPL expressions is possible. For this model, we are interested
+in knowing how close each decision variable is to its upper bound, in percentage.
+We can obtain this data into a dataframe with the code:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get the values of an expression into a DataFrame object</span>
+<span class="n">DataFrame</span><span class="w"> </span><span class="n">df2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ampl</span><span class="p">.</span><span class="na">getData</span><span class="p">(</span><span class="s">&quot;{j in FOOD} 100*Buy[j]/Buy[j].ub&quot;</span><span class="p">);</span>
+<span class="c1">// Print them</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">df2</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="close-the-ampl-object-to-free-the-resources">
+<h2>Close the AMPL object to free the resources<a class="headerlink" href="#close-the-ampl-object-to-free-the-resources" title="Link to this heading">#</a></h2>
+<p>It is good practice to make sure that the AMPL object is closed and all its resources released when it is not needed anymore.
+This can be easily achieved by enclosing all the body of the program in a try block, and by calling the <a class="reference internal" href="com/ampl/AMPL.html#com.ampl.AMPL.close()" title="com.ampl.AMPL.close()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">AMPL.close</span></code></a> function in
+the finally block.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">AMPL</span><span class="w"> </span><span class="n">ampl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AMPL</span><span class="p">();</span>
+<span class="k">try</span><span class="p">{</span>
+<span class="w">   </span><span class="c1">// use ampl object here</span>
+<span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="p">{</span>
+<span class="w">   </span><span class="c1">// close all AMPL related resources here</span>
+<span class="w">   </span><span class="n">ampl</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="getting-started.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Initial Setup</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class-structure.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class structure</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-listing">Complete listing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project-and-add-references">Create a project and add references</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-project">Creating a new project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-reference-to-the-ampl-java-library">Add a reference to the AMPL Java library</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#java-imports-and-ampl-environment-creation">Java imports and AMPL environment creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-model-from-file">Load a model from file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-a-problem">Solve a problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-an-ampl-entity-in-the-programming-environment-get-objective-value">Get an AMPL entity in the programming environment (get objective value)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modify-model-data-assign-values-to-parameters">Modify model data (assign values to parameters)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-numeric-values-from-variables">Get numeric values from variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-arbitrary-values-via-ampl-expressions">Get arbitrary values via ampl expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#close-the-ampl-object-to-free-the-resources">Close the AMPL object to free the resources</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

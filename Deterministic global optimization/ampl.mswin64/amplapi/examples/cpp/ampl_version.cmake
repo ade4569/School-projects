@@ -1,0 +1,1 @@
+set(AMPL_LIBRARY_NAME ampl-2.3.13)

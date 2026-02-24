@@ -1,0 +1,1151 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>OutputHandler &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/outputhandler';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/cpp/classes/outputhandler.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Runnable" href="runnable.html" />
+    <link rel="prev" title="Optional" href="optional.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="../index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">C++ API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C++ API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    C++ API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C++ API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    C++ API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ampl.html">AMPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataframe.html">DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errorhandler.html">ErrorHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional.html">Optional</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">OutputHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runnable.html">Runnable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tuple.html">Tuple</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="variant.html">BasicVariant</a></li>
+
+
+
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="entity.html">Entity</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="entitymap.html">EntityMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instance.html">Instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constraint.html">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constraintinstance.html">ConstraintInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objective.html">Objective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objectiveinstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameter.html">Parameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setinstance.html">SetInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variable.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variableinstance.html">VariableInstance</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="amplexception.html">AMPLException</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../reference.html" class="nav-link">C++ API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">OutputHandler</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="outputhandler">
+<span id="ref-outputhandler"></span><h1>OutputHandler<a class="headerlink" href="#outputhandler" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl13OutputHandlerE">
+<span id="_CPPv3N4ampl13OutputHandlerE"></span><span id="_CPPv2N4ampl13OutputHandlerE"></span><span id="ampl::OutputHandler"></span><span class="target" id="classampl_1_1_output_handler"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OutputHandler</span></span></span><a class="headerlink" href="#_CPPv4N4ampl13OutputHandlerE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Implement this interface to handle the outputs from the calls to any function that causes the underlying AMPL interpreter to display a message. </p>
+<p>Note that errors and warnings are not passed through this interface, see <a class="reference internal" href="errorhandler.html#classampl_1_1_error_handler"><span class="std std-ref">ampl::ErrorHandler</span></a> for more information. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl13OutputHandler6outputEN6output4KindEPKc">
+<span id="_CPPv3N4ampl13OutputHandler6outputEN6output4KindEPKc"></span><span id="_CPPv2N4ampl13OutputHandler6outputEN6output4KindEPKc"></span><span id="ampl::OutputHandler::output__output::Kind.cCP"></span><span class="target" id="classampl_1_1_output_handler_1a6c04d2982bae3ece6cced8ccdcef1b2e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4ampl13OutputHandler6outputEN6output4KindEPKc" title="ampl::OutputHandler::output"><span class="n"><span class="pre">output</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Kind</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">kind</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N4ampl13OutputHandler6outputEN6output4KindEPKc" title="Link to this definition">#</a><br /></dt>
+<dd><p>This method is called when AMPL sends some output derived from executing a statement. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kind</strong> – kind of the output of the AMPL interpreter </p></li>
+<li><p><strong>msg</strong> – text of the output by the AMPL interpreter </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4KindE">
+<span id="_CPPv3N4ampl6output4KindE"></span><span id="_CPPv2N4ampl6output4KindE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612c"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">ampl</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">output</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Kind</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4KindE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Represents the type of the output coming from the interpreter </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind7WAITINGE">
+<span id="_CPPv3N4ampl6output4Kind7WAITINGE"></span><span id="_CPPv2N4ampl6output4Kind7WAITINGE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca4910ad773f2c336dcb30d7fe40fb6c17"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WAITING</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind7WAITINGE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">prompt2</span></code>, returned when incomplete statements are interpreted. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind5BREAKE">
+<span id="_CPPv3N4ampl6output4Kind5BREAKE"></span><span id="_CPPv2N4ampl6output4Kind5BREAKE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca61de7e988be8793852d922a37cec2e8f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BREAK</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind5BREAKE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">break</span></code>, displayed when an operation is interrupted with SIGINT. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind2CDE">
+<span id="_CPPv3N4ampl6output4Kind2CDE"></span><span id="_CPPv2N4ampl6output4Kind2CDE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cab74183fb6c6974c6728cd352857e4754"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CD</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind2CDE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">cd</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">cd</span></code> function. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind7DISPLAYE">
+<span id="_CPPv3N4ampl6output4Kind7DISPLAYE"></span><span id="_CPPv2N4ampl6output4Kind7DISPLAYE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca1070924f6e4cd7abfa36fb35010ee3d7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DISPLAY</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind7DISPLAYE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">display</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">display</span></code> function. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind4EXITE">
+<span id="_CPPv3N4ampl6output4Kind4EXITE"></span><span id="_CPPv2N4ampl6output4Kind4EXITE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca17c40551b6ce622e0378cf4c188cb9cb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EXIT</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind4EXITE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">exit</span></code>, returned as last message from AMPL before exiting the interpreter. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind6EXPANDE">
+<span id="_CPPv3N4ampl6output4Kind6EXPANDE"></span><span id="_CPPv2N4ampl6output4Kind6EXPANDE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca76ee0ec210b25cc0e5f7d785731ece37"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EXPAND</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind6EXPANDE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">expand</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">expand</span></code> function. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind4LOADE">
+<span id="_CPPv3N4ampl6output4Kind4LOADE"></span><span id="_CPPv2N4ampl6output4Kind4LOADE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca6eceab2e9a2849813a6b568e0dacd3a8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LOAD</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind4LOADE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">load</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">load</span></code> function when loading a library. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind6OPTIONE">
+<span id="_CPPv3N4ampl6output4Kind6OPTIONE"></span><span id="_CPPv2N4ampl6output4Kind6OPTIONE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca87a4dcce855ec035f478806915200b0e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OPTION</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind6OPTIONE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">option</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">option</span></code> function when getting the value of an option. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind5PRINTE">
+<span id="_CPPv3N4ampl6output4Kind5PRINTE"></span><span id="_CPPv2N4ampl6output4Kind5PRINTE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca45df77d31eebb920bf658705a5ae6deb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PRINT</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind5PRINTE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">print</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">print</span></code> function when printing values from AMPL command line. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind6PROMPTE">
+<span id="_CPPv3N4ampl6output4Kind6PROMPTE"></span><span id="_CPPv2N4ampl6output4Kind6PROMPTE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca6ae2b996c250da9cef78f0603989522d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PROMPT</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind6PROMPTE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">prompt1</span></code>, normal AMPL prompt. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind8SOLUTIONE">
+<span id="_CPPv3N4ampl6output4Kind8SOLUTIONE"></span><span id="_CPPv2N4ampl6output4Kind8SOLUTIONE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca05157fe9820efca8e5bf19f5133bce88"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SOLUTION</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind8SOLUTIONE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">solution</span></code>, returned when loading a solution with the command <code class="docutils literal notranslate"><span class="pre">solution</span></code>, contains the solver message. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind5SOLVEE">
+<span id="_CPPv3N4ampl6output4Kind5SOLVEE"></span><span id="_CPPv2N4ampl6output4Kind5SOLVEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca22f74df7c9ffc10412f61e9b4c90824a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SOLVE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind5SOLVEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">solve</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">solve</span></code> function, contains the solver message. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind4SHOWE">
+<span id="_CPPv3N4ampl6output4Kind4SHOWE"></span><span id="_CPPv2N4ampl6output4Kind4SHOWE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca99f072514fd6e58f63fa66110fbce503"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SHOW</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind4SHOWE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">show</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">show</span></code> function. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind4XREFE">
+<span id="_CPPv3N4ampl6output4Kind4XREFE"></span><span id="_CPPv2N4ampl6output4Kind4XREFE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612caa2ed507e70964397c0003b53f47f66e8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">XREF</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind4XREFE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">xref</span></code>, returned by the <code class="docutils literal notranslate"><span class="pre">xref</span></code> function. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind12SHELL_OUTPUTE">
+<span id="_CPPv3N4ampl6output4Kind12SHELL_OUTPUTE"></span><span id="_CPPv2N4ampl6output4Kind12SHELL_OUTPUTE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612caa84c307d2effcdb63bdf951d450405de"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SHELL_OUTPUT</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind12SHELL_OUTPUTE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of the AMPL command <code class="docutils literal notranslate"><span class="pre">shell</span></code></p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind13SHELL_MESSAGEE">
+<span id="_CPPv3N4ampl6output4Kind13SHELL_MESSAGEE"></span><span id="_CPPv2N4ampl6output4Kind13SHELL_MESSAGEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612caf2174eeff8a0e91f9351a6d9b357722e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SHELL_MESSAGE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind13SHELL_MESSAGEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Messages from the command <code class="docutils literal notranslate"><span class="pre">shell</span></code></p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind4MISCE">
+<span id="_CPPv3N4ampl6output4Kind4MISCE"></span><span id="_CPPv2N4ampl6output4Kind4MISCE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca2dbd16305cba29186225387c13151377"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MISC</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind4MISCE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output <code class="docutils literal notranslate"><span class="pre">misc</span></code></p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind11WRITE_TABLEE">
+<span id="_CPPv3N4ampl6output4Kind11WRITE_TABLEE"></span><span id="_CPPv2N4ampl6output4Kind11WRITE_TABLEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca72d5e187b7c4b8cd3192a243c709a1bb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WRITE_TABLE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind11WRITE_TABLEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Messages from the command <code class="docutils literal notranslate"><span class="pre">write</span> <span class="pre">table</span></code></p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind10READ_TABLEE">
+<span id="_CPPv3N4ampl6output4Kind10READ_TABLEE"></span><span id="_CPPv2N4ampl6output4Kind10READ_TABLEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca5fb4e33f1c62927f155a2bfe402327a8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">READ_TABLE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind10READ_TABLEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Messages from the command <code class="docutils literal notranslate"><span class="pre">read</span> <span class="pre">table</span></code></p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind10_READTABLEE">
+<span id="_CPPv3N4ampl6output4Kind10_READTABLEE"></span><span id="_CPPv2N4ampl6output4Kind10_READTABLEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca09ba7195979e9d686ead9eba1ceb7e16"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_READTABLE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind10_READTABLEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Internal messages from the command <code class="docutils literal notranslate"><span class="pre">read</span> <span class="pre">table</span></code></p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind11_WRITETABLEE">
+<span id="_CPPv3N4ampl6output4Kind11_WRITETABLEE"></span><span id="_CPPv2N4ampl6output4Kind11_WRITETABLEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612caa5694a9420f59c0b5ecda73b01f2a41a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_WRITETABLE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind11_WRITETABLEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Internal messages from the command <code class="docutils literal notranslate"><span class="pre">write</span> <span class="pre">table</span></code></p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind10BREAKPOINTE">
+<span id="_CPPv3N4ampl6output4Kind10BREAKPOINTE"></span><span id="_CPPv2N4ampl6output4Kind10BREAKPOINTE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca8c63b114dc4f5b2bd736d61b271235d4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BREAKPOINT</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind10BREAKPOINTE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Breakpoint hit. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind4CALLE">
+<span id="_CPPv3N4ampl6output4Kind4CALLE"></span><span id="_CPPv2N4ampl6output4Kind4CALLE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca346fa30364729367b390a51d845b6c55"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CALL</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind4CALLE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a script <code class="docutils literal notranslate"><span class="pre">call</span></code></p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind5CHECKE">
+<span id="_CPPv3N4ampl6output4Kind5CHECKE"></span><span id="_CPPv2N4ampl6output4Kind5CHECKE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cae4deb4dbdb08446e9ea79d96bfbef1fb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHECK</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind5CHECKE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">check</span></code> operation. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind5CLOSEE">
+<span id="_CPPv3N4ampl6output4Kind5CLOSEE"></span><span id="_CPPv2N4ampl6output4Kind5CLOSEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca2f639a6a9114190c7e1c2ef16e1c96d7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLOSE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind5CLOSEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">close</span></code> command for output redirection. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind8COMMANDSE">
+<span id="_CPPv3N4ampl6output4Kind8COMMANDSE"></span><span id="_CPPv2N4ampl6output4Kind8COMMANDSE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca9528f21726b1a1284dc1bc62b2e44c35"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">COMMANDS</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind8COMMANDSE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">commands</span></code> call into another file. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind8CONTINUEE">
+<span id="_CPPv3N4ampl6output4Kind8CONTINUEE"></span><span id="_CPPv2N4ampl6output4Kind8CONTINUEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612caece7d5e57e142754a4cb2a03997d53c8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONTINUE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind8CONTINUEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Issued when <code class="docutils literal notranslate"><span class="pre">continue</span></code> is encountered. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind4DATAE">
+<span id="_CPPv3N4ampl6output4Kind4DATAE"></span><span id="_CPPv2N4ampl6output4Kind4DATAE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cabd592c6e491deaac9f7bdd6a40ab1670"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DATA</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind4DATAE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">data</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind9DELETECMDE">
+<span id="_CPPv3N4ampl6output4Kind9DELETECMDE"></span><span id="_CPPv2N4ampl6output4Kind9DELETECMDE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca5d981abbc6ec5dafa527585c877e1732"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DELETECMD</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind9DELETECMDE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">delete</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind4DROPE">
+<span id="_CPPv3N4ampl6output4Kind4DROPE"></span><span id="_CPPv2N4ampl6output4Kind4DROPE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cafdea702efbea8bb8fa467c81809b2da9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DROP</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind4DROPE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">drop</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind19DROP_OR_RESTORE_ALLE">
+<span id="_CPPv3N4ampl6output4Kind19DROP_OR_RESTORE_ALLE"></span><span id="_CPPv2N4ampl6output4Kind19DROP_OR_RESTORE_ALLE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca7d5f3003b73353a0e807b4cca84ddbc7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DROP_OR_RESTORE_ALL</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind19DROP_OR_RESTORE_ALLE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Internal. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind4ELSEE">
+<span id="_CPPv3N4ampl6output4Kind4ELSEE"></span><span id="_CPPv2N4ampl6output4Kind4ELSEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cacc137c9108991247d3f172157f14d187"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ELSE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind4ELSEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Else block. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind10ELSE_CHECKE">
+<span id="_CPPv3N4ampl6output4Kind10ELSE_CHECKE"></span><span id="_CPPv2N4ampl6output4Kind10ELSE_CHECKE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca6001cdb933c2527268aa3eb57a905f9e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ELSE_CHECK</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind10ELSE_CHECKE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Internal. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind5ENDIFE">
+<span id="_CPPv3N4ampl6output4Kind5ENDIFE"></span><span id="_CPPv2N4ampl6output4Kind5ENDIFE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca7d0f693458922ae8c12af1c97fa666b6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ENDIF</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind5ENDIFE" title="Link to this definition">#</a><br /></dt>
+<dd><p>End of if block. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind7ENVIRONE">
+<span id="_CPPv3N4ampl6output4Kind7ENVIRONE"></span><span id="_CPPv2N4ampl6output4Kind7ENVIRONE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612caf086f20231f74f02c9300b66f4b7a506"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ENVIRON</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind7ENVIRONE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">environ</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind3FIXE">
+<span id="_CPPv3N4ampl6output4Kind3FIXE"></span><span id="_CPPv2N4ampl6output4Kind3FIXE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca47691d12f99c5444b6406bf9e04d9b0a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FIX</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind3FIXE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">fix</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind3FORE">
+<span id="_CPPv3N4ampl6output4Kind3FORE"></span><span id="_CPPv2N4ampl6output4Kind3FORE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cae29b8e073363b110c85fe8e75f5e0314"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FOR</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind3FORE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">for</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind2IFE">
+<span id="_CPPv3N4ampl6output4Kind2IFE"></span><span id="_CPPv2N4ampl6output4Kind2IFE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca443e19364ea60b6178a47105434cb855"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IF</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind2IFE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of an <code class="docutils literal notranslate"><span class="pre">if</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind3LETE">
+<span id="_CPPv3N4ampl6output4Kind3LETE"></span><span id="_CPPv2N4ampl6output4Kind3LETE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca996e6e4097105cf1ca69d679bc3774ea"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LET</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind3LETE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">let</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind7LOOPENDE">
+<span id="_CPPv3N4ampl6output4Kind7LOOPENDE"></span><span id="_CPPv2N4ampl6output4Kind7LOOPENDE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca3f3ffdba92b4abc02620099edc966c67"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LOOPEND</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind7LOOPENDE" title="Link to this definition">#</a><br /></dt>
+<dd><p>End of loop. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind9OBJECTIVEE">
+<span id="_CPPv3N4ampl6output4Kind9OBJECTIVEE"></span><span id="_CPPv2N4ampl6output4Kind9OBJECTIVEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612caab493d7ea54badf6974274d8f1972a85"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OBJECTIVE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind9OBJECTIVEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of an <code class="docutils literal notranslate"><span class="pre">objective</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind12OPTION_RESETE">
+<span id="_CPPv3N4ampl6output4Kind12OPTION_RESETE"></span><span id="_CPPv2N4ampl6output4Kind12OPTION_RESETE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cad98182062a34c3fcdf9793288136eef4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OPTION_RESET</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind12OPTION_RESETE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Occurs when resetting option values. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind6PRINTFE">
+<span id="_CPPv3N4ampl6output4Kind6PRINTFE"></span><span id="_CPPv2N4ampl6output4Kind6PRINTFE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca63a9cb098e3ebb5faa73ab7673c868d9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PRINTF</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind6PRINTFE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">printf</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind7PROBLEME">
+<span id="_CPPv3N4ampl6output4Kind7PROBLEME"></span><span id="_CPPv2N4ampl6output4Kind7PROBLEME"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cae6eb7b1fcc7f54be8c367548105fb635"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PROBLEM</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind7PROBLEME" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">problem</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind5PURGEE">
+<span id="_CPPv3N4ampl6output4Kind5PURGEE"></span><span id="_CPPv2N4ampl6output4Kind5PURGEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca11bb4a5490460fa7351bf841e786a429"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PURGE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind5PURGEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">purge</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind6RBRACEE">
+<span id="_CPPv3N4ampl6output4Kind6RBRACEE"></span><span id="_CPPv2N4ampl6output4Kind6RBRACEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca03bf302e854fbc0acd1161c8f7d23e71"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RBRACE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind6RBRACEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Occurs when a right brace is encountered. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind4READE">
+<span id="_CPPv3N4ampl6output4Kind4READE"></span><span id="_CPPv2N4ampl6output4Kind4READE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cacb98810e53e4dab703816cc3b61ad58c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">READ</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind4READE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">read</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind6RELOADE">
+<span id="_CPPv3N4ampl6output4Kind6RELOADE"></span><span id="_CPPv2N4ampl6output4Kind6RELOADE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca680dd5290590996e5f46092bae8a9bd7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RELOAD</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind6RELOADE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">reload</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind6REMOVEE">
+<span id="_CPPv3N4ampl6output4Kind6REMOVEE"></span><span id="_CPPv2N4ampl6output4Kind6REMOVEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca0b876770ab0b4e7f5659b9563d49268f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REMOVE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind6REMOVEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">remove</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind6REPEATE">
+<span id="_CPPv3N4ampl6output4Kind6REPEATE"></span><span id="_CPPv2N4ampl6output4Kind6REPEATE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca940935b2f066c3bd60bf472fc5a24f6f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REPEAT</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind6REPEATE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Beginning of a repeat loop. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind10REPEAT_ENDE">
+<span id="_CPPv3N4ampl6output4Kind10REPEAT_ENDE"></span><span id="_CPPv2N4ampl6output4Kind10REPEAT_ENDE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca9641409726ade6bb498500e9a681775f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REPEAT_END</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind10REPEAT_ENDE" title="Link to this definition">#</a><br /></dt>
+<dd><p>End of a repeat loop. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind5RESETE">
+<span id="_CPPv3N4ampl6output4Kind5RESETE"></span><span id="_CPPv2N4ampl6output4Kind5RESETE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca8e51879832371035c1b3fdfe4ad5e804"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RESET</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind5RESETE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">reset</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind7RESTOREE">
+<span id="_CPPv3N4ampl6output4Kind7RESTOREE"></span><span id="_CPPv2N4ampl6output4Kind7RESTOREE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cad95e4baf697048bd163217f0bdd6afbb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RESTORE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind7RESTOREE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">restore</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind8RUN_ARGSE">
+<span id="_CPPv3N4ampl6output4Kind8RUN_ARGSE"></span><span id="_CPPv2N4ampl6output4Kind8RUN_ARGSE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cabf2f697639bc550d3c3d67ce5a832bf5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RUN_ARGS</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind8RUN_ARGSE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Internal. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind9SEMICOLONE">
+<span id="_CPPv3N4ampl6output4Kind9SEMICOLONE"></span><span id="_CPPv2N4ampl6output4Kind9SEMICOLONE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612caf2de4a68fe43bf82758539691b66f78d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SEMICOLON</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind9SEMICOLONE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Internal. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind5SSTEPE">
+<span id="_CPPv3N4ampl6output4Kind5SSTEPE"></span><span id="_CPPv2N4ampl6output4Kind5SSTEPE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cad57ae1b1ca548508cd8e8720dbdc918e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SSTEP</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind5SSTEPE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Internal. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind4THENE">
+<span id="_CPPv3N4ampl6output4Kind4THENE"></span><span id="_CPPv2N4ampl6output4Kind4THENE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca3f8c5b5f1ae36a0356572dabd9133ba0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">THEN</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind4THENE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Beginning of the <code class="docutils literal notranslate"><span class="pre">then</span></code> part of an if statement. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind5UNFIXE">
+<span id="_CPPv3N4ampl6output4Kind5UNFIXE"></span><span id="_CPPv2N4ampl6output4Kind5UNFIXE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cabcfceeffa186f96ca634cce93e1efd6c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UNFIX</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind5UNFIXE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of an <code class="docutils literal notranslate"><span class="pre">unfix</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind6UNLOADE">
+<span id="_CPPv3N4ampl6output4Kind6UNLOADE"></span><span id="_CPPv2N4ampl6output4Kind6UNLOADE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612cae0dc5ccaa255db927ef9fcbbe1290e06"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UNLOAD</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind6UNLOADE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of an <code class="docutils literal notranslate"><span class="pre">unload</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind6UPDATEE">
+<span id="_CPPv3N4ampl6output4Kind6UPDATEE"></span><span id="_CPPv2N4ampl6output4Kind6UPDATEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca4eb53b50bc16c2e33dcf213ee6a425ea"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UPDATE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind6UPDATEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of an <code class="docutils literal notranslate"><span class="pre">update</span></code> command. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl6output4Kind5WRITEE">
+<span id="_CPPv3N4ampl6output4Kind5WRITEE"></span><span id="_CPPv2N4ampl6output4Kind5WRITEE"></span><span class="target" id="output_8h_1a81582056e7ff6638a03c93a2235f612ca9bab7fe61a8ee9e14912a25056297db9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WRITE</span></span></span><a class="headerlink" href="#_CPPv4N4ampl6output4Kind5WRITEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Output of a <code class="docutils literal notranslate"><span class="pre">write</span></code> command. </p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="optional.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Optional</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="runnable.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Runnable</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl13OutputHandlerE"><code class="docutils literal notranslate"><span class="pre">OutputHandler</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl13OutputHandler6outputEN6output4KindEPKc"><code class="docutils literal notranslate"><span class="pre">OutputHandler::output()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4KindE"><code class="docutils literal notranslate"><span class="pre">Kind</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind7WAITINGE"><code class="docutils literal notranslate"><span class="pre">Kind::WAITING</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind5BREAKE"><code class="docutils literal notranslate"><span class="pre">Kind::BREAK</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind2CDE"><code class="docutils literal notranslate"><span class="pre">Kind::CD</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind7DISPLAYE"><code class="docutils literal notranslate"><span class="pre">Kind::DISPLAY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind4EXITE"><code class="docutils literal notranslate"><span class="pre">Kind::EXIT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind6EXPANDE"><code class="docutils literal notranslate"><span class="pre">Kind::EXPAND</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind4LOADE"><code class="docutils literal notranslate"><span class="pre">Kind::LOAD</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind6OPTIONE"><code class="docutils literal notranslate"><span class="pre">Kind::OPTION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind5PRINTE"><code class="docutils literal notranslate"><span class="pre">Kind::PRINT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind6PROMPTE"><code class="docutils literal notranslate"><span class="pre">Kind::PROMPT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind8SOLUTIONE"><code class="docutils literal notranslate"><span class="pre">Kind::SOLUTION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind5SOLVEE"><code class="docutils literal notranslate"><span class="pre">Kind::SOLVE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind4SHOWE"><code class="docutils literal notranslate"><span class="pre">Kind::SHOW</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind4XREFE"><code class="docutils literal notranslate"><span class="pre">Kind::XREF</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind12SHELL_OUTPUTE"><code class="docutils literal notranslate"><span class="pre">Kind::SHELL_OUTPUT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind13SHELL_MESSAGEE"><code class="docutils literal notranslate"><span class="pre">Kind::SHELL_MESSAGE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind4MISCE"><code class="docutils literal notranslate"><span class="pre">Kind::MISC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind11WRITE_TABLEE"><code class="docutils literal notranslate"><span class="pre">Kind::WRITE_TABLE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind10READ_TABLEE"><code class="docutils literal notranslate"><span class="pre">Kind::READ_TABLE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind10_READTABLEE"><code class="docutils literal notranslate"><span class="pre">Kind::_READTABLE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind11_WRITETABLEE"><code class="docutils literal notranslate"><span class="pre">Kind::_WRITETABLE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind10BREAKPOINTE"><code class="docutils literal notranslate"><span class="pre">Kind::BREAKPOINT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind4CALLE"><code class="docutils literal notranslate"><span class="pre">Kind::CALL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind5CHECKE"><code class="docutils literal notranslate"><span class="pre">Kind::CHECK</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind5CLOSEE"><code class="docutils literal notranslate"><span class="pre">Kind::CLOSE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind8COMMANDSE"><code class="docutils literal notranslate"><span class="pre">Kind::COMMANDS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind8CONTINUEE"><code class="docutils literal notranslate"><span class="pre">Kind::CONTINUE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind4DATAE"><code class="docutils literal notranslate"><span class="pre">Kind::DATA</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind9DELETECMDE"><code class="docutils literal notranslate"><span class="pre">Kind::DELETECMD</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind4DROPE"><code class="docutils literal notranslate"><span class="pre">Kind::DROP</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind19DROP_OR_RESTORE_ALLE"><code class="docutils literal notranslate"><span class="pre">Kind::DROP_OR_RESTORE_ALL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind4ELSEE"><code class="docutils literal notranslate"><span class="pre">Kind::ELSE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind10ELSE_CHECKE"><code class="docutils literal notranslate"><span class="pre">Kind::ELSE_CHECK</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind5ENDIFE"><code class="docutils literal notranslate"><span class="pre">Kind::ENDIF</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind7ENVIRONE"><code class="docutils literal notranslate"><span class="pre">Kind::ENVIRON</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind3FIXE"><code class="docutils literal notranslate"><span class="pre">Kind::FIX</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind3FORE"><code class="docutils literal notranslate"><span class="pre">Kind::FOR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind2IFE"><code class="docutils literal notranslate"><span class="pre">Kind::IF</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind3LETE"><code class="docutils literal notranslate"><span class="pre">Kind::LET</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind7LOOPENDE"><code class="docutils literal notranslate"><span class="pre">Kind::LOOPEND</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind9OBJECTIVEE"><code class="docutils literal notranslate"><span class="pre">Kind::OBJECTIVE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind12OPTION_RESETE"><code class="docutils literal notranslate"><span class="pre">Kind::OPTION_RESET</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind6PRINTFE"><code class="docutils literal notranslate"><span class="pre">Kind::PRINTF</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind7PROBLEME"><code class="docutils literal notranslate"><span class="pre">Kind::PROBLEM</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind5PURGEE"><code class="docutils literal notranslate"><span class="pre">Kind::PURGE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind6RBRACEE"><code class="docutils literal notranslate"><span class="pre">Kind::RBRACE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind4READE"><code class="docutils literal notranslate"><span class="pre">Kind::READ</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind6RELOADE"><code class="docutils literal notranslate"><span class="pre">Kind::RELOAD</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind6REMOVEE"><code class="docutils literal notranslate"><span class="pre">Kind::REMOVE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind6REPEATE"><code class="docutils literal notranslate"><span class="pre">Kind::REPEAT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind10REPEAT_ENDE"><code class="docutils literal notranslate"><span class="pre">Kind::REPEAT_END</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind5RESETE"><code class="docutils literal notranslate"><span class="pre">Kind::RESET</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind7RESTOREE"><code class="docutils literal notranslate"><span class="pre">Kind::RESTORE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind8RUN_ARGSE"><code class="docutils literal notranslate"><span class="pre">Kind::RUN_ARGS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind9SEMICOLONE"><code class="docutils literal notranslate"><span class="pre">Kind::SEMICOLON</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind5SSTEPE"><code class="docutils literal notranslate"><span class="pre">Kind::SSTEP</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind4THENE"><code class="docutils literal notranslate"><span class="pre">Kind::THEN</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind5UNFIXE"><code class="docutils literal notranslate"><span class="pre">Kind::UNFIX</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind6UNLOADE"><code class="docutils literal notranslate"><span class="pre">Kind::UNLOAD</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind6UPDATEE"><code class="docutils literal notranslate"><span class="pre">Kind::UPDATE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl6output4Kind5WRITEE"><code class="docutils literal notranslate"><span class="pre">Kind::WRITE</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

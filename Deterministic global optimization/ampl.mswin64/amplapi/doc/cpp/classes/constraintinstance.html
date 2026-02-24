@@ -1,0 +1,910 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>ConstraintInstance &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/constraintinstance';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/cpp/classes/constraintinstance.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Objective" href="objective.html" />
+    <link rel="prev" title="Constraint" href="constraint.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="../index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">C++ API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C++ API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    C++ API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../reference.html">
+    C++ API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    C++ API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ampl.html">AMPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataframe.html">DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errorhandler.html">ErrorHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional.html">Optional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputhandler.html">OutputHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runnable.html">Runnable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tuple.html">Tuple</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="variant.html">BasicVariant</a></li>
+
+
+
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="entity.html">Entity</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="entitymap.html">EntityMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instance.html">Instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constraint.html">Constraint</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ConstraintInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objective.html">Objective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objectiveinstance.html">ObjectiveInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameter.html">Parameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setinstance.html">SetInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variable.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variableinstance.html">VariableInstance</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="amplexception.html">AMPLException</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../reference.html" class="nav-link">C++ API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ConstraintInstance</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="constraintinstance">
+<h1>ConstraintInstance<a class="headerlink" href="#constraintinstance" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl18ConstraintInstanceE">
+<span id="_CPPv3N4ampl18ConstraintInstanceE"></span><span id="_CPPv2N4ampl18ConstraintInstanceE"></span><span id="ampl::ConstraintInstance"></span><span class="target" id="classampl_1_1_constraint_instance"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ConstraintInstance</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">ampl</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">BasicInstance</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstraintInstance</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N4ampl18ConstraintInstanceE" title="Link to this definition">#</a><br /></dt>
+<dd><p>This class represent an instance of a constraint. </p>
+<p>In general, all AMPL suffixes for a constraint are available through methods with the same name in this class. See <a class="reference external" href="http://www.ampl.com/NEW/suffbuiltin.html">http://www.ampl.com/NEW/suffbuiltin.html</a> for a list of the available suffixes. </p>
+<p>Note that, since this class represents instances of both algebraic and logical constraints, some suffixes might not be available for every instance. If a wrong suffix for the specific class of constraint is accessed, an std::logic_error is thrown. </p>
+<p>All the accessors in this class throw an std::runtime_error if the instance has been deleted in the underlying AMPL interpreter. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl18ConstraintInstance4dropEv">
+<span id="_CPPv3N4ampl18ConstraintInstance4dropEv"></span><span id="_CPPv2N4ampl18ConstraintInstance4dropEv"></span><span id="ampl::ConstraintInstance::drop"></span><span class="target" id="classampl_1_1_constraint_instance_1a4ad2de6abaf3a99a70f8073a5f7ac4bb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">drop</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl18ConstraintInstance4dropEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Drop this constraint instance, corresponding to the AMPL code: <code class="docutils literal notranslate"><span class="pre">drop</span> <span class="pre">constraintname;</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl18ConstraintInstance7restoreEv">
+<span id="_CPPv3N4ampl18ConstraintInstance7restoreEv"></span><span id="_CPPv2N4ampl18ConstraintInstance7restoreEv"></span><span id="ampl::ConstraintInstance::restore"></span><span class="target" id="classampl_1_1_constraint_instance_1a6f7a4a4fb0e32163c38a0c6988b4a8fb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">restore</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl18ConstraintInstance7restoreEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Restore this constraint instance, corresponding to the AMPL code: <code class="docutils literal notranslate"><span class="pre">restore</span> <span class="pre">constraintname;</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance4bodyEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance4bodyEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance4bodyEv"></span><span id="ampl::ConstraintInstance::bodyC"></span><span class="target" id="classampl_1_1_constraint_instance_1aa6992eba08363a6e2e1957e58e9b300c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">body</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance4bodyEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current value of the constraint’s body. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance7astatusEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance7astatusEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance7astatusEv"></span><span id="ampl::ConstraintInstance::astatusC"></span><span class="target" id="classampl_1_1_constraint_instance_1a7101a27bac979ec6f3dc23f765482e45"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">astatus</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance7astatusEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current AMPL status (dropped, presolved, or substituted out) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance6defvarEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance6defvarEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance6defvarEv"></span><span id="ampl::ConstraintInstance::defvarC"></span><span class="target" id="classampl_1_1_constraint_instance_1a085b41d8c4e628587aa8e4a375d02f00"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">defvar</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance6defvarEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the index in <code class="docutils literal notranslate"><span class="pre">_var</span></code> of “defined variable” substituted out by the constraint. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance5dinitEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance5dinitEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance5dinitEv"></span><span id="ampl::ConstraintInstance::dinitC"></span><span class="target" id="classampl_1_1_constraint_instance_1adead68d673b63fa26e6eb53eaa48c152"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dinit</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance5dinitEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current initial guess for the constraint’s dual variable. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance6dinit0Ev">
+<span id="_CPPv3NK4ampl18ConstraintInstance6dinit0Ev"></span><span id="_CPPv2NK4ampl18ConstraintInstance6dinit0Ev"></span><span id="ampl::ConstraintInstance::dinit0C"></span><span class="target" id="classampl_1_1_constraint_instance_1a534cf86c3e3581c69d636298b1a1ed8a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dinit0</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance6dinit0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the original initial guess for the constraint’s dual variable. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance4dualEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance4dualEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance4dualEv"></span><span id="ampl::ConstraintInstance::dualC"></span><span class="target" id="classampl_1_1_constraint_instance_1a4c33368f88502ef7c14be8c956462fd2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dual</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance4dualEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current value of the constraint’s dual variable. </p>
+<p>Note that dual values are often reset by the underlying AMPL interpreter by the presolve functionalities triggered by some methods. A possible workaround is to set the option <code class="docutils literal notranslate"><span class="pre">presolve;</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code> (see setBoolOption). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance2lbEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance2lbEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance2lbEv"></span><span id="ampl::ConstraintInstance::lbC"></span><span class="target" id="classampl_1_1_constraint_instance_1a25a1238c502b290f0f08a165befb345c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lb</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance2lbEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current value of the constraint’s lower bound. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance2ubEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance2ubEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance2ubEv"></span><span id="ampl::ConstraintInstance::ubC"></span><span class="target" id="classampl_1_1_constraint_instance_1a0f60a571ca03f7af00dfc6314b83a22b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ub</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance2ubEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current value of the constraint’s upper bound. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance3lbsEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance3lbsEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance3lbsEv"></span><span id="ampl::ConstraintInstance::lbsC"></span><span class="target" id="classampl_1_1_constraint_instance_1ac24e43bc380af3d9f3054fb677d3e379"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lbs</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance3lbsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the constraint lower bound sent to the solver (reflecting adjustment for fixed variables) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance3ubsEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance3ubsEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance3ubsEv"></span><span id="ampl::ConstraintInstance::ubsC"></span><span class="target" id="classampl_1_1_constraint_instance_1a14655ce0c5f70d1064ce013f829a70e4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ubs</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance3ubsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the constraint upper bound sent to the solver (reflecting adjustment for fixed variables) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance5ldualEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance5ldualEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance5ldualEv"></span><span id="ampl::ConstraintInstance::ldualC"></span><span class="target" id="classampl_1_1_constraint_instance_1a593783e574faeef0a550527938475d76"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ldual</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance5ldualEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current dual value associated with the lower bound. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance5udualEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance5udualEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance5udualEv"></span><span id="ampl::ConstraintInstance::udualC"></span><span class="target" id="classampl_1_1_constraint_instance_1aa3be52b5dd680bdadcaf03a30bd2b754"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">udual</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance5udualEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current dual value associated with the upper bounds. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance6lslackEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance6lslackEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance6lslackEv"></span><span id="ampl::ConstraintInstance::lslackC"></span><span class="target" id="classampl_1_1_constraint_instance_1aac35eac938185b1096cf524b3f457749"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lslack</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance6lslackEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the slack at lower bound <code class="docutils literal notranslate"><span class="pre">body</span> <span class="pre">-</span> <span class="pre">lb</span></code></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance6uslackEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance6uslackEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance6uslackEv"></span><span id="ampl::ConstraintInstance::uslackC"></span><span class="target" id="classampl_1_1_constraint_instance_1a0389eb67ef40dc12e2eaf1a14a594c91"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">uslack</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance6uslackEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the slack at upper bound <code class="docutils literal notranslate"><span class="pre">ub</span> <span class="pre">-</span> <span class="pre">body</span></code></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance5slackEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance5slackEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance5slackEv"></span><span id="ampl::ConstraintInstance::slackC"></span><span class="target" id="classampl_1_1_constraint_instance_1accd1cf3dab95546377ccfbce1af59eee"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">slack</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance5slackEv" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="constraint.html#classampl_1_1_constraint"><span class="std std-ref">Constraint</span></a> slack (the lesser of lslack and uslack) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance7sstatusEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance7sstatusEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance7sstatusEv"></span><span id="ampl::ConstraintInstance::sstatusC"></span><span class="target" id="classampl_1_1_constraint_instance_1a05a364806519d6f27207bbdcc9d26f8a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sstatus</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance7sstatusEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the solver status (basis status of constraint’s slack or artificial variable) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance6statusEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance6statusEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance6statusEv"></span><span id="ampl::ConstraintInstance::statusC"></span><span class="target" id="classampl_1_1_constraint_instance_1a1e093eb2e274444d0a27b50c1cddff19"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">status</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance6statusEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the AMPL status if not <code class="docutils literal notranslate"><span class="pre">in</span></code>, otherwise solver status. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4ampl18ConstraintInstance7setDualEd">
+<span id="_CPPv3N4ampl18ConstraintInstance7setDualEd"></span><span id="_CPPv2N4ampl18ConstraintInstance7setDualEd"></span><span id="ampl::ConstraintInstance::setDual__double"></span><span class="target" id="classampl_1_1_constraint_instance_1a50b42c32537fdd44fb376493864d658a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDual</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dual</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4ampl18ConstraintInstance7setDualEd" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="set.html#classampl_1_1_set"><span class="std std-ref">Set</span></a> the value of the dual variable associated to this constraint. </p>
+<p>Equivalent to the AMPL statement:</p>
+<p><code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">c</span> <span class="pre">:=</span> <span class="pre">dual;</span></code></p>
+<p>Note that dual values are often reset by the underlying AMPL interpreter by the presolve functionalities triggered by some methods. A possible workaround is to set the option <code class="docutils literal notranslate"><span class="pre">presolve</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code> (see setBoolOption).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dual</strong> – The value to be assigned to the dual variable </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance3valEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance3valEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance3valEv"></span><span id="ampl::ConstraintInstance::valC"></span><span class="target" id="classampl_1_1_constraint_instance_1a863a9486f855f1c7037067d3281dbd95"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">val</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance3valEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the <a class="reference internal" href="ampl.html#classampl_1_1_a_m_p_l"><span class="std std-ref">AMPL</span></a> val suffix. </p>
+<p>Valid only for logical constraints. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance6entityEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance6entityEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance6entityEv"></span><span id="ampl::ConstraintInstance::entityC"></span><span class="target" id="classampl_1_1_basic_instance_1ae6edbe22495bdf5ae2820d3d681188e3"></span><a class="reference internal" href="entity.html#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">entity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance6entityEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns the entity that this instance is part of. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="classampl_1_1_basic_instance_1ae6edbe22495bdf5ae2820d3d681188e3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="entity.html#_CPPv4N4ampl6EntityE" title="ampl::Entity"><span class="n"><span class="pre">Entity</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">entity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Returns the entity that this instance is part of. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance3keyEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance3keyEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance3keyEv"></span><span id="ampl::ConstraintInstance::keyC"></span><span class="target" id="classampl_1_1_basic_instance_1a19db3a33ff4bea954ec5fb483826c60f"></span><a class="reference internal" href="tuple.html#_CPPv4N4ampl5TupleE" title="ampl::Tuple"><span class="n"><span class="pre">Tuple</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">key</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance3keyEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns the key of this instance. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="classampl_1_1_basic_instance_1a19db3a33ff4bea954ec5fb483826c60f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="tuple.html#_CPPv4N4ampl5TupleE" title="ampl::Tuple"><span class="n"><span class="pre">Tuple</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">key</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Returns the key of this instance. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance4nameEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance4nameEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance4nameEv"></span><span id="ampl::ConstraintInstance::nameC"></span><span class="target" id="classampl_1_1_basic_instance_1a1599b3667c3362f467b711b4d793a8f7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance4nameEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns the name of this instance. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="classampl_1_1_basic_instance_1a1599b3667c3362f467b711b4d793a8f7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Returns the name of this instance. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4ampl18ConstraintInstance8toStringEv">
+<span id="_CPPv3NK4ampl18ConstraintInstance8toStringEv"></span><span id="_CPPv2NK4ampl18ConstraintInstance8toStringEv"></span><span id="ampl::ConstraintInstance::toStringC"></span><span class="target" id="classampl_1_1_basic_instance_1aa66c235dce6b4c49f48ae8f316c16bad"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toString</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4ampl18ConstraintInstance8toStringEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns a string representation of this instance. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="classampl_1_1_basic_instance_1aa66c235dce6b4c49f48ae8f316c16bad"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toString</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Returns a string representation of this instance. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="constraint.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Constraint</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="objective.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Objective</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl18ConstraintInstanceE"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl18ConstraintInstance4dropEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::drop()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl18ConstraintInstance7restoreEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::restore()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance4bodyEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::body()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance7astatusEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::astatus()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance6defvarEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::defvar()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance5dinitEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::dinit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance6dinit0Ev"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::dinit0()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance4dualEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::dual()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance2lbEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::lb()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance2ubEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::ub()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance3lbsEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::lbs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance3ubsEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::ubs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance5ldualEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::ldual()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance5udualEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::udual()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance6lslackEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::lslack()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance6uslackEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::uslack()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance5slackEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::slack()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance7sstatusEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::sstatus()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance6statusEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::status()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N4ampl18ConstraintInstance7setDualEd"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::setDual()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance3valEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::val()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance6entityEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::entity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance3keyEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::key()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance4nameEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::name()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK4ampl18ConstraintInstance8toStringEv"><code class="docutils literal notranslate"><span class="pre">ConstraintInstance::toString()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

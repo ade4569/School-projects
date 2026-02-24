@@ -1,0 +1,21 @@
+.. highlight:: c++
+
+.. _ref::Entity:
+
+
+
+EntityBase
+----------
+
+.. doxygenclass:: ampl::Entities::EntityBase
+	:members:
+	:undoc-members:
+
+
+
+Entity
+------
+
+.. doxygenclass:: ampl::Entities::Entity< K >
+	:members:
+	:undoc-members:

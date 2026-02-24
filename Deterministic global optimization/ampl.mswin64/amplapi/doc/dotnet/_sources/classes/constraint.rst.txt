@@ -1,0 +1,15 @@
+.. _ref::Constraint:
+
+Constraint
+----------
+
+.. doxygenclass:: ampl::Entities::Constraint
+   :members:
+   :undoc-members:
+
+ConstraintMap
+-------------
+
+.. doxygenclass:: ampl::Entities::ConstraintMap
+   :members:
+   :undoc-members:

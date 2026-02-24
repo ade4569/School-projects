@@ -1,0 +1,16 @@
+\* Problem: Aseemblage de vélos *\
+
+Maximize
+Benefice : 700 nc + 300 ns
+
+Subject To 
+TempsMaxTravail : 0.06 nc + 0.05 ns <= 60
+SurfaceMax : 2.5 nc + ns <= 1500
+LimiteCargos : nc <= 700
+
+\* To declare integer variables : 
+Integer 
+nc 
+ns
+
+End 

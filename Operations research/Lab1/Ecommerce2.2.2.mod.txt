@@ -1,0 +1,75 @@
+# Problem: Optimisation pour l'e-commerce Cas particulier 2.2.2
+
+set Demandes; 
+set Fluides;
+set Magasins; 
+
+# variables
+var a{i in Demandes, j in Magasins, k in Fluides}, >=0;
+var b{i in Demandes, j in Magasins}, binary;
+
+# paramètres
+param demandes{i in Demandes, j in Fluides};
+param stocks{i in Magasins, j in Fluides};
+param couts{i in Magasins, j in Fluides};
+param coutFixeExpedition{i in Demandes, j in Magasins};
+param coutVariableExpedition{i in Demandes, j in Magasins};
+param M;
+
+# contraintes
+s.t. StocksSuffisant{j in Magasins, k in Fluides}:
+sum{i in Demandes} a[i,j,k] <= stocks[j,k];
+
+s.t. DemandesTotales{i in Demandes, k in Fluides}:
+sum{j in Magasins} a[i,j,k] = demandes[i,k];
+
+s.t. Cond1{i in Demandes, j in Magasins}:
+b[i,j] <= sum{k in Fluides} a[i,j,k];
+
+s.t. Cond2{i in Demandes, j in Magasins}:
+b[i,j]*M >= sum{k in Fluides} a[i,j,k];
+
+# fonction 
+minimize CoutTotal :
+    (sum{i in Demandes, j in Magasins, k in Fluides} a[i,j,k]*(couts[j,k] + coutVariableExpedition[i,j])) + (sum{i in Demandes, j in Magasins} b[i,j]*coutFixeExpedition[i,j]) ;
+
+data;
+
+set Demandes :=
+D1
+D2;
+
+set Fluides :=
+F1
+F2;
+
+set Magasins :=
+M1
+M2
+M3;
+
+param demandes : F1 F2 := 
+D1 2 0
+D2 1 3;
+
+param stocks : F1 F2 :=
+M1 2.5 1
+M2 1 2
+M3 2 1;
+
+param couts : F1 F2 :=
+M1 1 1
+M2 2 3
+M3 3 2;
+
+param coutFixeExpedition : M1 M2 M3 := 
+D1 110 90 100
+D2 110 90 100;
+
+param coutVariableExpedition : M1 M2 M3 :=
+D1 10 1 5
+D2 2 20 10;
+
+param M := 10;
+
+end;

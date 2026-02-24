@@ -1,0 +1,204 @@
+Problem:    Ecommerce2
+Rows:       49
+Columns:    41 (41 integer, 36 binary)
+Non-zeros:  183
+Status:     INTEGER OPTIMAL
+Objective:  DistanceParcourue = 22 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 UneSeuleSource[ALPHA]
+                                   1             1             = 
+     2 UneSeuleSource[C1]
+                                   1             1             = 
+     3 UneSeuleSource[C2]
+                                   1             1             = 
+     4 UneSeuleSource[C3]
+                                   1             1             = 
+     5 UneSeuleSource[C4]
+                                   1             1             = 
+     6 UneSeuleSource[C5]
+                                   1             1             = 
+     7 UneSeuleDestination[ALPHA]
+                                   1             1             = 
+     8 UneSeuleDestination[C1]
+                                   1             1             = 
+     9 UneSeuleDestination[C2]
+                                   1             1             = 
+    10 UneSeuleDestination[C3]
+                                   1             1             = 
+    11 UneSeuleDestination[C4]
+                                   1             1             = 
+    12 UneSeuleDestination[C5]
+                                   1             1             = 
+    13 TrajetAuMemeClient
+                                   0            -0             = 
+    14 LivraisonLogique[C1,C1]
+                                   0            -4               
+    15 LivraisonLogique[C1,C2]
+                                  -4            -4               
+    16 LivraisonLogique[C1,C3]
+                                  -3            -4               
+    17 LivraisonLogique[C1,C4]
+                                  -1            -4               
+    18 LivraisonLogique[C1,C5]
+                                  -2            -4               
+    19 LivraisonLogique[C2,C1]
+                                   4            -4               
+    20 LivraisonLogique[C2,C2]
+                                   0            -4               
+    21 LivraisonLogique[C2,C3]
+                                  -4            -4               
+    22 LivraisonLogique[C2,C4]
+                                   3            -4               
+    23 LivraisonLogique[C2,C5]
+                                   2            -4               
+    24 LivraisonLogique[C3,C1]
+                                   3            -4               
+    25 LivraisonLogique[C3,C2]
+                                  -1            -4               
+    26 LivraisonLogique[C3,C3]
+                                   0            -4               
+    27 LivraisonLogique[C3,C4]
+                                   2            -4               
+    28 LivraisonLogique[C3,C5]
+                                  -4            -4               
+    29 LivraisonLogique[C4,C1]
+                                  -4            -4               
+    30 LivraisonLogique[C4,C2]
+                                  -3            -4               
+    31 LivraisonLogique[C4,C3]
+                                  -2            -4               
+    32 LivraisonLogique[C4,C4]
+                                   0            -4               
+    33 LivraisonLogique[C4,C5]
+                                  -1            -4               
+    34 LivraisonLogique[C5,C1]
+                                   2            -4               
+    35 LivraisonLogique[C5,C2]
+                                  -2            -4               
+    36 LivraisonLogique[C5,C3]
+                                  -1            -4               
+    37 LivraisonLogique[C5,C4]
+                                  -4            -4               
+    38 LivraisonLogique[C5,C5]
+                                   0            -4               
+    39 OrdreLivraisonSup1[C1]
+                                   1             1               
+    40 OrdreLivraisonSup1[C2]
+                                   5             1               
+    41 OrdreLivraisonSup1[C3]
+                                   4             1               
+    42 OrdreLivraisonSup1[C4]
+                                   2             1               
+    43 OrdreLivraisonSup1[C5]
+                                   3             1               
+    44 OrdreLivraisonInfN[C1]
+                                   1                           5 
+    45 OrdreLivraisonInfN[C2]
+                                   5                           5 
+    46 OrdreLivraisonInfN[C3]
+                                   4                           5 
+    47 OrdreLivraisonInfN[C4]
+                                   2                           5 
+    48 OrdreLivraisonInfN[C5]
+                                   3                           5 
+    49 DistanceParcourue
+                                  22                             
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 AParcourir[ALPHA,ALPHA]
+                    *              0             0             1 
+     2 AParcourir[ALPHA,C1]
+                    *              0             0             1 
+     3 AParcourir[ALPHA,C2]
+                    *              1             0             1 
+     4 AParcourir[ALPHA,C3]
+                    *              0             0             1 
+     5 AParcourir[ALPHA,C4]
+                    *              0             0             1 
+     6 AParcourir[ALPHA,C5]
+                    *              0             0             1 
+     7 AParcourir[C1,ALPHA]
+                    *              1             0             1 
+     8 AParcourir[C1,C1]
+                    *              0             0             1 
+     9 AParcourir[C1,C2]
+                    *              0             0             1 
+    10 AParcourir[C1,C3]
+                    *              0             0             1 
+    11 AParcourir[C1,C4]
+                    *              0             0             1 
+    12 AParcourir[C1,C5]
+                    *              0             0             1 
+    13 AParcourir[C2,ALPHA]
+                    *              0             0             1 
+    14 AParcourir[C2,C1]
+                    *              0             0             1 
+    15 AParcourir[C2,C2]
+                    *              0             0             1 
+    16 AParcourir[C2,C3]
+                    *              1             0             1 
+    17 AParcourir[C2,C4]
+                    *              0             0             1 
+    18 AParcourir[C2,C5]
+                    *              0             0             1 
+    19 AParcourir[C3,ALPHA]
+                    *              0             0             1 
+    20 AParcourir[C3,C1]
+                    *              0             0             1 
+    21 AParcourir[C3,C2]
+                    *              0             0             1 
+    22 AParcourir[C3,C3]
+                    *              0             0             1 
+    23 AParcourir[C3,C4]
+                    *              0             0             1 
+    24 AParcourir[C3,C5]
+                    *              1             0             1 
+    25 AParcourir[C4,ALPHA]
+                    *              0             0             1 
+    26 AParcourir[C4,C1]
+                    *              1             0             1 
+    27 AParcourir[C4,C2]
+                    *              0             0             1 
+    28 AParcourir[C4,C3]
+                    *              0             0             1 
+    29 AParcourir[C4,C4]
+                    *              0             0             1 
+    30 AParcourir[C4,C5]
+                    *              0             0             1 
+    31 AParcourir[C5,ALPHA]
+                    *              0             0             1 
+    32 AParcourir[C5,C1]
+                    *              0             0             1 
+    33 AParcourir[C5,C2]
+                    *              0             0             1 
+    34 AParcourir[C5,C3]
+                    *              0             0             1 
+    35 AParcourir[C5,C4]
+                    *              1             0             1 
+    36 AParcourir[C5,C5]
+                    *              0             0             1 
+    37 OrdreLivraison[C1]
+                    *              1             0               
+    38 OrdreLivraison[C2]
+                    *              5             0               
+    39 OrdreLivraison[C3]
+                    *              4             0               
+    40 OrdreLivraison[C4]
+                    *              2             0               
+    41 OrdreLivraison[C5]
+                    *              3             0               
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

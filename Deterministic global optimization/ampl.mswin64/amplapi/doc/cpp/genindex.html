@@ -1,0 +1,1626 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JF2K1JY3G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2JF2K1JY3G');
+    </script>
+    
+    <title>Index &#8212; AMPL API 2.3.13 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css?v=222dc9a7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=99a2a735" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=4d7a031b"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="canonical" href="https://ampl.com/api/latest/cpp/genindex.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-favicon.png"/>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.13" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<i class="bi bi-grid-3x3-gap"></i>
+
+<div class="dropdown">
+  <button class="btn pst-navbar-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+  </button>
+  <ul class="dropdown-menu"><div class="dropdown-header">AMPL Resources</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/"><i class="fas fa-home fa-fw fa-lg"></i> AMPL.com</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://discuss.ampl.com/"><i class="fab fa-discourse fa-fw fa-lg"></i>AMPL Support Forum</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://portal.ampl.com/"><i class="fas fa-user fa-fw fa-lg"></i>AMPL Download Portal</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://dev.ampl.com/"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>AMPL Development Resources</a></li>
+<div class="dropdown-header">AMPL + Python &#x1F40D;</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/mo-book/">Hands-On Optimization in Python</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/colab/">AMPL Model Colaboratory</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/streamlit/">AMPL on Streamlit Cloud</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpy.ampl.com/">amplpy: Python API</a></li>
+<div class="dropdown-header">Open Source Projects</div>
+<li><a class="btn btn-sm dropdown-item" href="https://rampl.ampl.com/">rAMPL: R API</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://plugins.ampl.com/">AMPL Plugins</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://gsl.ampl.com/">AMPL GSL</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://amplpyfinance.ampl.com/">amplpyfinance</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampls.ampl.com/">Solver Callbacks</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://mp.ampl.com/">MP: Solver Interface Framework</a></li>
+<div class="dropdown-header">Licenses & Pricing</div>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/standard-pricing/" target="_blank">AMPL & Solvers pricing</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/courses" target="_blank">Free AMPL For Teaching</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://ampl.com/ce" target="_blank">Free AMPL Community Edition</a></li>
+<div class="dropdown-header">Social Media</div>
+<li><a class="btn btn-sm dropdown-item" href="https://www.linkedin.com/company/ampl" target="_blank"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a></li>
+<li><a class="btn btn-sm dropdown-item" href="https://twitter.com/AMPLopt" target="_blank"><i class="fab fa-twitter fa-fw"></i> Twitter / X</a></li></ul>
+</div>
+
+<a class="navbar-brand logo" href="index.html" style="text-decoration: none">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      <span>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-light" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <img src="https://raw.githubusercontent.com/ampl/ampl.github.io/master/themes/static/ampl-navbar-logo.png" class="logo__image only-dark pst-js-only" style="width: auto; height: 30px; padding-bottom: 4px;" alt="AMPL API 2.3.13 documentation - Home"/>
+        <span class="title">C++ API</span>
+      </span>
+    
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference.html">
+    C++ API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    C++ API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="intro.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting-started.html">
+    Initial Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="class-structure.html">
+    Class structure
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference.html">
+    C++ API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    C++ API Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com/apis/" title="AMPL APIs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-sitemap fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL APIs</span></a>
+        </li>
+  
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discuss.ampl.com" title="AMPL Support Forum" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Support Forum</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://portal.ampl.com" title="AMPL Portal" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Portal</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ampl.com" title="AMPL Homepage" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-home fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Homepage</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://dev.ampl.com" title="AMPL Resources" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">AMPL Resources</span></a>
+        </li></ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <img src="https://portal.ampl.com/dl/ads/python_ecosystem_badge_nologo.png" alt="AMPL Python Ecosystem"  title="AMPL Python Ecosystem" style="width: 250px" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="0,0,125,250" alt="AMPL Python Ecosystem" href="https://ampl.com/python/" target="_blank">
+        <area shape="rect" coords="125,0,250,250" alt="AMPL Model Colaboratory" href="https://ampl.com/colab/" target="_blank">
+    </map>
+  </div>
+  <div class="d-none d-md-block mb-4" style="text-align:left">
+    <a href="https://ampl.com/mo-book" target="_blank">
+      <img src="https://portal.ampl.com/dl/ads/mo_book_small_nologo.png" alt="Hands-On Mathematical Optimization with AMPL in Python" title="Hands-On Mathematical Optimization with AMPL in Python" style="width: 250px">
+    </a>
+  </div>
+  <div class="d-none d-md-block" style="text-align:left">
+    <p class="mt-2">Follow us on <a href="https://twitter.com/AMPLopt" target="_blank" ><i class="fab fa-twitter fa-fw fa-fw"></i>Twitter</a> and <a href="https://www.linkedin.com/company/ampl" target="_blank" ><i class="fab fa-linkedin fa-fw fa-fw"></i>LinkedIn</a>!</p>
+  </div>
+</div>
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPLE">ampl::AMPL (C++ class)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL9addToPathEN3fmt10CStringRefE">ampl::AMPL::addToPath (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL4AMPLERK11Environment">ampl::AMPL::AMPL (C++ function)</a>, <a href="classes/ampl.html#_CPPv4N4ampl4AMPL4AMPLEv">[1]</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL2cdEN3fmt10CStringRefE">ampl::AMPL::cd (C++ function)</a>, <a href="classes/ampl.html#_CPPv4NK4ampl4AMPL2cdEv">[1]</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL5closeEv">ampl::AMPL::close (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL7displayE10EntityArgs">ampl::AMPL::display (C++ function)</a>, <a href="classes/ampl.html#_CPPv4N4ampl4AMPL7displayE10StringArgs">[1]</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL4evalEN3fmt10CStringRefE">ampl::AMPL::eval (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL9evalAsyncEN3fmt10CStringRefEP8Runnable">ampl::AMPL::evalAsync (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL6expandE10EntityArgs">ampl::AMPL::expand (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL10exportDataEN3fmt10CStringRefE">ampl::AMPL::exportData (C++ function)</a>, <a href="classes/ampl.html#_CPPv4NK4ampl4AMPL10exportDataEv">[1]</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL11exportModelEN3fmt10CStringRefE">ampl::AMPL::exportModel (C++ function)</a>, <a href="classes/ampl.html#_CPPv4NK4ampl4AMPL11exportModelEv">[1]</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL13getBoolOptionEN3fmt10CStringRefE">ampl::AMPL::getBoolOption (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL13getConstraintEN3fmt10CStringRefE">ampl::AMPL::getConstraint (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL14getConstraintsEv">ampl::AMPL::getConstraints (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL23getCurrentObjectiveNameEv">ampl::AMPL::getCurrentObjectiveName (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL7getDataE10StringArgs">ampl::AMPL::getData (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL12getDblOptionEN3fmt10CStringRefE">ampl::AMPL::getDblOption (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL9getEntityEN3fmt10CStringRefE">ampl::AMPL::getEntity (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL15getErrorHandlerEv">ampl::AMPL::getErrorHandler (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL12getIntOptionEN3fmt10CStringRefE">ampl::AMPL::getIntOption (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL12getObjectiveEN3fmt10CStringRefE">ampl::AMPL::getObjective (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL13getObjectivesEv">ampl::AMPL::getObjectives (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL9getOptionEN3fmt10CStringRefE">ampl::AMPL::getOption (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL9getOutputEN3fmt10CStringRefE">ampl::AMPL::getOutput (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL16getOutputHandlerEv">ampl::AMPL::getOutputHandler (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL12getParameterEN3fmt10CStringRefE">ampl::AMPL::getParameter (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL13getParametersEv">ampl::AMPL::getParameters (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL6getSetEN3fmt10CStringRefE">ampl::AMPL::getSet (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL7getSetsEv">ampl::AMPL::getSets (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL8getTableEN3fmt10CStringRefE">ampl::AMPL::getTable (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL9getTablesEv">ampl::AMPL::getTables (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL8getValueEN3fmt10CStringRefE">ampl::AMPL::getValue (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL11getVariableEN3fmt10CStringRefE">ampl::AMPL::getVariable (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL12getVariablesEv">ampl::AMPL::getVariables (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL9interruptEv">ampl::AMPL::interrupt (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL6isBusyEv">ampl::AMPL::isBusy (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL9isRunningEv">ampl::AMPL::isRunning (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL4readEN3fmt10CStringRefE">ampl::AMPL::read (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL9readAsyncEN3fmt10CStringRefEP8Runnable">ampl::AMPL::readAsync (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL8readDataEN3fmt10CStringRefE">ampl::AMPL::readData (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL13readDataAsyncEN3fmt10CStringRefEP8Runnable">ampl::AMPL::readDataAsync (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL9readTableEN3fmt10CStringRefE">ampl::AMPL::readTable (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL5resetEv">ampl::AMPL::reset (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL13setBoolOptionEN3fmt10CStringRefEb">ampl::AMPL::setBoolOption (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL7setDataERK9DataFrameN3fmt10CStringRefE">ampl::AMPL::setData (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL12setDblOptionEN3fmt10CStringRefEd">ampl::AMPL::setDblOption (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL15setErrorHandlerEP12ErrorHandler">ampl::AMPL::setErrorHandler (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL12setIntOptionEN3fmt10CStringRefEi">ampl::AMPL::setIntOption (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL9setOptionEN3fmt10CStringRefEN3fmt10CStringRefE">ampl::AMPL::setOption (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL16setOutputHandlerEP13OutputHandler">ampl::AMPL::setOutputHandler (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL4showE10EntityArgs">ampl::AMPL::show (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL8snapshotEN3fmt10CStringRefEbbb">ampl::AMPL::snapshot (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL5solveEN3fmt10CStringRefEN3fmt10CStringRefE">ampl::AMPL::solve (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL10solveAsyncEP8Runnable">ampl::AMPL::solveAsync (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4NK4ampl4AMPL8toStringEv">ampl::AMPL::toString (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL5writeEN3fmt10CStringRefEN3fmt10CStringRefE">ampl::AMPL::write (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPL10writeTableEN3fmt10CStringRefE">ampl::AMPL::writeTable (C++ function)</a>
+</li>
+      <li><a href="classes/ampl.html#_CPPv4N4ampl4AMPLD0Ev">ampl::AMPL::~AMPL (C++ function)</a>
+</li>
+      <li><a href="classes/amplexception.html#_CPPv4N4ampl13AMPLExceptionE">ampl::AMPLException (C++ class)</a>
+</li>
+      <li><a href="classes/amplexception.html#_CPPv4N4ampl13AMPLException13AMPLExceptionEN3fmt10CStringRefE">ampl::AMPLException::AMPLException (C++ function)</a>, <a href="classes/amplexception.html#_CPPv4N4ampl13AMPLException13AMPLExceptionEN3fmt10CStringRefEiiN3fmt10CStringRefE">[1]</a>, <a href="classes/amplexception.html#_CPPv4N4ampl13AMPLException13AMPLExceptionERK13AMPLException">[2]</a>
+</li>
+      <li><a href="classes/amplexception.html#_CPPv4NK4ampl13AMPLException13getLineNumberEv">ampl::AMPLException::getLineNumber (C++ function)</a>
+</li>
+      <li><a href="classes/amplexception.html#_CPPv4NK4ampl13AMPLException10getMessageEv">ampl::AMPLException::getMessage (C++ function)</a>
+</li>
+      <li><a href="classes/amplexception.html#_CPPv4NK4ampl13AMPLException9getOffsetEv">ampl::AMPLException::getOffset (C++ function)</a>
+</li>
+      <li><a href="classes/amplexception.html#_CPPv4NK4ampl13AMPLException13getSourceNameEv">ampl::AMPLException::getSourceName (C++ function)</a>
+</li>
+      <li><a href="classes/amplexception.html#_CPPv4N4ampl13AMPLException13setSourceNameERKNSt6stringE">ampl::AMPLException::setSourceName (C++ function)</a>
+</li>
+      <li><a href="classes/amplexception.html#_CPPv4N4ampl13AMPLExceptionD0Ev">ampl::AMPLException::~AMPLException (C++ function)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4I_bEN4ampl12BasicVariantE">ampl::BasicVariant (C++ class)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4I_bEN4ampl12BasicVariant12BasicVariantERK12BasicVariantI1UE">ampl::BasicVariant::BasicVariant (C++ function)</a>, <a href="classes/variant.html#_CPPv4N4ampl12BasicVariant12BasicVariantEN8internal7VariantE">[1]</a>, <a href="classes/variant.html#_CPPv4N4ampl12BasicVariant12BasicVariantEPKc">[2]</a>, <a href="classes/variant.html#_CPPv4N4ampl12BasicVariant12BasicVariantEPN8internal7VariantE">[3]</a>, <a href="classes/variant.html#_CPPv4N4ampl12BasicVariant12BasicVariantERK12BasicVariant">[4]</a>, <a href="classes/variant.html#_CPPv4N4ampl12BasicVariant12BasicVariantERKNSt6stringE">[5]</a>, <a href="classes/variant.html#_CPPv4N4ampl12BasicVariant12BasicVariantEd">[6]</a>, <a href="classes/variant.html#_CPPv4N4ampl12BasicVariant12BasicVariantEi">[7]</a>, <a href="classes/variant.html#_CPPv4N4ampl12BasicVariant12BasicVariantEj">[8]</a>, <a href="classes/variant.html#_CPPv4N4ampl12BasicVariant12BasicVariantEl">[9]</a>, <a href="classes/variant.html#_CPPv4N4ampl12BasicVariant12BasicVariantEm">[10]</a>, <a href="classes/variant.html#_CPPv4N4ampl12BasicVariant12BasicVariantEv">[11]</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4NK4ampl12BasicVariant5c_strEv">ampl::BasicVariant::c_str (C++ function)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4NK4ampl12BasicVariant3dblEv">ampl::BasicVariant::dbl (C++ function)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4NK4ampl12BasicVariant4implEv">ampl::BasicVariant::impl (C++ function)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4N4ampl12BasicVariant8impl_ptrEv">ampl::BasicVariant::impl_ptr (C++ function)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4I_bEN4ampl12BasicVariantaSER12BasicVariantRK12BasicVariantI1UE">ampl::BasicVariant::operator= (C++ function)</a>, <a href="classes/variant.html#_CPPv4N4ampl12BasicVariantaSERK12BasicVariant">[1]</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4NK4ampl12BasicVariant3strEv">ampl::BasicVariant::str (C++ function)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4NK4ampl12BasicVariant8toStringEv">ampl::BasicVariant::toString (C++ function)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4NK4ampl12BasicVariant4typeEv">ampl::BasicVariant::type (C++ function)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4N4ampl12BasicVariantD0Ev">ampl::BasicVariant::~BasicVariant (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4N4ampl10ConstraintE">ampl::Constraint (C++ class)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint7astatusEv">ampl::Constraint::astatus (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint5beginEv">ampl::Constraint::begin (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint4bodyEv">ampl::Constraint::body (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint6defvarEv">ampl::Constraint::defvar (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint5dinitEv">ampl::Constraint::dinit (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint6dinit0Ev">ampl::Constraint::dinit0 (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4N4ampl10Constraint4dropEv">ampl::Constraint::drop (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint4dualEv">ampl::Constraint::dual (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint3endEv">ampl::Constraint::end (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint4findE8TupleRef">ampl::Constraint::find (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint3getE10VariantRef">ampl::Constraint::get (C++ function)</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint3getE10VariantRef10VariantRef">[1]</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint3getE10VariantRef10VariantRef10VariantRef">[2]</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint3getE10VariantRef10VariantRef10VariantRef10VariantRef">[3]</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint3getE8TupleRef">[4]</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint3getEv">[5]</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint15getIndexingSetsEv">ampl::Constraint::getIndexingSets (C++ function)</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint15getIndexingSetsEv">[1]</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint9getValuesE10StringArgs">ampl::Constraint::getValues (C++ function)</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint9getValuesE10StringArgs">[1]</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint9getValuesEv">[2]</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint9getValuesEv">[3]</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint10indexarityEv">ampl::Constraint::indexarity (C++ function)</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint10indexarityEv">[1]</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint9isLogicalEv">ampl::Constraint::isLogical (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint8isScalarEv">ampl::Constraint::isScalar (C++ function)</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint8isScalarEv">[1]</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4N4ampl10Constraint8iteratorE">ampl::Constraint::iterator (C++ type)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint2lbEv">ampl::Constraint::lb (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint3lbsEv">ampl::Constraint::lbs (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint5ldualEv">ampl::Constraint::ldual (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint6lslackEv">ampl::Constraint::lslack (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint4nameEv">ampl::Constraint::name (C++ function)</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint4nameEv">[1]</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint12numInstancesEv">ampl::Constraint::numInstances (C++ function)</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint12numInstancesEv">[1]</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10ConstraintixE10VariantRef">ampl::Constraint::operator[] (C++ function)</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10ConstraintixE8TupleRef">[1]</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4N4ampl10Constraint7restoreEv">ampl::Constraint::restore (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4N4ampl10Constraint7setDualEd">ampl::Constraint::setDual (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4N4ampl10Constraint9setValuesE9DataFrame">ampl::Constraint::setValues (C++ function)</a>, <a href="classes/constraint.html#_CPPv4N4ampl10Constraint9setValuesE9DataFrame">[1]</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint5slackEv">ampl::Constraint::slack (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint7sstatusEv">ampl::Constraint::sstatus (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint6statusEv">ampl::Constraint::status (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint8toStringEv">ampl::Constraint::toString (C++ function)</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint8toStringEv">[1]</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint2ubEv">ampl::Constraint::ub (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint3ubsEv">ampl::Constraint::ubs (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint5udualEv">ampl::Constraint::udual (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint6uslackEv">ampl::Constraint::uslack (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint3valEv">ampl::Constraint::val (C++ function)</a>
+</li>
+      <li><a href="classes/constraint.html#_CPPv4NK4ampl10Constraint4xrefEv">ampl::Constraint::xref (C++ function)</a>, <a href="classes/constraint.html#_CPPv4NK4ampl10Constraint4xrefEv">[1]</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4N4ampl18ConstraintInstanceE">ampl::ConstraintInstance (C++ class)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance7astatusEv">ampl::ConstraintInstance::astatus (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance4bodyEv">ampl::ConstraintInstance::body (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance6defvarEv">ampl::ConstraintInstance::defvar (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance5dinitEv">ampl::ConstraintInstance::dinit (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance6dinit0Ev">ampl::ConstraintInstance::dinit0 (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4N4ampl18ConstraintInstance4dropEv">ampl::ConstraintInstance::drop (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance4dualEv">ampl::ConstraintInstance::dual (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance6entityEv">ampl::ConstraintInstance::entity (C++ function)</a>, <a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance6entityEv">[1]</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance3keyEv">ampl::ConstraintInstance::key (C++ function)</a>, <a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance3keyEv">[1]</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance2lbEv">ampl::ConstraintInstance::lb (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance3lbsEv">ampl::ConstraintInstance::lbs (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance5ldualEv">ampl::ConstraintInstance::ldual (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance6lslackEv">ampl::ConstraintInstance::lslack (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance4nameEv">ampl::ConstraintInstance::name (C++ function)</a>, <a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance4nameEv">[1]</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4N4ampl18ConstraintInstance7restoreEv">ampl::ConstraintInstance::restore (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4N4ampl18ConstraintInstance7setDualEd">ampl::ConstraintInstance::setDual (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance5slackEv">ampl::ConstraintInstance::slack (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance7sstatusEv">ampl::ConstraintInstance::sstatus (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance6statusEv">ampl::ConstraintInstance::status (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance8toStringEv">ampl::ConstraintInstance::toString (C++ function)</a>, <a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance8toStringEv">[1]</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance2ubEv">ampl::ConstraintInstance::ub (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance3ubsEv">ampl::ConstraintInstance::ubs (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance5udualEv">ampl::ConstraintInstance::udual (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance6uslackEv">ampl::ConstraintInstance::uslack (C++ function)</a>
+</li>
+      <li><a href="classes/constraintinstance.html#_CPPv4NK4ampl18ConstraintInstance3valEv">ampl::ConstraintInstance::val (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrameE">ampl::DataFrame (C++ class)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame9addColumnEN3fmt10CStringRefE">ampl::DataFrame::addColumn (C++ function)</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame9addColumnEN3fmt10CStringRefEN8internal4ArgsE">[1]</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame6addRowE10VariantRef">ampl::DataFrame::addRow (C++ function)</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame6addRowE10VariantRef10VariantRef">[1]</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame6addRowE10VariantRef10VariantRef10VariantRef">[2]</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame6addRowE10VariantRef10VariantRef10VariantRef10VariantRef">[3]</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame6addRowE8TupleRef">[4]</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame5beginEv">ampl::DataFrame::begin (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame6ColumnE">ampl::DataFrame::Column (C++ type)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame9DataFrameENSt6size_tE">ampl::DataFrame::DataFrame (C++ function)</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame9DataFrameENSt6size_tE10StringArgs">[1]</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame9DataFrameERK10EntityArgs">[2]</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame9DataFrameERK9DataFrame">[3]</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame3endEv">ampl::DataFrame::end (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame4findE8TupleRef">ampl::DataFrame::find (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame9getColumnEN3fmt10CStringRefE">ampl::DataFrame::getColumn (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame10getHeadersEv">ampl::DataFrame::getHeaders (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame10getNumColsEv">ampl::DataFrame::getNumCols (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame13getNumIndicesEv">ampl::DataFrame::getNumIndices (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame10getNumRowsEv">ampl::DataFrame::getNumRows (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame6getRowE10VariantRef">ampl::DataFrame::getRow (C++ function)</a>, <a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame6getRowE8TupleRef">[1]</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame13getRowByIndexENSt6size_tE">ampl::DataFrame::getRowByIndex (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame4implEv">ampl::DataFrame::impl (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame8iteratorE">ampl::DataFrame::iterator (C++ class)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame8iterator15difference_typeE">ampl::DataFrame::iterator::difference_type (C++ type)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame8iterator17iterator_categoryE">ampl::DataFrame::iterator::iterator_category (C++ type)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame8iteratorneE8iterator">ampl::DataFrame::iterator::operator!= (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame8iteratormlEv">ampl::DataFrame::iterator::operator* (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame8iteratorppEi">ampl::DataFrame::iterator::operator++ (C++ function)</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame8iteratorppEv">[1]</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame8iteratoreqE8iterator">ampl::DataFrame::iterator::operator== (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame8iterator7pointerE">ampl::DataFrame::iterator::pointer (C++ type)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame8iterator9referenceE">ampl::DataFrame::iterator::reference (C++ type)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame8iterator10value_typeE">ampl::DataFrame::iterator::value_type (C++ type)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrameneERK9DataFrame">ampl::DataFrame::operator!= (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrameaSERK9DataFrame">ampl::DataFrame::operator= (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrameeqERK9DataFrame">ampl::DataFrame::operator== (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame7reserveENSt6size_tE">ampl::DataFrame::reserve (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame3RowE">ampl::DataFrame::Row (C++ type)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4I_NSt6size_tEEN4ampl9DataFrame8setArrayEvN8internal4ArgsERA2NR_Kd">ampl::DataFrame::setArray (C++ function)</a>, <a href="classes/dataframe.html#_CPPv4I_NSt6size_tEEN4ampl9DataFrame8setArrayEvN8internal4ArgsERA2NR_PKc">[1]</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame8setArrayENSt6size_tEN8internal4ArgsEPKd">[2]</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame8setArrayENSt6size_tEN8internal4ArgsEPPCKc">[3]</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame9setColumnEN3fmt10CStringRefEN8internal4ArgsENSt6size_tE">ampl::DataFrame::setColumn (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEvN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_Kd">ampl::DataFrame::setMatrix (C++ function)</a>, <a href="classes/dataframe.html#_CPPv4I_NSt6size_tE_NSt6size_tEEN4ampl9DataFrame9setMatrixEvN8internal4ArgsEN8internal4ArgsERA2NR_A2NC_PKc">[1]</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame9setMatrixENSt6size_tEN8internal4ArgsENSt6size_tEN8internal4ArgsEPKd">[2]</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame9setMatrixENSt6size_tEN8internal4ArgsENSt6size_tEN8internal4ArgsEPPCKc">[3]</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame8setValueE8TupleRefN3fmt10CStringRefEN4ampl10VariantRefE">ampl::DataFrame::setValue (C++ function)</a>, <a href="classes/dataframe.html#_CPPv4N4ampl9DataFrame8setValueENSt6size_tE6size_tN4ampl10VariantRefE">[1]</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4NK4ampl9DataFrame8toStringEv">ampl::DataFrame::toString (C++ function)</a>
+</li>
+      <li><a href="classes/dataframe.html#_CPPv4N4ampl9DataFrameD0Ev">ampl::DataFrame::~DataFrame (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4N4ampl6EntityE">ampl::Entity (C++ class)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4I0EN4ampl6Entity6EntityE11BasicEntityI1IE">ampl::Entity::Entity (C++ function)</a>, <a href="classes/entity.html#_CPPv4N4ampl6Entity6EntityEv">[1]</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK4ampl6Entity15getIndexingSetsEv">ampl::Entity::getIndexingSets (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK4ampl6Entity9getValuesE10StringArgs">ampl::Entity::getValues (C++ function)</a>, <a href="classes/entity.html#_CPPv4NK4ampl6Entity9getValuesEv">[1]</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK4ampl6Entity10indexarityEv">ampl::Entity::indexarity (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK4ampl6Entity8isScalarEv">ampl::Entity::isScalar (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK4ampl6Entity7isValidEv">ampl::Entity::isValid (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK4ampl6Entity4nameEv">ampl::Entity::name (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK4ampl6Entity12numInstancesEv">ampl::Entity::numInstances (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4N4ampl6EntityaSERK6Entity">ampl::Entity::operator= (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4N4ampl6Entity9setValuesE9DataFrame">ampl::Entity::setValues (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK4ampl6Entity8toStringEv">ampl::Entity::toString (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK4ampl6Entity4typeEv">ampl::Entity::type (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK4ampl6Entity4xrefEv">ampl::Entity::xref (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4N4ampl10EntityArgsE">ampl::EntityArgs (C++ class)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity">ampl::EntityArgs::EntityArgs (C++ function)</a>, <a href="classes/entity.html#_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity6Entity">[1]</a>, <a href="classes/entity.html#_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity6Entity6Entity">[2]</a>, <a href="classes/entity.html#_CPPv4N4ampl10EntityArgs10EntityArgsE6Entity6Entity6Entity6Entity">[3]</a>, <a href="classes/entity.html#_CPPv4N4ampl10EntityArgs10EntityArgsEA_K6EntityNSt6size_tE">[4]</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK4ampl10EntityArgs7getArgsEv">ampl::EntityArgs::getArgs (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK4ampl10EntityArgs4sizeEv">ampl::EntityArgs::size (C++ function)</a>
+</li>
+      <li><a href="classes/entitymap.html#_CPPv4I0EN4ampl9EntityMapE">ampl::EntityMap (C++ class)</a>
+</li>
+      <li><a href="classes/entitymap.html#_CPPv4NK4ampl9EntityMap5beginEv">ampl::EntityMap::begin (C++ function)</a>
+</li>
+      <li><a href="classes/entitymap.html#_CPPv4NK4ampl9EntityMap3endEv">ampl::EntityMap::end (C++ function)</a>
+</li>
+      <li><a href="classes/entitymap.html#_CPPv4NK4ampl9EntityMap4findEN3fmt10CStringRefE">ampl::EntityMap::find (C++ function)</a>
+</li>
+      <li><a href="classes/entitymap.html#_CPPv4N4ampl9EntityMap8iteratorE">ampl::EntityMap::iterator (C++ class)</a>
+</li>
+      <li><a href="classes/entitymap.html#_CPPv4NK4ampl9EntityMapixEN3fmt10CStringRefE">ampl::EntityMap::operator[] (C++ function)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4N4ampl11EnvironmentE">ampl::Environment (C++ class)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4NK4ampl11Environment5beginEv">ampl::Environment::begin (C++ function)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4NK4ampl11Environment3endEv">ampl::Environment::end (C++ function)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4N4ampl11Environment11EnvironmentEN3fmt10CStringRefEN3fmt10CStringRefE">ampl::Environment::Environment (C++ function)</a>, <a href="classes/environment.html#_CPPv4N4ampl11Environment11EnvironmentERK11Environment">[1]</a>, <a href="classes/environment.html#_CPPv4N4ampl11Environment11EnvironmentEv">[2]</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4NK4ampl11Environment4findEN3fmt10CStringRefE">ampl::Environment::find (C++ function)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4NK4ampl11Environment14getAMPLCommandEv">ampl::Environment::getAMPLCommand (C++ function)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4NK4ampl11Environment9getBinDirEv">ampl::Environment::getBinDir (C++ function)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4NK4ampl11Environment10getBinNameEv">ampl::Environment::getBinName (C++ function)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4N4ampl11Environment8iteratorE">ampl::Environment::iterator (C++ type)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4N4ampl11EnvironmentaSERK11Environment">ampl::Environment::operator= (C++ function)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4N4ampl11Environment3putEN3fmt10CStringRefEN3fmt10CStringRefE">ampl::Environment::put (C++ function)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4N4ampl11Environment9setBinDirEN3fmt10CStringRefE">ampl::Environment::setBinDir (C++ function)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4N4ampl11Environment10setBinNameEN3fmt10CStringRefE">ampl::Environment::setBinName (C++ function)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4NK4ampl11Environment4sizeEv">ampl::Environment::size (C++ function)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4NK4ampl11Environment8toStringEv">ampl::Environment::toString (C++ function)</a>
+</li>
+      <li><a href="classes/environment.html#_CPPv4N4ampl11EnvironmentD0Ev">ampl::Environment::~Environment (C++ function)</a>
+</li>
+      <li><a href="classes/errorhandler.html#_CPPv4N4ampl12ErrorHandlerE">ampl::ErrorHandler (C++ class)</a>
+</li>
+      <li><a href="classes/errorhandler.html#_CPPv4N4ampl12ErrorHandler5errorERK13AMPLException">ampl::ErrorHandler::error (C++ function)</a>
+</li>
+      <li><a href="classes/errorhandler.html#_CPPv4N4ampl12ErrorHandler7warningERK13AMPLException">ampl::ErrorHandler::warning (C++ function)</a>
+</li>
+      <li><a href="classes/instance.html#_CPPv4N4ampl8InstanceE">ampl::Instance (C++ class)</a>
+</li>
+      <li><a href="classes/instance.html#_CPPv4NK4ampl8Instance6entityEv">ampl::Instance::entity (C++ function)</a>
+</li>
+      <li><a href="classes/instance.html#_CPPv4I0EN4ampl8Instance8InstanceE13BasicInstanceI13InnerInstanceE">ampl::Instance::Instance (C++ function)</a>
+</li>
+      <li><a href="classes/instance.html#_CPPv4NK4ampl8Instance3keyEv">ampl::Instance::key (C++ function)</a>
+</li>
+      <li><a href="classes/instance.html#_CPPv4NK4ampl8Instance4nameEv">ampl::Instance::name (C++ function)</a>
+</li>
+      <li><a href="classes/instance.html#_CPPv4I0EN4ampl8InstanceaSER8Instance13BasicInstanceI13InnerInstanceE">ampl::Instance::operator= (C++ function)</a>
+</li>
+      <li><a href="classes/instance.html#_CPPv4NK4ampl8Instance8toStringEv">ampl::Instance::toString (C++ function)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4N4ampl9ObjectiveE">ampl::Objective (C++ class)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective7astatusEv">ampl::Objective::astatus (C++ function)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective5beginEv">ampl::Objective::begin (C++ function)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4N4ampl9Objective4dropEv">ampl::Objective::drop (C++ function)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective3endEv">ampl::Objective::end (C++ function)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective8exitcodeEv">ampl::Objective::exitcode (C++ function)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective4findE8TupleRef">ampl::Objective::find (C++ function)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective3getE10VariantRef">ampl::Objective::get (C++ function)</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective3getE10VariantRef10VariantRef">[1]</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective3getE10VariantRef10VariantRef10VariantRef">[2]</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective3getE10VariantRef10VariantRef10VariantRef10VariantRef">[3]</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective3getE8TupleRef">[4]</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective3getEv">[5]</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective15getIndexingSetsEv">ampl::Objective::getIndexingSets (C++ function)</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective15getIndexingSetsEv">[1]</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective9getValuesE10StringArgs">ampl::Objective::getValues (C++ function)</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective9getValuesE10StringArgs">[1]</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective9getValuesEv">[2]</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective9getValuesEv">[3]</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective10indexarityEv">ampl::Objective::indexarity (C++ function)</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective10indexarityEv">[1]</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective8isScalarEv">ampl::Objective::isScalar (C++ function)</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective8isScalarEv">[1]</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4N4ampl9Objective8iteratorE">ampl::Objective::iterator (C++ type)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective7messageEv">ampl::Objective::message (C++ function)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective12minimizationEv">ampl::Objective::minimization (C++ function)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective4nameEv">ampl::Objective::name (C++ function)</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective4nameEv">[1]</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective12numInstancesEv">ampl::Objective::numInstances (C++ function)</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective12numInstancesEv">[1]</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9ObjectiveixE10VariantRef">ampl::Objective::operator[] (C++ function)</a>, <a href="classes/objective.html#_CPPv4NK4ampl9ObjectiveixE8TupleRef">[1]</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4N4ampl9Objective7restoreEv">ampl::Objective::restore (C++ function)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective6resultEv">ampl::Objective::result (C++ function)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="classes/objective.html#_CPPv4N4ampl9Objective9setValuesE9DataFrame">ampl::Objective::setValues (C++ function)</a>, <a href="classes/objective.html#_CPPv4N4ampl9Objective9setValuesE9DataFrame">[1]</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective7sstatusEv">ampl::Objective::sstatus (C++ function)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective8toStringEv">ampl::Objective::toString (C++ function)</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective8toStringEv">[1]</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective5valueEv">ampl::Objective::value (C++ function)</a>
+</li>
+      <li><a href="classes/objective.html#_CPPv4NK4ampl9Objective4xrefEv">ampl::Objective::xref (C++ function)</a>, <a href="classes/objective.html#_CPPv4NK4ampl9Objective4xrefEv">[1]</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4N4ampl17ObjectiveInstanceE">ampl::ObjectiveInstance (C++ class)</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance7astatusEv">ampl::ObjectiveInstance::astatus (C++ function)</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4N4ampl17ObjectiveInstance4dropEv">ampl::ObjectiveInstance::drop (C++ function)</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance6entityEv">ampl::ObjectiveInstance::entity (C++ function)</a>, <a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance6entityEv">[1]</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance8exitcodeEv">ampl::ObjectiveInstance::exitcode (C++ function)</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance3keyEv">ampl::ObjectiveInstance::key (C++ function)</a>, <a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance3keyEv">[1]</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance7messageEv">ampl::ObjectiveInstance::message (C++ function)</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance12minimizationEv">ampl::ObjectiveInstance::minimization (C++ function)</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance4nameEv">ampl::ObjectiveInstance::name (C++ function)</a>, <a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance4nameEv">[1]</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4N4ampl17ObjectiveInstance7restoreEv">ampl::ObjectiveInstance::restore (C++ function)</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance6resultEv">ampl::ObjectiveInstance::result (C++ function)</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance7sstatusEv">ampl::ObjectiveInstance::sstatus (C++ function)</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance8toStringEv">ampl::ObjectiveInstance::toString (C++ function)</a>, <a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance8toStringEv">[1]</a>
+</li>
+      <li><a href="classes/objectiveinstance.html#_CPPv4NK4ampl17ObjectiveInstance5valueEv">ampl::ObjectiveInstance::value (C++ function)</a>
+</li>
+      <li><a href="classes/optional.html#_CPPv4I0EN4ampl8OptionalE">ampl::Optional (C++ class)</a>
+</li>
+      <li><a href="classes/optional.html#_CPPv4NK4ampl8OptionalcvbEv">ampl::Optional::operator bool (C++ function)</a>
+</li>
+      <li><a href="classes/optional.html#_CPPv4NK4ampl8OptionalmlEv">ampl::Optional::operator* (C++ function)</a>
+</li>
+      <li><a href="classes/optional.html#_CPPv4NK4ampl8OptionalptEv">ampl::Optional::operator-&gt; (C++ function)</a>
+</li>
+      <li><a href="classes/optional.html#_CPPv4N4ampl8Optional8OptionalERK1T">ampl::Optional::Optional (C++ function)</a>, <a href="classes/optional.html#_CPPv4N4ampl8Optional8OptionalEv">[1]</a>
+</li>
+      <li><a href="classes/optional.html#_CPPv4NK4ampl8Optional5valueEv">ampl::Optional::value (C++ function)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4KindE">ampl::output::Kind (C++ enum)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind10_READTABLEE">ampl::output::Kind::_READTABLE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind11_WRITETABLEE">ampl::output::Kind::_WRITETABLE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind5BREAKE">ampl::output::Kind::BREAK (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind10BREAKPOINTE">ampl::output::Kind::BREAKPOINT (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind4CALLE">ampl::output::Kind::CALL (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind2CDE">ampl::output::Kind::CD (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind5CHECKE">ampl::output::Kind::CHECK (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind5CLOSEE">ampl::output::Kind::CLOSE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind8COMMANDSE">ampl::output::Kind::COMMANDS (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind8CONTINUEE">ampl::output::Kind::CONTINUE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind4DATAE">ampl::output::Kind::DATA (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind9DELETECMDE">ampl::output::Kind::DELETECMD (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind7DISPLAYE">ampl::output::Kind::DISPLAY (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind4DROPE">ampl::output::Kind::DROP (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind19DROP_OR_RESTORE_ALLE">ampl::output::Kind::DROP_OR_RESTORE_ALL (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind4ELSEE">ampl::output::Kind::ELSE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind10ELSE_CHECKE">ampl::output::Kind::ELSE_CHECK (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind5ENDIFE">ampl::output::Kind::ENDIF (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind7ENVIRONE">ampl::output::Kind::ENVIRON (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind4EXITE">ampl::output::Kind::EXIT (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind6EXPANDE">ampl::output::Kind::EXPAND (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind3FIXE">ampl::output::Kind::FIX (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind3FORE">ampl::output::Kind::FOR (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind2IFE">ampl::output::Kind::IF (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind3LETE">ampl::output::Kind::LET (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind4LOADE">ampl::output::Kind::LOAD (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind7LOOPENDE">ampl::output::Kind::LOOPEND (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind4MISCE">ampl::output::Kind::MISC (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind9OBJECTIVEE">ampl::output::Kind::OBJECTIVE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind6OPTIONE">ampl::output::Kind::OPTION (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind12OPTION_RESETE">ampl::output::Kind::OPTION_RESET (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind5PRINTE">ampl::output::Kind::PRINT (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind6PRINTFE">ampl::output::Kind::PRINTF (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind7PROBLEME">ampl::output::Kind::PROBLEM (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind6PROMPTE">ampl::output::Kind::PROMPT (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind5PURGEE">ampl::output::Kind::PURGE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind6RBRACEE">ampl::output::Kind::RBRACE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind4READE">ampl::output::Kind::READ (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind10READ_TABLEE">ampl::output::Kind::READ_TABLE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind6RELOADE">ampl::output::Kind::RELOAD (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind6REMOVEE">ampl::output::Kind::REMOVE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind6REPEATE">ampl::output::Kind::REPEAT (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind10REPEAT_ENDE">ampl::output::Kind::REPEAT_END (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind5RESETE">ampl::output::Kind::RESET (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind7RESTOREE">ampl::output::Kind::RESTORE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind8RUN_ARGSE">ampl::output::Kind::RUN_ARGS (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind9SEMICOLONE">ampl::output::Kind::SEMICOLON (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind13SHELL_MESSAGEE">ampl::output::Kind::SHELL_MESSAGE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind12SHELL_OUTPUTE">ampl::output::Kind::SHELL_OUTPUT (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind4SHOWE">ampl::output::Kind::SHOW (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind8SOLUTIONE">ampl::output::Kind::SOLUTION (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind5SOLVEE">ampl::output::Kind::SOLVE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind5SSTEPE">ampl::output::Kind::SSTEP (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind4THENE">ampl::output::Kind::THEN (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind5UNFIXE">ampl::output::Kind::UNFIX (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind6UNLOADE">ampl::output::Kind::UNLOAD (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind6UPDATEE">ampl::output::Kind::UPDATE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind7WAITINGE">ampl::output::Kind::WAITING (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind5WRITEE">ampl::output::Kind::WRITE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind11WRITE_TABLEE">ampl::output::Kind::WRITE_TABLE (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl6output4Kind4XREFE">ampl::output::Kind::XREF (C++ enumerator)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl13OutputHandlerE">ampl::OutputHandler (C++ class)</a>
+</li>
+      <li><a href="classes/outputhandler.html#_CPPv4N4ampl13OutputHandler6outputEN6output4KindEPKc">ampl::OutputHandler::output (C++ function)</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4N4ampl9ParameterE">ampl::Parameter (C++ class)</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter5beginEv">ampl::Parameter::begin (C++ function)</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter3endEv">ampl::Parameter::end (C++ function)</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter4findE8TupleRef">ampl::Parameter::find (C++ function)</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter3getE10VariantRef">ampl::Parameter::get (C++ function)</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9Parameter3getE10VariantRef10VariantRef">[1]</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9Parameter3getE10VariantRef10VariantRef10VariantRef">[2]</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9Parameter3getE10VariantRef10VariantRef10VariantRef10VariantRef">[3]</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9Parameter3getE8TupleRef">[4]</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9Parameter3getEv">[5]</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter15getIndexingSetsEv">ampl::Parameter::getIndexingSets (C++ function)</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9Parameter15getIndexingSetsEv">[1]</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter9getValuesE10StringArgs">ampl::Parameter::getValues (C++ function)</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9Parameter9getValuesEv">[1]</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter10hasDefaultEv">ampl::Parameter::hasDefault (C++ function)</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter10indexarityEv">ampl::Parameter::indexarity (C++ function)</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9Parameter10indexarityEv">[1]</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter8isScalarEv">ampl::Parameter::isScalar (C++ function)</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9Parameter8isScalarEv">[1]</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter10isSymbolicEv">ampl::Parameter::isSymbolic (C++ function)</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4N4ampl9Parameter8iteratorE">ampl::Parameter::iterator (C++ type)</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter4nameEv">ampl::Parameter::name (C++ function)</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9Parameter4nameEv">[1]</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter12numInstancesEv">ampl::Parameter::numInstances (C++ function)</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9Parameter12numInstancesEv">[1]</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9ParameterixE10VariantRef">ampl::Parameter::operator[] (C++ function)</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9ParameterixE8TupleRef">[1]</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4N4ampl9Parameter3setE10VariantRef">ampl::Parameter::set (C++ function)</a>, <a href="classes/parameter.html#_CPPv4N4ampl9Parameter3setE10VariantRef10VariantRef">[1]</a>, <a href="classes/parameter.html#_CPPv4N4ampl9Parameter3setE8TupleRef10VariantRef">[2]</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4N4ampl9Parameter9setValuesE9DataFrame">ampl::Parameter::setValues (C++ function)</a>, <a href="classes/parameter.html#_CPPv4N4ampl9Parameter9setValuesEA_K5TupleN8internal4ArgsENSt6size_tE">[1]</a>, <a href="classes/parameter.html#_CPPv4N4ampl9Parameter9setValuesEN8internal4ArgsENSt6size_tE">[2]</a>, <a href="classes/parameter.html#_CPPv4N4ampl9Parameter9setValuesENSt6size_tEN8internal4ArgsENSt6size_tEN8internal4ArgsEPKdb">[3]</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter8toStringEv">ampl::Parameter::toString (C++ function)</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9Parameter8toStringEv">[1]</a>
+</li>
+      <li><a href="classes/parameter.html#_CPPv4NK4ampl9Parameter4xrefEv">ampl::Parameter::xref (C++ function)</a>, <a href="classes/parameter.html#_CPPv4NK4ampl9Parameter4xrefEv">[1]</a>
+</li>
+      <li><a href="classes/runnable.html#_CPPv4N4ampl8RunnableE">ampl::Runnable (C++ class)</a>
+</li>
+      <li><a href="classes/runnable.html#_CPPv4N4ampl8Runnable3runEv">ampl::Runnable::run (C++ function)</a>
+</li>
+      <li><a href="classes/runnable.html#_CPPv4N4ampl8RunnableD0Ev">ampl::Runnable::~Runnable (C++ function)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4N4ampl3SetE">ampl::Set (C++ class)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set5arityEv">ampl::Set::arity (C++ function)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set5beginEv">ampl::Set::begin (C++ function)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set8containsE8TupleRef">ampl::Set::contains (C++ function)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set3endEv">ampl::Set::end (C++ function)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set4findE8TupleRef">ampl::Set::find (C++ function)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set3getE10VariantRef">ampl::Set::get (C++ function)</a>, <a href="classes/set.html#_CPPv4NK4ampl3Set3getE10VariantRef10VariantRef">[1]</a>, <a href="classes/set.html#_CPPv4NK4ampl3Set3getE10VariantRef10VariantRef10VariantRef">[2]</a>, <a href="classes/set.html#_CPPv4NK4ampl3Set3getE10VariantRef10VariantRef10VariantRef10VariantRef">[3]</a>, <a href="classes/set.html#_CPPv4NK4ampl3Set3getE8TupleRef">[4]</a>, <a href="classes/set.html#_CPPv4NK4ampl3Set3getEv">[5]</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set15getIndexingSetsEv">ampl::Set::getIndexingSets (C++ function)</a>, <a href="classes/set.html#_CPPv4NK4ampl3Set15getIndexingSetsEv">[1]</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set9getValuesEv">ampl::Set::getValues (C++ function)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set10indexarityEv">ampl::Set::indexarity (C++ function)</a>, <a href="classes/set.html#_CPPv4NK4ampl3Set10indexarityEv">[1]</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4N4ampl3Set13InstanceRangeE">ampl::Set::InstanceRange (C++ class)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set13InstanceRange5beginEv">ampl::Set::InstanceRange::begin (C++ function)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set13InstanceRange3endEv">ampl::Set::InstanceRange::end (C++ function)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set13InstanceRange4findE8TupleRef">ampl::Set::InstanceRange::find (C++ function)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4N4ampl3Set13InstanceRange8iteratorE">ampl::Set::InstanceRange::iterator (C++ type)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set9instancesEv">ampl::Set::instances (C++ function)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set8isScalarEv">ampl::Set::isScalar (C++ function)</a>, <a href="classes/set.html#_CPPv4NK4ampl3Set8isScalarEv">[1]</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4N4ampl3Set8iteratorE">ampl::Set::iterator (C++ type)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4N4ampl3Set11MemberRangeE">ampl::Set::MemberRange (C++ type)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set7membersEv">ampl::Set::members (C++ function)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set4nameEv">ampl::Set::name (C++ function)</a>, <a href="classes/set.html#_CPPv4NK4ampl3Set4nameEv">[1]</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set12numInstancesEv">ampl::Set::numInstances (C++ function)</a>, <a href="classes/set.html#_CPPv4NK4ampl3Set12numInstancesEv">[1]</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3SetixE10VariantRef">ampl::Set::operator[] (C++ function)</a>, <a href="classes/set.html#_CPPv4NK4ampl3SetixE8TupleRef">[1]</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4N4ampl3Set9setValuesE9DataFrame">ampl::Set::setValues (C++ function)</a>, <a href="classes/set.html#_CPPv4N4ampl3Set9setValuesEA_K5TupleNSt6size_tE">[1]</a>, <a href="classes/set.html#_CPPv4N4ampl3Set9setValuesEN8internal4ArgsENSt6size_tE">[2]</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set4sizeEv">ampl::Set::size (C++ function)</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set8toStringEv">ampl::Set::toString (C++ function)</a>, <a href="classes/set.html#_CPPv4NK4ampl3Set8toStringEv">[1]</a>
+</li>
+      <li><a href="classes/set.html#_CPPv4NK4ampl3Set4xrefEv">ampl::Set::xref (C++ function)</a>, <a href="classes/set.html#_CPPv4NK4ampl3Set4xrefEv">[1]</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4N4ampl11SetInstanceE">ampl::SetInstance (C++ class)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance5arityEv">ampl::SetInstance::arity (C++ function)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance8containsE8TupleRef">ampl::SetInstance::contains (C++ function)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance6entityEv">ampl::SetInstance::entity (C++ function)</a>, <a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance6entityEv">[1]</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance9getValuesEv">ampl::SetInstance::getValues (C++ function)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance3keyEv">ampl::SetInstance::key (C++ function)</a>, <a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance3keyEv">[1]</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4N4ampl11SetInstance11MemberRangeE">ampl::SetInstance::MemberRange (C++ class)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance11MemberRange5beginEv">ampl::SetInstance::MemberRange::begin (C++ function)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance11MemberRange3endEv">ampl::SetInstance::MemberRange::end (C++ function)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4N4ampl11SetInstance11MemberRange8iteratorE">ampl::SetInstance::MemberRange::iterator (C++ class)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance11MemberRange8iteratorneERK8iterator">ampl::SetInstance::MemberRange::iterator::operator!= (C++ function)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance11MemberRange8iteratormlEv">ampl::SetInstance::MemberRange::iterator::operator* (C++ function)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4N4ampl11SetInstance11MemberRange8iteratorppEi">ampl::SetInstance::MemberRange::iterator::operator++ (C++ function)</a>, <a href="classes/setinstance.html#_CPPv4N4ampl11SetInstance11MemberRange8iteratorppEv">[1]</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance11MemberRange8iteratoreqERK8iterator">ampl::SetInstance::MemberRange::iterator::operator== (C++ function)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4N4ampl11SetInstance11MemberRange11MemberRangeEPN8internal11SetInstanceE">ampl::SetInstance::MemberRange::MemberRange (C++ function)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance11MemberRange4sizeEv">ampl::SetInstance::MemberRange::size (C++ function)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4N4ampl11SetInstance7membersEv">ampl::SetInstance::members (C++ function)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance4nameEv">ampl::SetInstance::name (C++ function)</a>, <a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance4nameEv">[1]</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4N4ampl11SetInstance9setValuesE9DataFrame">ampl::SetInstance::setValues (C++ function)</a>, <a href="classes/setinstance.html#_CPPv4N4ampl11SetInstance9setValuesEA_K5TupleNSt6size_tE">[1]</a>, <a href="classes/setinstance.html#_CPPv4N4ampl11SetInstance9setValuesEN8internal4ArgsENSt6size_tE">[2]</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4N4ampl11SetInstance4sizeEv">ampl::SetInstance::size (C++ function)</a>
+</li>
+      <li><a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance8toStringEv">ampl::SetInstance::toString (C++ function)</a>, <a href="classes/setinstance.html#_CPPv4NK4ampl11SetInstance8toStringEv">[1]</a>
+</li>
+      <li><a href="classes/tuple.html#_CPPv4N4ampl5TupleE">ampl::Tuple (C++ class)</a>
+</li>
+      <li><a href="classes/tuple.html#_CPPv4NK4ampl5Tuple4implEv">ampl::Tuple::impl (C++ function)</a>
+</li>
+      <li><a href="classes/tuple.html#_CPPv4N4ampl5Tuple4joinE8TupleRef8TupleRef">ampl::Tuple::join (C++ function)</a>
+</li>
+      <li><a href="classes/tuple.html#_CPPv4NK4ampl5TupleixENSt6size_tE">ampl::Tuple::operator[] (C++ function)</a>
+</li>
+      <li><a href="classes/tuple.html#_CPPv4NK4ampl5Tuple4sizeEv">ampl::Tuple::size (C++ function)</a>
+</li>
+      <li><a href="classes/tuple.html#_CPPv4NK4ampl5Tuple8toStringEv">ampl::Tuple::toString (C++ function)</a>
+</li>
+      <li><a href="classes/tuple.html#_CPPv4N4ampl5Tuple5TupleE10VariantRef">ampl::Tuple::Tuple (C++ function)</a>, <a href="classes/tuple.html#_CPPv4N4ampl5Tuple5TupleE10VariantRef10VariantRef">[1]</a>, <a href="classes/tuple.html#_CPPv4N4ampl5Tuple5TupleE10VariantRef10VariantRef10VariantRef">[2]</a>, <a href="classes/tuple.html#_CPPv4N4ampl5Tuple5TupleE10VariantRef10VariantRef10VariantRef10VariantRef">[3]</a>, <a href="classes/tuple.html#_CPPv4N4ampl5Tuple5TupleE8TupleRef">[4]</a>, <a href="classes/tuple.html#_CPPv4N4ampl5Tuple5TupleEA_7VariantNSt6size_tE">[5]</a>, <a href="classes/tuple.html#_CPPv4N4ampl5Tuple5TupleEN8internal5TupleE">[6]</a>, <a href="classes/tuple.html#_CPPv4N4ampl5Tuple5TupleEv">[7]</a>
+</li>
+      <li><a href="classes/tuple.html#_CPPv4N4ampl8TupleRefE">ampl::TupleRef (C++ type)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4N4ampl4TypeE">ampl::Type (C++ enum)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4N4ampl4Type5EMPTYE">ampl::Type::EMPTY (C++ enumerator)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4N4ampl4Type7NUMERICE">ampl::Type::NUMERIC (C++ enumerator)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4N4ampl4Type6STRINGE">ampl::Type::STRING (C++ enumerator)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4N4ampl3var11IntegralityE">ampl::var::Integrality (C++ enum)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4N4ampl3var11Integrality6BINARYE">ampl::var::Integrality::BINARY (C++ enumerator)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4N4ampl3var11Integrality10CONTINUOUSE">ampl::var::Integrality::CONTINUOUS (C++ enumerator)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4N4ampl3var11Integrality7INTEGERE">ampl::var::Integrality::INTEGER (C++ enumerator)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4N4ampl8VariableE">ampl::Variable (C++ class)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable7astatusEv">ampl::Variable::astatus (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable5beginEv">ampl::Variable::begin (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable6defeqnEv">ampl::Variable::defeqn (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable4dualEv">ampl::Variable::dual (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable3endEv">ampl::Variable::end (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable4findE8TupleRef">ampl::Variable::find (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4N4ampl8Variable3fixEd">ampl::Variable::fix (C++ function)</a>, <a href="classes/variable.html#_CPPv4N4ampl8Variable3fixEv">[1]</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable3getE10VariantRef">ampl::Variable::get (C++ function)</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable3getE10VariantRef10VariantRef">[1]</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable3getE10VariantRef10VariantRef10VariantRef">[2]</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable3getE10VariantRef10VariantRef10VariantRef10VariantRef">[3]</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable3getE8TupleRef">[4]</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable3getEv">[5]</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable15getIndexingSetsEv">ampl::Variable::getIndexingSets (C++ function)</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable15getIndexingSetsEv">[1]</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable9getValuesE10StringArgs">ampl::Variable::getValues (C++ function)</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable9getValuesE10StringArgs">[1]</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable9getValuesEv">[2]</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable9getValuesEv">[3]</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable10indexarityEv">ampl::Variable::indexarity (C++ function)</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable10indexarityEv">[1]</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable4initEv">ampl::Variable::init (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable5init0Ev">ampl::Variable::init0 (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable11integralityEv">ampl::Variable::integrality (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable8isScalarEv">ampl::Variable::isScalar (C++ function)</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable8isScalarEv">[1]</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4N4ampl8Variable8iteratorE">ampl::Variable::iterator (C++ type)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable2lbEv">ampl::Variable::lb (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable3lb0Ev">ampl::Variable::lb0 (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable3lb1Ev">ampl::Variable::lb1 (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable3lb2Ev">ampl::Variable::lb2 (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable3lrcEv">ampl::Variable::lrc (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable6lslackEv">ampl::Variable::lslack (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable4nameEv">ampl::Variable::name (C++ function)</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable4nameEv">[1]</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable12numInstancesEv">ampl::Variable::numInstances (C++ function)</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable12numInstancesEv">[1]</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8VariableixE10VariantRef">ampl::Variable::operator[] (C++ function)</a>, <a href="classes/variable.html#_CPPv4NK4ampl8VariableixE8TupleRef">[1]</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable2rcEv">ampl::Variable::rc (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4N4ampl8Variable8setValueEd">ampl::Variable::setValue (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4N4ampl8Variable9setValuesE9DataFrame">ampl::Variable::setValues (C++ function)</a>, <a href="classes/variable.html#_CPPv4N4ampl8Variable9setValuesE9DataFrame">[1]</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable5slackEv">ampl::Variable::slack (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable7sstatusEv">ampl::Variable::sstatus (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable6statusEv">ampl::Variable::status (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable8toStringEv">ampl::Variable::toString (C++ function)</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable8toStringEv">[1]</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable2ubEv">ampl::Variable::ub (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable3ub0Ev">ampl::Variable::ub0 (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable3ub1Ev">ampl::Variable::ub1 (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable3ub2Ev">ampl::Variable::ub2 (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4N4ampl8Variable5unfixEv">ampl::Variable::unfix (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable3urcEv">ampl::Variable::urc (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable6uslackEv">ampl::Variable::uslack (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable5valueEv">ampl::Variable::value (C++ function)</a>
+</li>
+      <li><a href="classes/variable.html#_CPPv4NK4ampl8Variable4xrefEv">ampl::Variable::xref (C++ function)</a>, <a href="classes/variable.html#_CPPv4NK4ampl8Variable4xrefEv">[1]</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4N4ampl16VariableInstanceE">ampl::VariableInstance (C++ class)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance7astatusEv">ampl::VariableInstance::astatus (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance6defeqnEv">ampl::VariableInstance::defeqn (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance4dualEv">ampl::VariableInstance::dual (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance6entityEv">ampl::VariableInstance::entity (C++ function)</a>, <a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance6entityEv">[1]</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4N4ampl16VariableInstance3fixEd">ampl::VariableInstance::fix (C++ function)</a>, <a href="classes/variableinstance.html#_CPPv4N4ampl16VariableInstance3fixEv">[1]</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance4initEv">ampl::VariableInstance::init (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance5init0Ev">ampl::VariableInstance::init0 (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance3keyEv">ampl::VariableInstance::key (C++ function)</a>, <a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance3keyEv">[1]</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance2lbEv">ampl::VariableInstance::lb (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance3lb0Ev">ampl::VariableInstance::lb0 (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance3lb1Ev">ampl::VariableInstance::lb1 (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance3lb2Ev">ampl::VariableInstance::lb2 (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance3lrcEv">ampl::VariableInstance::lrc (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance6lslackEv">ampl::VariableInstance::lslack (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance4nameEv">ampl::VariableInstance::name (C++ function)</a>, <a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance4nameEv">[1]</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance2rcEv">ampl::VariableInstance::rc (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4N4ampl16VariableInstance8setValueEd">ampl::VariableInstance::setValue (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance5slackEv">ampl::VariableInstance::slack (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance7sstatusEv">ampl::VariableInstance::sstatus (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance6statusEv">ampl::VariableInstance::status (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance8toStringEv">ampl::VariableInstance::toString (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance2ubEv">ampl::VariableInstance::ub (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance3ub0Ev">ampl::VariableInstance::ub0 (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance3ub1Ev">ampl::VariableInstance::ub1 (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance3ub2Ev">ampl::VariableInstance::ub2 (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4N4ampl16VariableInstance5unfixEv">ampl::VariableInstance::unfix (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance3urcEv">ampl::VariableInstance::urc (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance6uslackEv">ampl::VariableInstance::uslack (C++ function)</a>
+</li>
+      <li><a href="classes/variableinstance.html#_CPPv4NK4ampl16VariableInstance5valueEv">ampl::VariableInstance::value (C++ function)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4N4ampl7VariantE">ampl::Variant (C++ type)</a>
+</li>
+      <li><a href="classes/variant.html#_CPPv4N4ampl10VariantRefE">ampl::VariantRef (C++ type)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="classes/entity.html#_CPPv4N19PhonyNameDueToError11BasicEntityEPN8internal10EntityBaseE">PhonyNameDueToError::BasicEntity (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError5beginEv">PhonyNameDueToError::begin (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError3endEv">PhonyNameDueToError::end (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError4findE8TupleRef">PhonyNameDueToError::find (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError3getE10VariantRef">PhonyNameDueToError::get (C++ function)</a>, <a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError3getE10VariantRef10VariantRef">[1]</a>, <a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError3getE10VariantRef10VariantRef10VariantRef">[2]</a>, <a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError3getE10VariantRef10VariantRef10VariantRef10VariantRef">[3]</a>, <a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError3getE8TupleRef">[4]</a>, <a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError3getEv">[5]</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError15getIndexingSetsEv">PhonyNameDueToError::getIndexingSets (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError9getValuesE10StringArgs">PhonyNameDueToError::getValues (C++ function)</a>, <a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError9getValuesEv">[1]</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError10indexarityEv">PhonyNameDueToError::indexarity (C++ function)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError8isScalarEv">PhonyNameDueToError::isScalar (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4N19PhonyNameDueToError8iteratorE">PhonyNameDueToError::iterator (C++ type)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError4nameEv">PhonyNameDueToError::name (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError12numInstancesEv">PhonyNameDueToError::numInstances (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK19PhonyNameDueToErrorixE10VariantRef">PhonyNameDueToError::operator[] (C++ function)</a>, <a href="classes/entity.html#_CPPv4NK19PhonyNameDueToErrorixE8TupleRef">[1]</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4N19PhonyNameDueToError9setValuesE9DataFrame">PhonyNameDueToError::setValues (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError8toStringEv">PhonyNameDueToError::toString (C++ function)</a>
+</li>
+      <li><a href="classes/entity.html#_CPPv4NK19PhonyNameDueToError4xrefEv">PhonyNameDueToError::xref (C++ function)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2013-2025, AMPL Optimization Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>
