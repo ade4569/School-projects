@@ -20,6 +20,12 @@ Lab works focused on advanced optimization techniques:
 - Branch-and-price
 - Lagrangian relaxation
 
+### Computer vision
+
+Projects on:
+- Geometric modeling: Medial axis extraction from multiple foreground–background images for surface mesh reconstruction
+- Image processing: Image mosaicing using multiple images containing overlapping regions
+
 ### Deep Learning Project
 
 - Object detection project using the YOLO (You Only Look Once) architecture.
